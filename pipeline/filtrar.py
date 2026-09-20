@@ -53,8 +53,10 @@ INSTRUCOES = """És o filtro do Sinal. Pontuas notícias de tecnologia para uma 
 QUEM É O LEITOR
 Duarte, 2.º ano do TeSP em Programação de Sistemas de Informação no Politécnico
 de Leiria. Programador full-stack júnior.
-Sabe: PHP (POO, MVC), JavaScript, SQL e MySQL, HTML/CSS/Bootstrap, jQuery, AJAX,
-C, C#/.NET, Python básico, Git, Composer, Ubuntu e shell, Scrum.
+Sabe: PHP (POO, MVC), Java e Android nativo (Android Studio), JavaScript, SQL e
+MySQL, HTML/CSS/Bootstrap, jQuery, AJAX, C, C#/.NET, Python básico, MQTT, Git,
+Composer, Ubuntu e shell, Scrum.
+O foco dele é web em PHP e mobile em Android — são as duas metades do curso.
 Não sabe, e não vale a pena assumir: Node e o seu ecossistema, TypeScript,
 React, Vue, Angular, Docker, containers, CI/CD na prática, cloud, testes
 automatizados.
@@ -95,11 +97,18 @@ dizer porquê. Sem gentilezas e sem repetir o título.
 Os temas saem da lista dada, no máximo dois por item."""
 
 
-def esquema(quantidade: int) -> dict:
+def esquema() -> dict:
     """O formato obrigatório da resposta.
 
     Com isto o modelo não pode devolver prosa à volta do JSON, e nós não
     precisamos de código a adivinhar onde é que o JSON começa.
+
+    Vai aqui só o que os structured outputs da API aceitam: tipos, `enum`,
+    `required` e `additionalProperties: False`. Contagens (`minItems`,
+    `maxItems`) e limites numéricos (`minimum`, `maximum`) são recusados com
+    um 400 — a API é explícita: para arrays, `minItems` diferente de 0 ou 1
+    não é suportado. Quem garante essas regras são as instruções, que já as
+    dizem, e a verificação nossa ao ler a resposta. Não voltes a pô-las aqui.
     """
     return {
         "type": "json_schema",
@@ -108,17 +117,17 @@ def esquema(quantidade: int) -> dict:
             "properties": {
                 "avaliacoes": {
                     "type": "array",
-                    "minItems": quantidade,
-                    "maxItems": quantidade,
                     "items": {
                         "type": "object",
                         "properties": {
                             "id": {"type": "string"},
-                            "nota": {"type": "integer", "minimum": 0, "maximum": 10},
+                            "nota": {"type": "integer"},
                             "justificacao": {"type": "string"},
+                            # O `enum` é aceite e é o que interessa: garante que
+                            # nenhum tema novo entra. Quantos vêm fica às
+                            # instruções e ao corte lá em baixo.
                             "temas": {
                                 "type": "array",
-                                "maxItems": 2,
                                 "items": {"type": "string", "enum": TEMAS},
                             },
                         },
@@ -216,7 +225,7 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
                 max_tokens=4000,
                 system=INSTRUCOES,
                 messages=[{"role": "user", "content": texto_do_lote(lote)}],
-                output_config={"format": esquema(len(lote))},
+                output_config={"format": esquema()},
             )
         except anthropic.RateLimitError:
             avisos.append(f"lote {numero_do_lote}: limite de pedidos atingido, ficou por pontuar")
@@ -241,9 +250,12 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
             item = por_id.get(avaliacao.get("id"))
             if item is None:
                 continue  # id que não pedimos; ignora-se em vez de se confiar nele
-            item["nota"] = int(avaliacao["nota"])
+            # O esquema deixou de poder impor a escala e a contagem, por isso
+            # impõem-se aqui. Uma nota fora de 0-10 ia partir a ordenação do
+            # site e o limiar da fase 3; um terceiro tema só ia sujar o cartão.
+            item["nota"] = max(0, min(10, int(avaliacao["nota"])))
             item["justificacao"] = avaliacao["justificacao"]
-            item["temas"] = avaliacao["temas"]
+            item["temas"] = list(avaliacao["temas"])[:2]
 
     sem_nota = sum(1 for item in itens if "nota" not in item)
     if sem_nota:

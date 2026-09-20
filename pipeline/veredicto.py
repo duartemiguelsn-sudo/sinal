@@ -75,8 +75,10 @@ pontuados e verificados. É o último passo, e é o que o leitor lê primeiro.
 QUEM É O LEITOR
 Duarte, 2.º ano do TeSP em Programação de Sistemas de Informação no Politécnico
 de Leiria. Programador full-stack júnior.
-Sabe: PHP (POO, MVC), JavaScript, SQL e MySQL, HTML/CSS/Bootstrap, jQuery, AJAX,
-C, C#/.NET, Python básico, Git, Composer, Ubuntu e shell, Scrum.
+Sabe: PHP (POO, MVC), Java e Android nativo (Android Studio), JavaScript, SQL e
+MySQL, HTML/CSS/Bootstrap, jQuery, AJAX, C, C#/.NET, Python básico, MQTT, Git,
+Composer, Ubuntu e shell, Scrum.
+O foco dele é web em PHP e mobile em Android — são as duas metades do curso.
 Não sabe, e não vale a pena assumir: Node e o seu ecossistema, TypeScript,
 React, Vue, Angular, Docker, containers, CI/CD na prática, cloud, testes
 automatizados.
@@ -137,12 +139,16 @@ As dúvidas são perguntas por responder, uma frase cada, no máximo três. Se n
 houver nenhuma, devolves a lista vazia — não se inventam dúvidas para encher."""
 
 
-def esquema(quantidade: int) -> dict:
+def esquema() -> dict:
     """O formato obrigatório da resposta.
 
     O veredicto é uma lista fechada pela mesma razão que os temas da fase 2 o
     são: o site tem quatro estilos de cartão e um quinto rótulo inventado pelo
     modelo não teria onde aparecer.
+
+    Contagens (`minItems`, `maxItems`) não entram aqui: a API recusa-as com um
+    400. Ver a nota igual no `esquema` da fase 2. O limite das dúvidas fica às
+    instruções e ao `_duvidas_juntas`, que já corta a lista.
     """
     return {
         "type": "json_schema",
@@ -151,8 +157,6 @@ def esquema(quantidade: int) -> dict:
             "properties": {
                 "julgamentos": {
                     "type": "array",
-                    "minItems": quantidade,
-                    "maxItems": quantidade,
                     "items": {
                         "type": "object",
                         "properties": {
@@ -161,7 +165,6 @@ def esquema(quantidade: int) -> dict:
                             "justificacao": {"type": "string"},
                             "duvidas": {
                                 "type": "array",
-                                "maxItems": 3,
                                 "items": {"type": "string"},
                             },
                         },
@@ -357,7 +360,7 @@ def julgar(
                 messages=[{"role": "user", "content": texto_do_lote(lote)}],
                 # Pensar antes de escrever, mas a esforço baixo. Ver ESFORCO.
                 thinking={"type": "adaptive"},
-                output_config={"format": esquema(len(lote)), "effort": ESFORCO},
+                output_config={"format": esquema(), "effort": ESFORCO},
             )
         except anthropic.RateLimitError:
             avisos.append(f"lote {numero_do_lote}: limite de pedidos atingido, ficou por julgar")
