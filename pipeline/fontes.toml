@@ -62,3 +62,84 @@ nome = "Android Developers"
 url = "https://android-developers.googleblog.com/feeds/posts/default"
 camada = 1
 confirmada = "2026-09-20"
+
+# ---------------------------------------------------------------------------
+# Camada 2 — descoberta (sinal de atenção, nunca verdade).
+#
+# Nada daqui é facto. Uma história com 300 pontos no Hacker News quer dizer
+# que muita gente carregou no botão, e mais nada. Estes itens existem para a
+# fase 3 ir verificar, e o site mostra a camada para o leitor saber o que
+# tem à frente.
+#
+# Estas fontes não têm feed: só API JSON. Por isso declaram `tipo`, e o
+# endereço leva marcadores que o pipeline preenche na hora ({desde} é um
+# instante unix, {desde_iso} é AAAA-MM-DD).
+#
+# O campo `limite` é um travão de custo, não uma preferência: a fase 2 paga
+# ao item. Se uma destas fontes um dia mudar e despejar mil resultados, o
+# corte dá-se aqui e fica registado no ecrã.
+
+[[fonte]]
+nome = "Hacker News"
+tipo = "hn"
+# 150 pontos é o corte. Medido a 2026-09-20: acima de 100 dá 284 histórias por
+# semana, acima de 250 dá 116. 150 fica no meio, ~28 por dia, que é o que a
+# fase 2 aguenta sem dar nas vistas na fatura.
+url = "https://hn.algolia.com/api/v1/search_by_date?tags=story&numericFilters=points>150,created_at_i>{desde}&hitsPerPage=50"
+camada = 2
+limite = 50
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "GitHub — repositórios novos em alta"
+tipo = "github"
+# Repositórios criados de fresco que já apanharam estrelas. É o mais perto que
+# a API do GitHub deixa chegar de "estrelas ganhas esta semana" — ordenar os
+# antigos por estrelas devolve sempre os mesmos gigantes e não diz nada.
+url = "https://api.github.com/search/repositories?q=stars:>100+created:>{desde_iso}&sort=stars&order=desc&per_page=20"
+camada = 2
+limite = 20
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "GitHub — MCP"
+tipo = "github"
+url = "https://api.github.com/search/repositories?q=topic:mcp+created:>{desde_iso}+stars:>10&sort=stars&order=desc&per_page=15"
+camada = 2
+limite = 15
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "GitHub — PHP"
+tipo = "github"
+url = "https://api.github.com/search/repositories?q=topic:php+created:>{desde_iso}+stars:>10&sort=stars&order=desc&per_page=10"
+camada = 2
+limite = 10
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "GitHub — Android"
+tipo = "github"
+url = "https://api.github.com/search/repositories?q=topic:android+created:>{desde_iso}+stars:>10&sort=stars&order=desc&per_page=10"
+camada = 2
+limite = 10
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "Lobsters — IA"
+url = "https://lobste.rs/t/ai.rss"
+camada = 2
+limite = 25
+confirmada = "2026-09-20"
+
+# O Reddit responde, mas corta pedidos seguidos do mesmo endereço com 429 —
+# aconteceu nos testes de 2026-09-20 à segunda chamada. Fica cá uma só
+# comunidade, e se falhar o pipeline salta-a e regista. Se se tornar um erro
+# de todos os dias no Action, tira-se: uma fonte que nunca responde só suja
+# o ecrã.
+[[fonte]]
+nome = "r/LocalLLaMA"
+url = "https://www.reddit.com/r/LocalLLaMA/.rss"
+camada = 2
+limite = 25
+confirmada = "2026-09-20"
