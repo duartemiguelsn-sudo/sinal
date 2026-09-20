@@ -40,6 +40,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import filtrar  # noqa: E402  (a tradução dos erros da API vive lá)
 from fontes import TEMPO_LIMITE, cabecalhos  # noqa: E402
 
 MODELO = "claude-haiku-4-5"
@@ -341,7 +342,7 @@ def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], flo
     except anthropic.RateLimitError:
         return [], [], 0.0, "limite de pedidos atingido"
     except anthropic.APIStatusError as erro:
-        return [], [], 0.0, f"a API respondeu {erro.status_code}"
+        return [], [], 0.0, filtrar.explicar_erro(erro)
     except anthropic.APIConnectionError as erro:
         return [], [], 0.0, f"não chegou à API ({erro})"
 

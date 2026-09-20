@@ -222,7 +222,7 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
             avisos.append(f"lote {numero_do_lote}: limite de pedidos atingido, ficou por pontuar")
             continue
         except anthropic.APIStatusError as erro:
-            avisos.append(f"lote {numero_do_lote}: a API respondeu {erro.status_code}")
+            avisos.append(f"lote {numero_do_lote}: {explicar_erro(erro)}")
             continue
         except anthropic.APIConnectionError as erro:
             avisos.append(f"lote {numero_do_lote}: não chegou à API ({erro})")
@@ -250,6 +250,38 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
         avisos.append(f"{sem_nota} itens ficaram sem nota e vão para o site como incertos")
 
     return itens, avisos, gasto
+
+
+def explicar_erro(erro: anthropic.APIStatusError) -> str:
+    """Traduz um erro da API para uma frase que diga o que fazer a seguir.
+
+    O código sozinho não chega. Um 400 tanto é falta de saldo como um pedido
+    mal formado, e a diferença é entre ir carregar a conta e ir corrigir
+    código. A explicação vem no corpo da resposta; é essa que se lê.
+
+    Vive aqui, e não em cada fase, porque as três fases pagas falham da mesma
+    maneira e não faz sentido escreverem a mesma frase cada uma à sua maneira.
+    """
+    texto = (getattr(erro, "message", "") or str(erro)).lower()
+
+    if "credit balance" in texto or ("insufficient" in texto and "credit" in texto):
+        return (
+            "a conta da Anthropic está sem saldo — carrega em "
+            "console.anthropic.com/settings/billing e volta a correr"
+        )
+    if erro.status_code == 401:
+        return "a ANTHROPIC_API_KEY não foi aceite; confirma o valor no .env"
+    if erro.status_code == 403:
+        return "a chave não tem permissão para este modelo"
+    if erro.status_code in (500, 503, 529):
+        return f"a API está em baixo ou sobrecarregada ({erro.status_code}); tenta mais tarde"
+
+    # O que sobra é raro e não se adivinha. Vai o código e a explicação da
+    # própria API, cortada, que é sempre melhor do que um número sozinho.
+    detalhe = (getattr(erro, "message", "") or "").strip()
+    if detalhe:
+        return f"a API respondeu {erro.status_code}: {detalhe[:200]}"
+    return f"a API respondeu {erro.status_code}"
 
 
 def tem_chave() -> bool:

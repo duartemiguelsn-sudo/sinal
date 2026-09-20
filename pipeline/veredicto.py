@@ -32,6 +32,8 @@ from __future__ import annotations
 
 import json
 
+import filtrar  # a tradução dos erros da API vive lá
+
 MODELO = "claude-sonnet-5"
 
 # Dólares por milhão de tokens, Sonnet 5. Cinco vezes mais caro à saída do que
@@ -361,7 +363,7 @@ def julgar(
             avisos.append(f"lote {numero_do_lote}: limite de pedidos atingido, ficou por julgar")
             continue
         except anthropic.APIStatusError as erro:
-            avisos.append(f"lote {numero_do_lote}: a API respondeu {erro.status_code}")
+            avisos.append(f"lote {numero_do_lote}: {filtrar.explicar_erro(erro)}")
             continue
         except anthropic.APIConnectionError as erro:
             avisos.append(f"lote {numero_do_lote}: não chegou à API ({erro})")

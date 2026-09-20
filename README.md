@@ -127,6 +127,11 @@ Sem `ANTHROPIC_API_KEY` no ambiente, a fase 2 não corre e diz-o — a recolha f
 mesma e os itens vão para o site sem nota. As partes gratuitas das fases 3 e 4 correm
 sempre, com chave ou sem ela.
 
+Com chave mas sem saldo na conta é o mesmo resultado, e também com a razão escrita: a
+API responde 400 e as três fases pagas traduzem-no para *"a conta da Anthropic está sem
+saldo"*, em vez do código sozinho. A corrida não se perde — recolhe, publica, e diz o
+que ficou por pontuar.
+
 Contas por corrida, com os tetos que estão no código: fase 2 até 0,25 USD (uma corrida
 de 45 itens estimou 0,017 USD), fase 3 até 0,12 USD e fase 4 até 0,15 USD. Uma corrida
 por dia dá menos de 5 USD por mês no pior caso, e o pior caso é raro: a maioria dos
