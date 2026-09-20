@@ -388,6 +388,22 @@
     "recolhido": "2026-09-21"
   },
   {
+    "id": "81440999aa6a",
+    "titulo": "Wow... thank goodness for open weights!!!",
+    "resumo": "submitted by /u/johnnyApplePRNG [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlvb3y/wow_thank_goodness_for_open_weights/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-20",
+    "nota": 2,
+    "justificacao": "Post de rede social sem substância — apenas um título emotivo e um link, nenhuma informação sobre o que a notícia é ou porque é relevante para o teu trabalho.",
+    "temas": [
+      "ia"
+    ],
+    "veredicto": "ruido",
+    "recolhido": "2026-09-20"
+  },
+  {
     "id": "7f309519de9e",
     "titulo": "jaredpalmer/kev",
     "resumo": "912 estrelas, Apache-2.0, Python. tiny Jev-like family of decision models built on top of Qwen3 you can train and run on your own",
