@@ -1,0 +1,308 @@
+[
+  {
+    "id": "28367d69f519",
+    "titulo": "v2.1.278",
+    "resumo": "What's changed Changed auto mode for Claude API and Enterprise users, and on Bedrock, Vertex, Foundry and gateways, to default to the server-side classifier, which does not charge for classifier overhead ( CLAUDE_CODE_AUTO_MODE_SERVER=0 opts out on Bedrock, Vertex, Foundry and gateways); warns on billed fallback. See https://code.claude.com/docs/en/auto-mode-classifier-billing Added an Auto mode s…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.278",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-19"
+  },
+  {
+    "id": "559b0cf11197",
+    "titulo": "Introducing the Australian Youth Safety Blueprint",
+    "resumo": "OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people.",
+    "url": "https://openai.com/index/australian-youth-safety-blueprint",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-18"
+  },
+  {
+    "id": "cbde4620c702",
+    "titulo": "Copilot code review: An improved review experience",
+    "resumo": "Copilot code review now gives you a clearer view of how a review changes over time, more intelligently auto-resolves its own suggestions, and generates useful commit messages when you accept… The post Copilot code review: An improved review experience appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-18"
+  },
+  {
+    "id": "9a3d27b14d82",
+    "titulo": "Manage the code coverage ruleset condition with the REST API",
+    "resumo": "You can now use the generally available REST API to manage the Restrict code coverage repository ruleset option, in addition to the existing UI support. This ruleset lets you enforce… The post Manage the code coverage ruleset condition with the REST API appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-18-manage-the-code-coverage-ruleset-condition-with-the-rest-api",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-18"
+  },
+  {
+    "id": "587e82fd87bc",
+    "titulo": "GitHub Copilot weekly releases — September 14",
+    "resumo": "This week, GitHub Copilot adds new model selection options, code review updates, and Sentry integration in the Copilot app. There are also updates for admins, plus new agent features in… The post GitHub Copilot weekly releases — September 14 appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-18"
+  },
+  {
+    "id": "7019e34a4540",
+    "titulo": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
+    "resumo": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on October 19th, 2026: Model Deprecation date… The post Upcoming deprecation of selected GitHub Copilot models in mid-October appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-18"
+  },
+  {
+    "id": "6f7db5bc4bc1",
+    "titulo": "Stage-only npm tokens for safer automation",
+    "resumo": "You can now select Read and write (stage only) when creating an npm granular access token. This lets your automated workflows stage package versions for review without giving the token… The post Stage-only npm tokens for safer automation appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-18-stage-only-npm-tokens-for-safer-automation",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-18"
+  },
+  {
+    "id": "2e32a5a9d6fe",
+    "titulo": "v2.1.277",
+    "resumo": "What's changed Added AGENTS.md support: in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead; change it under \"Project instructions\" in /config (not yet on Bedrock, Vertex or Foundry) Added CLAUDE_GATEWAY_PROXY_IS_EGRESS_BOUNDARY=1 for Claude apps gateways whose only egress is a forward proxy: every outbound request hands the proxy the hostname instead of resolving it locally Added…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.277",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-18"
+  },
+  {
+    "id": "3575631df8c6",
+    "titulo": "v2.1.276",
+    "resumo": "What's changed Fixed every request failing with 400 … Input tag 'advisor_20260301' when ANTHROPIC_BASE_URL points at a proxy or gateway (2.1.275 regression)",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.276",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-18"
+  },
+  {
+    "id": "964ae1dd0fac",
+    "titulo": "How Cooley is accelerating IPO work with ChatGPT",
+    "resumo": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most.",
+    "url": "https://openai.com/index/cooley-gopublic",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "363bbead77de",
+    "titulo": "Introducing Astra for Law",
+    "resumo": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work.",
+    "url": "https://openai.com/index/astra-for-law",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "cfbfb7473f2f",
+    "titulo": "Copilot impact dashboard now shows feature engagement",
+    "resumo": "The Copilot impact dashboard now shows how many active users regularly use key Copilot features. Enterprise administrators can quickly see which experiences are widely adopted and which may need more… The post Copilot impact dashboard now shows feature engagement appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "7fbb1d664de3",
+    "titulo": "Agentic CLI customizations now in the usage metrics API",
+    "resumo": "GitHub Copilot expands existing CLI report coverage with agentic activity metrics for skills, custom agents, Model Context Protocol (MCP) servers, slash commands, and plugins. What’s new The fields appear in… The post Agentic CLI customizations now in the usage metrics API appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "a4ef61465bc2",
+    "titulo": "Ubuntu 26 generally available and latest migration",
+    "resumo": "The Ubuntu 26.04 runner image for GitHub Actions is now out of public preview and fully supported for production workflows on both x64 and arm64. As part of this release,… The post Ubuntu 26 generally available and latest migration appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-17-ubuntu-26-generally-available-and-latest-migration",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "ba788d57500e",
+    "titulo": "Workflow execution protections in GitHub Actions generally available",
+    "resumo": "Workflow execution protections for GitHub Actions, previously in public preview, are now generally available for GitHub Enterprise, organizations, and repositories. Execution protections let you define an allowlist that controls who… The post Workflow execution protections in GitHub Actions generally available appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "965bd319e890",
+    "titulo": "v2.1.275",
+    "resumo": "What's changed Added the signed-in account to Claude apps gateway sign-in: when the gateway names it, you confirm it before the credential is saved, and /status shows it Added a send-now key (ctrl+enter, or ctrl+x ctrl+s) that interrupts the current turn and sends all queued messages at once; sent and queued messages show in gray until the model receives them Added a startup warning when a configu…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.275",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "16ab809693ef",
+    "titulo": "v2.1.274",
+    "resumo": "What's changed Added a visible warning when memory usage is critical, with steps to free memory or restart safely Added CLAUDE_CODE_MCP_STARTUP_WAIT_MS to bound how long the first non-interactive turn waits for connecting MCP servers ( 0 = don't wait) Added effort attribute to the claude_code.llm_request OpenTelemetry trace span, matching the api_request event Added claude_code.managed_settings_re…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.274",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "ebaac7e03f0b",
+    "titulo": "Introducing the AndroidX Security State Libraries: A Unified View of Device Security",
+    "resumo": "Posted by Maunik Shah, Staff Software Engineer, Alec Garcia, Software Engineer, and Joseph Yong, Technical Program Manager At Android, we are constantly working to provide developers and enterprise partners with the data they need to keep devices protected. Today, we're thrilled to announce the stable release of the AndroidX Security State version 1.1.0 and Security State Provider version 1.0.0 li…",
+    "url": "https://android-developers.googleblog.com/2026/09/introducing-androidx-security-state-libraries.html",
+    "fonte": "Android Developers",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "6f95035bf386",
+    "titulo": "Android Bench 2.0: Pushing the frontier with challenging long-horizon tasks",
+    "resumo": "Posted by Matthew McCullough, VP, Product Management, Android Developer When we first launched Android Bench, we built a rigorous foundation for evaluating how large language models (LLMs) assist developers with real-world Android tasks. As AI models and agents rapidly evolve, we’ve been updating our methodology, such as aligning our benchmark framework with the Harbor framework . Today we’re rele…",
+    "url": "https://android-developers.googleblog.com/2026/09/android-bench-2-long-horizon-tasks.html",
+    "fonte": "Android Developers",
+    "camada": 1,
+    "data": "2026-09-17"
+  },
+  {
+    "id": "027811ca1632",
+    "titulo": "Helping older adults use AI in everyday life",
+    "resumo": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities to build practical AI skills safely.",
+    "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-16"
+  },
+  {
+    "id": "52752974efc0",
+    "titulo": "Reimagining advertising with AI",
+    "resumo": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify.",
+    "url": "https://openai.com/index/reimagining-advertising-with-ai",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-16"
+  },
+  {
+    "id": "973a91148c50",
+    "titulo": "Hex turns complex analysis into visual reports with GPT‑6 Astra",
+    "resumo": "GPT-6 Astra helps Hex’s data agents turn answers into interactive visualizations that employees are proud to share.",
+    "url": "https://openai.com/index/hex-gpt-6-astra",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-16"
+  },
+  {
+    "id": "5f7e182a53f2",
+    "titulo": "How to connect AI usage to business value",
+    "resumo": "Learn how ChatGPT Work and Codex analytics help teams understand AI usage and spend, identify training needs, and connect adoption to business outcomes.",
+    "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-16"
+  },
+  {
+    "id": "bbe6c30a33c9",
+    "titulo": "Our framework for reporting model misalignment",
+    "resumo": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior.",
+    "url": "https://openai.com/index/model-misalignment-reporting-framework",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-16"
+  },
+  {
+    "id": "71646fffd914",
+    "titulo": "How workers are unlocking new ways of working",
+    "resumo": "New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work.",
+    "url": "https://openai.com/index/unlocking-new-ways-of-working",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-16"
+  },
+  {
+    "id": "b558fe0be320",
+    "titulo": "Mistral and Mozilla are bringing open, private and multilingual AI to your web browser",
+    "resumo": "Open, private and multilingual AI is coming to your web browser. Mistral and Mozilla team up to put powerful, trustworthy AI where you already browse.",
+    "url": "https://mistral.ai/news/mistral-x-mozilla/",
+    "fonte": "Mistral",
+    "camada": 1,
+    "data": "2026-09-16"
+  },
+  {
+    "id": "70ff7b63d5f5",
+    "titulo": "Automate SSO authorization for classic PATs and SSH keys",
+    "resumo": "Enterprise admins can now automate SSO authorization for existing classic personal access tokens (PATs) and SSH keys for organizations in GitHub Enterprise Cloud, replacing manual per-organization authorization by your developers.… The post Automate SSO authorization for classic PATs and SSH keys appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-16-automate-sso-authorization-for-classic-pats-and-ssh-keys",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-16"
+  },
+  {
+    "id": "f4c3141ce9f2",
+    "titulo": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+    "resumo": "",
+    "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+    "fonte": "Google DeepMind",
+    "camada": 1,
+    "data": "2026-09-15"
+  },
+  {
+    "id": "16a7b27ed0ae",
+    "titulo": "Your Agent Aced the Task. Will It Do It Again?",
+    "resumo": "",
+    "url": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
+    "fonte": "Hugging Face",
+    "camada": 1,
+    "data": "2026-09-15"
+  },
+  {
+    "id": "10df20daaceb",
+    "titulo": "v2.1.273",
+    "resumo": "What's changed Added x-claude-code-request-class , x-claude-code-agent-type , x-claude-code-prev-tool-durations , x-claude-code-compaction and x-claude-code-context-compacted request headers for LLM gateways; opt in with CLAUDE_CODE_GATEWAY_HINT_HEADERS=1 Added a notification when an MCP server disconnects mid-session and automatic reconnection gives up, pointing at /mcp Added forking a session st…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.273",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-15"
+  },
+  {
+    "id": "2fe213dd4019",
+    "titulo": "v2.1.272",
+    "resumo": "What's changed Bug fixes and reliability improvements",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.272",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-15"
+  },
+  {
+    "id": "296d33defd03",
+    "titulo": "How Fyxer built an AI executive assistant people trust",
+    "resumo": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice.",
+    "url": "https://openai.com/index/fyxer",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-14"
+  },
+  {
+    "id": "12e9dd685180",
+    "titulo": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+    "resumo": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
+    "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-14"
+  },
+  {
+    "id": "bb4d61dbe9a9",
+    "titulo": "v2.1.271",
+    "resumo": "What's changed Added fast mode in Claude Code Remote sessions (cloud and self-hosted runners): the host's fast-mode setting or /fast typed in the session applies where your organization allows it Added mouse support to the /config panel in fullscreen mode: the wheel scrolls the settings list, a click on a setting's value changes it, and the row under the pointer is highlighted Added claude self-ho…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.271",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-14"
+  }
+]

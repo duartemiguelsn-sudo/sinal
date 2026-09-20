@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Sinal — notícias de IA e programação já avaliadas para decidir o que merece atenção.">
+    <title>Sinal — painel de decisões</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="cabecalho__interior">
+        <div>
+          <h1>Sinal</h1>
+          <p id="resumo-recolha" class="resumo-recolha" aria-live="polite">A preparar a recolha…</p>
+        </div>
+        <button id="alternar-tema" class="botao botao--tema" type="button" aria-label="Usar tema escuro">
+          <span id="icone-tema" aria-hidden="true">◐</span>
+          <span id="texto-tema">Tema escuro</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="controlos" aria-labelledby="titulo-controlos">
+        <h2 id="titulo-controlos" class="so-leitores">Ordenação e filtros</h2>
+        <div class="ordenacao">
+          <label for="ordenar">Ordenar</label>
+          <select id="ordenar" name="ordenar">
+            <option value="relevancia">Por relevância</option>
+            <option value="data">Por data</option>
+          </select>
+        </div>
+
+        <nav class="filtros" aria-label="Filtros de notícias">
+          <div class="grupo-filtros">
+            <p class="titulo-filtro">Veredicto</p>
+            <div id="filtros-veredicto" class="lista-filtros" aria-label="Filtrar por veredicto"></div>
+          </div>
+          <div class="grupo-filtros">
+            <p class="titulo-filtro">Tema</p>
+            <div id="filtros-tema" class="lista-filtros" aria-label="Filtrar por tema"></div>
+          </div>
+          <button id="limpar-filtros" class="botao botao--limpar" type="button" disabled>Limpar filtros</button>
+        </nav>
+      </section>
+
+      <p id="aviso-erro" class="aviso-erro" role="alert" hidden></p>
+
+      <section aria-labelledby="titulo-resultados">
+        <div class="topo-resultados">
+          <h2 id="titulo-resultados">Leitura</h2>
+          <p id="contagem-resultados" class="contagem-resultados" aria-live="polite"></p>
+        </div>
+        <div id="estado" class="estado" role="status" aria-live="polite">
+          <p class="estado__titulo">A carregar a recolha…</p>
+          <p>Estamos a ler o ficheiro de notícias.</p>
+        </div>
+        <div id="lista-itens" class="lista-itens" hidden></div>
+      </section>
+    </main>
+  </body>
+</html>

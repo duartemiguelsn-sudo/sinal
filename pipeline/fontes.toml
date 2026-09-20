@@ -1,0 +1,64 @@
+# Fontes do Sinal — camada 1 (verdade: sai da boca de quem faz a coisa).
+#
+# Regra: nenhuma fonte entra aqui sem o URL ter sido testado e ter devolvido
+# conteúdo. O campo "confirmada" diz a data em que isso foi feito. Se um feed
+# começar a falhar, o pipeline salta-o e regista o erro — não pára a recolha.
+#
+# Nota sobre a Anthropic: à data de 2026-09-20 não publica RSS. Foram testados
+# /rss.xml, /feed.xml, /news/rss.xml e /engineering/rss.xml — todos 404. Até
+# existir feed, apanhamos as novidades pelos feeds de releases no GitHub, que
+# são igualmente fonte primária.
+
+[[fonte]]
+nome = "OpenAI"
+url = "https://openai.com/news/rss.xml"
+camada = 1
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "Google DeepMind"
+url = "https://deepmind.google/blog/rss.xml"
+camada = 1
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "Mistral"
+url = "https://mistral.ai/rss.xml"
+camada = 1
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "Hugging Face"
+url = "https://huggingface.co/blog/feed.xml"
+camada = 1
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "GitHub Changelog"
+url = "https://github.blog/changelog/feed/"
+camada = 1
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "Claude Code — releases"
+url = "https://github.com/anthropics/claude-code/releases.atom"
+camada = 1
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "MCP — releases da especificação"
+url = "https://github.com/modelcontextprotocol/modelcontextprotocol/releases.atom"
+camada = 1
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "PHP"
+url = "https://www.php.net/feed.atom"
+camada = 1
+confirmada = "2026-09-20"
+
+[[fonte]]
+nome = "Android Developers"
+url = "https://android-developers.googleblog.com/feeds/posts/default"
+camada = 1
+confirmada = "2026-09-20"

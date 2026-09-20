@@ -1,0 +1,6 @@
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Configuração local das ferramentas, não faz parte do projeto
+.claude/

@@ -1,0 +1,4 @@
+# O repositório guarda tudo com fins de linha LF. O Windows continua a ver
+# CRLF na cópia de trabalho, mas o que vai para o Git é igual ao que o
+# GitHub Actions (Linux) vai ler.
+* text=auto eol=lf
