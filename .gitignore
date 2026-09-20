@@ -8,3 +8,6 @@ __pycache__/
 # Contexto do projeto. Fica so na maquina: descreve o Duarte em detalhe e
 # o repositorio e publico.
 CLAUDE.md
+
+# As chaves. Ficam so na maquina.
+.env

@@ -29,6 +29,7 @@ parte do pipeline que lê o disco antes de lhe escrever.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -49,6 +50,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 CAMINHO_FONTES = RAIZ / "pipeline" / "fontes.toml"
 CAMINHO_ITENS = RAIZ / "dados" / "itens.json"
 CAMINHO_VISTOS = RAIZ / "dados" / "vistos.json"
+CAMINHO_AMBIENTE = RAIZ / ".env"
 
 # Quase todos os feeds servem o arquivo inteiro, não o dia. Sem esta janela, a
 # primeira corrida apanha milhares de itens antigos e manda-os todos para a
@@ -60,6 +62,37 @@ JANELA_DE_DIAS = 7
 # porque é o travão principal de todo o orçamento: tudo o que vem depois custa
 # por item, e é este número que decide quantos itens é que há depois.
 LIMIAR_FASE_3 = 7
+
+
+def carregar_ambiente(caminho: Path) -> list[str]:
+    """Lê as chaves do .env para o ambiente. Devolve os nomes que carregou.
+
+    Não precisa de biblioteca nenhuma: o ficheiro são linhas NOME=valor. O que
+    já estiver no ambiente ganha sempre — dentro do Action a chave vem de um
+    Secret e não há .env nenhum, e na consola uma variável posta à mão continua
+    a valer por cima do ficheiro.
+
+    O valor nunca é impresso, aqui nem em lado nenhum. O que se diz é o nome.
+    """
+    if not caminho.exists():
+        return []
+
+    carregadas = []
+    for linha in caminho.read_text(encoding="utf-8").splitlines():
+        linha = linha.strip()
+        if not linha or linha.startswith("#") or "=" not in linha:
+            continue
+        nome, _, valor = linha.partition("=")
+        nome = nome.strip()
+        # As aspas são um hábito de quem vem do shell; aqui só estorvam.
+        valor = valor.strip().strip('"').strip("'")
+        # Uma linha por preencher no .env não é um erro, é o estado normal de
+        # quem só usa uma das chaves. Salta-se sem dizer nada.
+        if not nome or not valor or os.environ.get(nome):
+            continue
+        os.environ[nome] = valor
+        carregadas.append(nome)
+    return carregadas
 
 
 def mostrar_lista(titulo: str, linhas: list[str]) -> None:
@@ -128,6 +161,12 @@ def main() -> int:
         help=f"quantos dias de itens ficam no ficheiro que o site lê (por omissão {publicar.DIAS_DE_HISTORICO}); 0 não corta nada",
     )
     opcoes = argumentos.parse_args()
+
+    # Antes de tudo, porque é daqui que saem as chaves que as fases pagas
+    # procuram no ambiente.
+    do_ficheiro = carregar_ambiente(CAMINHO_AMBIENTE)
+    if do_ficheiro:
+        print(f"Chaves lidas do .env: {', '.join(do_ficheiro)}\n")
 
     print("Fase 1 — a ler as fontes\n")
 

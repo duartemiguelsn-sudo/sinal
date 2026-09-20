@@ -69,6 +69,7 @@ comportamento certo: sem dados não há julgamento.
 ├─ dados/
 │  ├─ itens.json                    # o que o site lê
 │  └─ vistos.json                   # id -> data em que foi visto
+├─ .env.exemplo                     # modelo do .env; o .env a sério nunca entra no Git
 └─ requirements.txt                 # uma dependência só: o SDK da Anthropic
 ```
 
@@ -84,12 +85,30 @@ A fase 1 só precisa de Python 3.11 ou superior. A fase 2 precisa do SDK e da ch
 pip install -r requirements.txt
 ```
 
-A chave nunca vai para o repositório nem para o site. Localmente é uma variável de
-ambiente; no GitHub Action será um Secret.
+A chave nunca vai para o repositório nem para o site. Na tua máquina fica num `.env`,
+que está no `.gitignore` e o Git não vê; no GitHub Action vem de um Secret, e lá o `.env`
+nem existe. Copia o exemplo e preenche:
+
+```bash
+copy .env.exemplo .env
+```
+
+O `.env` tem duas linhas. A `ANTHROPIC_API_KEY` é a que paga as fases 2, 3 e 4, e tira-se
+em <https://console.anthropic.com/settings/keys>. A `GITHUB_TOKEN` é opcional e sobe o
+limite da pesquisa do GitHub na fase 3 de 10 para 30 pedidos por minuto; chega um token
+clássico sem permissão nenhuma marcada.
+
+O pipeline lê o ficheiro no arranque e diz os **nomes** das chaves que encontrou — nunca
+os valores. O que já estiver no ambiente ganha ao ficheiro, por isso um `setx` continua a
+funcionar se preferires:
 
 ```bash
 setx ANTHROPIC_API_KEY "sk-ant-..."
 ```
+
+Uma nota: esta pasta está dentro do OneDrive, por isso o `.env` é sincronizado para a
+nuvem como qualquer outro ficheiro. Não sai do repositório nem do site, mas se preferires
+que a chave não vá para lado nenhum, usa o `setx` e deixa o `.env` por preencher.
 
 ```bash
 python pipeline/principal.py                   # recolhe, pontua, verifica e julga
