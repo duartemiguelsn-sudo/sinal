@@ -13,15 +13,22 @@ repositório é público, por isso está no `.gitignore`.
 
 ## Estado a 2026-09-20
 
-**Fases 1 e 2 estão feitas.** As fases 3 a 5 ainda não existem.
+**Fases 1, 2 e 3 estão feitas.** As fases 4 e 5 ainda não existem.
 
 | Fase | Estado |
 |---|---|
 | 1 — recolher | Feita; 16 fontes, camadas 1 e 2 |
 | 2 — filtrar (pontuar com Haiku 4.5) | Feita; falta uma corrida a sério com chave |
-| 3 — verificar | Por fazer |
+| 3 — verificar | Feita; a parte do GitHub já correu a sério, a da pesquisa falta chave |
 | 4 — veredicto (Sonnet 5) | Por fazer |
 | 5 — publicar (GitHub Action) | Por fazer; por agora corre-se à mão |
+
+A fase 3 tem dois caminhos. Um item que aponte para um repositório do GitHub — que são
+quase dois terços da recolha — é verificado pela API do GitHub: estrelas, último commit,
+licença e linguagem, de graça e sem passar por modelo nenhum. Tudo o resto vai a
+pesquisa paga, que é a parte cara e por isso está limitada a três itens e duas pesquisas
+cada por corrida. Um facto sem o URL de onde saiu não é guardado; o que não se confirmou
+fica como dúvida em aberto.
 
 O site lê `dados/itens.json` e mostra a recolha real. Enquanto a fase 2 não correr com
 uma chave, os itens não têm nota nem veredicto e aparecem todos como *Incerto* — que é
@@ -36,6 +43,7 @@ o comportamento certo: sem dados não há julgamento.
 │  ├─ fontes.toml                   # as fontes, editáveis sem tocar no código
 │  ├─ fontes.py                     # fase 1: lê RSS, Atom e APIs JSON, normaliza
 │  ├─ filtrar.py                    # fase 2: pontua com o Haiku, com travões de custo
+│  ├─ verificar.py                  # fase 3: factos do GitHub de graça, o resto por pesquisa
 │  └─ principal.py                  # orquestra as fases
 ├─ dados/
 │  ├─ itens.json                    # o que o site lê
@@ -63,15 +71,23 @@ setx ANTHROPIC_API_KEY "sk-ant-..."
 ```
 
 ```bash
-python pipeline/principal.py             # recolhe e pontua
-python pipeline/principal.py --estimar   # diz quanto ia custar, sem gastar nada
-python pipeline/principal.py --sem-filtro # só a fase 1, como antes
-python pipeline/principal.py --teto 0.05 # aperta o travão de custo desta corrida
-python pipeline/principal.py --esquecer  # ignora o histórico e apanha tudo
+python pipeline/principal.py                # recolhe, pontua e verifica
+python pipeline/principal.py --estimar      # diz quanto ia custar, sem gastar nada
+python pipeline/principal.py --sem-filtro   # só a fase 1, como antes
+python pipeline/principal.py --sem-pesquisa # fase 3 só na parte que é de graça
+python pipeline/principal.py --teto 0.05    # aperta o travão de custo da fase 2
+python pipeline/principal.py --teto-fase3 0.05 # aperta o travão de custo da fase 3
+python pipeline/principal.py --esquecer     # ignora o histórico e apanha tudo
 ```
 
 Sem `ANTHROPIC_API_KEY` no ambiente, a fase 2 não corre e diz-o — a recolha faz-se na
-mesma e os itens vão para o site sem nota.
+mesma e os itens vão para o site sem nota. A parte gratuita da fase 3 corre sempre, com
+chave ou sem ela.
+
+Contas por corrida, com os tetos que estão no código: fase 2 até 0,25 USD (uma corrida
+de 45 itens estimou 0,017 USD) e fase 3 até 0,12 USD. Uma corrida por dia dá menos de
+4 USD por mês no pior caso, e o pior caso é raro porque a maioria dos candidatos são
+repositórios e verificam-se de graça.
 
 Para ver o site localmente (abrir o `index.html` direto no browser não funciona, o
 `fetch` é bloqueado em `file://`):

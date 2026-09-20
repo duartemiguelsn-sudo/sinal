@@ -1,20 +1,21 @@
-"""Orquestra o pipeline do Sinal. Existem as fases 1 e 2.
+"""Orquestra o pipeline do Sinal. Existem as fases 1, 2 e 3.
 
 Correr a partir da raiz do repositório:
 
-    python pipeline/principal.py             # recolhe e pontua
-    python pipeline/principal.py --estimar   # diz o que ia custar, sem gastar
-    python pipeline/principal.py --sem-filtro # só recolhe, como antes da fase 2
-    python pipeline/principal.py --esquecer  # ignora o histórico e apanha tudo
+    python pipeline/principal.py                # recolhe, pontua e verifica
+    python pipeline/principal.py --estimar      # diz o que ia custar, sem gastar
+    python pipeline/principal.py --sem-filtro   # só recolhe, como antes da fase 2
+    python pipeline/principal.py --sem-pesquisa # verifica só o que é de graça
+    python pipeline/principal.py --esquecer     # ignora o histórico e apanha tudo
 
 A fase 2 é a primeira que custa dinheiro. Por isso está desenhada para se
 poder olhar para a conta antes de a fazer: o `--estimar` mostra o custo da
 corrida sem chamar a API, e no fim de uma corrida a sério aparece o valor
 verdadeiro, tirado do `usage` que a API devolve.
 
-As fases 3 (verificar) e 4 (veredicto) entram aqui a seguir, e só vão ver os
-itens com nota igual ou superior ao LIMIAR_FASE_3. É esse número, mais do que
-qualquer outro, que decide o custo do projeto — a fase 3 paga por pesquisa.
+A fase 4 (veredicto) entra aqui a seguir, e só vai ver os itens com nota igual
+ou superior ao LIMIAR_FASE_3. É esse número, mais do que qualquer outro, que
+decide o custo do projeto — a fase 3 paga por pesquisa.
 """
 
 from __future__ import annotations
@@ -32,6 +33,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 sys.path.insert(0, str(Path(__file__).parent))
 
 import filtrar  # noqa: E402
+import verificar  # noqa: E402
 from fontes import ErroDeFonte, recolher  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
@@ -112,7 +114,18 @@ def main() -> int:
         "--teto",
         type=float,
         default=filtrar.TETO_DE_DOLARES,
-        help=f"travão de custo em dólares por corrida (por omissão {filtrar.TETO_DE_DOLARES})",
+        help=f"travão de custo da fase 2, em dólares por corrida (por omissão {filtrar.TETO_DE_DOLARES})",
+    )
+    argumentos.add_argument(
+        "--sem-pesquisa",
+        action="store_true",
+        help="na fase 3 usa só o que é de graça (a API do GitHub) e não paga pesquisa nenhuma",
+    )
+    argumentos.add_argument(
+        "--teto-fase3",
+        type=float,
+        default=verificar.TETO_DE_DOLARES,
+        help=f"travão de custo da fase 3, em dólares por corrida (por omissão {verificar.TETO_DE_DOLARES})",
     )
     opcoes = argumentos.parse_args()
 
@@ -177,8 +190,16 @@ def main() -> int:
     print(f"Custo estimado: {conta['dolares']:.4f} USD   (teto desta corrida: {opcoes.teto:.2f} USD)")
 
     if opcoes.estimar:
+        print(
+            f"\nPior caso da fase 3: {verificar.TETO_DE_ITENS_PESQUISADOS} itens pesquisados a "
+            f"{verificar.PESQUISAS_POR_ITEM} pesquisas cada, com teto de {opcoes.teto_fase3:.2f} USD.\n"
+            "O custo verdadeiro dela só se sabe depois das notas: os itens que forem\n"
+            "repositórios do GitHub verificam-se de graça e não entram nesta conta."
+        )
         print("\n--estimar: fica por aqui, não se chamou a API e não se gastou nada.")
         return 0
+
+    gasto = 0.0
 
     if opcoes.sem_filtro:
         print("\n--sem-filtro: a fase 2 não correu. Os itens vão para o site sem nota.")
@@ -190,19 +211,63 @@ def main() -> int:
         )
     else:
         print("\na pontuar...")
-        novos, avisos_fase2, gasto = filtrar.pontuar(novos, opcoes.teto)
+        novos, avisos_fase2, gasto_fase2 = filtrar.pontuar(novos, opcoes.teto)
+        gasto += gasto_fase2
         mostrar_lista("Fase 2:", avisos_fase2)
 
         pontuados = [item for item in novos if "nota" in item]
         if pontuados:
-            candidatos = [item for item in pontuados if item["nota"] >= LIMIAR_FASE_3]
             distribuicao: dict[int, int] = {}
             for item in pontuados:
                 distribuicao[item["nota"]] = distribuicao.get(item["nota"], 0) + 1
             escala = "  ".join(f"{nota}:{quantos}" for nota, quantos in sorted(distribuicao.items(), reverse=True))
             print(f"\nNotas  {escala}")
-            print(f"{len(candidatos)} itens com nota >= {LIMIAR_FASE_3} — é o que a fase 3 irá verificar")
-        print(f"Custo real desta corrida: {gasto:.4f} USD")
+        print(f"Custo da fase 2: {gasto_fase2:.4f} USD")
+
+    # Fase 3. Os candidatos vão ordenados por nota, do mais alto para o mais
+    # baixo: se o teto de custo cortar a meio, corta pelos que menos interessam.
+    candidatos = sorted(
+        (item for item in novos if item.get("nota", 0) >= LIMIAR_FASE_3),
+        key=lambda item: item["nota"],
+        reverse=True,
+    )
+
+    if not candidatos:
+        print(f"\nFase 3 — nenhum item com nota >= {LIMIAR_FASE_3}. Não há nada para verificar.")
+    else:
+        conta3 = verificar.estimar(candidatos)
+        print(
+            f"\nFase 3 — {len(candidatos)} itens com nota >= {LIMIAR_FASE_3}: "
+            f"{conta3['repositorios']} são repositórios e verificam-se de graça, "
+            f"{conta3['pesquisados']} vão a pesquisa"
+        )
+        if conta3["ignorados"]:
+            print(f"{conta3['ignorados']} ficam por pesquisar por causa do teto de itens")
+        print(
+            f"Custo estimado: {conta3['dolares']:.4f} USD"
+            f"   (teto desta corrida: {opcoes.teto_fase3:.2f} USD)"
+        )
+
+        # A pesquisa é a única parte paga desta fase. O caminho do GitHub corre
+        # sempre, mesmo sem chave: não custa nada e é ele que dá os números
+        # exactos que o julgamento não pode inventar.
+        if opcoes.sem_pesquisa:
+            print("--sem-pesquisa: corre só a parte de graça.")
+        elif not filtrar.tem_chave():
+            print("Sem ANTHROPIC_API_KEY: corre só a parte de graça.")
+        com_pesquisa = not opcoes.sem_pesquisa and filtrar.tem_chave()
+
+        print("\na verificar...")
+        avisos_fase3, gasto_fase3 = verificar.verificar(candidatos, opcoes.teto_fase3, com_pesquisa)
+        gasto += gasto_fase3
+        mostrar_lista("Fase 3:", avisos_fase3)
+
+        com_factos = sum(1 for item in candidatos if item.get("factos"))
+        print(f"\n{com_factos} de {len(candidatos)} itens ficaram com factos verificados")
+        print(f"Custo da fase 3: {gasto_fase3:.4f} USD")
+
+    if gasto:
+        print(f"\nCusto real desta corrida: {gasto:.4f} USD")
 
     gravar_json(CAMINHO_ITENS, novos)
     gravar_json(CAMINHO_VISTOS, sorted(vistos | {item["id"] for item in novos}))
