@@ -5,7 +5,8 @@ contra o perfil do Duarte, e diz o que fazer com ele. O objetivo não é mostrar
 notícias — é mostrar menos, com um veredicto.
 
 O contexto completo do projeto (para quem é, como se julga, o que está fora de âmbito)
-está no `CLAUDE.md`.
+está no `CLAUDE.md`, que fica só na máquina — descreve o Duarte em detalhe e este
+repositório é público, por isso está no `.gitignore`.
 
 - Site: https://duartemiguelsn-sudo.github.io/sinal/
 - Repositório: https://github.com/duartemiguelsn-sudo/sinal

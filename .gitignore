@@ -4,3 +4,7 @@ __pycache__/
 
 # Configuração local das ferramentas, não faz parte do projeto
 .claude/
+
+# Contexto do projeto. Fica so na maquina: descreve o Duarte em detalhe e
+# o repositorio e publico.
+CLAUDE.md
