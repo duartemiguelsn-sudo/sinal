@@ -1,21 +1,24 @@
-"""Orquestra o pipeline do Sinal. Existem as fases 1, 2 e 3.
+"""Orquestra o pipeline do Sinal. Existem as fases 1, 2, 3 e 4.
 
 Correr a partir da raiz do repositório:
 
-    python pipeline/principal.py                # recolhe, pontua e verifica
-    python pipeline/principal.py --estimar      # diz o que ia custar, sem gastar
-    python pipeline/principal.py --sem-filtro   # só recolhe, como antes da fase 2
-    python pipeline/principal.py --sem-pesquisa # verifica só o que é de graça
-    python pipeline/principal.py --esquecer     # ignora o histórico e apanha tudo
+    python pipeline/principal.py                 # recolhe, pontua, verifica e julga
+    python pipeline/principal.py --estimar       # diz o que ia custar, sem gastar
+    python pipeline/principal.py --sem-filtro    # só recolhe, como antes da fase 2
+    python pipeline/principal.py --sem-pesquisa  # verifica só o que é de graça
+    python pipeline/principal.py --sem-veredicto # não paga julgamento escrito
+    python pipeline/principal.py --esquecer      # ignora o histórico e apanha tudo
 
 A fase 2 é a primeira que custa dinheiro. Por isso está desenhada para se
 poder olhar para a conta antes de a fazer: o `--estimar` mostra o custo da
 corrida sem chamar a API, e no fim de uma corrida a sério aparece o valor
 verdadeiro, tirado do `usage` que a API devolve.
 
-A fase 4 (veredicto) entra aqui a seguir, e só vai ver os itens com nota igual
-ou superior ao LIMIAR_FASE_3. É esse número, mais do que qualquer outro, que
-decide o custo do projeto — a fase 3 paga por pesquisa.
+O LIMIAR_FASE_3 é o número que decide o custo do projeto. Tudo o que fica
+abaixo dele sai daqui pontuado e com um veredicto tirado da nota, de graça.
+Tudo o que fica acima passa pela verificação (fase 3, paga por pesquisa) e
+pelo julgamento escrito (fase 4, paga ao Sonnet). Mexer neste número mexe nas
+duas contas ao mesmo tempo.
 """
 
 from __future__ import annotations
@@ -33,6 +36,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 sys.path.insert(0, str(Path(__file__).parent))
 
 import filtrar  # noqa: E402
+import veredicto  # noqa: E402
 import verificar  # noqa: E402
 from fontes import ErroDeFonte, recolher  # noqa: E402
 
@@ -127,6 +131,17 @@ def main() -> int:
         default=verificar.TETO_DE_DOLARES,
         help=f"travão de custo da fase 3, em dólares por corrida (por omissão {verificar.TETO_DE_DOLARES})",
     )
+    argumentos.add_argument(
+        "--sem-veredicto",
+        action="store_true",
+        help="na fase 4 não paga julgamento escrito; todos os itens ficam com o veredicto tirado da nota",
+    )
+    argumentos.add_argument(
+        "--teto-fase4",
+        type=float,
+        default=veredicto.TETO_DE_DOLARES,
+        help=f"travão de custo da fase 4, em dólares por corrida (por omissão {veredicto.TETO_DE_DOLARES})",
+    )
     opcoes = argumentos.parse_args()
 
     print("Fase 1 — a ler as fontes\n")
@@ -195,6 +210,12 @@ def main() -> int:
             f"{verificar.PESQUISAS_POR_ITEM} pesquisas cada, com teto de {opcoes.teto_fase3:.2f} USD.\n"
             "O custo verdadeiro dela só se sabe depois das notas: os itens que forem\n"
             "repositórios do GitHub verificam-se de graça e não entram nesta conta."
+        )
+        print(
+            f"\nPior caso da fase 4: {veredicto.TETO_DE_ITENS_JULGADOS} itens julgados pelo "
+            f"{veredicto.MODELO}, com teto de {opcoes.teto_fase4:.2f} USD.\n"
+            "Os restantes itens da corrida levam o veredicto tirado da nota da fase 2,\n"
+            "que não custa nada."
         )
         print("\n--estimar: fica por aqui, não se chamou a API e não se gastou nada.")
         return 0
@@ -265,6 +286,50 @@ def main() -> int:
         com_factos = sum(1 for item in candidatos if item.get("factos"))
         print(f"\n{com_factos} de {len(candidatos)} itens ficaram com factos verificados")
         print(f"Custo da fase 3: {gasto_fase3:.4f} USD")
+
+    # Fase 4. Só os candidatos verificados levam julgamento escrito — é a única
+    # parte paga. Todos os outros apanham o veredicto da nota logo a seguir,
+    # de graça, e é por isso que este bloco pode ser saltado inteiro sem que
+    # nenhum item fique sem rótulo.
+    if not candidatos:
+        print("\nFase 4 — não há itens verificados, por isso não há nada para julgar.")
+    elif opcoes.sem_veredicto:
+        print("\nFase 4 — --sem-veredicto: ninguém é julgado, todos levam o veredicto da nota.")
+    elif not filtrar.tem_chave():
+        print("\nFase 4 — sem ANTHROPIC_API_KEY: todos levam o veredicto da nota.")
+    else:
+        conta4 = veredicto.estimar(candidatos)
+        print(
+            f"\nFase 4 — {conta4['julgados']} itens em {conta4['lotes']} lotes pelo "
+            f"{veredicto.MODELO}, ~{conta4['entrada']} tokens de entrada e "
+            f"~{conta4['saida']} de saída"
+        )
+        if conta4["ignorados"]:
+            print(f"{conta4['ignorados']} ficam por julgar por causa do teto de itens")
+        print(
+            f"Custo estimado: {conta4['dolares']:.4f} USD"
+            f"   (teto desta corrida: {opcoes.teto_fase4:.2f} USD)"
+        )
+
+        print("\na julgar...")
+        avisos_fase4, gasto_fase4 = veredicto.julgar(candidatos, opcoes.teto_fase4)
+        gasto += gasto_fase4
+        mostrar_lista("Fase 4:", avisos_fase4)
+        print(f"\nCusto da fase 4: {gasto_fase4:.4f} USD")
+
+    # O resto da corrida — a esmagadora maioria — fica com o veredicto tirado
+    # da nota que a fase 2 já pagou, sem chamar modelo nenhum. Corre sempre,
+    # também depois de um julgamento escrito, para apanhar os candidatos que
+    # um travão ou uma falha deixaram por julgar.
+    derivados = veredicto.marcar_sem_julgamento(novos, LIMIAR_FASE_3)
+    if derivados:
+        escala = "  ".join(f"{rotulo}:{quantos}" for rotulo, quantos in sorted(derivados.items()))
+        print(f"\n{sum(derivados.values())} veredictos tirados da nota, de graça  —  {escala}")
+
+    contagem: dict[str, int] = {}
+    for item in novos:
+        contagem[item["veredicto"]] = contagem.get(item["veredicto"], 0) + 1
+    print("Veredictos  " + "  ".join(f"{rotulo}:{quantos}" for rotulo, quantos in sorted(contagem.items())))
 
     if gasto:
         print(f"\nCusto real desta corrida: {gasto:.4f} USD")
