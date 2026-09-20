@@ -13,7 +13,7 @@ repositório é público, por isso está no `.gitignore`.
 
 ## Estado a 2026-09-20
 
-**Fases 1, 2, 3 e 4 estão feitas.** Falta a fase 5.
+**O pipeline está completo: fases 1 a 5.**
 
 | Fase | Estado |
 |---|---|
@@ -21,7 +21,7 @@ repositório é público, por isso está no `.gitignore`.
 | 2 — filtrar (pontuar com Haiku 4.5) | Feita; falta uma corrida a sério com chave |
 | 3 — verificar | Feita; a parte do GitHub já correu a sério, a da pesquisa falta chave |
 | 4 — veredicto (Sonnet 5) | Feita; a parte de graça já correu, a paga falta chave |
-| 5 — publicar (GitHub Action) | Por fazer; por agora corre-se à mão |
+| 5 — publicar (GitHub Action) | Feita; falta ligar o Secret e o Pages no repositório |
 
 A fase 3 tem dois caminhos. Um item que aponte para um repositório do GitHub — que são
 quase dois terços da recolha — é verificado pela API do GitHub: estrelas, último commit,
@@ -39,6 +39,15 @@ frase que a fase 2 escreveu. Custo zero, e nenhum facto novo aparece pelo caminh
 Um item nunca chega a *Agora* por esta via: para ser *Agora* é preciso alguém ter ido
 ver os factos, e isso é a fase 3.
 
+A fase 5 é a única que lê o disco antes de lhe escrever. Junta a corrida de hoje ao
+que já estava publicado — sem isto, cada corrida apagava o dia anterior — e corta o que
+passou os 60 dias, para o ficheiro que o telemóvel descarrega não crescer sem fim. Um id
+repetido não substitui o item antigo em bloco: escreve por cima campo a campo, para que
+uma corrida sem chave não deite fora a nota e o veredicto que já foram pagos. O
+`vistos.json` é cortado pela mesma janela e passou a guardar a data em que cada id foi
+visto, porque sem ela não havia como saber qual é que já podia sair; ficheiros no formato
+antigo continuam a ler-se.
+
 O site lê `dados/itens.json` e mostra a recolha real. Enquanto a fase 2 não correr com
 uma chave, os itens não têm nota e aparecem todos como *Incerto* — que é o
 comportamento certo: sem dados não há julgamento.
@@ -53,10 +62,13 @@ comportamento certo: sem dados não há julgamento.
 │  ├─ fontes.py                     # fase 1: lê RSS, Atom e APIs JSON, normaliza
 │  ├─ filtrar.py                    # fase 2: pontua com o Haiku, com travões de custo
 │  ├─ verificar.py                  # fase 3: factos do GitHub de graça, o resto por pesquisa
+│  ├─ veredicto.py                  # fase 4: julgamento escrito pelo Sonnet, ou tirado da nota
+│  ├─ publicar.py                   # fase 5: junta ao histórico, corta os 60 dias, grava
 │  └─ principal.py                  # orquestra as fases
+├─ .github/workflows/recolha.yml    # fase 5: corre o pipeline e faz commit, uma vez por dia
 ├─ dados/
 │  ├─ itens.json                    # o que o site lê
-│  └─ vistos.json                   # ids já processados
+│  └─ vistos.json                   # id -> data em que foi visto
 └─ requirements.txt                 # uma dependência só: o SDK da Anthropic
 ```
 
@@ -89,6 +101,7 @@ python pipeline/principal.py --teto 0.05       # aperta o travão de custo da fa
 python pipeline/principal.py --teto-fase3 0.05 # aperta o travão de custo da fase 3
 python pipeline/principal.py --teto-fase4 0.05 # aperta o travão de custo da fase 4
 python pipeline/principal.py --esquecer        # ignora o histórico e apanha tudo
+python pipeline/principal.py --historico 90    # guarda 90 dias em vez de 60; 0 não corta
 ```
 
 Sem `ANTHROPIC_API_KEY` no ambiente, a fase 2 não corre e diz-o — a recolha faz-se na
@@ -107,6 +120,34 @@ Para ver o site localmente (abrir o `index.html` direto no browser não funciona
 ```bash
 python -m http.server 8765
 ```
+
+## A corrida automática
+
+O `.github/workflows/recolha.yml` corre o pipeline às 06:00 UTC todos os dias, faz
+commit do `dados/` neste mesmo repositório, e o site — que é estático e lê o ficheiro
+directamente — fica actualizado sem mais nada. Se num dia não houver nada de novo, não
+há commit: um dia vazio é um resultado, não uma avaria.
+
+Faltam dois passos, que se fazem uma vez só e na interface do GitHub:
+
+1. **Settings > Secrets and variables > Actions > New repository secret**, com o nome
+   `ANTHROPIC_API_KEY`. Sem ele o Action corre na mesma, mas só faz a fase 1 e os itens
+   vão para o site sem nota.
+2. **Settings > Pages > Deploy from a branch**, ramo `main`, pasta `/ (root)`. É por
+   isso que o site está na raiz e não em `site/`.
+
+O Action escreve no repositório, e isso não é o comportamento por omissão: o
+`permissions: contents: write` do ficheiro é que lho permite. Confirma também que em
+**Settings > Actions > General** a opção *Workflow permissions* não está presa em
+*Read repository contents*.
+
+Para testar sem esperar um dia, o separador **Actions > recolha > Run workflow** corre
+à mão, com uma caixa para o fazer sem gastar nada na API.
+
+Um aviso sobre o agendamento: o GitHub atrasa — e às vezes salta — corridas agendadas
+quando a plataforma está com carga, e desliga o `schedule` num repositório que fique
+60 dias sem qualquer actividade. Por isso a janela de recolha é de sete dias e não de
+um: uma corrida falhada não deixa buracos no site.
 
 ## Os travões de custo
 
@@ -190,5 +231,7 @@ nada de novo.
   está feito porque o mínimo para uma prefixo entrar em cache anda nos 1024 a 4096
   tokens conforme o modelo, e este anda perto do limite de baixo — é preciso medir
   antes de acrescentar código que talvez não poupe nada.
-- O ficheiro `dados/itens.json` ainda não corta os 60 dias de histórico previstos para
-  a fase 5, porque ainda não há histórico para cortar.
+- O corte dos 60 dias está feito e testado, mas **ainda nunca cortou nada a sério** —
+  não há histórico com essa idade. A primeira limpeza verdadeira é daqui a dois meses.
+- Os ids que já estavam no `vistos.json` no formato antigo ficaram sem data. Mantêm-se
+  enquanto o item deles estiver publicado, e saem na primeira limpeza depois disso.

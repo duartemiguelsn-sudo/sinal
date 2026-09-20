@@ -1,4 +1,4 @@
-"""Orquestra o pipeline do Sinal. Existem as fases 1, 2, 3 e 4.
+"""Orquestra o pipeline do Sinal. Existem as fases 1, 2, 3, 4 e 5.
 
 Correr a partir da raiz do repositório:
 
@@ -8,6 +8,7 @@ Correr a partir da raiz do repositório:
     python pipeline/principal.py --sem-pesquisa  # verifica só o que é de graça
     python pipeline/principal.py --sem-veredicto # não paga julgamento escrito
     python pipeline/principal.py --esquecer      # ignora o histórico e apanha tudo
+    python pipeline/principal.py --historico 0   # publica sem cortar nada
 
 A fase 2 é a primeira que custa dinheiro. Por isso está desenhada para se
 poder olhar para a conta antes de a fazer: o `--estimar` mostra o custo da
@@ -19,12 +20,15 @@ abaixo dele sai daqui pontuado e com um veredicto tirado da nota, de graça.
 Tudo o que fica acima passa pela verificação (fase 3, paga por pesquisa) e
 pelo julgamento escrito (fase 4, paga ao Sonnet). Mexer neste número mexe nas
 duas contas ao mesmo tempo.
+
+A fase 5 é a que junta esta corrida ao que já estava publicado e corta o
+histórico velho. Não chama a API, e está no `publicar.py` porque é a única
+parte do pipeline que lê o disco antes de lhe escrever.
 """
 
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from datetime import date, timedelta
 from pathlib import Path
@@ -36,6 +40,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 sys.path.insert(0, str(Path(__file__).parent))
 
 import filtrar  # noqa: E402
+import publicar  # noqa: E402
 import veredicto  # noqa: E402
 import verificar  # noqa: E402
 from fontes import ErroDeFonte, recolher  # noqa: E402
@@ -44,8 +49,6 @@ RAIZ = Path(__file__).resolve().parent.parent
 CAMINHO_FONTES = RAIZ / "pipeline" / "fontes.toml"
 CAMINHO_ITENS = RAIZ / "dados" / "itens.json"
 CAMINHO_VISTOS = RAIZ / "dados" / "vistos.json"
-
-DIAS_DE_HISTORICO = 60  # ver fase 5: o ficheiro não pode crescer sem fim
 
 # Quase todos os feeds servem o arquivo inteiro, não o dia. Sem esta janela, a
 # primeira corrida apanha milhares de itens antigos e manda-os todos para a
@@ -59,30 +62,6 @@ JANELA_DE_DIAS = 7
 LIMIAR_FASE_3 = 7
 
 
-def ler_vistos(caminho: Path) -> set[str]:
-    """Ids já processados. Ficheiro em falta é normal na primeira corrida."""
-    if not caminho.exists():
-        return set()
-    try:
-        return set(json.loads(caminho.read_text(encoding="utf-8")))
-    except (json.JSONDecodeError, TypeError):
-        print(f"aviso: {caminho.name} ilegível, a recomeçar o histórico do zero")
-        return set()
-
-
-def gravar_json(caminho: Path, conteudo) -> None:
-    """Grava com indentação e acentos legíveis.
-
-    ensure_ascii=False é de propósito: estes ficheiros vão para o Git e o
-    diff tem de ser legível por uma pessoa. Sem isto, 'ç' vira 'ç'.
-    """
-    caminho.parent.mkdir(parents=True, exist_ok=True)
-    caminho.write_text(
-        json.dumps(conteudo, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-
-
 def mostrar_lista(titulo: str, linhas: list[str]) -> None:
     if not linhas:
         return
@@ -92,7 +71,7 @@ def mostrar_lista(titulo: str, linhas: list[str]) -> None:
 
 
 def main() -> int:
-    argumentos = argparse.ArgumentParser(description="Pipeline do Sinal (fases 1 e 2).")
+    argumentos = argparse.ArgumentParser(description="Pipeline do Sinal (fases 1 a 5).")
     argumentos.add_argument(
         "--dias",
         type=int,
@@ -142,6 +121,12 @@ def main() -> int:
         default=veredicto.TETO_DE_DOLARES,
         help=f"travão de custo da fase 4, em dólares por corrida (por omissão {veredicto.TETO_DE_DOLARES})",
     )
+    argumentos.add_argument(
+        "--historico",
+        type=int,
+        default=publicar.DIAS_DE_HISTORICO,
+        help=f"quantos dias de itens ficam no ficheiro que o site lê (por omissão {publicar.DIAS_DE_HISTORICO}); 0 não corta nada",
+    )
     opcoes = argumentos.parse_args()
 
     print("Fase 1 — a ler as fontes\n")
@@ -152,7 +137,8 @@ def main() -> int:
         print(f"erro fatal na configuração das fontes: {erro}")
         return 1
 
-    vistos = set() if opcoes.esquecer else ler_vistos(CAMINHO_VISTOS)
+    # Um dicionário de id -> data; para filtrar só interessam as chaves.
+    vistos = {} if opcoes.esquecer else publicar.ler_vistos(CAMINHO_VISTOS)
     novos = [item for item in itens if item["id"] not in vistos]
 
     # Um item sem data é sempre aceite: preferimos vê-lo e decidir do que
@@ -334,8 +320,22 @@ def main() -> int:
     if gasto:
         print(f"\nCusto real desta corrida: {gasto:.4f} USD")
 
-    gravar_json(CAMINHO_ITENS, novos)
-    gravar_json(CAMINHO_VISTOS, sorted(vistos | {item["id"] for item in novos}))
+    # Fase 5. Junta esta corrida ao que já estava publicado e corta o que é
+    # velho de mais. Não custa nada, e por isso corre sempre até ao fim, mesmo
+    # que as fases pagas tenham sido saltadas.
+    resumo = publicar.publicar(CAMINHO_ITENS, CAMINHO_VISTOS, novos, opcoes.historico)
+
+    print(
+        f"\nFase 5 — {resumo['novos']} itens acrescentados aos {resumo['historico']} "
+        f"que já lá estavam"
+        + (f", {resumo['repetidos']} actualizados" if resumo["repetidos"] else "")
+    )
+    if resumo["cortados"]:
+        print(
+            f"{resumo['cortados']} cortados por passarem os {opcoes.historico} dias de histórico"
+            + (f" e {resumo['ids_esquecidos']} ids esquecidos" if resumo["ids_esquecidos"] else "")
+        )
+    print(f"{resumo['publicados']} itens ficam no site")
     print(f"\nEscrito: {CAMINHO_ITENS.relative_to(RAIZ)} e {CAMINHO_VISTOS.relative_to(RAIZ)}")
     return 0
 

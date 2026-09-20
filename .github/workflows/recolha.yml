@@ -1,0 +1,92 @@
+# Fase 5, a parte que corre sozinha: uma vez por dia, recolher, julgar,
+# escrever os ficheiros de dados e fazer commit deles neste mesmo repositório.
+#
+# Porquê commit em vez de uma base de dados: o site é estático e lê o
+# dados/itens.json directamente do repositório. Sem servidor, sem base de
+# dados, sem contas a pagar — e o histórico de cada corrida fica no Git, que
+# é o melhor registo que podíamos ter de graça.
+name: recolha
+
+on:
+  schedule:
+    # 06:00 UTC, todos os dias. Em Portugal dá as 7h no verão e as 6h no
+    # inverno. O GitHub atrasa as corridas agendadas quando está com carga,
+    # por isso trata isto como "de manhã", não como um relógio.
+    - cron: "0 6 * * *"
+  # Permite correr à mão a partir do separador Actions, que é como se testa
+  # sem esperar um dia inteiro.
+  workflow_dispatch:
+    inputs:
+      sem_pagar:
+        description: "Correr só a fase 1, sem gastar nada na API"
+        type: boolean
+        default: false
+
+# O Action escreve no repositório, e isso não é o comportamento por omissão.
+permissions:
+  contents: write
+
+# Duas corridas ao mesmo tempo dariam dois commits a partir do mesmo ponto e
+# uma delas perdia. Nunca corre mais do que uma.
+concurrency:
+  group: recolha
+  cancel-in-progress: false
+
+jobs:
+  recolher:
+    runs-on: ubuntu-latest
+    # Uma corrida normal demora minutos. Se passar disto, alguma fonte está
+    # pendurada e é melhor falhar do que ficar a gastar minutos de Action.
+    timeout-minutes: 30
+
+    steps:
+      - name: Ir buscar o repositório
+        uses: actions/checkout@v4
+        with:
+          # O histórico inteiro, porque mais abaixo pode ser preciso um rebase
+          # se alguém tiver feito push enquanto isto corria.
+          fetch-depth: 0
+
+      - name: Preparar o Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar as dependências
+        run: pip install -r requirements.txt
+
+      - name: Correr o pipeline
+        env:
+          # A chave vive só aqui. Nunca entra no repositório e nunca chega ao
+          # frontend. Sem ela, o pipeline recolhe na mesma e publica os itens
+          # sem nota — que é o comportamento certo, não uma avaria.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "${{ inputs.sem_pagar }}" = "true" ]; then
+            python pipeline/principal.py --sem-filtro
+          else
+            python pipeline/principal.py
+          fi
+
+      - name: Fazer commit dos dados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add dados/
+
+          # Um dia sem nada de novo não é um erro: é um resultado, e o
+          # pipeline já o disse no log. Não se faz commit vazio por isso.
+          if git diff --cached --quiet; then
+            echo "Nada mudou nos dados. Não há commit a fazer."
+            exit 0
+          fi
+
+          git commit -m "Recolha de $(date -u +%Y-%m-%d)"
+
+          # Se entretanto houve push no main, rebase e tenta outra vez. Os
+          # ficheiros de dados só são escritos aqui, por isso não há conflito
+          # a resolver — só um commit a pôr por cima.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
