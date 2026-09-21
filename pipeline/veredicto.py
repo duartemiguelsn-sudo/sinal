@@ -142,8 +142,8 @@ houver nenhuma, devolves a lista vazia — não se inventam dúvidas para encher
 def esquema() -> dict:
     """O formato obrigatório da resposta.
 
-    O veredicto é uma lista fechada pela mesma razão que os temas da fase 2 o
-    são: o site tem quatro estilos de cartão e um quinto rótulo inventado pelo
+    O veredicto é uma lista fechada pela mesma razão que a área da fase 2 o é:
+    o site tem quatro estilos de cartão e um quinto rótulo inventado pelo
     modelo não teria onde aparecer.
 
     Contagens (`minItems`, `maxItems`) não entram aqui: a API recusa-as com um

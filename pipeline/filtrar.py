@@ -41,12 +41,41 @@ TETO_DE_DOLARES = 0.25
 # que aparece no ecrã depois de uma corrida a sério.
 CHARS_POR_TOKEN = 3.5
 
-# Lista fechada. Se o modelo pudesse inventar temas, os filtros do site
-# enchiam-se de categorias com um item cada e deixavam de filtrar nada.
-TEMAS = [
-    "ia", "modelos", "ferramentas", "mcp", "php", "android",
-    "web", "dados", "seguranca", "carreira", "estudo", "outro",
+# As oito áreas em que o painel se lê, pela ordem que o Duarte pediu. Cada item
+# leva exactamente uma. Duas por item fariam o mesmo item aparecer em dois
+# filtros ao mesmo tempo, e um filtro que devolve o mesmo duas vezes não está a
+# filtrar nada — era esse o defeito da lista de temas que isto substitui.
+#
+# `fora-de-ambito` é a nona e é a válvula de escape. Existe porque obrigar um
+# item a caber numa das oito quando não cabe é pior do que dizer que não cabe.
+# Serve também de alarme: se encher, há uma fonte a puxar lixo e o sítio de a
+# corrigir é o fontes.toml, não aqui.
+#
+# A terceira coluna é a definição que vai no prompt. Fica ao lado do nome de
+# propósito: se um dia a área mudar de sentido, muda-se num sítio só e o modelo
+# passa a ser avisado na mesma corrida.
+AREAS = [
+    ("modelos-apis", "Modelos e APIs",
+     "lançamentos dos laboratórios, modelos novos, mudanças de preço, alterações de API e de limites"),
+    ("agentes-codigo", "Agentes e ferramentas de código",
+     "Claude Code, Copilot, Cursor, editores, CLIs, extensões, e mudanças aos planos destas ferramentas"),
+    ("skills-mcp", "Skills, MCP e automação",
+     "servidores e clientes MCP, repositórios de skills, ficheiros de instruções, prompts, receitas de automação"),
+    ("repos-em-alta", "Repositórios em alta",
+     "projetos que ganharam tração agora e não têm assunto de nenhuma das áreas acima"),
+    ("gratis-estudante", "Grátis para estudante",
+     "cursos e certificações gratuitas, licenças, vouchers, GitHub Student Pack, programas de estudante"),
+    ("meu-stack", "O teu stack",
+     "PHP e web, Android e Java, MySQL, MQTT: versões, CVEs, bibliotecas, fim de suporte"),
+    ("ferramentas-dia-a-dia", "Ferramentas do dia-a-dia",
+     "clientes REST, ferramentas de base de dados, utilitários, e recursos de interface: ícones, fontes, paletas, componentes"),
+    ("carreira-junior", "Carreira júnior",
+     "o que se pede a um júnior em Portugal, portfólio, estágios, entrevistas técnicas"),
+    ("fora-de-ambito", "Fora de âmbito",
+     "não cabe em nenhuma das oito"),
 ]
+
+NOMES_DE_AREA = [slug for slug, _, _ in AREAS]
 
 INSTRUCOES = """És o filtro do Sinal. Pontuas notícias de tecnologia para uma pessoa só.
 
@@ -113,7 +142,28 @@ e pelo resumo. Um item por explicar é melhor do que uma explicação inventada.
 
 A justificação é uma frase, em português de Portugal, dirigida ao Duarte, a
 dizer porquê. Sem gentilezas e sem repetir o título.
-Os temas saem da lista dada, no máximo dois por item."""
+
+A ÁREA
+Cada item leva exactamente uma, escolhida pelo assunto e não pela fonte:
+
+""" + "\n".join(
+    f"  {slug}\n      {descricao}" for slug, _, descricao in AREAS
+) + """
+
+Desempates, por esta ordem:
+- Um repositório que seja servidor MCP, cliente MCP ou coleção de skills vai
+  para skills-mcp, nunca para repos-em-alta.
+- Um repositório ou notícia de PHP, Java, Android, MySQL ou MQTT vai para
+  meu-stack, mesmo que esteja a dar que falar.
+- repos-em-alta é só para projetos que não têm assunto em nenhuma das outras.
+  Não é o sítio de qualquer coisa que venha do GitHub.
+- Preços, limites de utilização ou alterações de API vão para modelos-apis,
+  mesmo quando a notícia fala de uma ferramenta.
+- Uma oferta, voucher ou curso gratuito vai para gratis-estudante mesmo que o
+  assunto dele seja outro. Aqui manda a oferta.
+- fora-de-ambito só quando nenhuma das oito serve mesmo. Um item fora de
+  âmbito raramente passa de nota 3 — se puseres fora-de-ambito com nota alta,
+  uma das duas coisas está errada."""
 
 
 def esquema() -> dict:
@@ -149,15 +199,13 @@ def esquema() -> dict:
                             "o_que_e": {"type": "string"},
                             "nota": {"type": "integer"},
                             "justificacao": {"type": "string"},
-                            # O `enum` é aceite e é o que interessa: garante que
-                            # nenhum tema novo entra. Quantos vêm fica às
-                            # instruções e ao corte lá em baixo.
-                            "temas": {
-                                "type": "array",
-                                "items": {"type": "string", "enum": TEMAS},
-                            },
+                            # O `enum` é aceite e faz aqui todo o trabalho:
+                            # sendo um campo só, e não uma lista, a API garante
+                            # sozinha que sai exactamente uma área e que ela
+                            # está na lista. Não há nada para validar depois.
+                            "area": {"type": "string", "enum": NOMES_DE_AREA},
                         },
-                        "required": ["id", "nome", "o_que_e", "nota", "justificacao", "temas"],
+                        "required": ["id", "nome", "o_que_e", "nota", "justificacao", "area"],
                         "additionalProperties": False,
                     },
                 }
@@ -208,9 +256,9 @@ def estimar(itens: list[dict]) -> dict:
     chars = sum(len(item["titulo"]) + len(item["resumo"]) + 80 for item in itens)
 
     entrada = lotes * int(len(INSTRUCOES) / CHARS_POR_TOKEN) + int(chars / CHARS_POR_TOKEN)
-    # Por item: nota, justificação de uma frase, até dois temas, e agora também
-    # o nome e a linha do que é. Os dois campos novos são o grosso do aumento —
-    # subiram a saída de 50 para 95 tokens por item, e a saída é o token caro.
+    # Por item: nota, justificação de uma frase, a área, e o nome mais a linha
+    # do que é. Estes dois últimos são o grosso — subiram a saída de 50 para 95
+    # tokens por item, e a saída é o token caro.
     saida = len(itens) * 95
 
     return {
@@ -284,7 +332,11 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
             # site e o limiar da fase 3; um terceiro tema só ia sujar o cartão.
             item["nota"] = max(0, min(10, int(avaliacao["nota"])))
             item["justificacao"] = avaliacao["justificacao"]
-            item["temas"] = list(avaliacao["temas"])[:2]
+            # O enum do esquema já garante que é uma das nove. A verificação
+            # fica na mesma porque o custo é uma linha e o estrago seria uma
+            # área fantasma a aparecer no filtro do site.
+            area = avaliacao["area"]
+            item["area"] = area if area in NOMES_DE_AREA else "fora-de-ambito"
             # O esquema garante que os dois campos vêm; não garante que venham
             # com tamanho de cartão. Um nome que não caiba parte a maquetagem no
             # telemóvel, por isso corta-se aqui e não no CSS, onde ficaria

@@ -30,6 +30,37 @@ inglês. O modelo só pode usar o que está no título, no resumo e na fonte —
 chegar, escreve que não dá para saber, que é melhor do que inventar. O título original
 não se perde: fica no tooltip da ligação.
 
+A fase 2 arruma também cada item numa **área**, uma só, escolhida pelo assunto e não
+pela fonte. São as oito por que o painel se lê, mais uma válvula de escape:
+
+| Área | O que leva | Novidades esperadas |
+|---|---|---|
+| Modelos e APIs | lançamentos dos laboratórios, modelos novos, preços, limites | Diária |
+| Agentes e ferramentas de código | Claude Code, Copilot, Cursor, editores, CLIs, planos | Diária |
+| Skills, MCP e automação | servidores e clientes MCP, skills, prompts, automação | Diária |
+| Repositórios em alta | tração recente sem assunto próprio noutra área | Diária |
+| Grátis para estudante | cursos, certificações, licenças, Student Pack | Semanal |
+| O teu stack | PHP, web, Android, Java, MySQL, MQTT: versões, CVEs, fim de suporte | Diária |
+| Ferramentas do dia-a-dia | clientes REST, base de dados, utilitários, ícones e fontes | Semanal |
+| Carreira júnior | o que se pede a um júnior em Portugal, portfólio, estágios | Semanal |
+| Fora de âmbito | não cabe em nenhuma das oito | — |
+
+Uma área por item, e não duas, porque duas punham o mesmo item em dois filtros ao mesmo
+tempo — e um filtro que devolve o mesmo duas vezes não está a filtrar. A lista é fechada
+por `enum` no esquema da resposta, por isso a API garante sozinha que a área existe.
+O desempate está escrito no prompt: um repositório de MCP vai para *Skills, MCP e
+automação* e não para *Repositórios em alta*; um de PHP ou Android vai para *O teu
+stack*; uma oferta de estudante vai para *Grátis para estudante* seja qual for o assunto.
+
+*Fora de âmbito* é o alarme. Na corrida de 2026-09-21 levou **81 de 164** itens, quase
+todos do Hacker News e do r/LocalLLaMA e nenhum acima de nota 4. Não é erro de
+classificação: é a medida de quanto é que as fontes de hoje trazem que não serve para
+nada. Quando encher, o sítio de mexer é o `fontes.toml`.
+
+Duas áreas estão a zero — *Grátis para estudante* e *Carreira júnior* — porque não há
+fonte nenhuma que as alimente. O site mostra-as na mesma, desligadas e a dizer porquê:
+escondê-las dava a entender que não havia novidades, quando o que não há é fonte.
+
 A fase 3 tem dois caminhos. Um item que aponte para um repositório do GitHub — que são
 quase dois terços da recolha — é verificado pela API do GitHub: estrelas, último commit,
 licença e linguagem, de graça e sem passar por modelo nenhum. Tudo o resto vai a
@@ -220,17 +251,23 @@ estado honesto de quem não conseguiu julgar, e não uma promessa que ninguém v
 Números medidos a 2026-09-20, com os preços da tabela oficial dessa data
 (Haiku 4.5 a $1/$5 por milhão de tokens de entrada/saída).
 
-- Prompt de sistema da fase 2: ~950 tokens, enviado uma vez por lote de 20 itens.
-- Corrida a apanhar 7 dias de uma vez: 162 itens, 9 lotes, **$0,1301** medidos a
+- Prompt de sistema da fase 2: ~1500 tokens, enviado uma vez por lote de 20 itens.
+- Corrida a apanhar 7 dias de uma vez: 149 itens, 8 lotes, **$0,1161** medidos a
   2026-09-21, ou **$0,0008 por item**.
 - Corrida diária típica, 25 a 40 itens novos: **$0,020 a $0,032 por dia**, ou seja
   **$0,60 a $0,96 por mês**.
 
-O `nome` e a linha do que a coisa é custaram isto: o mesmo lote de 162 itens custava
-$0,0588 antes de existirem, e passou a custar $0,1301. Pouco mais do dobro, e a culpa
-é toda dos tokens de saída, que são os caros — subiram de ~50 para ~95 por item. Em
-dinheiro são uns $0,50 por mês a mais, e é o preço de se perceber o cartão sem abrir
-o link.
+Dois aumentos, medidos no mesmo dia e no mesmo lote:
+
+- O `nome` e a linha do que a coisa é levaram o custo por item de **$0,00036 para
+  $0,0008**, pouco mais do dobro. A culpa é toda dos tokens de saída, que são os
+  caros: subiram de ~50 para ~95 por item. Uns $0,50 por mês.
+- A área não custou praticamente nada. Substituiu a lista de temas, por isso a saída
+  não mexeu; o que cresceu foi o prompt de sistema, de ~950 para ~1500 tokens, e esse
+  é de entrada e paga-se uma vez por lote — na ordem de **$0,002 por corrida**.
+
+Em conjunto, a fase 2 fica em menos de **$1 por mês**, e o projeto todo, com a fase 4
+por cima, na ordem dos **$2,50**.
 
 Fase 4, estimada com os preços do Sonnet 5 ($2/$10 por milhão) sobre a recolha que
 está no disco: 12 itens em 3 lotes dão **$0,063 por corrida**, ou **$1,90 por mês**.
@@ -283,3 +320,11 @@ nada de novo.
   não há histórico com essa idade. A primeira limpeza verdadeira é daqui a dois meses.
 - Os ids que já estavam no `vistos.json` no formato antigo ficaram sem data. Mantêm-se
   enquanto o item deles estiver publicado, e saem na primeira limpeza depois disso.
+- **Duas das oito áreas não têm fonte nenhuma**: *Grátis para estudante* e *Carreira
+  júnior*. Nenhuma das duas tem feeds — obrigam a pesquisa paga com periodicidade
+  semanal, que é desenho novo e custo novo. Ficam a zero e o site diz porquê.
+  *Ferramentas do dia-a-dia* tem três itens, mas por acidente: também não tem fonte
+  própria, só apanha o que passa pelas outras.
+- A periodicidade das áreas é, para já, **uma promessa e não um mecanismo**. Está
+  escrita no site para se saber o que esperar, mas o Action corre tudo uma vez por dia:
+  não há fontes marcadas como semanais nem nada que as trave.

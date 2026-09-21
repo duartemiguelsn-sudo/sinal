@@ -14,10 +14,31 @@ const descricoesCamadas = {
   4: "Contexto"
 };
 
+// As mesmas áreas que a fase 2 atribui — a lista a sério vive em
+// `pipeline/filtrar.py`, que é quem a impõe ao modelo. Aqui está a ordem de
+// leitura e o nome que se mostra, porque o item só traz o slug.
+//
+// A periodicidade é uma promessa sobre as fontes, não sobre esta lista: diz de
+// quanto em quanto tempo é que faz sentido haver coisa nova nesta área. Uma
+// área sem fonte nenhuma fica vazia, e o botão diz isso em vez de a esconder —
+// esconder dava a entender que não havia novidades, quando o que não há é
+// fonte.
+const AREAS = [
+  ["modelos-apis", "Modelos e APIs", "Diária"],
+  ["agentes-codigo", "Agentes e ferramentas de código", "Diária"],
+  ["skills-mcp", "Skills, MCP e automação", "Diária"],
+  ["repos-em-alta", "Repositórios em alta", "Diária"],
+  ["gratis-estudante", "Grátis para estudante", "Semanal"],
+  ["meu-stack", "O teu stack", "Diária"],
+  ["ferramentas-dia-a-dia", "Ferramentas do dia-a-dia", "Semanal"],
+  ["carreira-junior", "Carreira júnior", "Semanal"],
+  ["fora-de-ambito", "Fora de âmbito", "—"]
+];
+
 let itens = [];
 const filtrosActivos = {
   veredictos: new Set(),
-  temas: new Set()
+  areas: new Set()
 };
 
 const elementoLista = document.querySelector("#lista-itens");
@@ -27,7 +48,7 @@ const elementoResumo = document.querySelector("#resumo-recolha");
 const elementoContagem = document.querySelector("#contagem-resultados");
 const selectorOrdenacao = document.querySelector("#ordenar");
 const elementoFiltrosVeredicto = document.querySelector("#filtros-veredicto");
-const elementoFiltrosTema = document.querySelector("#filtros-tema");
+const elementoFiltrosArea = document.querySelector("#filtros-area");
 const botaoLimpar = document.querySelector("#limpar-filtros");
 const botaoTema = document.querySelector("#alternar-tema");
 const textoTema = document.querySelector("#texto-tema");
@@ -153,9 +174,8 @@ function mostrarEstado(titulo, mensagem) {
 function filtrarEOrdenar() {
   const resultado = itens.filter((item) => {
     const passaVeredicto = filtrosActivos.veredictos.size === 0 || filtrosActivos.veredictos.has(item.veredicto);
-    const temasDoItem = Array.isArray(item.temas) ? item.temas.map(String) : [];
-    const passaTema = filtrosActivos.temas.size === 0 || temasDoItem.some((tema) => filtrosActivos.temas.has(tema));
-    return passaVeredicto && passaTema;
+    const passaArea = filtrosActivos.areas.size === 0 || filtrosActivos.areas.has(String(item.area || ""));
+    return passaVeredicto && passaArea;
   });
 
   resultado.sort((primeiro, segundo) => {
@@ -170,7 +190,7 @@ function filtrarEOrdenar() {
 
 function apresentarItens() {
   const resultado = filtrarEOrdenar();
-  const haFiltros = filtrosActivos.veredictos.size > 0 || filtrosActivos.temas.size > 0;
+  const haFiltros = filtrosActivos.veredictos.size > 0 || filtrosActivos.areas.size > 0;
   botaoLimpar.disabled = !haFiltros;
   elementoContagem.textContent = `${resultado.length} ${resultado.length === 1 ? "resultado" : "resultados"}`;
 
@@ -209,9 +229,28 @@ function prepararFiltros() {
     elementoFiltrosVeredicto.append(criarBotaoFiltro(nome, valor, "veredictos"));
   });
 
-  const temas = [...new Set(itens.flatMap((item) => Array.isArray(item.temas) ? item.temas.map(String) : []))]
-    .sort((a, b) => a.localeCompare(b, "pt"));
-  temas.forEach((tema) => elementoFiltrosTema.append(criarBotaoFiltro(tema, tema, "temas")));
+  const quantos = new Map();
+  itens.forEach((item) => {
+    const area = String(item.area || "");
+    if (area) quantos.set(area, (quantos.get(area) || 0) + 1);
+  });
+
+  // As áreas aparecem todas e pela ordem da lista, não pela ordem alfabética
+  // nem só as que têm itens. A ordem é a de leitura dele, e uma área a zero é
+  // informação: ou não houve novidades, ou ainda não há fonte que a alimente.
+  AREAS.forEach(([valor, nome, periodicidade]) => {
+    const total = quantos.get(valor) || 0;
+    const botao = criarBotaoFiltro(`${nome} (${total})`, valor, "areas");
+    if (total === 0) {
+      // Desligado em vez de escondido: carregar num filtro que não devolve
+      // nada só mostra a lista vazia e não explica porquê.
+      botao.disabled = true;
+      botao.title = `${nome}: ainda não entrou nada nesta área.`;
+    } else {
+      botao.title = `${nome} · novidades esperadas: ${periodicidade.toLowerCase()}`;
+    }
+    elementoFiltrosArea.append(botao);
+  });
 }
 
 function actualizarResumo() {
@@ -284,7 +323,7 @@ async function carregarItens() {
 selectorOrdenacao.addEventListener("change", apresentarItens);
 botaoLimpar.addEventListener("click", () => {
   filtrosActivos.veredictos.clear();
-  filtrosActivos.temas.clear();
+  filtrosActivos.areas.clear();
   document.querySelectorAll(".filtro").forEach((botao) => botao.setAttribute("aria-pressed", "false"));
   apresentarItens();
 });
