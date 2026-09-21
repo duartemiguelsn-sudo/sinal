@@ -54,18 +54,29 @@ function formatarData(valor) {
   }).format(data);
 }
 
+// O nome que a fase 2 escreveu ganha ao título do feed. O título cru é quase
+// sempre inglês, e em repositórios é o slug `utilizador/projeto`, que não diz
+// nada a quem está a ler. Quando não há nome — item por pontuar — mostra-se o
+// título, porque mostrar um cartão sem cabeçalho era pior.
+function nomeVisivel(item) {
+  return String(item.nome || item.titulo || "Sem título");
+}
+
 function criarLigacaoSegura(item) {
   const titulo = criarElemento("h3", "titulo-item");
   try {
     const endereco = new URL(String(item.url));
     if (endereco.protocol !== "https:" && endereco.protocol !== "http:") throw new Error("Protocolo não permitido");
-    const ligacao = criarElemento("a", "", String(item.titulo || "Sem título"));
+    const ligacao = criarElemento("a", "", nomeVisivel(item));
     ligacao.href = endereco.href;
     ligacao.target = "_blank";
     ligacao.rel = "noopener";
+    // O título original não se perde: fica no tooltip, para se poder confirmar
+    // que o nome corresponde mesmo ao que a fonte publicou.
+    if (item.nome && item.titulo) ligacao.title = String(item.titulo);
     titulo.append(ligacao);
   } catch {
-    titulo.textContent = String(item.titulo || "Sem título");
+    titulo.textContent = nomeVisivel(item);
   }
   return titulo;
 }
@@ -80,7 +91,12 @@ function criarCartao(item) {
   titulo.id = `titulo-${String(item.id)}`;
   cartao.append(marca, titulo);
 
-  if (item.resumo) cartao.append(criarElemento("p", "resumo-item", String(item.resumo)));
+  // A linha do que a coisa é, em português, escrita pela fase 2. Substitui o
+  // resumo do feed em vez de se juntar a ele: dizem a mesma coisa em línguas
+  // diferentes, e o resumo do feed às vezes é lixo puro ("submitted by /u/...").
+  // Sem nota ainda não há esta linha, e aí vale o resumo cru — é o que há.
+  const descricao = item.o_que_e || item.resumo;
+  if (descricao) cartao.append(criarElemento("p", "resumo-item", String(descricao)));
 
   if (Array.isArray(item.factos) && item.factos.length > 0) {
     const listaFactos = criarElemento("dl", "factos");

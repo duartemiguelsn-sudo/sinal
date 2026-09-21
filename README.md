@@ -18,10 +18,17 @@ repositório é público, por isso está no `.gitignore`.
 | Fase | Estado |
 |---|---|
 | 1 — recolher | Feita; 16 fontes, camadas 1 e 2 |
-| 2 — filtrar (pontuar com Haiku 4.5) | Feita; falta uma corrida a sério com chave |
-| 3 — verificar | Feita; a parte do GitHub já correu a sério, a da pesquisa falta chave |
-| 4 — veredicto (Sonnet 5) | Feita; a parte de graça já correu, a paga falta chave |
-| 5 — publicar (GitHub Action) | Feita; falta ligar o Secret e o Pages no repositório |
+| 2 — filtrar (pontuar com Haiku 4.5) | Feita e corrida a sério |
+| 3 — verificar | Feita e corrida a sério, nos dois caminhos |
+| 4 — veredicto (Sonnet 5) | Feita e corrida a sério |
+| 5 — publicar (GitHub Action) | Feita; Secret e Pages ligados, o Action já fez commit |
+
+A fase 2 não devolve só a nota. Devolve também o **nome** e a **linha do que a coisa
+é**, ambos em português, e são eles que o cartão mostra em cima. O título do feed não
+serve para ler: metade são slugs de repositório (`ejfkdev/ddc`) e quase todos vêm em
+inglês. O modelo só pode usar o que está no título, no resumo e na fonte — se isso não
+chegar, escreve que não dá para saber, que é melhor do que inventar. O título original
+não se perde: fica no tooltip da ligação.
 
 A fase 3 tem dois caminhos. Um item que aponte para um repositório do GitHub — que são
 quase dois terços da recolha — é verificado pela API do GitHub: estrelas, último commit,
@@ -47,6 +54,16 @@ uma corrida sem chave não deite fora a nota e o veredicto que já foram pagos. 
 `vistos.json` é cortado pela mesma janela e passou a guardar a data em que cada id foi
 visto, porque sem ela não havia como saber qual é que já podia sair; ficheiros no formato
 antigo continuam a ler-se.
+
+**No `vistos.json` só entra o que tem nota.** "Visto" quer dizer julgado, não quer dizer
+recolhido. Um item que passe pela fase 5 sem nota — porque não havia chave, porque o lote
+falhou, porque um travão de custo o apanhou — não é dado por visto, e se já lá estava é
+libertado para a corrida seguinte o apanhar outra vez. Sem esta regra, uma corrida sem
+chave queima em silêncio tudo o que recolheu: o item fica no site como *Incerto* para
+sempre e a fase 1 nunca mais o volta a ver. Aconteceu de verdade às primeiras corridas,
+que prenderam 152 itens — a camada 1 inteira entre eles. Não faz ciclo sem fim porque a
+fase 1 só aceita itens dos últimos sete dias: passada essa janela o feed deixa de os dar
+e desiste-se sozinho.
 
 O site lê `dados/itens.json` e mostra a recolha real. Enquanto a fase 2 não correr com
 uma chave, os itens não têm nota e aparecem todos como *Incerto* — que é o
@@ -203,10 +220,17 @@ estado honesto de quem não conseguiu julgar, e não uma promessa que ninguém v
 Números medidos a 2026-09-20, com os preços da tabela oficial dessa data
 (Haiku 4.5 a $1/$5 por milhão de tokens de entrada/saída).
 
-- Prompt de sistema da fase 2: ~623 tokens, enviado uma vez por lote de 20 itens.
-- Primeira corrida, a apanhar 7 dias de uma vez: 162 itens, 9 lotes, **$0,0588**.
-- Corrida diária típica, 25 a 40 itens novos: **$0,009 a $0,015 por dia**, ou seja
-  **$0,28 a $0,44 por mês**.
+- Prompt de sistema da fase 2: ~950 tokens, enviado uma vez por lote de 20 itens.
+- Corrida a apanhar 7 dias de uma vez: 162 itens, 9 lotes, **$0,1301** medidos a
+  2026-09-21, ou **$0,0008 por item**.
+- Corrida diária típica, 25 a 40 itens novos: **$0,020 a $0,032 por dia**, ou seja
+  **$0,60 a $0,96 por mês**.
+
+O `nome` e a linha do que a coisa é custaram isto: o mesmo lote de 162 itens custava
+$0,0588 antes de existirem, e passou a custar $0,1301. Pouco mais do dobro, e a culpa
+é toda dos tokens de saída, que são os caros — subiram de ~50 para ~95 por item. Em
+dinheiro são uns $0,50 por mês a mais, e é o preço de se perceber o cartão sem abrir
+o link.
 
 Fase 4, estimada com os preços do Sonnet 5 ($2/$10 por milhão) sobre a recolha que
 está no disco: 12 itens em 3 lotes dão **$0,063 por corrida**, ou **$1,90 por mês**.
