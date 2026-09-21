@@ -11,13 +11,13 @@ repositório é público, por isso está no `.gitignore`.
 - Site: https://duartemiguelsn-sudo.github.io/sinal/
 - Repositório: https://github.com/duartemiguelsn-sudo/sinal
 
-## Estado a 2026-09-20
+## Estado a 2026-09-21
 
 **O pipeline está completo: fases 1 a 5.**
 
 | Fase | Estado |
 |---|---|
-| 1 — recolher | Feita; 16 fontes, camadas 1 e 2 |
+| 1 — recolher | Feita; 23 fontes, camadas 1, 2 e 3 |
 | 2 — filtrar (pontuar com Haiku 4.5) | Feita e corrida a sério |
 | 3 — verificar | Feita e corrida a sério, nos dois caminhos |
 | 4 — veredicto (Sonnet 5) | Feita e corrida a sério |
@@ -57,9 +57,21 @@ todos do Hacker News e do r/LocalLLaMA e nenhum acima de nota 4. Não é erro de
 classificação: é a medida de quanto é que as fontes de hoje trazem que não serve para
 nada. Quando encher, o sítio de mexer é o `fontes.toml`.
 
-Duas áreas estão a zero — *Grátis para estudante* e *Carreira júnior* — porque não há
-fonte nenhuma que as alimente. O site mostra-as na mesma, desligadas e a dizer porquê:
-escondê-las dava a entender que não havia novidades, quando o que não há é fonte.
+Três áreas nasceram sem fonte nenhuma que as alimentasse. A 2026-09-21 foram
+procuradas fontes para elas, e o resultado foi desigual:
+
+- *Ferramentas do dia-a-dia* resolveu-se bem. Quatro feeds de releases — Bruno, DBeaver,
+  Lucide e Mosquitto — que são camada 1 porque é o próprio autor a anunciar a versão.
+  Falam pouco e por isso quase não custam.
+- *Grátis para estudante* resolveu-se a meio. Há freeCodeCamp e JetBrains Academy, que
+  anunciam cursos e avisam quando uma oferta fecha, mas **a página do GitHub Student
+  Pack continua sem feed** e é essa a que mais interessa.
+- *Carreira júnior* não se resolveu. Não existe feed nenhum sobre o mercado português.
+  Ficou a categoria do blogue do GitHub sobre o ofício, que é global e é opinião — dá
+  alguma coisa, não dá o que a área promete.
+
+O site mostra na mesma as áreas vazias, desligadas e a dizer porquê: escondê-las dava a
+entender que não havia novidades, quando o que não há é fonte.
 
 A fase 3 tem dois caminhos. Um item que aponte para um repositório do GitHub — que são
 quase dois terços da recolha — é verificado pela API do GitHub: estrelas, último commit,
@@ -266,6 +278,13 @@ Dois aumentos, medidos no mesmo dia e no mesmo lote:
   não mexeu; o que cresceu foi o prompt de sistema, de ~950 para ~1500 tokens, e esse
   é de entrada e paga-se uma vez por lote — na ordem de **$0,002 por corrida**.
 
+As sete fontes acrescentadas a 2026-09-21 custam pouco porque falam pouco. Medido na
+primeira corrida com elas: 14 itens novos, **$0,0120**, e nenhum chegou à nota 7, por
+isso as fases 3 e 4 não correram. Em regime, esperam-se cerca de 3,5 itens por dia
+vindos delas — dez em cada onze são do freeCodeCamp — o que dá **$0,09 por mês** na
+fase 2. As quatro de releases somam menos de $0,01 por mês entre todas: na maior parte
+dos dias não têm nada para dizer.
+
 Em conjunto, a fase 2 fica em menos de **$1 por mês**, e o projeto todo, com a fase 4
 por cima, na ordem dos **$2,50**.
 
@@ -281,8 +300,25 @@ está.
 
 ## As fontes
 
-16 fontes, todas testadas a 2026-09-20. Nove de camada 1 (o autor a falar) e sete de
-camada 2 (sinal de atenção, nunca verdade).
+23 fontes, todas testadas antes de entrarem. Treze de camada 1 (o autor a falar), sete
+de camada 2 (sinal de atenção, nunca verdade) e duas de camada 3 (ofertas para
+estudante). As nove primeiras foram testadas a 2026-09-20, as sete últimas a 2026-09-21.
+
+Quatro das de camada 1 são feeds de releases de ferramentas — Bruno para REST, DBeaver
+para base de dados, Lucide para ícones, Mosquitto para MQTT. São camada 1 porque quem
+anuncia a versão é quem a fez. O Mosquitto está calado desde 2026-02-09 e fica na mesma:
+o dia em que sair um CVE, é por ali que chega primeiro.
+
+Testados a 2026-09-21 e **recusados**, para ninguém voltar a gastar tempo com eles:
+
+| Endereço | Porquê não |
+|---|---|
+| `github.blog/tag/student-developer-pack/feed/` | responde 200, mas o item mais recente é de 2021-09-01 |
+| `github.blog/tag/github-education/feed/` | o mesmo, parado em 2024-11-21 |
+| `microsoft.com/en-us/education/blog/feed/` | vivo, mas escrito para direções de escolas |
+| `landing.jobs/blog/feed/` | responde 200 sem um único item |
+| `itjobs.pt` | 404 em `/feed` e em `/noticias/rss` |
+| `hoppscotch/hoppscotch` releases | vivo, mas o Bruno já cobre clientes REST |
 
 As de camada 2 não têm feed: são APIs JSON. Por isso cada fonte declara um `tipo` no
 `fontes.toml` (`rss`, `hn` ou `github`) e o endereço leva marcadores — `{desde}` e
@@ -320,11 +356,19 @@ nada de novo.
   não há histórico com essa idade. A primeira limpeza verdadeira é daqui a dois meses.
 - Os ids que já estavam no `vistos.json` no formato antigo ficaram sem data. Mantêm-se
   enquanto o item deles estiver publicado, e saem na primeira limpeza depois disso.
-- **Duas das oito áreas não têm fonte nenhuma**: *Grátis para estudante* e *Carreira
-  júnior*. Nenhuma das duas tem feeds — obrigam a pesquisa paga com periodicidade
-  semanal, que é desenho novo e custo novo. Ficam a zero e o site diz porquê.
-  *Ferramentas do dia-a-dia* tem três itens, mas por acidente: também não tem fonte
-  própria, só apanha o que passa pelas outras.
+- **A *Carreira júnior* continua sem fonte a sério.** Procurou-se a 2026-09-21 e não
+  há feed nenhum sobre o mercado português: a `landing.jobs` responde sem itens e o
+  `itjobs.pt` devolve 404. O que está lá é a categoria do blogue do GitHub sobre o
+  ofício, que é global e é opinião. Resolver isto a sério obriga a pesquisa paga
+  semanal, que é desenho novo e custo novo, e está por decidir.
+- **A página de ofertas do GitHub Student Pack não tem feed** e é a que mais interessa
+  à área *Grátis para estudante*. Dava para a vigiar de graça — buscar a página, guardar
+  uma impressão digital da lista de ofertas e só produzir um item quando ela mudar, sem
+  modelo nenhum pelo meio. É um `tipo` novo no `fontes.py` e ainda não está feito.
+- **O freeCodeCamp está em observação.** Publica umas três por dia e na primeira corrida
+  seis dos dez itens foram parar a *Fora de âmbito* — são tutoriais. Está lá porque é
+  onde saem os cursos gratuitos, e custa uns $0,09 por mês. Se ao fim de uma semana não
+  tiver trazido um único curso, é o primeiro a sair.
 - A periodicidade das áreas é, para já, **uma promessa e não um mecanismo**. Está
   escrita no site para se saber o que esperar, mas o Action corre tudo uma vez por dia:
   não há fontes marcadas como semanais nem nada que as trave.

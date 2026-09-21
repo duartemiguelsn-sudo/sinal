@@ -63,6 +63,42 @@ url = "https://android-developers.googleblog.com/feeds/posts/default"
 camada = 1
 confirmada = "2026-09-20"
 
+# Ferramentas do dia-a-dia. São feeds de releases, por isso é o próprio autor a
+# anunciar a versão — camada 1, e não "alguém disse no fórum". Falam pouco, uma
+# release por semana ou por mês, o que os torna baratos: na maior parte dos dias
+# não trazem nada, e isso é o comportamento certo e não uma avaria.
+#
+# Um cliente REST chega. O Hoppscotch também responde (testado a 2026-09-21),
+# mas duas ferramentas que fazem a mesma coisa dão o dobro dos itens para a
+# mesma decisão.
+
+[[fonte]]
+nome = "Bruno — releases"
+url = "https://github.com/usebruno/bruno/releases.atom"
+camada = 1
+confirmada = "2026-09-21"
+
+[[fonte]]
+nome = "DBeaver — releases"
+url = "https://github.com/dbeaver/dbeaver/releases.atom"
+camada = 1
+confirmada = "2026-09-21"
+
+[[fonte]]
+nome = "Lucide — releases"
+url = "https://github.com/lucide-icons/lucide/releases.atom"
+camada = 1
+confirmada = "2026-09-21"
+
+# O MQTT está no stack dele e não tinha fonte nenhuma. O Mosquitto lançou a
+# última versão a 2026-02-09, ou seja, está calado há sete meses. Fica na mesma:
+# quando sair versão ou CVE, é aqui que aparece primeiro e não em segunda mão.
+[[fonte]]
+nome = "Mosquitto — releases"
+url = "https://github.com/eclipse-mosquitto/mosquitto/releases.atom"
+camada = 1
+confirmada = "2026-09-21"
+
 # ---------------------------------------------------------------------------
 # Camada 2 — descoberta (sinal de atenção, nunca verdade).
 #
@@ -143,3 +179,53 @@ url = "https://www.reddit.com/r/LocalLLaMA/.rss"
 camada = 2
 limite = 25
 confirmada = "2026-09-20"
+
+# Carreira, o mais perto que há de graça. É a categoria do blogue do GitHub
+# sobre o ofício: o papel do programador, primeiros passos, o que se pede hoje.
+# Fica em camada 2 de propósito, apesar de ser o GitHub a escrever — é opinião,
+# é global, e não é o mercado português nem é facto que se verifique.
+[[fonte]]
+nome = "GitHub — ofício de programador"
+url = "https://github.blog/category/developer-skills/feed/"
+camada = 2
+limite = 10
+confirmada = "2026-09-21"
+
+# ---------------------------------------------------------------------------
+# Camada 3 — oportunidades para estudante.
+#
+# Cursos grátis, certificações, licenças e vouchers. São poucas por mês e quase
+# nenhuma tem feed próprio. O que está aqui é o que existe mesmo e respondeu a
+# 2026-09-21.
+#
+# Testado e recusado no mesmo dia, escrito para ninguém voltar a tentar:
+#   github.blog/tag/student-developer-pack/feed/  responde 200, mas o item mais
+#     recente é de 2021-09-01. O GitHub deixou de escrever sobre o Pack.
+#   github.blog/tag/github-education/feed/        igual, parado em 2024-11-21.
+#   microsoft.com/en-us/education/blog/feed/      vivo, mas escrito para direções
+#     de escolas, não para alunos. Traria ruído a cada corrida.
+#   landing.jobs/blog/feed/ e itjobs.pt           sem feed (200 sem itens, e 404).
+#
+# Fica por resolver, e está escrito no README: a página de ofertas do Student
+# Pack continua sem maneira de ser vigiada por RSS.
+
+[[fonte]]
+nome = "freeCodeCamp"
+url = "https://www.freecodecamp.org/news/rss/"
+camada = 3
+# Publica umas três por dia e a maior parte são tutoriais, que a fase 2 vai
+# mandar para fora de âmbito. Aceita-se esse desperdício — na ordem de $0,09
+# por mês — porque é aqui que saem os cursos gratuitos, e esses não saem em
+# mais lado nenhum que tenha feed.
+limite = 10
+confirmada = "2026-09-21"
+
+[[fonte]]
+nome = "JetBrains Academy"
+url = "https://blog.jetbrains.com/education/feed/"
+camada = 3
+# Duas ou três por mês. Vale pelo que anuncia e pelo que retira: a 2026-08-31
+# publicaram o fim do Teacher Pack para bootcamps. É esse tipo de aviso que
+# custa dinheiro a quem não o lê a tempo.
+limite = 10
+confirmada = "2026-09-21"
