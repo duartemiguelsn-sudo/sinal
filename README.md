@@ -17,7 +17,7 @@ repositório é público, por isso está no `.gitignore`.
 
 | Fase | Estado |
 |---|---|
-| 1 — recolher | Feita; 23 fontes, camadas 1, 2 e 3 |
+| 1 — recolher | Feita; 24 fontes, camadas 1, 2 e 3 |
 | 2 — filtrar (pontuar com Haiku 4.5) | Feita e corrida a sério |
 | 3 — verificar | Feita e corrida a sério, nos dois caminhos |
 | 4 — veredicto (Sonnet 5) | Feita e corrida a sério |
@@ -119,7 +119,7 @@ comportamento certo: sem dados não há julgamento.
 ├─ index.html, estilo.css, app.js   # o site, servido pelo Pages a partir da raiz
 ├─ pipeline/
 │  ├─ fontes.toml                   # as fontes, editáveis sem tocar no código
-│  ├─ fontes.py                     # fase 1: lê RSS, Atom e APIs JSON, normaliza
+│  ├─ fontes.py                     # fase 1: lê RSS, Atom, APIs JSON e páginas
 │  ├─ filtrar.py                    # fase 2: pontua com o Haiku, com travões de custo
 │  ├─ verificar.py                  # fase 3: factos do GitHub de graça, o resto por pesquisa
 │  ├─ veredicto.py                  # fase 4: julgamento escrito pelo Sonnet, ou tirado da nota
@@ -128,7 +128,8 @@ comportamento certo: sem dados não há julgamento.
 ├─ .github/workflows/recolha.yml    # fase 5: corre o pipeline e faz commit, uma vez por dia
 ├─ dados/
 │  ├─ itens.json                    # o que o site lê
-│  └─ vistos.json                   # id -> data em que foi visto
+│  ├─ vistos.json                   # id -> data em que foi visto
+│  └─ paginas.json                  # retrato das páginas vigiadas, para as comparar
 ├─ .env.exemplo                     # modelo do .env; o .env a sério nunca entra no Git
 └─ requirements.txt                 # uma dependência só: o SDK da Anthropic
 ```
@@ -300,14 +301,49 @@ está.
 
 ## As fontes
 
-23 fontes, todas testadas antes de entrarem. Treze de camada 1 (o autor a falar), sete
-de camada 2 (sinal de atenção, nunca verdade) e duas de camada 3 (ofertas para
-estudante). As nove primeiras foram testadas a 2026-09-20, as sete últimas a 2026-09-21.
+24 fontes, todas testadas antes de entrarem. Treze de camada 1 (o autor a falar), sete
+de camada 2 (sinal de atenção, nunca verdade) e três de camada 3 (ofertas para
+estudante). As nove primeiras foram testadas a 2026-09-20, as outras a 2026-09-21.
 
 Quatro das de camada 1 são feeds de releases de ferramentas — Bruno para REST, DBeaver
 para base de dados, Lucide para ícones, Mosquitto para MQTT. São camada 1 porque quem
 anuncia a versão é quem a fez. O Mosquitto está calado desde 2026-02-09 e fica na mesma:
 o dia em que sair um CVE, é por ali que chega primeiro.
+
+### A página vigiada
+
+A página de ofertas do Student Pack é a fonte que mais interessa à área *Grátis para
+estudante* e é a única que não tem feed nenhum. Os dois que o GitHub teve estão mortos
+desde 2021 e 2024. Por isso existe um quarto tipo de fonte, `pagina`, e é o único do
+pipeline **com memória**: guarda um retrato da lista em `dados/paginas.json` e a notícia
+é a diferença para a corrida anterior — quem entrou, quem saiu, quem reescreveu a oferta.
+
+```
+GitHub Student Pack: 1 a entrar, 1 a sair, 1 com oferta diferente
+No GitHub Student Pack entraram Namecheap; saíram Figmuito;
+mudaram de oferta Microsoft Azure.
+```
+
+Três decisões que valem a pena perceber:
+
+- **Na primeira corrida não sai item nenhum.** Guarda-se o retrato e fica-se por aí.
+  Dizer "há 83 parceiros" no dia em que se começou a olhar não é notícia, é o ponto de
+  partida. A comparação começa na corrida seguinte.
+- **O retrato só é gravado no fim da corrida.** Se ela rebentar a meio, o ficheiro fica
+  como estava e a alteração volta a ser encontrada amanhã. Gravar mais cedo dava o
+  contrário: a alteração dada como vista e nunca publicada.
+- **O id do item leva a alteração dentro**, e não só o endereço. Se a página mudar outra
+  vez na semana que vem, tem de ser um item novo — com o id do endereço, o `vistos.json`
+  engolia o segundo.
+
+Isto é raspar HTML, e raspar HTML parte-se. O travão é o `MINIMO_DE_PARCEIROS` no
+`fontes.py`: abaixo de 40 parceiros extraídos a fonte declara-se avariada, porque o erro
+plausível é o GitHub ter mudado o template e não terem desaparecido oitenta ofertas. Nos
+dias em que a página não muda, a fonte não diz nada e isso é o comportamento certo — um
+feed que responde sem itens está avariado, uma página que não mudou não está.
+
+Custo em API: zero. É um pedido HTTP e uma comparação de listas, sem modelo nenhum pelo
+meio. Só gera item nos dias em que o GitHub mexer na lista, que são poucos por ano.
 
 Testados a 2026-09-21 e **recusados**, para ninguém voltar a gastar tempo com eles:
 
@@ -361,10 +397,11 @@ nada de novo.
   `itjobs.pt` devolve 404. O que está lá é a categoria do blogue do GitHub sobre o
   ofício, que é global e é opinião. Resolver isto a sério obriga a pesquisa paga
   semanal, que é desenho novo e custo novo, e está por decidir.
-- **A página de ofertas do GitHub Student Pack não tem feed** e é a que mais interessa
-  à área *Grátis para estudante*. Dava para a vigiar de graça — buscar a página, guardar
-  uma impressão digital da lista de ofertas e só produzir um item quando ela mudar, sem
-  modelo nenhum pelo meio. É um `tipo` novo no `fontes.py` e ainda não está feito.
+- **O vigia do Student Pack depende do HTML do GitHub** e parte-se no dia em que ele
+  mudar o template. Está travado — abaixo de 40 parceiros extraídos a fonte declara-se
+  avariada em vez de anunciar que desapareceram oitenta ofertas — mas travado não é
+  imune: se o GitHub mudar a página, o Sinal deixa de ver as ofertas e diz-o no log em
+  vez de o gritar. Convém olhar para os erros da recolha de vez em quando.
 - **O freeCodeCamp está em observação.** Publica umas três por dia e na primeira corrida
   seis dos dez itens foram parar a *Fora de âmbito* — são tutoriais. Está lá porque é
   onde saem os cursos gratuitos, e custa uns $0,09 por mês. Se ao fim de uma semana não

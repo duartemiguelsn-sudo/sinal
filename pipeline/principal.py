@@ -29,6 +29,7 @@ parte do pipeline que lê o disco antes de lhe escrever.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 from datetime import date, timedelta
@@ -50,6 +51,10 @@ RAIZ = Path(__file__).resolve().parent.parent
 CAMINHO_FONTES = RAIZ / "pipeline" / "fontes.toml"
 CAMINHO_ITENS = RAIZ / "dados" / "itens.json"
 CAMINHO_VISTOS = RAIZ / "dados" / "vistos.json"
+# Retrato das fontes do tipo `pagina`. Uma página não tem entradas nem datas: a
+# notícia é a diferença para o que lá estava na corrida anterior, e é aqui que
+# esse "anterior" fica guardado entre corridas.
+CAMINHO_PAGINAS = RAIZ / "dados" / "paginas.json"
 CAMINHO_AMBIENTE = RAIZ / ".env"
 
 # Quase todos os feeds servem o arquivo inteiro, não o dia. Sem esta janela, a
@@ -101,6 +106,30 @@ def mostrar_lista(titulo: str, linhas: list[str]) -> None:
     print(f"\n{titulo}")
     for linha in linhas:
         print(f"  - {linha}")
+
+
+def ler_paginas(caminho: Path) -> dict:
+    """Lê o retrato da corrida anterior. Um ficheiro que falte ou que esteja
+    estragado vale zero: perde-se uma comparação e grava-se um retrato novo,
+    que é muito melhor do que a corrida parar por causa disto."""
+    try:
+        return json.loads(caminho.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def guardar_paginas(caminho: Path, retratos: dict) -> None:
+    """Grava o retrato desta corrida, e só no fim dela.
+
+    Se a corrida rebentar a meio, o ficheiro fica como estava e a alteração
+    volta a ser encontrada amanhã. Gravar mais cedo dava o contrário: a
+    alteração dada como vista e nunca publicada.
+    """
+    caminho.parent.mkdir(parents=True, exist_ok=True)
+    caminho.write_text(
+        json.dumps(retratos, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
 
 
 def main() -> int:
@@ -171,7 +200,9 @@ def main() -> int:
     print("Fase 1 — a ler as fontes\n")
 
     try:
-        itens, erros, avisos = recolher(CAMINHO_FONTES, opcoes.dias)
+        itens, erros, avisos, retratos = recolher(
+            CAMINHO_FONTES, opcoes.dias, ler_paginas(CAMINHO_PAGINAS)
+        )
     except ErroDeFonte as erro:
         print(f"erro fatal na configuração das fontes: {erro}")
         return 1
@@ -200,7 +231,10 @@ def main() -> int:
         print(f"  {quantidade:>4}  {nome}")
 
     mostrar_lista("Fontes com problemas:", erros)
-    mostrar_lista("Fontes cortadas pelo teto:", avisos)
+    # Avisos, e não erros: uma fonte cortada pelo teto respondeu bem de mais, e
+    # uma página a guardar o primeiro retrato está a fazer o que deve. Cada
+    # linha diz o que é — o título não pode prometer só uma dessas coisas.
+    mostrar_lista("Avisos das fontes:", avisos)
 
     sem_data = sum(1 for item in novos if not item["data"])
     print(f"\n{len(itens)} itens recolhidos, {len(novos)} novos nos últimos {opcoes.dias} dias", end="")
@@ -385,7 +419,14 @@ def main() -> int:
     if resumo["por_pontuar"]:
         print(f"{resumo['por_pontuar']} itens no site continuam sem nota")
     print(f"{resumo['publicados']} itens ficam no site")
-    print(f"\nEscrito: {CAMINHO_ITENS.relative_to(RAIZ)} e {CAMINHO_VISTOS.relative_to(RAIZ)}")
+    # Só agora, com a corrida inteira feita, é que o retrato das páginas passa a
+    # ser o de hoje. Até aqui uma falha deixava tudo como estava, de propósito.
+    guardar_paginas(CAMINHO_PAGINAS, retratos)
+
+    print(
+        f"\nEscrito: {CAMINHO_ITENS.relative_to(RAIZ)}, "
+        f"{CAMINHO_VISTOS.relative_to(RAIZ)} e {CAMINHO_PAGINAS.relative_to(RAIZ)}"
+    )
     return 0
 
 

@@ -643,6 +643,22 @@
     "area": "repos-em-alta"
   },
   {
+    "id": "8db79723e7ad",
+    "titulo": "What happened to the Snowden archive",
+    "resumo": "156 pontos e 66 comentários no Hacker News",
+    "url": "https://libroot.org/posts/what-happened-to-the-snowden-archive",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-20",
+    "nota": 2,
+    "justificacao": "Camada 2 sem substância no resumo — só diz que tem pontos no Hacker News, não explica o assunto. Sem saber o que é, não pode servir ao teu stack.",
+    "area": "fora-de-ambito",
+    "nome": "What happened to the Snowden archive",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "ruido",
+    "recolhido": "2026-09-21"
+  },
+  {
     "id": "86062f722efb",
     "titulo": "Success running Qwen 3.8 27B EXL3 on RTX 3060 + 5060 Ti",
     "resumo": "Sharing my successful experience here. My setup: RTX 5060 Ti 16GB (x16 PCIe slot) RTX 3060 12GB (x4 PCIe slot) RAM: 32GB CPU: Ryzen 5 5600 OS: Linux So I have a total of 28GB. Average tk/s: 50, and this is using MTP so it varies a lot between 40 and 60 but it mostly floats at 50. Without MTP it goes down to 22 tk/s. Inference engine: exllamav3 via https://github.com/theroyallab/tabbyAPI Model: htt…",

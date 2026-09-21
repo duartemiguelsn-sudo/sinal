@@ -229,3 +229,33 @@ camada = 3
 # custa dinheiro a quem não o lê a tempo.
 limite = 10
 confirmada = "2026-09-21"
+
+# ---------------------------------------------------------------------------
+# Páginas vigiadas.
+#
+# A página de ofertas do Student Pack é a fonte que mais interessa à área
+# "Grátis para estudante" e não tem feed nenhum — os dois que o GitHub teve
+# estão mortos desde 2021 e 2024, e estão listados acima. Não tem entradas nem
+# datas: é uma lista que hoje está assim e amanhã está de outra maneira.
+#
+# Por isso declara `tipo = "pagina"` e é a única fonte do pipeline com memória.
+# Guarda um retrato em `dados/paginas.json` e a notícia é a diferença: quem
+# entrou, quem saiu, e quem reescreveu a oferta.
+#
+# Não custa nada em API — é um pedido HTTP e uma comparação de listas. Só gera
+# item nos dias em que o GitHub mexer na lista, que são poucos por ano. Custa
+# outra coisa: depende do HTML do GitHub, e parte-se no dia em que ele mudar.
+# Quando isso acontecer a fonte diz que se partiu em vez de anunciar que
+# desapareceram oitenta ofertas — é para isso que serve o MINIMO_DE_PARCEIROS
+# no fontes.py.
+#
+# Fica em camada 3 e não em camada 1, apesar de ser o GitHub a escrever a
+# própria página, porque a camada 3 é a das ofertas para estudante e é assim
+# que a fase 2 sabe o que pesar: se ele consegue mesmo usar aquilo de graça.
+
+[[fonte]]
+nome = "GitHub Student Pack"
+tipo = "pagina"
+url = "https://education.github.com/pack/offers"
+camada = 3
+confirmada = "2026-09-21"

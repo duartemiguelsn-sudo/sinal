@@ -1,0 +1,503 @@
+{
+ "GitHub Student Pack": {
+  "1password": [
+   "1Password",
+   [
+    "Get 1Password free for a year including 1Password Developer Tools"
+   ]
+  ],
+  "adafruit": [
+   "Adafruit",
+   [
+    "One year of Adafruit IO+ and discounts on selected hardware."
+   ]
+  ],
+  "algoexpert": [
+   "AlgoExpert",
+   [
+    "Free access to 20 coding interview questions on AlgoExpert as well as a 10% discount on all AlgoExpert products."
+   ]
+  ],
+  "appfigures": [
+   "Appfigures",
+   [
+    "\"Free access to universal analytics and performance reports for one year."
+   ]
+  ],
+  "appwrite": [
+   "Appwrite",
+   [
+    "Free access to Appwrite's Education plan (2 projects with equivalent resource limits as Appwrite Pro, worth $40/month) throughout the course of your student career (i.e., as long as you remain a member of the GitHub Student Developer Pack)"
+   ]
+  ],
+  "arduino": [
+   "Arduino",
+   [
+    "Free Arduino Cloud for 6 months and discounts on selected hardware."
+   ]
+  ],
+  "astra": [
+   "AstraSecurity",
+   [
+    "6 month access to website firewall & malware scanner"
+   ]
+  ],
+  "blackfire": [
+   "Blackfire",
+   [
+    "Free Developer subscription for students."
+   ]
+  ],
+  "blockchair": [
+   "Blockchair",
+   [
+    "100,000 free requests."
+   ]
+  ],
+  "boot-dev": [
+   "Boot.dev",
+   [
+    "Master Python, Golang, TypeScript and more in our immersive programming curriculum. Learn Backend Development, DevOps, and Data Analysis with 3 months of free access to Boot.dev’s complete interactive membership."
+   ]
+  ],
+  "bootstrapstudio": [
+   "Bootstrap Studio",
+   [
+    "A free license for Bootstrap Studio while you are a student."
+   ]
+  ],
+  "browserstack": [
+   "BrowserStack",
+   [
+    "Free Automate Mobile Plan for 1 parallel and 1 user for 1 year."
+   ]
+  ],
+  "cambercloud": [
+   "Camber",
+   [
+    "Free Camber Student plan while you're enrolled, including 40 CPU hours, 5 GPU hours, 50 GB of storage, and 50 agent messages per month. Connect open data sources like Postgres, Trino, and S3, build agents that know your data and your code, and run them from Cursor or Claude Code through the Camber MCP server — long jobs keep running after you close your laptop."
+   ]
+  ],
+  "cartodb": [
+   "CARTO",
+   [
+    "Free account upgrades with increased database storage, real time data, Location Data Services Credits, and premium features for 2 years."
+   ]
+  ],
+  "clerk": [
+   "Clerk",
+   [
+    "Free Pro plan while you're a student."
+   ]
+  ],
+  "codecov": [
+   "Codecov",
+   [
+    "Free access to Codecov on public and private repositories."
+   ]
+  ],
+  "codedex": [
+   "Codedex",
+   [
+    "Verified students receive 6 months of Codédex Club, a premium membership for free."
+   ]
+  ],
+  "codescene": [
+   "CodeScene",
+   [
+    "A free Student account to analyze private GitHub repositories."
+   ]
+  ],
+  "configcat": [
+   "ConfigCat",
+   [
+    "1000 feature flags, ∞ users for free."
+   ]
+  ],
+  "dashlane": [
+   "Dashlane",
+   [
+    "Dashlane Premium free for 6 months."
+   ]
+  ],
+  "datacamp": [
+   "DataCamp",
+   [
+    "DataCamp has partnered with GitHub Education to offer three months of free access when you sign up for a DataCamp subscription with your GitHub student account."
+   ]
+  ],
+  "datadog": [
+   "Datadog",
+   [
+    "Pro Account, including 10 servers. Free for 2 years."
+   ]
+  ],
+  "deepnote": [
+   "Deepnote",
+   [
+    "Our offer includes free use of the Deepnote Team plan while you are a student. The Deepnote Team Plan includes: Unlimited team members & projects, 30-day version history, unlimited basic machines with up to 5GB RAM and 2vCPU, premium integrations (Snowflake, SQL Server, BigQuery, Redshift, and more), and 30-day revision history."
+   ]
+  ],
+  "deepscan": [
+   "DeepScan",
+   [
+    "Free 6-month trial while you are a student."
+   ]
+  ],
+  "devcycle": [
+   "DevCycle",
+   [
+    "1 Free Year on our Starter Plan to Verified Students. Includes unlimited seats, unlimited feature flags, and unlimited usage."
+   ]
+  ],
+  "doppler": [
+   "Doppler",
+   [
+    "Free Doppler Team subscription while the user is an active student."
+   ]
+  ],
+  "educative": [
+   "Educative",
+   [
+    "Dive into 6 months of free access to over 70 practical courses, covering hot topics like Web Development, Python, Java, and Machine Learning. Plus, students enjoy an awesome 30% discount on any subscription they pick!"
+   ]
+  ],
+  "frontendmasters": [
+   "FrontendMasters",
+   [
+    "Free 6-months access to all courses and workshops."
+   ]
+  ],
+  "ghdesktop": [
+   "GitHub Desktop",
+   [
+    "Open Source by GitHub, free for everyone."
+   ]
+  ],
+  "github": [
+   "GitHub",
+   [
+    "Free GitHub Pro while you are a student."
+   ]
+  ],
+  "github-campus-experts": [
+   "Github Campus Experts",
+   [
+    "Apply to become part of the program while you’re a student."
+   ]
+  ],
+  "github-codespaces": [
+   "GitHub Codespaces",
+   [
+    "Free Pro level access to Codespaces to use anywhere in your account."
+   ]
+  ],
+  "github-copilot": [
+   "GitHub Copilot",
+   [
+    "GitHub Copilot Student is available to verified students. The plan includes unlimited code completions and an allowance of GitHub AI Credits, plus limited chat and agent usage with models available through auto model selection only."
+   ]
+  ],
+  "github-pages": [
+   "GitHub Pages",
+   [
+    "Get one site per GitHub account and organization, and unlimited project sites."
+   ]
+  ],
+  "gitkraken": [
+   "GitKraken",
+   [
+    "The GitKraken Student Plan: Free for 6 months and then up to 80% off the Pro price as long as you’re a student."
+   ]
+  ],
+  "gitlens": [
+   "GitLens",
+   [
+    "The GitKraken Student plan: free for 6 months and then up to 80% off the Pro price as long as you’re a student."
+   ]
+  ],
+  "gorails": [
+   "GoRails",
+   [
+    "Free access to all videos and lessons for 12 months."
+   ]
+  ],
+  "hazeover": [
+   "HazeOver",
+   [
+    "Free app license, including minor updates."
+   ]
+  ],
+  "heroku": [
+   "Heroku",
+   [
+    "Enjoy a credit of $13 USD per month for 24 months."
+   ]
+  ],
+  "honeybadger": [
+   "Honeybadger",
+   [
+    "Free Small account for 1 year."
+   ]
+  ],
+  "icons8": [
+   "Icons8",
+   [
+    "Free 3-month subscription that includes: icons, photos, illustrations, and music."
+   ]
+  ],
+  "iconscout": [
+   "IconScout",
+   [
+    "Free access to 60 premium icons from selected contributors every month for 1 year."
+   ]
+  ],
+  "imgbot": [
+   "Imgbot",
+   [
+    "Free image optimization for all your public and private projects while you are a student."
+   ]
+  ],
+  "interviewcake": [
+   "InterviewCake",
+   [
+    "Access to the full coding interview prep course for 1 week."
+   ]
+  ],
+  "jetbrains": [
+   "JetBrains",
+   [
+    "A free subscription for students, to be renewed annually."
+   ]
+  ],
+  "lambdatest": [
+   "LambdaTest",
+   [
+    "Free LambdaTest Live Plan for one year."
+   ]
+  ],
+  "localstack": [
+   "LocalStack",
+   [
+    "Free license to LocalStack’s most powerful AWS emulator in a ready-to-use cloud environment"
+   ]
+  ],
+  "microsoft": [
+   "Microsoft Azure",
+   [
+    "Free access to 25+ Microsoft Azure cloud services plus $100 in Azure credit. For students aged 18+."
+   ]
+  ],
+  "microsoft-365": [
+   "Microsoft 365",
+   [
+    "Students can now get free or discounted access to our powerful productivity apps with AI built in, 1TB of cloud Storage, and and advanced security for your data and devices. Sign up today to unlock all your benefits."
+   ]
+  ],
+  "microsoft-azure-13-17": [
+   "Microsoft Azure (for ages 13-17)",
+   [
+    "For students age 13-17. Free access to Azure App Services, Azure Functions, Notification Hubs, MySQL database from MySQL in-app, Application Insights, Azure DevOps."
+   ]
+  ],
+  "microsoftvisualstudio": [
+   "Microsoft Visual Studio Dev Essentials",
+   [
+    "Visual Studio Community, Visual Studio Community for Mac, access to Pluralsight training, 1 free year of Azure services with $200 credit for the 1st month and more."
+   ]
+  ],
+  "mongodb": [
+   "MongoDB",
+   [
+    "$50 in MongoDB Atlas Credits, plus access to MongoDB Compass and MongoDB University including free certification valued at $150."
+   ]
+  ],
+  "namecheap": [
+   "Namecheap",
+   [
+    "1 year domain name registration on the .me TLD.",
+    "1 SSL certificate free for 1 year."
+   ]
+  ],
+  "namecom": [
+   "Name.com",
+   [
+    "Build your project on a select free domain with over 25 domain extensions like .live, .studio, .software, .app, and .dev. Be sure your Name.com account includes a unique address, otherwise the system may assume your request is a duplicate."
+   ]
+  ],
+  "newrelic": [
+   "New Relic",
+   [
+    "Free New Relic while you are a student. ($300/month value)"
+   ]
+  ],
+  "notion": [
+   "Notion",
+   [
+    "Everything in the Notion Education plan with additional AI responses. Notion Education plan offers everything in our Plus plan + increased sharing & collaboration capabilities and longer page history."
+   ]
+  ],
+  "notion-templates": [
+   "Notion Template Collection",
+   [
+    "From setting up your CS course dashboard to running your hackathons to building your portfolios — this collection of templates has got you covered, in the classroom and beyond."
+   ]
+  ],
+  "octicons": [
+   "Octicons",
+   [
+    "Using Figma designs to build the Octicons icon library"
+   ]
+  ],
+  "pageclip": [
+   "Pageclip",
+   [
+    "Free basic plan while you are a student."
+   ]
+  ],
+  "poeditor": [
+   "POEditor",
+   [
+    "Plus Plan for free for one year."
+   ]
+  ],
+  "polypane": [
+   "Polypane",
+   [
+    "You'll get free use of Polypane's individual plan for 1 year."
+   ]
+  ],
+  "pomodone": [
+   "PomoDone",
+   [
+    "PomoDone Lite plan free for 2-years."
+   ]
+  ],
+  "popsql": [
+   "PopSQL",
+   [
+    "Free Premium subscription for PopSQL while you're a student."
+   ]
+  ],
+  "requestly": [
+   "Requestly",
+   [
+    "Requestly Professional plan (worth $270) free for one year."
+   ]
+  ],
+  "scrapinghub": [
+   "Zyte",
+   [
+    "1 Free Forever Scrapy Cloud Unit - unlimited team members, projects or requests. Unlimited crawl time and 120 day data retention."
+   ]
+  ],
+  "scrimba": [
+   "Scrimba",
+   [
+    "Level up your coding skills with interactive courses, projects, and challenges. Learn JavaScript, CSS, React, Python, and more. Enjoy 1 month of free access to Full access to Scrimba’s Pro courses, projects, and coding challenges, which includes 40+ courses."
+   ]
+  ],
+  "sentry": [
+   "Sentry",
+   [
+    "Students enjoy: 50K errors, 100K transactions, 1GB attachments, 500 replays, Team features, 1 yr limit (can renew), Disabled On-demand"
+   ]
+  ],
+  "simpleanalytics": [
+   "SimpleAnalytics",
+   [
+    "Starter plan free for one year, including 100k page views per month."
+   ]
+  ],
+  "sqlgate": [
+   "SQLGate",
+   [
+    "Access to most Standard Subscription features for 1 year."
+   ]
+  ],
+  "stripe": [
+   "Stripe",
+   [
+    "Get $25 in Stripe credits to offset fees on products including Stripe Payments, Billing, and more."
+   ]
+  ],
+  "student-vscode": [
+   "Visual Studio Code",
+   [
+    "These coding packs help you download everything you need to start coding in Java, Python, or .NET."
+   ]
+  ],
+  "symfonycasts": [
+   "SymfonyCasts",
+   [
+    "Free 3-month subscription for students."
+   ]
+  ],
+  "tech": [
+   ".TECH",
+   [
+    "One standard .TECH domain free for 1 year."
+   ]
+  ],
+  "termius": [
+   "Termius",
+   [
+    "Free access to all Termius Pro and Termius Team features, while you're a student."
+   ]
+  ],
+  "testmail": [
+   "Testmail",
+   [
+    "Free Essential plan while you're a student."
+   ]
+  ],
+  "themeisle": [
+   "Themeisle",
+   [
+    "Free year of Neve Agency WordPress theme exclusively for students."
+   ]
+  ],
+  "todiagram": [
+   "ToDiagram",
+   [
+    "ToDiagram Pro Plan including full editor access, no data limits, and up to 10 documents stored in the cloud. This offer does not include AI-assistant functionality."
+   ]
+  ],
+  "tower": [
+   "Tower",
+   [
+    "Free license for Tower Pro while you are a student."
+   ]
+  ],
+  "travis": [
+   "Travis CI",
+   [
+    "Private builds for free while you're a student."
+   ]
+  ],
+  "vaadin": [
+   "Vaadin",
+   [
+    "Free Pro subscription license to access the commercial components and tools."
+   ]
+  ],
+  "visme": [
+   "Visme",
+   [
+    "Get 3 free months free access to Visme's Starter plan."
+   ]
+  ],
+  "workingcopy": [
+   "WorkingCopy",
+   [
+    "All Pro features for free while you are a student."
+   ]
+  ],
+  "xojo": [
+   "Xojo",
+   [
+    "Xojo Pro license free while you are a student."
+   ]
+  ]
+ }
+}

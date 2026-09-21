@@ -9,6 +9,13 @@ JSON, e são precisamente as que trazem a camada 2. Por isso cada fonte declara
 um `tipo` no fontes.toml, e há um interpretador por tipo. O resultado é sempre
 o mesmo dicionário — quem consome não precisa de saber de onde veio.
 
+Há um tipo que foge à regra: `pagina`. Uma página de ofertas não tem entradas
+nem datas — é uma lista que hoje está assim e amanhã está de outra maneira. A
+única notícia que dela se tira é a diferença para a corrida anterior, e por isso
+é o único interpretador com memória. O retrato entra e sai por parâmetro; quem
+escreve o ficheiro é o `principal.py`, para esta fase continuar a não tocar no
+disco.
+
 Nada aqui julga nada. Esta fase só recolhe. O julgamento vem nas fases 2 a 4.
 """
 
@@ -45,7 +52,18 @@ LIMITE_RESUMO = 400  # caracteres; a fase 2 paga por token, e o resumo inteiro n
 # arrastar a fatura atrás dela sem ninguém dar por isso.
 LIMITE_POR_FONTE = 60
 
-TIPOS = ("rss", "hn", "github")
+TIPOS = ("rss", "hn", "github", "pagina")
+
+# Marcadores do cartão de parceiro na página de ofertas do Student Pack. São
+# frágeis de propósito: dependem do HTML do GitHub, que muda sem avisar. É por
+# isso que existe o MINIMO_DE_PARCEIROS — mais vale a fonte dizer que se partiu
+# do que anunciar que desapareceram oitenta ofertas.
+PARCEIRO = re.compile(r'<h3 id="([^"]+)" class="sr-only">([^<]*)</h3>(.*?)(?=<h3 id="|\Z)', re.S)
+OFERTA = re.compile(r"<h5[^>]*>Offer(?: #\d+)?</h5>\s*<p[^>]*>(.*?)</p>", re.S)
+
+# A página tinha 83 parceiros a 2026-09-21. Abaixo deste número assume-se que o
+# template mudou e não se compara nada — comparar dava um falso alarme enorme.
+MINIMO_DE_PARCEIROS = 40
 
 # Pausa entre dois pedidos ao mesmo servidor. A pesquisa do GitHub aceita 10
 # pedidos por minuto sem autenticação e devolve 403 a quem dispara quatro
@@ -281,6 +299,87 @@ def itens_do_github(json_bruto: bytes, fonte: dict) -> list[dict]:
     return itens
 
 
+def ofertas_da_pagina(html_bruto: bytes) -> dict[str, list]:
+    """Tira da página do Student Pack o que cada parceiro está a oferecer.
+
+    Devolve `slug -> [nome, [ofertas]]`. Isto é raspar HTML, não é ler um feed:
+    parte-se no dia em que o GitHub mexer no template. Quem chama tem de tratar
+    um resultado curto como avaria, nunca como "acabaram as ofertas".
+    """
+    pagina = html_bruto.decode("utf-8", errors="replace")
+
+    parceiros: dict[str, list] = {}
+    for slug, nome, corpo in PARCEIRO.findall(pagina):
+        parceiros[slug] = [limpar_texto(nome), [limpar_texto(o) for o in OFERTA.findall(corpo)]]
+    return parceiros
+
+
+def itens_da_pagina(html_bruto: bytes, fonte: dict, anterior: dict | None) -> tuple[list[dict], dict, str]:
+    """Compara a página de hoje com o retrato da corrida anterior.
+
+    Devolve (itens, retrato_novo, aviso). Uma página não tem entradas nem datas,
+    por isso a única notícia que dela sai é o que mudou desde ontem: parceiros
+    que entraram, parceiros que saíram, e ofertas reescritas.
+
+    Na primeira corrida não há com que comparar. Guarda-se o retrato e não se
+    publica nada — dizer "há 83 parceiros" no dia em que se começou a olhar não
+    é notícia, é o ponto de partida.
+    """
+    agora = ofertas_da_pagina(html_bruto)
+    if len(agora) < MINIMO_DE_PARCEIROS:
+        raise ErroDeFonte(
+            f"só se extraíram {len(agora)} parceiros e esperavam-se pelo menos "
+            f"{MINIMO_DE_PARCEIROS}; o HTML da página deve ter mudado"
+        )
+
+    if not anterior:
+        return [], agora, (
+            f"{fonte['nome']}: primeiro retrato guardado com {len(agora)} parceiros; "
+            f"a comparação começa na próxima corrida"
+        )
+
+    entraram = [agora[slug][0] for slug in agora if slug not in anterior]
+    sairam = [anterior[slug][0] for slug in anterior if slug not in agora]
+    mudaram = [
+        agora[slug][0]
+        for slug in agora
+        if slug in anterior and agora[slug][1] != anterior[slug][1]
+    ]
+
+    if not (entraram or sairam or mudaram):
+        return [], agora, ""
+
+    # O resumo diz nomes e não números, porque é pelos nomes que se decide se
+    # vale a pena ir lá. A fase 2 recebe isto como recebe qualquer outro resumo.
+    partes = []
+    rotulos = []
+    if entraram:
+        partes.append("entraram " + ", ".join(entraram))
+        rotulos.append(f"{len(entraram)} a entrar")
+    if sairam:
+        partes.append("saíram " + ", ".join(sairam))
+        rotulos.append(f"{len(sairam)} a sair")
+    if mudaram:
+        partes.append("mudaram de oferta " + ", ".join(mudaram))
+        rotulos.append(f"{len(mudaram)} com oferta diferente")
+
+    item = {
+        # O id leva a alteração dentro, e não só o endereço: se a página mudar
+        # outra vez na semana que vem, tem de ser um item novo e não um repetido
+        # que o vistos.json engole.
+        "id": identificador(fonte["url"] + "|" + "; ".join(partes)),
+        "titulo": "GitHub Student Pack: " + ", ".join(rotulos),
+        "resumo": ("No GitHub Student Pack " + "; ".join(partes) + ".")[:LIMITE_RESUMO],
+        "url": fonte["url"],
+        "fonte": fonte["nome"],
+        "camada": int(fonte["camada"]),
+        # A página não diz quando mudou. O que se sabe é o dia em que demos por
+        # isso, e é esse que se escreve — a data do GitHub não se inventa.
+        "data": datetime.now(timezone.utc).date().isoformat(),
+    }
+    return [item], agora, ""
+
+
 # Um interpretador por tipo. Acrescentar uma fonte de um tipo que já existe é
 # mexer só no fontes.toml; um tipo novo é uma função nova aqui e mais nada.
 INTERPRETES = {
@@ -304,8 +403,10 @@ def preencher_url(url: str, dias: int) -> str:
     return url.format(desde=int(corte.timestamp()), desde_iso=corte.date().isoformat())
 
 
-def recolher(caminho_fontes: Path, dias: int = 7) -> tuple[list[dict], list[str], list[str]]:
-    """Corre todas as fontes e devolve (itens, erros, avisos).
+def recolher(
+    caminho_fontes: Path, dias: int = 7, estado: dict | None = None
+) -> tuple[list[dict], list[str], list[str], dict]:
+    """Corre todas as fontes e devolve (itens, erros, avisos, retratos).
 
     Uma fonte em baixo não pode partir a corrida inteira: regista-se o erro,
     salta-se, continua-se. No fim quem chama decide o que fazer com a lista
@@ -318,12 +419,22 @@ def recolher(caminho_fontes: Path, dias: int = 7) -> tuple[list[dict], list[str]
     O `dias` serve para as fontes de pesquisa saberem a partir de quando
     procurar. É o mesmo número da janela da fase 1, para não haver duas
     noções de "recente" a viver no mesmo pipeline.
+
+    O `estado` é o retrato das fontes do tipo `pagina` na corrida anterior, e
+    os `retratos` devolvidos são o desta. Passam por parâmetro de propósito:
+    assim esta fase continua a não abrir ficheiro nenhum, e quem decide quando
+    gravar é o `principal.py`, depois de a corrida chegar ao fim.
     """
     itens: list[dict] = []
     erros: list[str] = []
     avisos: list[str] = []
     vistos_nesta_corrida: set[str] = set()
     servidor_anterior = ""
+
+    # Começa vazio e não como cópia do anterior: assim, uma fonte de página que
+    # saia do fontes.toml leva o retrato dela atrás e não fica a ocupar espaço.
+    estado_anterior = estado or {}
+    retratos: dict[str, dict] = {}
 
     for fonte in ler_fontes(caminho_fontes):
         tipo = fonte.get("tipo", "rss")
@@ -337,9 +448,24 @@ def recolher(caminho_fontes: Path, dias: int = 7) -> tuple[list[dict], list[str]
 
         try:
             bruto = descarregar(endereco)
-            recolhidos = INTERPRETES[tipo](bruto, fonte)
+            if tipo == "pagina":
+                # Excepção com nome: este é o único interpretador que precisa de
+                # saber como estavam as coisas ontem, por isso não cabe no
+                # INTERPRETES, onde todos têm a mesma assinatura.
+                recolhidos, retrato, aviso = itens_da_pagina(
+                    bruto, fonte, estado_anterior.get(fonte["nome"])
+                )
+                retratos[fonte["nome"]] = retrato
+                if aviso:
+                    avisos.append(aviso)
+            else:
+                recolhidos = INTERPRETES[tipo](bruto, fonte)
         except ErroDeFonte as erro:
             erros.append(f"{fonte['nome']}: {erro}")
+            # Guarda-se o retrato velho: se hoje a página não respondeu, amanhã
+            # compara-se com o último bom e a alteração não se perde pelo meio.
+            if tipo == "pagina" and fonte["nome"] in estado_anterior:
+                retratos[fonte["nome"]] = estado_anterior[fonte["nome"]]
             continue
         except ET.ParseError as erro:
             erros.append(f"{fonte['nome']}: XML inválido ({erro})")
@@ -349,7 +475,10 @@ def recolher(caminho_fontes: Path, dias: int = 7) -> tuple[list[dict], list[str]
             continue
 
         if not recolhidos:
-            erros.append(f"{fonte['nome']}: respondeu, mas sem itens aproveitáveis")
+            # Uma página que não mudou é o caso normal e não é erro nenhum. Nas
+            # outras fontes é: um feed que responde sem itens está avariado.
+            if tipo != "pagina":
+                erros.append(f"{fonte['nome']}: respondeu, mas sem itens aproveitáveis")
             continue
 
         # Teto por fonte. Os itens já vêm ordenados pela própria fonte (mais
@@ -370,4 +499,4 @@ def recolher(caminho_fontes: Path, dias: int = 7) -> tuple[list[dict], list[str]
             vistos_nesta_corrida.add(item["id"])
             itens.append(item)
 
-    return itens, erros, avisos
+    return itens, erros, avisos, retratos
