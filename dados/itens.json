@@ -1,5 +1,390 @@
 [
   {
+    "id": "f3a2ec927a69",
+    "titulo": "GPT-3 is discontinued today",
+    "resumo": "It had such a long run. It was my first introduction to modern language models. I remember getting slightly excited over it. And now it lives purely in our memories. Arguably what's more infuriating is that they suggest using GPT-5.6 Terra as a replacement. Keep in mind that Babbage is a model that's literally 3/4 of the size than MiniCPM5 2B. Even Luna might be overkill as a replacement. But neit…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws67x4/gpt3_is_discontinued_today/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "ef05bd790ff4",
+    "titulo": "3090 for $1500???",
+    "resumo": "A couple weeks ago, I thought they were selling for 1200. On eBay now, the cheapest \"buy it now\" seems to be just shy of 1500. It feels like we're in a game of GPU musical chairs now. submitted by /u/sleight42 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws8f1r/3090_for_1500/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "e71d531d33b5",
+    "titulo": "supermemoryai/company-brain",
+    "resumo": "726 estrelas, Apache-2.0, TypeScript. Open-sourcing our company brain - A teammate in your Slack that remembers everything your team says, and can go do the work.",
+    "url": "https://github.com/supermemoryai/company-brain",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-27"
+  },
+  {
+    "id": "d8597bfbe116",
+    "titulo": "dzhng/jevgrep",
+    "resumo": "1097 estrelas, MIT, TypeScript. Find code by asking what it does. A CLI for coding agents that uses Jev to discover relevant files and source context.",
+    "url": "https://github.com/dzhng/jevgrep",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "d151c9c255aa",
+    "titulo": "maximilianfeix/proxy-scraper",
+    "resumo": "21 estrelas, MIT, Python. Free proxies that actually work: 700+ sources, every hit verified (honeypots, injected scripts, TLS), a live list every hour, a rotating proxy server and an MCP server for AI agents.",
+    "url": "https://github.com/maximilianfeix/proxy-scraper",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "c7b7dafa30a4",
+    "titulo": "SysAdminDoc/HushFacebook",
+    "resumo": "70 estrelas, GPL-3.0, Java. Hushfacebook v0.3.4: 43 patches for Facebook 580.0.0.51.74 with Morphe. Control ads and suggested posts, save videos, customize playback and use a focused Marketplace mode.",
+    "url": "https://github.com/SysAdminDoc/HushFacebook",
+    "fonte": "GitHub — Android",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "c4933eace51b",
+    "titulo": "macOS 27 ships a free local LLM on Apple Silicon Macs. I made it easy to use from Node and Python",
+    "resumo": "Apple Silicon Macs on macOS 26+ come with a small LLM built in. No download, no API key, and nothing leaves your Mac. Why I built it I was making a tool that writes API docs from code, and I didn't want users to install Ollama or paste an API key. Apple's model was already on their Mac, so I used it. Getting it to work well was harder than expected. At temperature 0 it kept repeating itself, and a…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws5l5p/macos_27_ships_a_free_local_llm_on_apple_silicon/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "bca476fd3463",
+    "titulo": "Niko1221/Strata",
+    "resumo": "697 estrelas, sem licença declarada, C++. Qwen3.8-Flash-Next (125B MoE) on a 8GB+ NVIDIA GPU: one-click install for Windows / Linux. Strata inference engine, OpenAI/Anthropic API on localhost, optional image input.",
+    "url": "https://github.com/Niko1221/Strata",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "b8013526bac1",
+    "titulo": "I’m calling this the Monstrosity. 5 ex mining BC-250 boards Qwen3-Coder-Next Q4 at 40 tok/s",
+    "resumo": "Using an asrock 12 unit case running one board as the main with the rest of them headless. About 71GB of vram exposed. So far 40 tok/s is with 30k context and it dips to around 30 tok/s at 100k context. This is all over the 1gb Ethernet that is on the boards already. I have 2 more of these and will probably get them running to see if 3.8 flash next runs at usable speeds. This setup is wildly ineff…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws49si/im_calling_this_the_monstrosity_5_ex_mining_bc250/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "af3976d94a76",
+    "titulo": "Minisforum MS-S1 MAX-P495 @ €7.799,00",
+    "resumo": "MINISFORUM MS-S1 MAX-P495 – Minisforum EU Expected to ship mid october. At that price point, it doesn't make a whole lot of sense in my opinion. I get that ram prices are where they are, i get that it's a newer model of hardware, but twice the price for 50% more ram and ~5-10% more performance is just hard, especially when compared to the recently released m5 ultra studio. submitted by /u/streppel…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws77kn/minisforum_mss1_maxp495_779900/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "aa2cd854ac34",
+    "titulo": "ollaya-dev/ollaya",
+    "resumo": "787 estrelas, Apache-2.0, Rust. Run open decision models locally: pull and serve Laya, decider, NLI and GLiClass behind a TypeSafe-compatible API. Ollama for decision models.",
+    "url": "https://github.com/ollaya-dev/ollaya",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "a28b36f14665",
+    "titulo": "Holo4",
+    "resumo": "Holo4 -27B-GGUF is a vision-language model (VLM) for Computer Use, built on the Qwen3.8 dense architecture and developed by H Company . Used with the hai-agents harness , it can send screenshots and tool results to the model, then execute its requested clicks, typing, code, and tool calls. https://huggingface.co/Hcompany/Holo4-27B-GGUF Holo4 -35B-A3B-GGUF is a vision-language model (VLM) for Compu…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsbi1y/holo4/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "9552195c964d",
+    "titulo": "Holo4: powering generalist computer-use agents",
+    "resumo": "",
+    "url": "https://huggingface.co/blog/Hcompany/holo4",
+    "fonte": "Hugging Face",
+    "camada": 1,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "91a383b6f98a",
+    "titulo": "BagasRizkyHarySaputra/MLBB-waydroid-LinuxCloudMLBB",
+    "resumo": "201 estrelas, MIT, Shell. Play Mobile Legends: Bang Bang (MLBB) on Linux via Waydroid — and stream it to your Android phone as cloud gaming (Sunshine + Artemis/Moonlight). Working multi-touch, Intel VAAPI encoding, one-command launcher.",
+    "url": "https://github.com/BagasRizkyHarySaputra/MLBB-waydroid-LinuxCloudMLBB",
+    "fonte": "GitHub — Android",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "87fc25ac5b1c",
+    "titulo": "3090 NVLink bridges: are there clones of these? why are they so insanely expensive?",
+    "resumo": "I think I need a 3-slot for my two cards. but holy fuck these things are pricey. submitted by /u/starkruzr [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws6bwf/3090_nvlink_bridges_are_there_clones_of_these_why/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "80053acc608c",
+    "titulo": "Avinash-jetwani/jevmem",
+    "resumo": "92 estrelas, MIT, TypeScript. Automatic project memory for Claude Code. Also works with Cursor and Codex.",
+    "url": "https://github.com/Avinash-jetwani/jevmem",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-26"
+  },
+  {
+    "id": "7ec19f7513b6",
+    "titulo": "georgeding/Relate",
+    "resumo": "117 estrelas, AGPL-3.0, JavaScript. 记得她说过的每一句话，也记得你答应过的每一件事。A self-hosted AI chief of staff for your chats — remembers what they said and what you promised.",
+    "url": "https://github.com/georgeding/Relate",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-24"
+  },
+  {
+    "id": "7e1ebcd8e9e3",
+    "titulo": "Guys I promise It wasn't me 😭😭",
+    "resumo": "https://preview.redd.it/psc1tc7lx8sh1.png?width=733&format=png&auto=webp&s=32cccd895c37b537d3b09c9b00c27e3d881638f4 https://www.reddit.com/r/LocalLLaMA/s/ddBWXZd3Hu submitted by /u/SilverRegion9394 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsc0iz/guys_i_promise_it_wasnt_me/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "529cc606ad9a",
+    "titulo": "GPU Glossary",
+    "resumo": "Comments",
+    "url": "https://modal.com/gpu-glossary",
+    "fonte": "Lobsters — IA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "4f749a2b3d64",
+    "titulo": "Liked Muse, so I cut the 30B model in half by width, distilled it back, and it does 57 of 60 tool tasks its parent does 60 of",
+    "resumo": "I've liked how Muse-Glimmer worked, so I wanted to see if I could produce a smaller \"kid\" out of it. Ornith's sharp decisions on when to think and which tool to call were the other thing I liked, so Ornith-1.0-9B got to be the policy teacher while the parent wrote the words. No RL anywhere, distillation only. I present to you Xyntetik-Kvist-14B . What it is good for Smaller than the Muse parent bu…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws6bmh/liked_muse_so_i_cut_the_30b_model_in_half_by/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "4968042193f8",
+    "titulo": "Musk, the Movie",
+    "resumo": "154 pontos e 103 comentários no Hacker News",
+    "url": "https://bleeckerstreetmedia.com/musk",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "41233231a58e",
+    "titulo": "It would be really cool to have an official 3D-print engineering benchmark/leaderboard like this",
+    "resumo": "Someone prompted different LLMs to generate CAD code for a bridge under fixed constraints (2-foot span, under 500g filament, 18-hour print limit), printed them, and load-tested them to failure. The results were quite varied: some models couldn't even design parts that fit together, while the winner held over 100 lbs. Most benchmarks don't really capture physical intuition, spatial reasoning, and f…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws0pdp/it_would_be_really_cool_to_have_an_official/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "3ecfcaefa6e0",
+    "titulo": "VeriLoop E2 vs Qwen 3.8 27B Base , Another Benchmaxxed slop or?",
+    "resumo": "I've been testing VeriLoop E2 for a bit another benchmaxxed Finetune slop or treasure and wanted to try it in GSQ-RCO as well. So I made a 3-bit GSQ-RCO quant of VeriLoop E2 and compared it with the other two 27B models I was using: Qwen 3.8 27B UD Q4_K_M Qwen 3.8 27B IQ3_XXS GSQ-RCO VeriLoop E2 IQ3_XXS GSQ-RCO I gave all three the same website generation task. Honestly, the VeriLoop E2 quant surp…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wsbtxp/veriloop_e2_vs_qwen_38_27b_base_another/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "32a09c945830",
+    "titulo": "BelmanteGu/UltraStreetFighterIVRecomp",
+    "resumo": "18 estrelas, GPL-3.0, Java. Unofficial static recompilation of Ultra Street Fighter IV (Xbox 360) to native code for macOS and Android, with a native Vulkan renderer. No game code or assets included.",
+    "url": "https://github.com/BelmanteGu/UltraStreetFighterIVRecomp",
+    "fonte": "GitHub — Android",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "207e2de0be56",
+    "titulo": "alexgreensh/anidoodle",
+    "resumo": "624 estrelas, Apache-2.0, TypeScript. Art and animation, written as code. Illustrations, loops, interactive web art, stickers and scored films in dozens of styles, identical on every render.",
+    "url": "https://github.com/alexgreensh/anidoodle",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "139cada8b3cf",
+    "titulo": "mexicat/pdoom-video",
+    "resumo": "1559 estrelas, MIT, TypeScript. Code-rendered music video for \"I'm Upping My P(doom)\"",
+    "url": "https://github.com/mexicat/pdoom-video",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "11dbeb6f3a4a",
+    "titulo": "FT: Corporate America rejects overpriced frontier, embraces open models",
+    "resumo": "submitted by /u/chocolateUI [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrzpzg/ft_corporate_america_rejects_overpriced_frontier/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "1022d7867309",
+    "titulo": "modified qwen 3.8 27b modifies windows credential dumper to bypass EDR detection",
+    "resumo": "link to original article TLDR: security researcher eddie zhang used a modified+uncensored local qwen 3.8 27b to create an executable capable of dumping LSASS memory for credential harvesting while evading 2 modern EDR security products. this makes me reflect on how cloud providers keep putting guardrails on everything to the point where even authorized testing gets blocked. local models are the on…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws7csk/modified_qwen_38_27b_modifies_windows_credential/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "0e8b163e7497",
+    "titulo": "NVIDIA shipped OpenShell, an open source sandbox that gives local and open agents real runtime limits instead of prompt rules. Over 100 firms joined the safety stack. OpenAI did not.",
+    "resumo": "https://x.com/JensenHuang/status/2104499465055023424 submitted by /u/InternationalGap3698 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws9ydg/nvidia_shipped_openshell_an_open_source_sandbox/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "0dc955c86c2b",
+    "titulo": "Owed a billion dollars in Nvidia stock",
+    "resumo": "795 pontos e 331 comentários no Hacker News",
+    "url": "https://colo.to/nvidia-stock-narrative.html",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "0718cf053d9a",
+    "titulo": "ElasticEmail/elasticemail-examples",
+    "resumo": "22 estrelas, MIT, TypeScript. Real-world Elastic Email examples for transactional email, SMTP, webhooks, inbound email, contacts, serverless platforms and AI coding agents across 20+ languages and frameworks.",
+    "url": "https://github.com/ElasticEmail/elasticemail-examples",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-23"
+  },
+  {
+    "id": "0409931aab41",
+    "titulo": "If you are running Qwen 3.8 Flash Next on Strix Halo, use this software for inference. It's so much faster than llama.cpp especially at high context.",
+    "resumo": "Here's the project. I have nothing to do with it. I'm just an amazed user. https://github.com/gufo-org/gufo/blob/main/docs/models/qwen3.8-flash-next/BENCHMARKS.md Those benchmark numbers hold up on real work loads. Here are some numbers I got during a chat. \"[6204 chunks in 119.0 s | encode: 1239 tok/s | decode: 57 tok/s]\" That's with MTP on. The PP speed in particular is just so fast. That PP spe…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ws8dpy/if_you_are_running_qwen_38_flash_next_on_strix/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "0365ec89c7e5",
+    "titulo": "yetone/magpie",
+    "resumo": "1500 estrelas, MIT, Go. Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
+    "url": "https://github.com/yetone/magpie",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-28",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-25"
+  },
+  {
+    "id": "fceb26d4d32c",
+    "titulo": "Naive-N0.5-Flash - 309B-A15.5B",
+    "resumo": "https://naive.ai/en/research/ Built for coding and AI R&D 1M context Hybrid SWA/DSA submitted by /u/nullmove [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrs58t/naiven05flash_309ba155b/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "f94c0a1e56c7",
+    "titulo": "The Normalization of Inexplicable Failures",
+    "resumo": "268 pontos e 113 comentários no Hacker News",
+    "url": "https://www.ihatethefuture.com/2026/09/the-normalization-of-inexplicable.html",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "edfd5b7d1fce",
     "titulo": "SupersonicLabs/Julia-1 · Hugging Face",
     "resumo": "New open source Jev like model for running on local devices from a group called Supersonic Labs. It's a 144M param local non-generative local classifier. From their site : Julia 1 opens our research into compact decision models. It builds on mmBERT-small , a multilingual encoder, and chooses among answers supplied with a question. It has 144.3 million parameters and runs on a CPU. Our question: ca…",
@@ -9,6 +394,28 @@
     "data": "2026-09-27",
     "veredicto": "incerto",
     "recolhido": "2026-09-27"
+  },
+  {
+    "id": "e7cec350da66",
+    "titulo": "Show HN: Lofi Cities – Pixel-art city nights with browser-generated lofi",
+    "resumo": "266 pontos e 113 comentários no Hacker News",
+    "url": "https://loficities.com/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "dc79517c06f4",
+    "titulo": "Swift 1.5 Qwen3.8 27b (A must-have for low thinking!)",
+    "resumo": "Just made this post for those who missed it : https://huggingface.co/ukisai/Swift-1.5-Qwen3.8-27b UkisAI released their updated Qwen 27B (tuned for token efficiency). I grabbed the IQ4_XS quant to test against Unsloth's Q4_K_S: Low-thinking: UkisAI consistently beat Unsloth in most of my tests. High-thinking: Unsloth still pulled ahead here. I was struggling with a custom script in Directory Opus.…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrv6bp/swift_15_qwen38_27b_a_musthave_for_low_thinking/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
   },
   {
     "id": "d3f41e6b38ea",
@@ -44,6 +451,50 @@
     "recolhido": "2026-09-27"
   },
   {
+    "id": "c90beaa345be",
+    "titulo": "When did Google get so weird?",
+    "resumo": "1407 pontos e 761 comentários no Hacker News",
+    "url": "https://sancho.bearblog.dev/google-weird/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "c6f1dde94675",
+    "titulo": "SNL Weekend Update: Anthropic CEO Dario Amodei on A.I.'S Threat to Humanity [video]",
+    "resumo": "185 pontos e 98 comentários no Hacker News",
+    "url": "https://www.youtube.com/watch?v=-Nvne3LzBls",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "c523e4870857",
+    "titulo": "PostmarketOS is rebranding as Nura",
+    "resumo": "180 pontos e 55 comentários no Hacker News",
+    "url": "https://nura.eco/blog/2026/09/27/nura-rename/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "c219fe8f6b6a",
+    "titulo": "Tells of a Slop UI",
+    "resumo": "369 pontos e 234 comentários no Hacker News",
+    "url": "https://hereticpleb.vercel.app/blog/10-tells-of-slop",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "c111e5332cd2",
     "titulo": "Which of the 16gb VRAM qwen3.8 27b’s is the best?",
     "resumo": "I’m having a hard time finding out which one gives you fastest speed, maximum context with best possible quality. I can run unsloth qwen3.8 27b iq4_xs with 65k q8 kv, context without MTP and vision offloaded to cpu. But also kinda slow for agentic work at like 30ish tok/s )I mean it’s acceptable) But that is like bare minimum for harness stuff, I know many people use Q3 quants but are Q3 quants re…",
@@ -55,9 +506,31 @@
     "recolhido": "2026-09-27"
   },
   {
+    "id": "bc5da742d312",
+    "titulo": "In an $80 motel room, a discovery to shed light on the origins of life",
+    "resumo": "257 pontos e 96 comentários no Hacker News",
+    "url": "https://www.nytimes.com/2026/09/26/science/motel-science-discovery.html",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "b9995e163582",
+    "titulo": "On caring for user data: NeoVim caused Vim undo files to be deleted",
+    "resumo": "375 pontos e 329 comentários no Hacker News",
+    "url": "https://unsung.aresluna.org/they-had-no-concept-of-a-duty-of-care-to-their-users/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "b77ebbdec9cb",
     "titulo": "Meta Blocks President Lula's Facebook Page, Campaign Ads 2 Weeks from Election",
-    "resumo": "175 pontos e 94 comentários no Hacker News",
+    "resumo": "445 pontos e 295 comentários no Hacker News",
     "url": "https://www.reddit.com/r/worldnews/comments/1wr3id3/meta_blocks_president_lulas_facebook_page_and/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -88,15 +561,114 @@
     "recolhido": "2026-09-27"
   },
   {
+    "id": "a3fb6b999021",
+    "titulo": "... so, yeah.",
+    "resumo": "Finally got 3.8-Flash-Next running on my M4Pro 48GB Mac with https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF Dense 3.8-27B is just faster... and maybe better due to quantization level... EDIT: Hold a second, Flash-Next is actually performing faster than 27B after some key flags on llama.cpp. it's Holding up to 131K without OOM-ing..... maybe... 0.36.940.283 I srv load: --top-k 0…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrutx9/so_yeah/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "a365d26f319b",
+    "titulo": "Ember-1",
+    "resumo": "493 pontos e 224 comentários no Hacker News",
+    "url": "https://fireworks.ai/blog/ember-1",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "a34ad8fd820b",
+    "titulo": "shihabal3amri/DiAuto",
+    "resumo": "30 estrelas, AGPL-3.0, Kotlin. Wireless and USB Android Auto receiver for BYD DiLink. No extra phone app or dongle.",
+    "url": "https://github.com/shihabal3amri/DiAuto",
+    "fonte": "GitHub — Android",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "9ebfd72d3c08",
+    "titulo": "Replacing the old battery on rechargeable bike lights",
+    "resumo": "178 pontos e 100 comentários no Hacker News",
+    "url": "https://jvns.ca/blog/2026/09/27/replacing-the-old-battery-on-rechargeable-bike-lights/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "9ddc30b05480",
+    "titulo": "Adding logit penalty for \"wait\", \"maybe\" and \"perhaps\" to Qwen models improves their accuracy",
+    "resumo": "Meta came out with a banger paper https://arxiv.org/pdf/2606.00206 , but it did not look at various quantizations supported in llama.cpp. So I did a run on 50 random MATH-500 questions ( https://huggingface.co/datasets/HuggingFaceH4/MATH-500 ) and ran it on various quantizations of https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF and tried --logit-bias 466-2 --logit-bias 694-2 --logit-bias 13…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wromzr/adding_logit_penalty_for_wait_maybe_and_perhaps/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "9cb7937215b6",
     "titulo": "tobi/disktree",
-    "resumo": "1431 estrelas, MIT, Rust. A treemap for finding and removing what fills your disk, for Omarchy. Rust + GPUI.",
+    "resumo": "1750 estrelas, MIT, Rust. A treemap for finding and removing what fills your disk, for Omarchy. Rust + GPUI.",
     "url": "https://github.com/tobi/disktree",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
     "data": "2026-09-27",
     "veredicto": "incerto",
     "recolhido": "2026-09-26"
+  },
+  {
+    "id": "97f7725daf42",
+    "titulo": "Self-Hosting on the Dark Web",
+    "resumo": "228 pontos e 86 comentários no Hacker News",
+    "url": "https://david.alvarezrosa.com/posts/self-hosting-on-the-dark-web/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "969e61d8ffc5",
+    "titulo": "Qwen company already rushed out a Jev competitor. No open weights yet.",
+    "resumo": "EDIT: About that, I tried it out, and it's garbage so far. I did some basic tests through AIHubMix (do not use that platform btw, it's trash), and my agent did some comparison. I guess it figures, it was a model they released just days after the Jev hype started. The agent's analysis is below: AI Agent's output: ``` I thoroughly tested https://aihubmix.com/v1/systemone using the provided API key a…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrz9py/qwen_company_already_rushed_out_a_jev_competitor/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "8ed1a2b54d62",
+    "titulo": "BelmanteGu/RaymanOriginsRecomp",
+    "resumo": "51 estrelas, GPL-3.0, C++. Unofficial static recompilation of Rayman Origins (Xbox 360) for PC and Android, using XenonRecomp. No game code or assets included.",
+    "url": "https://github.com/BelmanteGu/RaymanOriginsRecomp",
+    "fonte": "GitHub — Android",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-26"
+  },
+  {
+    "id": "83f483508a2a",
+    "titulo": "ArmanOskouei/Pishdad",
+    "resumo": "12 estrelas, MIT, linguagem não declarada. Laravel CMS + Next.js. Free, open-source, self-hosted Persian CMS — پارسی، فارسی. Install plugins and themes, own your data.",
+    "url": "https://github.com/ArmanOskouei/Pishdad",
+    "fonte": "GitHub — PHP",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
   },
   {
     "id": "7f721f274886",
@@ -121,6 +693,28 @@
     "recolhido": "2026-09-27"
   },
   {
+    "id": "6cd5459c7890",
+    "titulo": "Qwen plays World of Warcraft",
+    "resumo": "Been doing a bunch of vibe coding lately. Had my agents host a private WoW server for me, then built out a web browser client so you can play without installing the game and it has mobile controls. Afterwards, created a custom mcp to drive the client and have finer game control than a generic browser agent. The agent harness can plug into your local or cloud LLMs and be used to drive the game. For…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wry136/qwen_plays_world_of_warcraft/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "66af25621bdf",
+    "titulo": "Don't couple your Go code to GitHub",
+    "resumo": "260 pontos e 124 comentários no Hacker News",
+    "url": "https://iain.rocks/blog/dont-couple-your-go-code-to-github",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "65a4defc2a58",
     "titulo": "Navigating Cost Efficient Hardware in these Volatile Times",
     "resumo": "Where to even begin on this one...I guess I should start by acknowledging the risk vs reward for vendors other than nvidia, so: Yes I understand that nvidia are dominant currently on speed (llm and imagegen) and software ecosystem. I am too am hopefuly that software stack support continues to improve with other vendors. The current lag for other vendors is not a priority concern (it falls behind t…",
@@ -143,6 +737,17 @@
     "recolhido": "2026-09-26"
   },
   {
+    "id": "54d4186cb6cc",
+    "titulo": "Mimo v2.6 flash MOPD",
+    "resumo": "submitted by /u/Automatic-Arm8153 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrq71o/mimo_v26_flash_mopd/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "4ea9a41ac8ac",
     "titulo": "5 items in MiMo-V2.6",
     "resumo": "3 visible models are 1T, 311B and 9B, let's dream about two more... ;) submitted by /u/jacek2023 [link] [comments]",
@@ -156,7 +761,7 @@
   {
     "id": "4cc932e36cc0",
     "titulo": "What is the size of Yemen? (2024)",
-    "resumo": "176 pontos e 60 comentários no Hacker News",
+    "resumo": "254 pontos e 78 comentários no Hacker News",
     "url": "https://theborys.substack.com/p/what-is-the-size-of-yemen",
     "fonte": "Hacker News",
     "camada": 2,
@@ -165,9 +770,31 @@
     "recolhido": "2026-09-27"
   },
   {
+    "id": "4aa8cdc749d3",
+    "titulo": "There are no \"rogue\" AI agents",
+    "resumo": "370 pontos e 252 comentários no Hacker News",
+    "url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "480596ef2d02",
+    "titulo": "The Opus 5.5 posts about motion graphics are cool but Qwen 27B made this on a 4090",
+    "resumo": "Saw the hundreds of tweets where people just keep asking Opus 5.5 for motion graphic videos. Decided to ask qwen to look at them and make its own. Quite amazing what local can achieve. **EDIT** It looks laggy because of reddits .gif limit btw the full high res version (with sound) is here: https://x.com/mkultraware/status/2104192428664127555 Promted and built in: https://github.com/mkultraware/acc…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrjlls/the_opus_55_posts_about_motion_graphics_are_cool/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "422f82198929",
-    "titulo": "OpenAI Feared \"Optics\" of what might appear on Hacker News",
-    "resumo": "228 pontos e 196 comentários no Hacker News",
+    "titulo": "Unsealed Briefs in Authors’ Case v. Microsoft/OpenAI",
+    "resumo": "617 pontos e 604 comentários no Hacker News",
     "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -187,9 +814,20 @@
     "recolhido": "2026-09-26"
   },
   {
+    "id": "2d2084a857f4",
+    "titulo": "Qwen3.8-Flash-Next 177B NVFP4(119GiB): SSD streaming at 9-10 tok/s on one 16 GB RTX 5060 Ti + 32 GB RAM",
+    "resumo": "We built an inference engine InferredThoughts for MoE models that don't fit in VRAM + RAM. Most of the model stays on the SSD, and experts are read as tokens need them. This started as a proof of concept, and poc worked, we are getting 9-10 tok/s decode on Qwen3.8-Flash-Next NVFP4 (9.06 on the benchmark turn, 10.4 on the best turn). This is just the start. With better SSD streaming, we expect v2 t…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrxap8/qwen38flashnext_177b_nvfp4119gib_ssd_streaming_at/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "145fd777155f",
     "titulo": "XiaoPuOuO/openchatx-mcp",
-    "resumo": "135 estrelas, MIT, TypeScript. Turn ChatGPT into a local agent runtime. Operate your computer, use local tools, discover MCP servers, and delegate work to your own models through one MCP connection.",
+    "resumo": "183 estrelas, MIT, TypeScript. Turn ChatGPT into a local agent runtime. Operate your computer, use local tools, discover MCP servers, and delegate work to your own models through one MCP connection.",
     "url": "https://github.com/XiaoPuOuO/openchatx-mcp",
     "fonte": "GitHub — MCP",
     "camada": 2,
@@ -200,7 +838,7 @@
   {
     "id": "0fe1fa73ebf8",
     "titulo": "mikehasa/golive-skill",
-    "resumo": "992 estrelas, MIT, TypeScript. Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account, backend or telemetry.",
+    "resumo": "1030 estrelas, MIT, TypeScript. Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account, backend or telemetry.",
     "url": "https://github.com/mikehasa/golive-skill",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -211,7 +849,7 @@
   {
     "id": "0c71d4286181",
     "titulo": "If we do not stop to help each other, what do we become?",
-    "resumo": "183 pontos e 70 comentários no Hacker News",
+    "resumo": "205 pontos e 89 comentários no Hacker News",
     "url": "https://blog.codinghorror.com/if-we-do-not-stop-to-help-each-other-what-do-we-become/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -220,20 +858,31 @@
     "recolhido": "2026-09-27"
   },
   {
-    "id": "0365ec89c7e5",
-    "titulo": "yetone/magpie",
-    "resumo": "1149 estrelas, MIT, Go. Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
-    "url": "https://github.com/yetone/magpie",
-    "fonte": "GitHub — repositórios novos em alta",
+    "id": "0b5563f17147",
+    "titulo": "How do you guys give your models web browsing capabilities?",
+    "resumo": "I am using the Deepseek Harness, which has webfetch plugins by default. While it can help browse the internet, I myself have to give it specific URLs to search. But, apparently you can give it the full web browser and search engine capabilities. Unfortunately, it apparently needs API keys, and most are paid APIs. And the ones that are free and unlimited are really unreliable and often gets rate-li…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wro7hg/how_do_you_guys_give_your_models_web_browsing/",
+    "fonte": "r/LocalLLaMA",
     "camada": 2,
     "data": "2026-09-27",
     "veredicto": "incerto",
-    "recolhido": "2026-09-25"
+    "recolhido": "2026-09-28"
+  },
+  {
+    "id": "0144bd74d40c",
+    "titulo": "How to Level Up Your Portfolio in the AI Era: From Technical Writer to Developer Educator",
+    "resumo": "Until recently, building a technical writing portfolio could be as simple as creating a website, adding a list of articles, describing your writing experience, and linking to your social profiles. Tha",
+    "url": "https://www.freecodecamp.org/news/how-to-level-up-your-portfolio-in-the-ai-era-from-technical-writer-to-developer-educator/",
+    "fonte": "freeCodeCamp",
+    "camada": 3,
+    "data": "2026-09-27",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
   },
   {
     "id": "fc201052ac82",
     "titulo": "Drawgent: Coding agent on a live Excalidraw canvas",
-    "resumo": "155 pontos e 42 comentários no Hacker News",
+    "resumo": "175 pontos e 46 comentários no Hacker News",
     "url": "https://tangled.org/yanndegat.tngl.sh/drawgent",
     "fonte": "Hacker News",
     "camada": 2,
@@ -251,17 +900,6 @@
     "data": "2026-09-26",
     "veredicto": "incerto",
     "recolhido": "2026-09-26"
-  },
-  {
-    "id": "e71d531d33b5",
-    "titulo": "supermemoryai/company-brain",
-    "resumo": "603 estrelas, Apache-2.0, TypeScript. Open-sourcing our company brain - A teammate in your Slack that remembers everything your team says, and can go do the work.",
-    "url": "https://github.com/supermemoryai/company-brain",
-    "fonte": "GitHub — repositórios novos em alta",
-    "camada": 2,
-    "data": "2026-09-26",
-    "veredicto": "incerto",
-    "recolhido": "2026-09-27"
   },
   {
     "id": "e5f98069ee17",
@@ -288,7 +926,7 @@
   {
     "id": "cf39f2b97963",
     "titulo": "I'm the mom in that viral Giants clip. Let me tell you about my husband",
-    "resumo": "516 pontos e 203 comentários no Hacker News",
+    "resumo": "589 pontos e 236 comentários no Hacker News",
     "url": "https://themomoftheyear.substack.com/p/im-the-mom-in-that-viral-giants-clip",
     "fonte": "Hacker News",
     "camada": 2,
@@ -365,7 +1003,7 @@
   {
     "id": "b98ffd651fb0",
     "titulo": "graygnatconsole/mcp-audit-tool",
-    "resumo": "86 estrelas, MIT, Python. 🛡️ Security audit CLI for Model Context Protocol (MCP) servers — scan AI agent configs for tool poisoning, rug pulls, hardcoded secrets, command injection & supply-chain risks. Pure Python, SARIF + CI ready.",
+    "resumo": "118 estrelas, MIT, Python. 🛡️ Security audit CLI for Model Context Protocol (MCP) servers — scan AI agent configs for tool poisoning, rug pulls, hardcoded secrets, command injection & supply-chain risks. Pure Python, SARIF + CI ready.",
     "url": "https://github.com/graygnatconsole/mcp-audit-tool",
     "fonte": "GitHub — MCP",
     "camada": 2,
@@ -409,7 +1047,7 @@
   {
     "id": "ab6a90f5d123",
     "titulo": "One Month Without AI",
-    "resumo": "174 pontos e 222 comentários no Hacker News",
+    "resumo": "183 pontos e 226 comentários no Hacker News",
     "url": "https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html",
     "fonte": "Hacker News",
     "camada": 2,
@@ -420,13 +1058,24 @@
   {
     "id": "a79507a5af03",
     "titulo": "rudratoshs/buried-injections",
-    "resumo": "19 estrelas, MIT, Python. 🛡️ Regex catches 0%, Meta's Prompt Guard 2 catches 1% of 629 realistic AgentDojo injection attacks when they're buried in tool output. Reproducible benchmark.",
+    "resumo": "21 estrelas, MIT, Python. 🛡️ Regex catches 0%, Meta's Prompt Guard 2 catches 1% of 629 realistic AgentDojo injection attacks when they're buried in tool output. Reproducible benchmark.",
     "url": "https://github.com/rudratoshs/buried-injections",
     "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-26",
     "veredicto": "incerto",
     "recolhido": "2026-09-26"
+  },
+  {
+    "id": "9c91f3efc907",
+    "titulo": "An agent used DNS to reach an external chatbot",
+    "resumo": "183 pontos e 171 comentários no Hacker News",
+    "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-26",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
   },
   {
     "id": "9bc9e0ff6539",
@@ -442,7 +1091,7 @@
   {
     "id": "9b44c7a4f62f",
     "titulo": "Jury finds Facebook liable for deceiving users in Cambridge Analytica case",
-    "resumo": "406 pontos e 105 comentários no Hacker News",
+    "resumo": "421 pontos e 106 comentários no Hacker News",
     "url": "https://www.cbsnews.com/news/facebook-liable-deceiving-users-cambridge-analytica/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -475,7 +1124,7 @@
   {
     "id": "9191c8293eea",
     "titulo": "Fifteen years later, the Apple Cards origin story",
-    "resumo": "397 pontos e 103 comentários no Hacker News",
+    "resumo": "433 pontos e 114 comentários no Hacker News",
     "url": "https://lexontech.org/fifteen-years-later-the-apple-cards-origin-story",
     "fonte": "Hacker News",
     "camada": 2,
@@ -495,17 +1144,6 @@
     "recolhido": "2026-09-26"
   },
   {
-    "id": "8ed1a2b54d62",
-    "titulo": "BelmanteGu/RaymanOriginsRecomp",
-    "resumo": "42 estrelas, GPL-3.0, C++. Unofficial static recompilation of Rayman Origins (Xbox 360) for PC and Android, using XenonRecomp. No game code or assets included.",
-    "url": "https://github.com/BelmanteGu/RaymanOriginsRecomp",
-    "fonte": "GitHub — Android",
-    "camada": 2,
-    "data": "2026-09-26",
-    "veredicto": "incerto",
-    "recolhido": "2026-09-26"
-  },
-  {
     "id": "87d40bf4e02c",
     "titulo": "Run Qwen3.8+Flash-Next and tiny models on Apple Silicon up to 3x faster",
     "resumo": "Maybe you'll like it? I hope I get to use my self-promotion credit a tiny little bit here after being in the community so long haha. I was the top of MLX.fast for a while and remain the winner on chips below M5. If you have capacity to contribute further enhancements I'd love that <3 https://github.com/struffl/ishizuki submitted by /u/VagabondTruffle [link] [comments]",
@@ -519,7 +1157,7 @@
   {
     "id": "81a1eba7987b",
     "titulo": "Plunging test scores are a slow-moving catastrophe",
-    "resumo": "187 pontos e 359 comentários no Hacker News. https://archive.ph/n8Akh",
+    "resumo": "205 pontos e 398 comentários no Hacker News. https://archive.ph/n8Akh",
     "url": "https://www.economist.com/leaders/2026/09/10/plunging-test-scores-are-a-slow-moving-catastrophe",
     "fonte": "Hacker News",
     "camada": 2,
@@ -530,24 +1168,13 @@
   {
     "id": "803652575546",
     "titulo": "Breaking Up with Google Play: Why Conversations Is Now Free",
-    "resumo": "666 pontos e 273 comentários no Hacker News",
+    "resumo": "699 pontos e 293 comentários no Hacker News",
     "url": "https://gultsch.de/posts/breaking-up-with-google-play/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-26",
     "veredicto": "incerto",
     "recolhido": "2026-09-27"
-  },
-  {
-    "id": "80053acc608c",
-    "titulo": "Avinash-jetwani/jevmem",
-    "resumo": "87 estrelas, MIT, TypeScript. Automatic project memory for Claude Code. Also works with Cursor and Codex.",
-    "url": "https://github.com/Avinash-jetwani/jevmem",
-    "fonte": "GitHub — MCP",
-    "camada": 2,
-    "data": "2026-09-26",
-    "veredicto": "incerto",
-    "recolhido": "2026-09-26"
   },
   {
     "id": "772298bd491a",
@@ -563,7 +1190,7 @@
   {
     "id": "755e3dc914b2",
     "titulo": "DeepSeek Elastic Compute (DSec)",
-    "resumo": "252 pontos e 85 comentários no Hacker News",
+    "resumo": "320 pontos e 110 comentários no Hacker News",
     "url": "https://arxiv.org/abs/2609.22978",
     "fonte": "Hacker News",
     "camada": 2,
@@ -574,7 +1201,7 @@
   {
     "id": "73a976e998e8",
     "titulo": "Floci: Locally emulating any cloud service",
-    "resumo": "179 pontos e 42 comentários no Hacker News",
+    "resumo": "211 pontos e 48 comentários no Hacker News",
     "url": "https://floci.io",
     "fonte": "Hacker News",
     "camada": 2,
@@ -585,7 +1212,7 @@
   {
     "id": "6ea691e13aab",
     "titulo": "Go Concurrency Distilled",
-    "resumo": "228 pontos e 87 comentários no Hacker News",
+    "resumo": "387 pontos e 180 comentários no Hacker News",
     "url": "https://antonz.org/go-concurrency-distilled/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -607,7 +1234,7 @@
   {
     "id": "6d513ecbfb05",
     "titulo": "One Piece of Flock Camera Data Put This Innocent Woman in Jail for 13 Days",
-    "resumo": "250 pontos e 133 comentários no Hacker News",
+    "resumo": "256 pontos e 141 comentários no Hacker News",
     "url": "https://www.jezebel.com/flock-cameras-data-innocent-woman-arrested-lindsey-isaacs-palm-beach-florida-lawsuit-vehicular-homicide",
     "fonte": "Hacker News",
     "camada": 2,
@@ -618,7 +1245,7 @@
   {
     "id": "60365f1904ef",
     "titulo": "852wa/JIZURA",
-    "resumo": "708 estrelas, MIT, HTML. 歌詞から文字PVを自動で組み立てるブラウザアプリ",
+    "resumo": "909 estrelas, MIT, HTML. 歌詞から文字PVを自動で組み立てるブラウザアプリ",
     "url": "https://github.com/852wa/JIZURA",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -629,7 +1256,7 @@
   {
     "id": "58df322f46a9",
     "titulo": "nano-muse/nanoMuse",
-    "resumo": "18 estrelas, GPL-3.0, Kotlin. nanoMuse: a fully open-source, Muse-style personal agent for every device you own. One agent with a name and a face that does things, keeps working while the app is closed, remembers you, and asks before anything you cannot undo. On your Android phone today, with your own model; the phone's screen as a hand, and your PC driven from the phone.",
+    "resumo": "21 estrelas, GPL-3.0, Kotlin. nanoMuse: a fully open-source, Muse-style personal agent for every device you own. One agent with a name and a face that does things, keeps working while the app is closed, remembers you, and asks before anything you cannot undo. On your Android phone today, with your own model; the phone's screen as a hand, and your PC driven from the phone.",
     "url": "https://github.com/nano-muse/nanoMuse",
     "fonte": "GitHub — MCP",
     "camada": 2,
@@ -640,7 +1267,7 @@
   {
     "id": "53c6959c1870",
     "titulo": "How to keep enjoying programming in a world of LLMs",
-    "resumo": "231 pontos e 274 comentários no Hacker News",
+    "resumo": "332 pontos e 337 comentários no Hacker News",
     "url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
     "fonte": "Hacker News",
     "camada": 2,
@@ -684,13 +1311,24 @@
   {
     "id": "464712ef80ec",
     "titulo": "Japan moves to tighten rules for foreigners",
-    "resumo": "173 pontos e 485 comentários no Hacker News",
+    "resumo": "203 pontos e 587 comentários no Hacker News",
     "url": "https://www.aljazeera.com/economy/2026/9/25/japan-moves-to-tighten-rules-for-foreigners-throwing-futures-into-doubt",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-26",
     "veredicto": "incerto",
     "recolhido": "2026-09-27"
+  },
+  {
+    "id": "413244550b59",
+    "titulo": "A single function Jev-like wrapper for LLMs, including vision models",
+    "resumo": "152 pontos e 45 comentários no Hacker News",
+    "url": "http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-26",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
   },
   {
     "id": "3c679335531b",
@@ -706,7 +1344,7 @@
   {
     "id": "395440bfb292",
     "titulo": "asokurasu/text-humanizer",
-    "resumo": "738 estrelas, MIT, Python. A completely free open-sourced project designed to humanize AI-generated text through a multilingual LLM-powered rewriting pipeline.",
+    "resumo": "745 estrelas, MIT, Python. A completely free open-sourced project designed to humanize AI-generated text through a multilingual LLM-powered rewriting pipeline.",
     "url": "https://github.com/asokurasu/text-humanizer",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -717,7 +1355,7 @@
   {
     "id": "36075cbc8c0c",
     "titulo": "Show HN: Reladraw – A diagram language where you decide where to place things",
-    "resumo": "316 pontos e 85 comentários no Hacker News. I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software like Draw.io which are powerful but are very time consuming (and inefficient for agents to manipulate). I wanted to have the benefits of both, where you can",
+    "resumo": "397 pontos e 115 comentários no Hacker News. I love making diagrams to help understand, plan, etc. However, the options are (A) auto-placement languages like Mermaid or Graphviz (which don't let me decide how the diagram looks), or (B) software like Draw.io which are powerful but are very time consuming (and inefficient for agents to manipulate). I wanted to have the benefits of both, where you ca",
     "url": "https://github.com/reladraw/reladraw",
     "fonte": "Hacker News",
     "camada": 2,
@@ -728,7 +1366,7 @@
   {
     "id": "331eccad011a",
     "titulo": "We're gonna need a lot more mathematicians",
-    "resumo": "383 pontos e 477 comentários no Hacker News",
+    "resumo": "398 pontos e 491 comentários no Hacker News",
     "url": "https://terrytao.wordpress.com/2026/09/24/were-gonna-need-a-lot-more-mathematicians/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -770,6 +1408,17 @@
     "recolhido": "2026-09-27"
   },
   {
+    "id": "22fb81d30b15",
+    "titulo": "Flip Fluid on Flip Dots",
+    "resumo": "382 pontos e 24 comentários no Hacker News",
+    "url": "https://mitxela.com/projects/flipflip",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-26",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "1ed2b6f28784",
     "titulo": "PyModel/jev-judge-mcp",
     "resumo": "29 estrelas, MIT, Python. Typed judgment tools for MCP agents. TypeSafe's Jev model as verify, screen, find, classify, rerank, decide, compare, extract, review, gate, and score: the model judges, policy decides auto, review, or escalate.",
@@ -792,6 +1441,17 @@
     "recolhido": "2026-09-24"
   },
   {
+    "id": "139b31c180ab",
+    "titulo": "feitangyuan/onetake",
+    "resumo": "635 estrelas, NOASSERTION, Python. Motion films that never cut to the next slide: every beat grows out of the one before, one continuous camera, continuity measured by an oracle. A Claude Agent Skill for product launch films and feature demos.",
+    "url": "https://github.com/feitangyuan/onetake",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-26",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
+  },
+  {
     "id": "08d3b9f9f89f",
     "titulo": "Qwen3.8-27B Q4_K_M on 2x3060",
     "resumo": "For the last few days, I've been using two computers to run multiple agents. My 4x3090 machine is running Qwen 3.8 27B with parallel=2, so I can run two agents at the same time. My pi instances are running on a machine with 2x3060, running/managing smaller models such as Gemma 26B A4B or Qwen 35B A3B. Today, however, I needed my 4x3090 machine for some vLLM work, so I was missing my AI. I decided…",
@@ -805,7 +1465,7 @@
   {
     "id": "08d249cb1c6e",
     "titulo": "breakstageaxe61/genspark-claw",
-    "resumo": "84 estrelas, MIT, JavaScript. 🦀⚡ Community skill pack & CLI for Genspark Claw, OpenClaw & Hermes agents — 5 production-ready SKILL.md skills (deep research, reports, slides, browser automation, AI call prep), zero-dependency Node.js installer, MCP server, one-line install",
+    "resumo": "118 estrelas, MIT, JavaScript. 🦀⚡ Community skill pack & CLI for Genspark Claw, OpenClaw & Hermes agents — 5 production-ready SKILL.md skills (deep research, reports, slides, browser automation, AI call prep), zero-dependency Node.js installer, MCP server, one-line install",
     "url": "https://github.com/breakstageaxe61/genspark-claw",
     "fonte": "GitHub — MCP",
     "camada": 2,
@@ -827,7 +1487,7 @@
   {
     "id": "f597e74dfb85",
     "titulo": "Excel now supports multiple values in a single cell",
-    "resumo": "263 pontos e 190 comentários no Hacker News. Related: https://techcommunity.microsoft.com/blog/excelblog/excel-now...",
+    "resumo": "274 pontos e 193 comentários no Hacker News. Related: https://techcommunity.microsoft.com/blog/excelblog/excel-now...",
     "url": "https://techcommunity.microsoft.com/blog/microsoft365insiderblog/put-multiple-values-in-one-cell-with-lists-and-arrays-in-excel/4559395",
     "fonte": "Hacker News",
     "camada": 2,
@@ -926,7 +1586,7 @@
   {
     "id": "d61607857077",
     "titulo": "What even is an OS now?",
-    "resumo": "298 pontos e 451 comentários no Hacker News",
+    "resumo": "307 pontos e 467 comentários no Hacker News",
     "url": "https://sockpuppet.org/blog/2026/09/25/what-even-is-an-os-now/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -948,13 +1608,24 @@
   {
     "id": "d1defbaf4de8",
     "titulo": "Ollaya – Ollama for open-source, Jev-style decision models",
-    "resumo": "592 pontos e 145 comentários no Hacker News",
+    "resumo": "609 pontos e 145 comentários no Hacker News",
     "url": "https://ollaya.dev/",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-25",
     "veredicto": "incerto",
     "recolhido": "2026-09-26"
+  },
+  {
+    "id": "d1c1d864aa34",
+    "titulo": "Microsoft abandons personal AI chatbot race with Copilot reboot",
+    "resumo": "156 pontos e 148 comentários no Hacker News. https://archive.ph/XJG5V",
+    "url": "https://www.bloomberg.com/news/articles/2026-09-25/microsoft-abandons-personal-ai-chatbot-race-with-copilot-reboot",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-25",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
   },
   {
     "id": "cf359205ae26",
@@ -966,6 +1637,17 @@
     "data": "2026-09-25",
     "veredicto": "incerto",
     "recolhido": "2026-09-25"
+  },
+  {
+    "id": "bebc23a0e61a",
+    "titulo": "Writing Efficient C++ Code (2013)",
+    "resumo": "162 pontos e 126 comentários no Hacker News",
+    "url": "https://asawicki.info/articles/writing_efficient_cpp_code.php",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-25",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
   },
   {
     "id": "bbc67eea93f7",
@@ -1014,7 +1696,7 @@
   {
     "id": "a8f0c46aa261",
     "titulo": "JohnHeibel/PDoomVideo",
-    "resumo": "1112 estrelas, sem licença declarada, JavaScript. Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
+    "resumo": "1353 estrelas, sem licença declarada, JavaScript. Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
     "url": "https://github.com/JohnHeibel/PDoomVideo",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -1058,13 +1740,24 @@
   {
     "id": "9d8134f857c9",
     "titulo": "Ask HN: Who's still keeping a DOS machine up because the business depends on it?",
-    "resumo": "255 pontos e 275 comentários no Hacker News. Do you currently work with or know anyone who is still using: * dBase/Clipper/CLARION/Paradox/other DOS RAD environments on period hardware to run business processes? * CNC mills/spectrometers/microscopes/other industrial instruments controlled by ISA cards (either bespoke or standards like GPIB)? * Anything with a parallel port dongle? If so, I'd be ve",
+    "resumo": "275 pontos e 291 comentários no Hacker News. Do you currently work with or know anyone who is still using: * dBase/Clipper/CLARION/Paradox/other DOS RAD environments on period hardware to run business processes? * CNC mills/spectrometers/microscopes/other industrial instruments controlled by ISA cards (either bespoke or standards like GPIB)? * Anything with a parallel port dongle? If so, I'd be ve",
     "url": "https://news.ycombinator.com/item?id=49848955",
     "fonte": "Hacker News",
     "camada": 2,
     "data": "2026-09-25",
     "veredicto": "incerto",
     "recolhido": "2026-09-27"
+  },
+  {
+    "id": "9a8025219d91",
+    "titulo": "kydlikebtc/awesome-jev",
+    "resumo": "582 estrelas, NOASSERTION, Python. 1207 public resources for Jev, TypeSafe AI's System One decision model, indexed by decision pattern. Source citations, dated link checks and scheduled call-site text checks; runtime and performance are not independently tested here. EN/中文, JSON schema and platform compatibility.",
+    "url": "https://github.com/kydlikebtc/awesome-jev",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-25",
+    "veredicto": "incerto",
+    "recolhido": "2026-09-28"
   },
   {
     "id": "94383651126d",
@@ -1113,7 +1806,7 @@
   {
     "id": "8f9a1c0fbf8a",
     "titulo": "How we learned to stop worrying and love campus surveillance",
-    "resumo": "258 pontos e 139 comentários no Hacker News",
+    "resumo": "264 pontos e 139 comentários no Hacker News",
     "url": "https://fnl.mit.edu/how-we-learned-to-stop-worrying-and-love-campus-surveillance/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -1146,7 +1839,7 @@
   {
     "id": "893cb7d78a9c",
     "titulo": "Revealing the details of how OpenAI agents hacked Hugging Face",
-    "resumo": "720 pontos e 453 comentários no Hacker News",
+    "resumo": "744 pontos e 465 comentários no Hacker News",
     "url": "https://swarmtraces.org/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -1157,7 +1850,7 @@
   {
     "id": "88351a4a7db5",
     "titulo": "Show HN: Jev Plays Pokémon Red",
-    "resumo": "263 pontos e 115 comentários no Hacker News. Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex game than Tetris. So I went with Pokémon. I've spent endless hours playing this game as a child so building this was a ton of fun. I open sourced everything ",
+    "resumo": "273 pontos e 121 comentários no Hacker News. Hey HN! Wanted to share a fun project I've been hacking on. Given Jev can make decisions really fast (but not fast enough to play Doom yet sadly), I wanted to try and push it to play a more complex game than Tetris. So I went with Pokémon. I've spent endless hours playing this game as a child so building this was a ton of fun. I open sourced everything ",
     "url": "https://jev-pokemon.vercel.app/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -1234,7 +1927,7 @@
   {
     "id": "6c027eaa12ee",
     "titulo": "dgreenheck/tidewater",
-    "resumo": "775 estrelas, MIT, JavaScript. Coastal town built with Opus 5.5",
+    "resumo": "875 estrelas, MIT, JavaScript. Coastal town built with Opus 5.5",
     "url": "https://github.com/dgreenheck/tidewater",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -1311,7 +2004,7 @@
   {
     "id": "5e8bd66ca873",
     "titulo": "U.S. appeals court upholds designation of Anthropic as supply chain risk",
-    "resumo": "491 pontos e 869 comentários no Hacker News",
+    "resumo": "496 pontos e 883 comentários no Hacker News",
     "url": "https://www.cnbc.com/2026/09/25/pentagon-anthropic-ai-risk-appeals-court.html",
     "fonte": "Hacker News",
     "camada": 2,
@@ -1344,9 +2037,9 @@
   {
     "id": "5a411421e2d8",
     "titulo": "Goodbye Google",
-    "resumo": "255 pontos e 320 comentários no Hacker News",
+    "resumo": "Comments",
     "url": "https://robert.ocallahan.org/2026/09/goodbye-google.html",
-    "fonte": "Hacker News",
+    "fonte": "Lobsters — IA",
     "camada": 2,
     "data": "2026-09-25",
     "veredicto": "incerto",
@@ -1399,7 +2092,7 @@
   {
     "id": "31c366282409",
     "titulo": "Classified estimates show the NSA is paying billions to test AI models",
-    "resumo": "176 pontos e 106 comentários no Hacker News",
+    "resumo": "177 pontos e 106 comentários no Hacker News",
     "url": "https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models",
     "fonte": "Hacker News",
     "camada": 2,
@@ -1410,7 +2103,7 @@
   {
     "id": "2cefa4e1c5a5",
     "titulo": "Gravity seems holographic. What does that mean for reality?",
-    "resumo": "286 pontos e 221 comentários no Hacker News",
+    "resumo": "295 pontos e 232 comentários no Hacker News",
     "url": "https://www.quantamagazine.org/gravity-seems-holographic-what-does-that-mean-for-reality-20260925/",
     "fonte": "Hacker News",
     "camada": 2,
@@ -1551,17 +2244,6 @@
     "recolhido": "2026-09-23"
   },
   {
-    "id": "0718cf053d9a",
-    "titulo": "ElasticEmail/elasticemail-examples",
-    "resumo": "22 estrelas, MIT, TypeScript. Real-world Elastic Email examples for transactional email, SMTP, webhooks, inbound email, contacts, serverless platforms and AI coding agents across 20+ languages and frameworks.",
-    "url": "https://github.com/ElasticEmail/elasticemail-examples",
-    "fonte": "GitHub — MCP",
-    "camada": 2,
-    "data": "2026-09-25",
-    "veredicto": "incerto",
-    "recolhido": "2026-09-23"
-  },
-  {
     "id": "0447a6245098",
     "titulo": "Usage metrics API adds pull request review stages",
     "resumo": "The enterprise and organization repository-level Copilot usage metrics reports now break down how long pull requests spend in each stage of review. A new pull_request_review_times array on each repos-1-day row… The post Usage metrics API adds pull request review stages appeared first on The GitHub Blog .",
@@ -1575,7 +2257,7 @@
   {
     "id": "018be5fe2386",
     "titulo": "Factorio that you can touch",
-    "resumo": "353 pontos e 125 comentários no Hacker News",
+    "resumo": "359 pontos e 125 comentários no Hacker News",
     "url": "https://factorio.com/blog/post/fff-447",
     "fonte": "Hacker News",
     "camada": 2,
@@ -1630,7 +2312,7 @@
   {
     "id": "f0746bed431e",
     "titulo": "Nisaka520/JevGuide",
-    "resumo": "16 estrelas, MIT, Kotlin. 弦外之音 —— 微信聊天里的关系进展助手：读屏（无障碍树 / 截屏视觉）→ Jev 判读 + 攻略度 → 聊天模型出 3 条候选回复，攻略度常驻挂在屏幕上。不改微信、不发消息、不注入点击。",
+    "resumo": "20 estrelas, MIT, Kotlin. 弦外之音 —— 微信聊天里的关系进展助手：读屏（无障碍树 / 截屏视觉）→ Jev 判读 + 攻略度 → 聊天模型出 3 条候选回复，攻略度常驻挂在屏幕上。不改微信、不发消息、不注入点击。",
     "url": "https://github.com/Nisaka520/JevGuide",
     "fonte": "GitHub — Android",
     "camada": 2,
@@ -1971,7 +2653,7 @@
   {
     "id": "88dd971a2c6a",
     "titulo": "Contrastive-LM/CLM",
-    "resumo": "1729 estrelas, Apache-2.0, Python. ",
+    "resumo": "2118 estrelas, Apache-2.0, Python. ",
     "url": "https://github.com/Contrastive-LM/CLM",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -2510,7 +3192,7 @@
   {
     "id": "dbfbd4ba4421",
     "titulo": "Nisaka520/JevIntent",
-    "resumo": "59 estrelas, MIT, Java. 微信（FkWeChat 插件）：长按消息分析意图 / 情绪 / 回复姿态，只在本机弹提示，对方无感知",
+    "resumo": "61 estrelas, MIT, Java. 微信（FkWeChat 插件）：长按消息分析意图 / 情绪 / 回复姿态，只在本机弹提示，对方无感知",
     "url": "https://github.com/Nisaka520/JevIntent",
     "fonte": "GitHub — Android",
     "camada": 2,
@@ -2532,7 +3214,7 @@
   {
     "id": "d1e55ece7708",
     "titulo": "riba2534/claude-opus-5-5-demo",
-    "resumo": "817 estrelas, sem licença declarada, JavaScript. claude-opus-5-5-demo",
+    "resumo": "873 estrelas, sem licença declarada, JavaScript. claude-opus-5-5-demo",
     "url": "https://github.com/riba2534/claude-opus-5-5-demo",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -2730,7 +3412,7 @@
   {
     "id": "9f38c0acf4c8",
     "titulo": "LyraVoid/ImageForge",
-    "resumo": "30 estrelas, AGPL-3.0, TypeScript. Universal Android image patcher that runs entirely in your browser: analyze, patch, repack, verify and export. No server, no upload, and it never flashes a device.",
+    "resumo": "31 estrelas, AGPL-3.0, TypeScript. Universal Android image patcher that runs entirely in your browser: analyze, patch, repack, verify and export. No server, no upload, and it never flashes a device.",
     "url": "https://github.com/LyraVoid/ImageForge",
     "fonte": "GitHub — Android",
     "camada": 2,
@@ -2752,7 +3434,7 @@
   {
     "id": "9bf7ddc484ef",
     "titulo": "maxwellyoung/t3craft",
-    "resumo": "16 estrelas, MIT, Java. T3 Code inside Minecraft: prompt agents, get pinged, and let them build in your world",
+    "resumo": "17 estrelas, MIT, Java. T3 Code inside Minecraft: prompt agents, get pinged, and let them build in your world",
     "url": "https://github.com/maxwellyoung/t3craft",
     "fonte": "GitHub — MCP",
     "camada": 2,
@@ -2829,7 +3511,7 @@
   {
     "id": "87d613bd92f4",
     "titulo": "yukitorido/short-video-generator-AI",
-    "resumo": "721 estrelas, MIT, Python. AI video processing pipeline for generating vertical shorts using LLMs, Whisper transcription, highlight detection and automated editing",
+    "resumo": "729 estrelas, MIT, Python. AI video processing pipeline for generating vertical shorts using LLMs, Whisper transcription, highlight detection and automated editing",
     "url": "https://github.com/yukitorido/short-video-generator-AI",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -2854,17 +3536,6 @@
     "resumo": "212 pontos e 205 comentários no Hacker News",
     "url": "https://www.businessinsider.com/inside-open-ai-influencer-marketing-strategy-chatgpt-ads-sponsorships-instagram-2026-9",
     "fonte": "Hacker News",
-    "camada": 2,
-    "data": "2026-09-23",
-    "veredicto": "incerto",
-    "recolhido": "2026-09-24"
-  },
-  {
-    "id": "7ec19f7513b6",
-    "titulo": "georgeding/Relate",
-    "resumo": "112 estrelas, AGPL-3.0, JavaScript. 记得她说过的每一句话，也记得你答应过的每一件事。A self-hosted AI chief of staff for your chats — remembers what they said and what you promised.",
-    "url": "https://github.com/georgeding/Relate",
-    "fonte": "GitHub — MCP",
     "camada": 2,
     "data": "2026-09-23",
     "veredicto": "incerto",
@@ -3115,7 +3786,7 @@
   {
     "id": "504f21302709",
     "titulo": "Nisaka520/JevBystander",
-    "resumo": "13 estrelas, MIT, Kotlin. 安卓无障碍版微信判读：只读屏、只弹 3 条 Toast（意图 / 情绪 / 着急 / 建议），不生成回复文案、不发送 · 零第三方依赖，APK 861 KB",
+    "resumo": "15 estrelas, MIT, Kotlin. 安卓无障碍版微信判读：只读屏、只弹 3 条 Toast（意图 / 情绪 / 着急 / 建议），不生成回复文案、不发送 · 零第三方依赖，APK 861 KB",
     "url": "https://github.com/Nisaka520/JevBystander",
     "fonte": "GitHub — Android",
     "camada": 2,
@@ -3126,7 +3797,7 @@
   {
     "id": "4e75f1fa45d3",
     "titulo": "anishfn/shapeshift",
-    "resumo": "691 estrelas, MIT, TypeScript. An input that becomes what you mean: one text box that morphs into the right UI as you type. Powered by TypeSafe Jev, works offline.",
+    "resumo": "713 estrelas, MIT, TypeScript. An input that becomes what you mean: one text box that morphs into the right UI as you type. Powered by TypeSafe Jev, works offline.",
     "url": "https://github.com/anishfn/shapeshift",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
@@ -4201,7 +4872,7 @@
   {
     "id": "220918ab8ec5",
     "titulo": "kryvora-network/kryvora-node",
-    "resumo": "944 estrelas, NOASSERTION, Go. Reference client daemon and verification worker for Kryvora Network nodes.",
+    "resumo": "1016 estrelas, NOASSERTION, Go. Reference client daemon and verification worker for Kryvora Network nodes.",
     "url": "https://github.com/kryvora-network/kryvora-node",
     "fonte": "GitHub — repositórios novos em alta",
     "camada": 2,
