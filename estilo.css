@@ -350,6 +350,18 @@ select {
   font-size: 0.9rem;
 }
 
+/* A ação é a frase que decide, por isso tem mais peso do que o resumo que
+   vem antes e do que a justificação que vem depois. Sem cor própria: a cor
+   do cartão já é a do veredicto. */
+.acao {
+  max-width: 78ch;
+  margin-bottom: 14px;
+  color: var(--texto);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 .factos {
   display: flex;
   flex-wrap: wrap;

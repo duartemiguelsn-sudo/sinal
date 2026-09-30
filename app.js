@@ -116,6 +116,14 @@ function criarCartao(item) {
   const descricao = item.o_que_e || item.resumo;
   if (descricao) cartao.append(criarElemento("p", "resumo-item", String(descricao)));
 
+  // A ação é a decisão numa frase — o que fazer, quando voltar, porque não,
+  // o que falta saber — escrita pela fase 4. Vem antes dos factos e da
+  // justificação porque é o que se lê para decidir; o resto é o porquê.
+  // Só os itens julgados pelo Sonnet a têm. Nos outros não se inventa uma a
+  // partir da justificação: ela já aparece inteira mais abaixo, e repeti-la
+  // aqui era dizer o mesmo duas vezes.
+  if (item.acao) cartao.append(criarElemento("p", "acao", String(item.acao)));
+
   if (Array.isArray(item.factos) && item.factos.length > 0) {
     const listaFactos = criarElemento("dl", "factos");
     item.factos.forEach((facto) => {
