@@ -393,7 +393,18 @@ def explicar_erro(erro: anthropic.APIStatusError) -> str:
             "console.anthropic.com/settings/billing e volta a correr"
         )
     if erro.status_code == 401:
-        return "a ANTHROPIC_API_KEY não foi aceite; confirma o valor no .env"
+        # No Action não há .env: a chave vem do segredo do repositório. Dizer
+        # só ".env" mandava procurar no sítio errado — foi assim que uma chave
+        # desativada na consola deixou uma semana de corridas sem nota.
+        onde = (
+            "o segredo ANTHROPIC_API_KEY do repositório no GitHub"
+            if os.environ.get("GITHUB_ACTIONS") == "true"
+            else "o valor no .env"
+        )
+        return (
+            "a ANTHROPIC_API_KEY não foi aceite (401); vê na consola da Anthropic, "
+            f"em API Keys, se a chave está ativa, e confirma {onde}"
+        )
     if erro.status_code == 403:
         return "a chave não tem permissão para este modelo"
     if erro.status_code in (500, 503, 529):
