@@ -11,3 +11,6 @@ CLAUDE.md
 
 # As chaves. Ficam so na maquina.
 .env
+
+# Maquetas de design. Descartaveis, nao fazem parte do site.
+maquetas/
