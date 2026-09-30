@@ -5,13 +5,14 @@ dois caminhos, pela mesma lógica da fase 3 — o que se consegue fazer de graç
 faz-se de graça, e só se paga pelo que não tem alternativa:
 
 1. Itens verificados (nota >= LIMIAR_FASE_3, com factos da fase 3). Vão ao
-   Sonnet 5, que lê os factos e escreve o veredicto e a justificação. É a
-   parte paga, e é a razão de ser do projeto: julgar com dados à frente.
+   Sonnet 5, que lê os factos e escreve o veredicto, a justificação e a ação
+   (a frase curta que o site mostra na lista por baixo do nome). É a parte
+   paga, e é a razão de ser do projeto: julgar com dados à frente.
 
 2. Todos os outros — a esmagadora maioria, uns 150 por dia. Não vão a modelo
    nenhum. O veredicto sai da nota que a fase 2 já pagou, por uma regra fixa
    (ver `veredicto_da_nota`), e a justificação é a frase que a fase 2 já
-   escreveu. Custo zero.
+   escreveu. Custo zero. Estes não levam ação: o site usa a justificação.
 
 O caminho 2 merece explicação, porque à primeira vista parece inventar
 julgamento. Não inventa: a nota já é um julgamento, feito por um modelo que
@@ -53,9 +54,9 @@ ITENS_POR_PEDIDO = 5
 # dólares apanha tudo o resto.
 #
 # O número sai do orçamento de trás para a frente. Julgar dez itens custa cerca
-# de seis cêntimos, ou menos de dois dólares por mês. Com a fase 2 (~1.50/mês)
-# e a fase 3 (~0.90/mês no pior caso), o projeto fica à volta de quatro dólares
-# por mês, dentro do teto de cinco.
+# de seis cêntimos e meio, ou menos de dois dólares por mês. Com a fase 2
+# (~1.50/mês) e a fase 3 (~0.90/mês no pior caso), o projeto fica à volta de
+# quatro dólares por mês, dentro do teto de cinco.
 TETO_DE_ITENS_JULGADOS = 12
 TETO_DE_DOLARES = 0.15
 
@@ -68,6 +69,11 @@ ESFORCO = "low"
 CHARS_POR_TOKEN = 3.5
 
 VEREDICTOS = ["agora", "depois", "ruido", "incerto"]
+
+# A ação aparece numa linha de lista, ao lado de outras. As instruções pedem
+# menos de 120 caracteres; isto é a rede de segurança para quando o modelo não
+# cumpre, com folga para não cortar frases que passem por pouco.
+MAX_CHARS_ACAO = 160
 
 INSTRUCOES = """És o juiz do Sinal. Escreves o veredicto final sobre itens que já foram
 pontuados e verificados. É o último passo, e é o que o leitor lê primeiro.
@@ -142,7 +148,21 @@ menos de quinhentos caracteres. Directo, sem gentilezas, sem "este artigo
 aborda". Diz o que a coisa é, o que os factos mostram, e o que ele deve fazer
 com ela.
 As dúvidas são perguntas por responder, uma frase cada, no máximo três. Se não
-houver nenhuma, devolves a lista vazia — não se inventam dúvidas para encher."""
+houver nenhuma, devolves a lista vazia — não se inventam dúvidas para encher.
+
+A AÇÃO
+Além da justificação, escreves a ação: uma só frase, com menos de cento e
+vinte caracteres, que o site mostra na lista por baixo do nome. É a primeira
+coisa que ele lê depois do veredicto, por isso começa por um verbo e diz uma
+coisa só, conforme o veredicto:
+- "agora": o passo concreto a dar a seguir — o que ler, experimentar ou mudar.
+- "depois": quando voltar a olhar, o mesmo acontecimento da justificação.
+- "ruido": porque não vale o tempo dele, numa frase.
+- "incerto": o que é preciso saber antes de decidir.
+As regras duras valem aqui também: nenhuma estrela, data, versão ou preço que
+não esteja nos factos, e nunca um comando, nome de pacote ou endereço que não
+venha no material que recebes. Não repitas a justificação: resume-a numa
+decisão."""
 
 
 def esquema() -> dict:
@@ -154,7 +174,12 @@ def esquema() -> dict:
 
     Contagens (`minItems`, `maxItems`) não entram aqui: a API recusa-as com um
     400. Ver a nota igual no `esquema` da fase 2. O limite das dúvidas fica às
-    instruções e ao `_duvidas_juntas`, que já corta a lista.
+    instruções e ao `_duvidas_juntas`, que já corta a lista. O tamanho da ação
+    também: `maxLength` não é suportado nos esquemas, e quem o garante é
+    `_acao_limpa`.
+
+    A ação é obrigatória para o modelo nunca a esquecer. Se mesmo assim vier
+    vazia, o item fica sem ela e o site cai para a justificação.
     """
     return {
         "type": "json_schema",
@@ -169,12 +194,13 @@ def esquema() -> dict:
                             "id": {"type": "string"},
                             "veredicto": {"type": "string", "enum": VEREDICTOS},
                             "justificacao": {"type": "string"},
+                            "acao": {"type": "string"},
                             "duvidas": {
                                 "type": "array",
                                 "items": {"type": "string"},
                             },
                         },
-                        "required": ["id", "veredicto", "justificacao", "duvidas"],
+                        "required": ["id", "veredicto", "justificacao", "acao", "duvidas"],
                         "additionalProperties": False,
                     },
                 }
@@ -288,6 +314,21 @@ def _duvidas_juntas(do_item: list, do_modelo) -> list[str]:
     return juntas[:5]
 
 
+def _acao_limpa(bruto) -> str:
+    """A ação numa linha só, sem espaços a mais, e nunca maior que MAX_CHARS_ACAO.
+
+    Quebras de linha partiam a linha da lista no site, por isso juntam-se
+    todos os espaços num. Se passar do limite, corta na última palavra inteira
+    e marca o corte com reticências — cortar a meio de uma palavra dava uma
+    frase que parece erro.
+    """
+    frase = " ".join(str(bruto or "").split())
+    if len(frase) <= MAX_CHARS_ACAO:
+        return frase
+    cortada = frase[:MAX_CHARS_ACAO].rsplit(" ", 1)[0]
+    return cortada.rstrip(",;:—-") + "…"
+
+
 def estimar(candidatos: list[dict]) -> dict:
     """Quanto é que esta fase ia custar, sem gastar nada.
 
@@ -304,9 +345,10 @@ def estimar(candidatos: list[dict]) -> dict:
     )
     entrada = lotes * int(len(INSTRUCOES) / CHARS_POR_TOKEN) + int(chars / CHARS_POR_TOKEN)
 
-    # Por item: uns 300 tokens de justificação e dúvidas, mais uns 150 de
-    # raciocínio a esforço baixo. Os de raciocínio pagam-se ao preço da saída.
-    saida = julgados * 450
+    # Por item: uns 300 tokens de justificação e dúvidas, uns 50 da ação, mais
+    # uns 150 de raciocínio a esforço baixo. Os de raciocínio pagam-se ao
+    # preço da saída.
+    saida = julgados * 500
 
     return {
         "julgados": julgados,
@@ -405,6 +447,12 @@ def julgar(
             item["veredicto"] = rotulo
             item["justificacao"] = justificacao[:600]
             item["duvidas"] = _duvidas_juntas(item.get("duvidas"), julgamento.get("duvidas"))
+
+            # Ação vazia não se grava: o campo ou tem uma frase ou não existe,
+            # e quem lê o itens.json só tem de perguntar se ele lá está.
+            acao = _acao_limpa(julgamento.get("acao"))
+            if acao:
+                item["acao"] = acao
 
     sem_veredicto = sum(1 for item in candidatos if not item.get("veredicto"))
     if sem_veredicto:
