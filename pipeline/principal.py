@@ -403,6 +403,11 @@ def main() -> int:
         f"que já lá estavam"
         + (f", {resumo['repetidos']} actualizados" if resumo["repetidos"] else "")
     )
+    if resumo["fora_de_ambito"]:
+        print(
+            f"{resumo['fora_de_ambito']} não publicados por serem fora de âmbito "
+            f"(ficam no vistos, não voltam a ser pontuados)"
+        )
     if resumo["cortados"]:
         print(
             f"{resumo['cortados']} cortados por passarem os {opcoes.historico} dias de histórico"

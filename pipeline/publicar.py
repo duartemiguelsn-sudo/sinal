@@ -37,6 +37,17 @@ from pathlib import Path
 # site, não no custo do pipeline.
 DIAS_DE_HISTORICO = 60
 
+# A área que a fase 2 dá ao que não é do mundo dele. Estes itens são
+# pontuados — é preciso pagar a pontuação para saber que não interessam — mas
+# não chegam ao ficheiro que o site lê.
+#
+# Guardar tudo era a regra antiga, e servia para o site poder ordenar por data
+# sem buracos. Deixou de compensar: passaram a ser quase metade da recolha, e
+# um ecrã cheio de coisas que ele não pediu é o problema que o Sinal existe
+# para resolver. Continuam no `vistos.json`, por isso não voltam a ser
+# recolhidos nem pontuados outra vez — o corte poupa ecrã, não poupa dinheiro.
+AREA_FORA_DE_AMBITO = "fora-de-ambito"
+
 
 def gravar_json(caminho: Path, conteudo) -> None:
     """Grava com indentação e acentos legíveis.
@@ -121,6 +132,17 @@ def juntar(historico: list[dict], novos: list[dict]) -> tuple[list[dict], int]:
     return list(por_id.values()), repetidos
 
 
+def sem_fora_de_ambito(itens: list[dict]) -> tuple[list[dict], int]:
+    """Tira o que a fase 2 marcou como fora do âmbito. Devolve a lista e quantos saíram.
+
+    Só sai o que tem a área escrita. Um item por pontuar não tem área nenhuma,
+    e deitá-lo fora por isso seria confundir "ainda não se sabe" com "não
+    interessa" — são coisas diferentes e a segunda tem de ser decidida.
+    """
+    mantidos = [item for item in itens if item.get("area") != AREA_FORA_DE_AMBITO]
+    return mantidos, len(itens) - len(mantidos)
+
+
 def idade(item: dict) -> str:
     """A data pela qual o item é considerado velho.
 
@@ -167,7 +189,11 @@ def publicar(
 
     historico = ler_itens(caminho_itens)
     juntos, repetidos = juntar(historico, novos)
-    mantidos, cortados = cortar(juntos, dias, hoje)
+    # Pela ordem: primeiro sai o que não é do mundo dele, depois o que é
+    # velho de mais. Ao contrário dava na mesma, mas assim o número de
+    # "cortados por idade" fala só de idade e lê-se sem enganar.
+    dentro, fora = sem_fora_de_ambito(juntos)
+    mantidos, cortados = cortar(dentro, dias, hoje)
 
     # Mais recente primeiro, como o site mostra por omissão. Ordenar aqui faz
     # com que o diff do Git seja quase sempre um bloco no topo, legível.
@@ -215,6 +241,7 @@ def publicar(
         "novos": len(novos) - repetidos,
         "repetidos": repetidos,
         "historico": len(historico),
+        "fora_de_ambito": fora,
         "cortados": cortados,
         "publicados": len(mantidos),
         "ids_esquecidos": ids_esquecidos,
