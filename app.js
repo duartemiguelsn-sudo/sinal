@@ -29,10 +29,7 @@ const AREAS = [
   ["skills-mcp", "Skills, MCP e automação", "Diária"],
   ["repos-em-alta", "Repositórios em alta", "Diária"],
   ["gratis-estudante", "Grátis para estudante", "Semanal"],
-  ["meu-stack", "O teu stack", "Diária"],
-  ["ferramentas-dia-a-dia", "Ferramentas do dia-a-dia", "Semanal"],
-  ["carreira-junior", "Carreira júnior", "Semanal"],
-  ["fora-de-ambito", "Fora de âmbito", "—"]
+  ["ferramentas-dia-a-dia", "Ferramentas do dia-a-dia", "Semanal"]
 ];
 
 let itens = [];
