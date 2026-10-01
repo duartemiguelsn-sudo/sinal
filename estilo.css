@@ -961,3 +961,283 @@ select {
     transform: translateY(-1px);
   }
 }
+
+/*
+ * Modelo de leitura compacto:
+ * a página deixa de parecer um painel de administração e dá prioridade aos
+ * itens. Os filtros ficam disponíveis, mas não ocupam espaço até serem
+ * pedidos.
+ */
+.hero {
+  grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.65fr);
+  align-items: end;
+  max-width: none;
+  margin-bottom: 22px;
+}
+
+.hero h2 {
+  max-width: 20ch;
+  font-size: clamp(1.8rem, 4vw, 2.65rem);
+}
+
+.hero__texto {
+  max-width: 48ch;
+  font-size: 0.86rem;
+}
+
+.resumo-painel {
+  margin-bottom: 22px;
+  padding: 14px 0;
+  border: 0;
+  border-block: 1px solid var(--linha);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.secao-cabecalho {
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.secao-cabecalho .etiqueta {
+  display: inline;
+  margin-right: 8px;
+}
+
+.secao-cabecalho h2 {
+  display: inline;
+  font-size: 0.92rem;
+}
+
+.metricas {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-pequeno);
+  overflow: hidden;
+}
+
+.metrica {
+  grid-template-columns: auto 1fr;
+  padding: 10px 13px;
+  border: 0;
+  border-top: 2px solid var(--linha-forte);
+  border-radius: 0;
+  background: var(--superficie);
+  box-shadow: none;
+}
+
+.metrica + .metrica {
+  border-left: 1px solid var(--linha);
+}
+
+.metrica:hover,
+.metrica[aria-pressed="true"] {
+  box-shadow: none;
+  background: var(--superficie-suave);
+}
+
+.metrica__numero {
+  font-size: 1.55rem;
+}
+
+.metrica__nome {
+  font-size: 0.76rem;
+}
+
+.metrica__ajuda {
+  font-size: 0.62rem;
+}
+
+.controlos {
+  display: block;
+  min-height: 0;
+  margin-bottom: 22px;
+  border: 0;
+  border-block: 1px solid var(--linha);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.controlos__cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 0;
+  border: 0;
+  background: transparent;
+}
+
+.controlos__cabecalho .etiqueta {
+  margin-bottom: 2px;
+}
+
+.controlos__cabecalho h2 {
+  font-size: 0.9rem;
+}
+
+.controlos__corpo {
+  padding: 0;
+}
+
+.controlos__opcoes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-bottom: 11px;
+}
+
+.controlos__opcoes .ordenacao,
+.controlos__opcoes .modo-leitura {
+  gap: 7px;
+}
+
+.controlos__opcoes .ordenacao label,
+.controlos__opcoes .modo-leitura__rotulo {
+  font-size: 0.64rem;
+}
+
+.controlos__opcoes select,
+.controlos__opcoes .botao {
+  min-height: 34px;
+  padding-block: 5px;
+  font-size: 0.72rem;
+}
+
+.botao--filtros {
+  display: inline-flex;
+  border-color: var(--linha-forte);
+  color: var(--texto);
+}
+
+.filtros {
+  display: none;
+  grid-template-columns: minmax(140px, 0.65fr) minmax(300px, 1.5fr) auto;
+  align-items: end;
+  gap: 20px;
+  padding: 13px 0 3px;
+  border-top: 1px solid var(--linha);
+}
+
+.filtros.painel-filtros--aberto {
+  display: grid;
+}
+
+.lista-filtros {
+  gap: 6px;
+}
+
+.filtro {
+  min-height: 34px;
+  padding: 6px 9px;
+  border-color: var(--linha);
+  font-size: 0.65rem;
+}
+
+.botao--limpar {
+  min-height: 34px;
+  padding-block: 5px;
+}
+
+.topo-resultados {
+  padding-block: 0 10px;
+}
+
+@media (max-width: 719px) {
+  .hero {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .hero h2 {
+    max-width: 15ch;
+    margin-bottom: 10px;
+    font-size: 2.1rem;
+  }
+
+  .hero__texto {
+    max-width: 52ch;
+    font-size: 0.8rem;
+  }
+
+  .resumo-painel {
+    margin-bottom: 18px;
+    padding-block: 12px;
+  }
+
+  .secao-cabecalho {
+    display: block;
+  }
+
+  .secao-cabecalho__nota {
+    margin-top: 4px;
+  }
+
+  .metricas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metrica {
+    display: grid;
+    padding: 9px 10px;
+  }
+
+  .metrica:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .metrica:nth-child(n + 3) {
+    border-top: 1px solid var(--linha);
+  }
+
+  .metrica__numero {
+    font-size: 1.35rem;
+  }
+
+  .metrica__ajuda {
+    display: none;
+  }
+
+  .controlos__cabecalho {
+    padding-block: 9px;
+  }
+
+  .controlos__opcoes {
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .controlos__opcoes .ordenacao {
+    min-width: 0;
+  }
+
+  .controlos__opcoes .ordenacao label,
+  .controlos__opcoes .modo-leitura__rotulo {
+    display: none;
+  }
+
+  .controlos__opcoes select {
+    max-width: 142px;
+  }
+
+  .filtros {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding-top: 13px;
+  }
+
+  .lista-filtros {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 3px;
+  }
+
+  .filtro {
+    flex: 0 0 auto;
+  }
+}

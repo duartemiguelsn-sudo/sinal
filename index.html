@@ -40,7 +40,7 @@
     <main>
       <section class="hero" aria-labelledby="titulo-painel">
         <div>
-          <p class="etiqueta">Menos ruído. Mais decisão.</p>
+          <p class="etiqueta">Leitura de hoje</p>
           <h2 id="titulo-painel">O que merece a tua atenção?</h2>
         </div>
         <p class="hero__texto">O Sinal recolhe novidades de IA e programação, verifica o que consegue e separa o que merece tempo do que pode esperar.</p>
@@ -81,44 +81,42 @@
       <section class="controlos" aria-labelledby="titulo-controlos">
         <div class="controlos__cabecalho">
           <div>
-            <h2 id="titulo-controlos">Ordenação e filtros</h2>
+            <p class="etiqueta">Refinar</p>
+            <h2 id="titulo-controlos">Ordenar e filtrar</h2>
           </div>
-          <button id="abrir-filtros" class="botao botao--filtros" type="button" aria-expanded="false" aria-controls="painel-filtros">
-            <span aria-hidden="true">☷</span>
-            <span id="texto-filtros">Mostrar filtros</span>
-          </button>
-        </div>
-
-        <div class="controlos__corpo">
-          <div class="controlos__linha">
-          <div class="ordenacao">
-            <label for="ordenar">Ordenar</label>
-            <select id="ordenar" name="ordenar">
-              <option value="relevancia">Por relevância</option>
-              <option value="data">Por data</option>
-            </select>
-          </div>
-          <div class="modo-leitura" role="group" aria-label="Modo de leitura">
-            <span class="modo-leitura__rotulo">Vista</span>
-            <button id="alternar-densidade" class="botao botao--modo" type="button" aria-pressed="false" aria-label="Usar vista compacta">
-              <span aria-hidden="true">▦</span>
-              <span id="texto-densidade">Compacta</span>
+          <div class="controlos__opcoes">
+            <div class="ordenacao">
+              <label for="ordenar">Ordenar</label>
+              <select id="ordenar" name="ordenar" aria-label="Ordenar itens">
+                <option value="relevancia">Por relevância</option>
+                <option value="data">Por data</option>
+              </select>
+            </div>
+            <div class="modo-leitura" role="group" aria-label="Modo de leitura">
+              <span class="modo-leitura__rotulo">Vista</span>
+              <button id="alternar-densidade" class="botao botao--modo" type="button" aria-pressed="false" aria-label="Usar vista compacta">
+                <span aria-hidden="true">▦</span>
+                <span id="texto-densidade">Compacta</span>
+              </button>
+            </div>
+            <button id="abrir-filtros" class="botao botao--filtros" type="button" aria-expanded="false" aria-controls="painel-filtros">
+              <span aria-hidden="true">☷</span>
+              <span id="texto-filtros">Filtros</span>
             </button>
           </div>
-          </div>
 
-          <nav id="painel-filtros" class="filtros" aria-label="Filtros de notícias">
-            <div class="grupo-filtros">
-              <p class="titulo-filtro">Veredicto</p>
-              <div id="filtros-veredicto" class="lista-filtros" aria-label="Filtrar por veredicto"></div>
-            </div>
-            <div class="grupo-filtros">
-              <p class="titulo-filtro">Área</p>
-              <div id="filtros-area" class="lista-filtros" aria-label="Filtrar por área"></div>
-            </div>
-            <button id="limpar-filtros" class="botao botao--limpar" type="button" disabled>Limpar filtros</button>
-          </nav>
         </div>
+        <nav id="painel-filtros" class="filtros" aria-label="Filtros de notícias">
+          <div class="grupo-filtros">
+            <p id="titulo-filtro-veredicto" class="titulo-filtro">Veredicto</p>
+            <div id="filtros-veredicto" class="lista-filtros" role="group" aria-labelledby="titulo-filtro-veredicto"></div>
+          </div>
+          <div class="grupo-filtros">
+            <p id="titulo-filtro-area" class="titulo-filtro">Área</p>
+            <div id="filtros-area" class="lista-filtros" role="group" aria-labelledby="titulo-filtro-area"></div>
+          </div>
+          <button id="limpar-filtros" class="botao botao--limpar" type="button" disabled>Limpar filtros</button>
+        </nav>
       </section>
 
       <p id="aviso-erro" class="aviso-erro" role="alert" hidden></p>
