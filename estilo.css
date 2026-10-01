@@ -534,10 +534,22 @@ select {
   text-transform: uppercase;
 }
 
-.veredicto--agora { background: var(--agora); color: #fff; }
+.veredicto--agora { background: #087443; color: #fff; }
 .veredicto--depois { background: var(--depois-fundo); color: var(--depois); }
 .veredicto--incerto { background: var(--incerto-fundo); color: var(--incerto); }
-.veredicto--ruido { background: var(--ruido-fundo); color: var(--ruido); }
+.veredicto--ruido { background: var(--ruido-fundo); color: #3f4b42; }
+
+:root[data-tema="escuro"] .veredicto--ruido {
+  background: #303832;
+  color: #d1dbd2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]) .veredicto--ruido {
+    background: #303832;
+    color: #d1dbd2;
+  }
+}
 
 .nota-item {
   color: var(--texto-suave);
