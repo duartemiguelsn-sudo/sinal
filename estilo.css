@@ -374,14 +374,31 @@ select {
 }
 
 .controlos {
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  min-height: 220px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .controlos__cabecalho {
-  margin-bottom: 18px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 20px;
+  border-right: 1px solid var(--linha);
+  background: var(--superficie-suave);
+}
+
+.controlos__corpo {
+  min-width: 0;
+  padding: 20px 22px;
 }
 
 .controlos__linha {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding-bottom: 17px;
@@ -411,7 +428,9 @@ select {
 
 .filtros {
   display: grid;
-  gap: 16px;
+  grid-template-columns: minmax(150px, 0.7fr) minmax(300px, 1.5fr) auto;
+  align-items: end;
+  gap: 20px;
   padding-top: 17px;
 }
 
@@ -438,10 +457,14 @@ select {
 }
 
 .botao--limpar {
-  justify-self: start;
+  justify-self: end;
   min-height: 40px;
   color: var(--texto-suave);
   font-size: 0.74rem;
+}
+
+.botao--limpar:disabled {
+  display: none;
 }
 
 .aviso-erro,
@@ -787,6 +810,23 @@ select {
     padding: 15px;
   }
 
+  .controlos {
+    display: block;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .controlos__cabecalho {
+    padding: 15px;
+    border-right: 0;
+    border-bottom: 1px solid var(--linha);
+    background: transparent;
+  }
+
+  .controlos__corpo {
+    padding: 15px;
+  }
+
   .secao-cabecalho,
   .controlos__cabecalho,
   .controlos__linha {
@@ -830,6 +870,7 @@ select {
   .controlos__linha {
     display: grid;
     gap: 11px;
+    padding-bottom: 15px;
   }
 
   .ordenacao,
@@ -839,6 +880,9 @@ select {
 
   .filtros {
     display: none;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-top: 15px;
   }
 
   .filtros.painel-filtros--aberto {
@@ -885,15 +929,6 @@ select {
 
   .metricas {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .controlos__linha {
-    align-items: center;
-  }
-
-  .filtros {
-    grid-template-columns: minmax(210px, 0.7fr) minmax(300px, 1.5fr) auto;
-    align-items: end;
   }
 
   .botao--filtros {

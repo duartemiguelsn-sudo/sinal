@@ -81,7 +81,6 @@
       <section class="controlos" aria-labelledby="titulo-controlos">
         <div class="controlos__cabecalho">
           <div>
-            <p class="etiqueta">Explorar</p>
             <h2 id="titulo-controlos">Ordenação e filtros</h2>
           </div>
           <button id="abrir-filtros" class="botao botao--filtros" type="button" aria-expanded="false" aria-controls="painel-filtros">
@@ -90,7 +89,8 @@
           </button>
         </div>
 
-        <div class="controlos__linha">
+        <div class="controlos__corpo">
+          <div class="controlos__linha">
           <div class="ordenacao">
             <label for="ordenar">Ordenar</label>
             <select id="ordenar" name="ordenar">
@@ -105,19 +105,20 @@
               <span id="texto-densidade">Compacta</span>
             </button>
           </div>
-        </div>
+          </div>
 
-        <nav id="painel-filtros" class="filtros" aria-label="Filtros de notícias">
-          <div class="grupo-filtros">
-            <p class="titulo-filtro">Veredicto</p>
-            <div id="filtros-veredicto" class="lista-filtros" aria-label="Filtrar por veredicto"></div>
-          </div>
-          <div class="grupo-filtros">
-            <p class="titulo-filtro">Área</p>
-            <div id="filtros-area" class="lista-filtros" aria-label="Filtrar por área"></div>
-          </div>
-          <button id="limpar-filtros" class="botao botao--limpar" type="button" disabled>Limpar filtros</button>
-        </nav>
+          <nav id="painel-filtros" class="filtros" aria-label="Filtros de notícias">
+            <div class="grupo-filtros">
+              <p class="titulo-filtro">Veredicto</p>
+              <div id="filtros-veredicto" class="lista-filtros" aria-label="Filtrar por veredicto"></div>
+            </div>
+            <div class="grupo-filtros">
+              <p class="titulo-filtro">Área</p>
+              <div id="filtros-area" class="lista-filtros" aria-label="Filtrar por área"></div>
+            </div>
+            <button id="limpar-filtros" class="botao botao--limpar" type="button" disabled>Limpar filtros</button>
+          </nav>
+        </div>
       </section>
 
       <p id="aviso-erro" class="aviso-erro" role="alert" hidden></p>
