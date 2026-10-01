@@ -42,13 +42,23 @@ const elementoLista = document.querySelector("#lista-itens");
 const elementoEstado = document.querySelector("#estado");
 const elementoAviso = document.querySelector("#aviso-erro");
 const elementoResumo = document.querySelector("#resumo-recolha");
+const elementoResumoEstado = document.querySelector("#resumo-estado");
 const elementoContagem = document.querySelector("#contagem-resultados");
+const elementoEstadoFiltros = document.querySelector("#estado-filtros");
 const selectorOrdenacao = document.querySelector("#ordenar");
 const elementoFiltrosVeredicto = document.querySelector("#filtros-veredicto");
 const elementoFiltrosArea = document.querySelector("#filtros-area");
 const botaoLimpar = document.querySelector("#limpar-filtros");
 const botaoTema = document.querySelector("#alternar-tema");
 const textoTema = document.querySelector("#texto-tema");
+const botaoFiltros = document.querySelector("#abrir-filtros");
+const textoFiltros = document.querySelector("#texto-filtros");
+const painelFiltros = document.querySelector("#painel-filtros");
+const botaoDensidade = document.querySelector("#alternar-densidade");
+const textoDensidade = document.querySelector("#texto-densidade");
+const botaoInstalar = document.querySelector("#instalar-app");
+
+let eventoInstalacao = null;
 
 function criarElemento(nome, classe, texto) {
   const elemento = document.createElement(nome);
@@ -102,12 +112,20 @@ function criarLigacaoSegura(item) {
 function criarCartao(item) {
   const veredicto = nomesVeredictos[item.veredicto] ? item.veredicto : "incerto";
   const cartao = criarElemento("article", `cartao cartao--${veredicto}`);
-  cartao.setAttribute("aria-labelledby", `titulo-${String(item.id)}`);
+  const idTitulo = `titulo-${String(item.id).replace(/[^a-zA-Z0-9_-]/g, "-")}`;
+  cartao.setAttribute("aria-labelledby", idTitulo);
 
   const marca = criarElemento("p", `veredicto veredicto--${veredicto}`, nomesVeredictos[veredicto]);
+  const cabecalho = criarElemento("div", "cabecalho-cartao");
+  cabecalho.append(marca);
+  const nota = Number(item.nota);
+  if (Number.isFinite(nota)) {
+    cabecalho.append(criarElemento("span", "nota-item", `Nota ${nota}/10`));
+  }
+
   const titulo = criarLigacaoSegura(item);
-  titulo.id = `titulo-${String(item.id)}`;
-  cartao.append(marca, titulo);
+  titulo.id = idTitulo;
+  cartao.append(cabecalho, titulo);
 
   // A linha do que a coisa é, em português, escrita pela fase 2. Substitui o
   // resumo do feed em vez de se juntar a ele: dizem a mesma coisa em línguas
@@ -150,7 +168,7 @@ function criarCartao(item) {
 
   const rodape = criarElemento("footer", "rodape-cartao");
   rodape.append(
-    criarElemento("span", "", String(item.fonte || "Fonte desconhecida")),
+    criarElemento("span", "fonte-item", String(item.fonte || "Fonte desconhecida")),
     criarElemento("time", "separador", formatarData(item.data))
   );
   rodape.querySelector("time").dateTime = String(item.data || "");
@@ -198,6 +216,8 @@ function apresentarItens() {
   const haFiltros = filtrosActivos.veredictos.size > 0 || filtrosActivos.areas.size > 0;
   botaoLimpar.disabled = !haFiltros;
   elementoContagem.textContent = `${resultado.length} ${resultado.length === 1 ? "resultado" : "resultados"}`;
+  elementoEstadoFiltros.textContent = haFiltros ? "Filtros activos" : "Todos os itens";
+  actualizarEstadoControlos();
 
   if (resultado.length === 0) {
     const titulo = itens.length === 0 ? "Ainda não há itens." : "Nenhum item passou estes filtros.";
@@ -218,6 +238,7 @@ function apresentarItens() {
 function criarBotaoFiltro(texto, valor, tipo) {
   const botao = criarElemento("button", "filtro", texto);
   botao.type = "button";
+  botao.dataset.valor = valor;
   botao.setAttribute("aria-pressed", "false");
   botao.addEventListener("click", () => {
     const conjunto = filtrosActivos[tipo];
@@ -227,6 +248,22 @@ function criarBotaoFiltro(texto, valor, tipo) {
     apresentarItens();
   });
   return botao;
+}
+
+function actualizarEstadoControlos() {
+  document.querySelectorAll(".filtro").forEach((botao) => {
+    const tipo = botao.closest("#filtros-veredicto") ? "veredictos" : "areas";
+    const valor = botao.dataset.valor;
+    botao.setAttribute("aria-pressed", String(filtrosActivos[tipo].has(valor)));
+  });
+
+  document.querySelectorAll(".metrica").forEach((metrica) => {
+    metrica.setAttribute("aria-pressed", String(
+      filtrosActivos.veredictos.size === 1 &&
+      filtrosActivos.veredictos.has(metrica.dataset.veredicto) &&
+      filtrosActivos.areas.size === 0
+    ));
+  });
 }
 
 function prepararFiltros() {
@@ -259,12 +296,26 @@ function prepararFiltros() {
 }
 
 function actualizarResumo() {
+  const contagens = Object.fromEntries(Object.keys(nomesVeredictos).map((veredicto) => [veredicto, 0]));
+  itens.forEach((item) => {
+    const veredicto = nomesVeredictos[item.veredicto] ? item.veredicto : "incerto";
+    contagens[veredicto] += 1;
+  });
+
+  Object.entries(contagens).forEach(([veredicto, quantidade]) => {
+    const elemento = document.querySelector(`#contagem-${veredicto}`);
+    if (elemento) elemento.textContent = String(quantidade);
+  });
+
   const datas = itens.map((item) => dataValida(item.data)).filter(Boolean);
   const ultimaData = datas.length > 0 ? new Date(Math.max(...datas.map((data) => data.getTime()))) : null;
   const quantidade = `${itens.length} ${itens.length === 1 ? "item" : "itens"}`;
   elementoResumo.textContent = ultimaData
     ? `${quantidade} · última recolha a ${new Intl.DateTimeFormat("pt-PT", { day: "2-digit", month: "long", year: "numeric" }).format(ultimaData)}`
     : `${quantidade} · sem data de recolha`;
+  elementoResumoEstado.textContent = contagens.agora > 0
+    ? `${contagens.agora} ${contagens.agora === 1 ? "decisão pede" : "decisões pedem"} atenção`
+    : "Nada urgente nesta recolha";
 }
 
 function temaEscuroActivo() {
@@ -290,12 +341,96 @@ function iniciarTema() {
     const novoTema = temaEscuroActivo() ? "claro" : "escuro";
     document.documentElement.dataset.tema = novoTema;
     localStorage.setItem("sinal-tema", novoTema);
+    document.querySelector('meta[name="theme-color"]').setAttribute(
+      "content",
+      novoTema === "escuro" ? "#111512" : "#f4f5f2"
+    );
     actualizarBotaoTema();
   });
 
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
     if (!document.documentElement.dataset.tema) actualizarBotaoTema();
   });
+}
+
+function iniciarFiltros() {
+  botaoFiltros.addEventListener("click", () => {
+    const aberto = painelFiltros.classList.toggle("painel-filtros--aberto");
+    botaoFiltros.setAttribute("aria-expanded", String(aberto));
+    textoFiltros.textContent = aberto ? "Esconder filtros" : "Mostrar filtros";
+  });
+}
+
+function iniciarDensidade() {
+  const guardada = localStorage.getItem("sinal-densidade");
+  if (guardada === "compacta") document.documentElement.dataset.densidade = "compacta";
+
+  function actualizarBotao() {
+    const compacta = document.documentElement.dataset.densidade === "compacta";
+    textoDensidade.textContent = compacta ? "Detalhada" : "Compacta";
+    botaoDensidade.setAttribute("aria-pressed", String(compacta));
+    botaoDensidade.setAttribute("aria-label", compacta ? "Usar vista detalhada" : "Usar vista compacta");
+  }
+
+  actualizarBotao();
+  botaoDensidade.addEventListener("click", () => {
+    const compacta = document.documentElement.dataset.densidade !== "compacta";
+    if (compacta) {
+      document.documentElement.dataset.densidade = "compacta";
+      localStorage.setItem("sinal-densidade", "compacta");
+    } else {
+      delete document.documentElement.dataset.densidade;
+      localStorage.removeItem("sinal-densidade");
+    }
+    actualizarBotao();
+  });
+}
+
+function iniciarMetricas() {
+  document.querySelectorAll(".metrica").forEach((metrica) => {
+    metrica.addEventListener("click", () => {
+      const veredicto = metrica.dataset.veredicto;
+      const jáEstáSozinho = filtrosActivos.veredictos.size === 1 &&
+        filtrosActivos.veredictos.has(veredicto) &&
+        filtrosActivos.areas.size === 0;
+
+      filtrosActivos.veredictos.clear();
+      filtrosActivos.areas.clear();
+      if (!jáEstáSozinho) filtrosActivos.veredictos.add(veredicto);
+      apresentarItens();
+    });
+  });
+}
+
+function iniciarInstalacao() {
+  window.addEventListener("beforeinstallprompt", (evento) => {
+    evento.preventDefault();
+    eventoInstalacao = evento;
+    botaoInstalar.hidden = false;
+  });
+
+  botaoInstalar.addEventListener("click", async () => {
+    if (!eventoInstalacao) return;
+    eventoInstalacao.prompt();
+    await eventoInstalacao.userChoice;
+    eventoInstalacao = null;
+    botaoInstalar.hidden = true;
+  });
+
+  window.addEventListener("appinstalled", () => {
+    eventoInstalacao = null;
+    botaoInstalar.hidden = true;
+  });
+}
+
+function iniciarServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./sw.js").catch(() => {
+        // A instalação é opcional: o painel continua a funcionar sem cache offline.
+      });
+    });
+  }
 }
 
 async function carregarItens() {
@@ -329,9 +464,13 @@ selectorOrdenacao.addEventListener("change", apresentarItens);
 botaoLimpar.addEventListener("click", () => {
   filtrosActivos.veredictos.clear();
   filtrosActivos.areas.clear();
-  document.querySelectorAll(".filtro").forEach((botao) => botao.setAttribute("aria-pressed", "false"));
   apresentarItens();
 });
 
 iniciarTema();
+iniciarFiltros();
+iniciarDensidade();
+iniciarMetricas();
+iniciarInstalacao();
+iniciarServiceWorker();
 carregarItens();

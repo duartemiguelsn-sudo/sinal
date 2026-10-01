@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f4f5f2">
     <meta name="description" content="Sinal — notícias de IA e programação já avaliadas para decidir o que merece atenção.">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icone.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icone.svg">
     <title>Sinal — painel de decisões</title>
     <link rel="stylesheet" href="estilo.css">
     <script src="app.js" defer></script>
@@ -12,29 +16,98 @@
   <body>
     <header class="cabecalho">
       <div class="cabecalho__interior">
-        <div>
-          <h1>Sinal</h1>
-          <p id="resumo-recolha" class="resumo-recolha" aria-live="polite">A preparar a recolha…</p>
+        <div class="marca">
+          <span class="marca__simbolo" aria-hidden="true">S</span>
+          <div>
+            <p class="marca__sobretitulo">Painel pessoal</p>
+            <h1>Sinal</h1>
+            <p id="resumo-recolha" class="resumo-recolha" aria-live="polite">A preparar a recolha…</p>
+          </div>
         </div>
-        <button id="alternar-tema" class="botao botao--tema" type="button" aria-label="Usar tema escuro">
-          <span id="icone-tema" aria-hidden="true">◐</span>
-          <span id="texto-tema">Tema escuro</span>
-        </button>
+        <div class="cabecalho__acoes">
+          <button id="instalar-app" class="botao botao--instalar" type="button" hidden>
+            <span aria-hidden="true">↓</span>
+            <span>Instalar</span>
+          </button>
+          <button id="alternar-tema" class="botao botao--tema" type="button" aria-label="Usar tema escuro">
+            <span id="icone-tema" aria-hidden="true">◐</span>
+            <span id="texto-tema">Tema escuro</span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main>
+      <section class="hero" aria-labelledby="titulo-painel">
+        <div>
+          <p class="etiqueta">Menos ruído. Mais decisão.</p>
+          <h2 id="titulo-painel">O que merece a tua atenção?</h2>
+        </div>
+        <p class="hero__texto">O Sinal recolhe novidades de IA e programação, verifica o que consegue e separa o que merece tempo do que pode esperar.</p>
+      </section>
+
+      <section class="resumo-painel" aria-labelledby="titulo-resumo">
+        <div class="secao-cabecalho">
+          <div>
+            <p class="etiqueta">Hoje</p>
+            <h2 id="titulo-resumo">Decisões da recolha</h2>
+          </div>
+          <p id="resumo-estado" class="secao-cabecalho__nota">A contar os itens…</p>
+        </div>
+        <div class="metricas" aria-label="Contagem por veredicto">
+          <button class="metrica metrica--agora" type="button" data-veredicto="agora" aria-pressed="false">
+            <span id="contagem-agora" class="metrica__numero">0</span>
+            <span class="metrica__nome">Agora</span>
+            <span class="metrica__ajuda">Vale agir nas próximas semanas</span>
+          </button>
+          <button class="metrica metrica--depois" type="button" data-veredicto="depois" aria-pressed="false">
+            <span id="contagem-depois" class="metrica__numero">0</span>
+            <span class="metrica__nome">Depois</span>
+            <span class="metrica__ajuda">Bom, mas ainda não é altura</span>
+          </button>
+          <button class="metrica metrica--ruido" type="button" data-veredicto="ruido" aria-pressed="false">
+            <span id="contagem-ruido" class="metrica__numero">0</span>
+            <span class="metrica__nome">Ruído</span>
+            <span class="metrica__ajuda">Podes passar à frente</span>
+          </button>
+          <button class="metrica metrica--incerto" type="button" data-veredicto="incerto" aria-pressed="false">
+            <span id="contagem-incerto" class="metrica__numero">0</span>
+            <span class="metrica__nome">Incerto</span>
+            <span class="metrica__ajuda">Ainda faltam dados</span>
+          </button>
+        </div>
+      </section>
+
       <section class="controlos" aria-labelledby="titulo-controlos">
-        <h2 id="titulo-controlos" class="so-leitores">Ordenação e filtros</h2>
-        <div class="ordenacao">
-          <label for="ordenar">Ordenar</label>
-          <select id="ordenar" name="ordenar">
-            <option value="relevancia">Por relevância</option>
-            <option value="data">Por data</option>
-          </select>
+        <div class="controlos__cabecalho">
+          <div>
+            <p class="etiqueta">Explorar</p>
+            <h2 id="titulo-controlos">Ordenação e filtros</h2>
+          </div>
+          <button id="abrir-filtros" class="botao botao--filtros" type="button" aria-expanded="false" aria-controls="painel-filtros">
+            <span aria-hidden="true">☷</span>
+            <span id="texto-filtros">Mostrar filtros</span>
+          </button>
         </div>
 
-        <nav class="filtros" aria-label="Filtros de notícias">
+        <div class="controlos__linha">
+          <div class="ordenacao">
+            <label for="ordenar">Ordenar</label>
+            <select id="ordenar" name="ordenar">
+              <option value="relevancia">Por relevância</option>
+              <option value="data">Por data</option>
+            </select>
+          </div>
+          <div class="modo-leitura" role="group" aria-label="Modo de leitura">
+            <span class="modo-leitura__rotulo">Vista</span>
+            <button id="alternar-densidade" class="botao botao--modo" type="button" aria-pressed="false" aria-label="Usar vista compacta">
+              <span aria-hidden="true">▦</span>
+              <span id="texto-densidade">Compacta</span>
+            </button>
+          </div>
+        </div>
+
+        <nav id="painel-filtros" class="filtros" aria-label="Filtros de notícias">
           <div class="grupo-filtros">
             <p class="titulo-filtro">Veredicto</p>
             <div id="filtros-veredicto" class="lista-filtros" aria-label="Filtrar por veredicto"></div>
@@ -51,8 +124,14 @@
 
       <section aria-labelledby="titulo-resultados">
         <div class="topo-resultados">
-          <h2 id="titulo-resultados">Leitura</h2>
-          <p id="contagem-resultados" class="contagem-resultados" aria-live="polite"></p>
+          <div>
+            <p class="etiqueta">Arquivo</p>
+            <h2 id="titulo-resultados">Leitura</h2>
+          </div>
+          <div class="topo-resultados__direita">
+            <p id="estado-filtros" class="estado-filtros">Todos os itens</p>
+            <p id="contagem-resultados" class="contagem-resultados" aria-live="polite"></p>
+          </div>
         </div>
         <div id="estado" class="estado" role="status" aria-live="polite">
           <p class="estado__titulo">A carregar a recolha…</p>
@@ -61,5 +140,9 @@
         <div id="lista-itens" class="lista-itens" hidden></div>
       </section>
     </main>
+
+    <footer class="rodape-site">
+      <p>Sinal · uma leitura pessoal do mundo da IA e do desenvolvimento</p>
+    </footer>
   </body>
 </html>

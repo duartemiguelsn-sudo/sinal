@@ -1,0 +1,19 @@
+{
+  "name": "Sinal — painel de decisões",
+  "short_name": "Sinal",
+  "description": "Novidades de IA e programação já avaliadas para decidir o que merece atenção.",
+  "lang": "pt-PT",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f2",
+  "theme_color": "#f4f5f2",
+  "icons": [
+    {
+      "src": "icone.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
