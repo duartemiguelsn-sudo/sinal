@@ -1,4 +1,4 @@
-const CACHE = "sinal-estatico-v2";
+const CACHE = "sinal-estatico-v3";
 const FICHEIROS_ESTATICOS = [
   "./",
   "./index.html",
