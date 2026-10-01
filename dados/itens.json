@@ -1,5 +1,203 @@
 [
   {
+    "id": "f51c7028e2ca",
+    "titulo": "cmoraes10/loci",
+    "resumo": "18 estrelas, MIT, Python. Typed long-term memory for AI agents. One core, an MCP server and a Hermes plugin.",
+    "url": "https://github.com/cmoraes10/loci",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 7,
+    "justificacao": "Memória tipada de longo prazo para agentes, com servidor MCP — conceito que te interessa, mas o repositório nasceu hoje com 19 estrelas, sem histórico que prove que aguenta uso real. É cedo para apostar tempo nisto.",
+    "area": "skills-mcp",
+    "nome": "loci — memória de longo termo para agentes",
+    "o_que_e": "Sistema de memória persistente para agentes de IA, com um servidor MCP e plugin para outras plataformas.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "19",
+        "url": "https://api.github.com/repos/cmoraes10/loci"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/cmoraes10/loci"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/cmoraes10/loci"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/cmoraes10/loci"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "hoje",
+        "url": "https://api.github.com/repos/cmoraes10/loci"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-01",
+    "veredicto": "depois",
+    "acao": "Volta a olhar quando o projeto tiver mais maturidade e utilizadores a testá-lo.",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "e45fed453524",
+    "titulo": "Louis-CFM/coucou",
+    "resumo": "2022 estrelas, MIT, Swift. A tiny friend that lives in your notch (macOS) or at the top of your screen (Windows) and keeps an eye on your Claude Code sessions.",
+    "url": "https://github.com/Louis-CFM/coucou",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 8,
+    "justificacao": "É um widget de notch que mostra o estado de sessões do Claude Code, acabado de nascer (3 dias) e já com 2 mil estrelas — número que cheira a onda de visibilidade, não a utilidade comprovada. Vem da camada 2 e é Swift para macOS, enquanto tu estás em Windows/Ubuntu. Não muda nada no teu fluxo de trabalho real.",
+    "area": "agentes-codigo",
+    "nome": "coucou — monitor de Claude Code",
+    "o_que_e": "Aplicação que fica na barra de tarefas ou notch e monitora sessões de Claude Code.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "2025",
+        "url": "https://api.github.com/repos/Louis-CFM/coucou"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/Louis-CFM/coucou"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/Louis-CFM/coucou"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Swift",
+        "url": "https://api.github.com/repos/Louis-CFM/coucou"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/Louis-CFM/coucou"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-01",
+    "veredicto": "ruido",
+    "acao": "Ignora: é um gadget visual, não uma ferramenta de produtividade.",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "df02782130f2",
+    "titulo": "arjunkshah12345-hash/openpages",
+    "resumo": "14 estrelas, MIT, TypeScript. Open-source AI workspace for humans and agents — SuperCompress as the core context layer.",
+    "url": "https://github.com/arjunkshah12345-hash/openpages",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 5,
+    "justificacao": "Promessa interessante mas o resumo não explica como funciona nem se está vivo. Sem mais detalhes sobre o que SuperCompress faz e quanto setup exige, fica no meio — camada 2 com pouca substância.",
+    "area": "repos-em-alta",
+    "nome": "openpages — workspace de IA aberto",
+    "o_que_e": "Workspace open-source para humanos e agentes, com SuperCompress como camada central de contexto.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "b8ca0737d3a2",
+    "titulo": "Best OpenSource Claude Cowork alternative?",
+    "resumo": "Hey guys, Looking for an alternative for Claude Cowork : Project Work / Documents Integrations like Notion, Gmail, etc. Tools like Websearch, PDF creation, etc. Came over Eigent ( https://github.com/eigent-ai/eigent ) but cant find any actual reviews about it, what usually is a sign thats not good performing.. Also have tried multiple other frameworks (OpenClaw, Hermes, OpenWebUI Chat Interface) -…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wuu9ip/best_opensource_claude_cowork_alternative/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 4,
+    "justificacao": "Menção a Eigent e Hermes, que entram no mundo de agentes e MCP, mas o post é uma pergunta aberta sem resposta clara. Camada 2, sem substância. Se o projeto referido fosse sólido, valia mais.",
+    "area": "agentes-codigo",
+    "nome": "Procura de alternativa open-source a Claude Cowork",
+    "o_que_e": "Pergunta sobre projectos open-source que repliquem funcionalidades de Claude Cowork (integração com Notion, Gmail, etc.).",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "803705924fa3",
+    "titulo": "nanaism/yomiyasu",
+    "resumo": "763 estrelas, MIT, Python. AI生成の日本語を自然な日本語へ推敲するAgent Skill / Agent Skill for Refining AI-Generated Japanese into Natural Japanese",
+    "url": "https://github.com/nanaism/yomiyasu",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 5,
+    "justificacao": "Está bem feita e tem tração (763 estrelas), mas é uma skill para um caso muito específico — refinação de japonês. Sem contexto de estar a trabalhar com esse assunto agora, não muda nada esta semana.",
+    "area": "skills-mcp",
+    "nome": "yomiyasu — skill de refinação de japonês",
+    "o_que_e": "Agent skill que refina texto em japonês gerado por IA para soar natural.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "4317828ae771",
+    "titulo": "justxor/claude-code-pro-course",
+    "resumo": "30 estrelas, MIT, Shell. Claude Code PRO — полный курс и гайд на русском: CLAUDE.md, settings, skills, subagents, hooks, MCP, плагины, CI. 8 лабораторных, библиотека промптов и готовый starter-kit https://t.me/ai_machinelearning_big_data/10997 - здесь бесплатные курсы по chatgpt",
+    "url": "https://github.com/justxor/claude-code-pro-course",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 6,
+    "justificacao": "Tem potencial porque cobre MCP, skills e Claude Code, mas está em russo e vem com spam de telegram embutido no resumo. A camada 2 e a falta de substância clara descem a nota.",
+    "area": "skills-mcp",
+    "nome": "claude-code-pro-course — guia completo em russo",
+    "o_que_e": "Curso em russo sobre Claude Code com configurações, skills, subagentes, hooks, MCP e plugins.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "39eec83216d8",
+    "titulo": "szmcp: a ZIM HTML to Markdown converter and yet another ZIM MCP server",
+    "resumo": "Hello all, I wanted to share a little project I vibe-coded for myself that you may find useful. As many people here like to suggest, I wanted to give my small local LLMs access to information to improve their world knowledge. I didn't want to give my LLM free reign searching and browsing the web to keep my queries private and functional offline, so I wanted to give them an offline knowledge base.…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wuktlf/szmcp_a_zim_html_to_markdown_converter_and_yet/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 7,
+    "justificacao": "Post do Reddit sobre um conversor ZIM-para-Markdown e servidor MCP feito 'vibe-coded' para uso pessoal, sem qualquer facto verificado sobre o projeto em si — nem repositório confirmado, nem licença, nem requisitos. Não há como avaliar ganho nem custo de arranque.",
+    "area": "skills-mcp",
+    "nome": "szmcp — servidor MCP de ZIM HTML para Markdown",
+    "o_que_e": "Servidor MCP que converte ficheiros ZIM em Markdown e oferece acesso offline a uma base de conhecimento local.",
+    "factos": [],
+    "duvidas": [
+      "Existe realmente um projeto chamado szmcp no GitHub ou noutro repositório público?",
+      "Qual é a licença do projeto szmcp?",
+      "Qual é a linguagem de programação usada (Python, JavaScript, outro)?",
+      "O projeto requer dependências especiais (Node.js, Docker, ou outras)?",
+      "Existe realmente um repositório público do szmcp?"
+    ],
+    "verificado": "2026-10-01",
+    "veredicto": "incerto",
+    "acao": "Confirma se existe repositório público antes de gastares tempo a procurá-lo.",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "0e3ce3c6bab8",
+    "titulo": "Astrabox - Open source Arcade Game Generator",
+    "resumo": "Hey everyone! I’ve been working on ASTRABOX : an arcade interface where you describe a game, the AI builds it, and you can ask for changes by voice while playing. Each game gets its own visuals and gameplay, while a shared runtime handles controllers, scores, player joining, etc. I built it around Codex, but the code is open source. I’d love to see someone adapt it to a local coding model, local S…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wumex2/astrabox_open_source_arcade_game_generator/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 6,
+    "justificacao": "Usa IA (Codex originalmente) para gerar jogos, mas o assunto dele é gerar jogos arcade, não IA. É um bom projeto e está construído com agentes/código, mas para ele não muda nada — não está a fazer jogos.",
+    "area": "repos-em-alta",
+    "nome": "Astrabox — gerador de jogos arcade open-source",
+    "o_que_e": "Interface de arcade onde descreve um jogo, a IA constrói-o, e pede mudanças por voz enquanto joga.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
     "id": "ff649694bcad",
     "titulo": "add GLM-5.3-Flash (GLM5-Next) support by timkhronos · Pull Request #27773 · ggml-org/llama.cpp",
     "resumo": "now you can use GLM-5.3-Flash on your home computer submitted by /u/jacek2023 [link] [comments]",
@@ -30,6 +228,60 @@
     "o_que_e": "Um modelo de 27 parâmetros feito pelo Beijing Academy of Artificial Intelligence que aprende a melhorar soluções automaticamente ao longo de múltiplas iterações, treinado em tarefas de ML e programação.",
     "veredicto": "incerto",
     "recolhido": "2026-09-30"
+  },
+  {
+    "id": "efce1daa2ff1",
+    "titulo": "v2.1.286",
+    "resumo": "What's changed Added a count such as \"2 of 5\" to the permission prompt when several permission requests stack up Added mouse support for the \"N more\" rows of lists in fullscreen mode: click one to jump to that end of the list, with hover and pressed states Fixed several Claude Code processes and IDE extensions each opening a login browser when gcpAuthRefresh or awsAuthRefresh credentials expire Fi…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.286",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-09-30",
+    "nota": 7,
+    "justificacao": "Release normal do Claude Code, com correções de autenticação e melhorias de usabilidade na prompt de permissões. É manutenção útil, não é feature que mude o fluxo de trabalho — mas é a ferramenta que já usas, mantida a sério.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code v2.1.286",
+    "o_que_e": "Lançamento do Claude Code com melhorias em prompts de permissões, suporte para rato no modo fullscreen, e correcções de processos de autenticação em extensões IDE.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "148783",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      }
+    ],
+    "duvidas": [
+      "Não declara licença reconhecida — não se sabe o que se pode fazer com o código."
+    ],
+    "verificado": "2026-10-01",
+    "veredicto": "agora",
+    "acao": "Atualiza o Claude Code e lê o changelog de correções de autenticação.",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "ee61f7ae6341",
+    "titulo": "How to Diagnose and Fix AI Inference Latency on Kubernetes",
+    "resumo": "It's Thursday, around quarter past two. Your team shipped an internal assistant two weeks ago. The demo went well enough that someone in finance asked whether it could read contracts. Word spread. Tod",
+    "url": "https://www.freecodecamp.org/news/how-to-diagnose-and-fix-ai-inference-latency-on-kubernetes/",
+    "fonte": "freeCodeCamp",
+    "camada": 3,
+    "data": "2026-09-30",
+    "nota": 4,
+    "justificacao": "Toca inferência, mas em Kubernetes—ele não usa cloud paga nem infraestrutura de produção. Camada 3, útil para contexto mas não para o que ele faz agora.",
+    "area": "modelos-apis",
+    "nome": "Diagnóstico e correção de latência em inferência IA no Kubernetes",
+    "o_que_e": "Guia para resolver problemas de velocidade em assistentes IA em produção.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
   },
   {
     "id": "ec81a7566c80",
@@ -126,6 +378,22 @@
     "o_que_e": "Um repositório que recolhe proxies gratuitos de mais de 700 fontes, valida cada um, mantém uma lista actualizada a cada hora e oferece um servidor MCP para agentes IA."
   },
   {
+    "id": "be1e3c65b335",
+    "titulo": "You can now run Qwen 3.8 27B on AMD NPUs via FastFlowLM (at a killer 1 tps decode)",
+    "resumo": "submitted by /u/TuskNaPrezydenta2020 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wud77g/you_can_now_run_qwen_38_27b_on_amd_npus_via/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 5,
+    "justificacao": "É sobre modelos locais, mas o Duarte não tem máquina para correr modelos. Camada 2 sem detalhes sobre como isto afeta o ecossistema MCP ou agentes. Fica interessante mas fora do seu dia a dia.",
+    "area": "modelos-apis",
+    "nome": "Qwen 3.8 27B em AMD NPUs via FastFlowLM",
+    "o_que_e": "Forma de executar um modelo de linguagem grande em processadores de IA AMD com velocidade rápida de decodificação.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
     "id": "bca476fd3463",
     "titulo": "Niko1221/Strata",
     "resumo": "2149 estrelas, MIT, C++. Qwen3.8-Flash-Next (125B MoE) on a 8GB+ NVIDIA GPU: one-click install for Windows / Linux. Strata inference engine, OpenAI/Anthropic API on localhost, optional image input.",
@@ -188,6 +456,22 @@
     "recolhido": "2026-09-30"
   },
   {
+    "id": "b5e5e43443d2",
+    "titulo": "Helping small businesses put AI to work",
+    "resumo": "OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI.",
+    "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-30",
+    "nota": 2,
+    "justificacao": "Notícia sobre iniciativa corporativa e suporte empresarial. Não é modelo novo, API, ferramenta nem conteúdo que ele pudesse usar agora. Ruído.",
+    "area": "modelos-apis",
+    "nome": "OpenAI apoia pequenas empresas com formação em IA",
+    "o_que_e": "Parceria entre OpenAI e rede de apoio a pequenas empresas para treino prático em IA.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-01"
+  },
+  {
     "id": "b05ceac2f48e",
     "titulo": "rehan-remade/universal-modder",
     "resumo": "177 estrelas, MIT, Python. Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos.",
@@ -234,6 +518,85 @@
     "recolhido": "2026-09-30"
   },
   {
+    "id": "aabe2926a0a2",
+    "titulo": "We just open-sourced the world's fastest WebGPU kernels for local AI on Hugging Face",
+    "resumo": "The collection includes kernels for more than 200 common ML operations, all of which can run entirely locally in your browser on WebGPU. We're also working to upstream these optimizations to Transformers.js, ONNX Runtime Web, LiteRT.js, and more! Kernels: https://huggingface.co/kernels?platform=webgpu Blog: https://huggingface.co/blog/webgpu-kernels submitted by /u/xenovatech [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 6,
+    "justificacao": "Interessante do ponto de vista técnico, mas WebGPU é frontend pesado e ele não domina isso. Não tem aplicação imediata no workflow dele — é mais prototipagem que deployment prático.",
+    "area": "repos-em-alta",
+    "nome": "WebGPU kernels — operações ML rápidas em browser",
+    "o_que_e": "Coleção de kernels otimizados para WebGPU que executam 200+ operações de ML diretamente no browser sem servidor.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "975f57653267",
+    "titulo": "Gemini 4 Argon",
+    "resumo": "1443 pontos e 948 comentários no Hacker News. See also: Gemini 4 Argon (High): Intelligence, Performance and Price Analysis - https://news.ycombinator.com/item?id=49914236",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 5,
+    "justificacao": "É uma notícia sobre um modelo Google com muito interesse (1443 pontos), mas o resumo não explica o que Argon é nem qual é a diferença em relação ao Gemini 4. Vale acompanhar a conversa no HN, mas cego não dá.",
+    "area": "modelos-apis",
+    "nome": "Gemini 4 Argon",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "816b4041b8ea",
+    "titulo": "Two open-weights releases: Victoria (Qwen3.8-Flash-Next with 44% of experts cut, 70% Terminal-Bench 2.1, GGUF included) and Maple (a Canada-first fine-tune)",
+    "resumo": "We had a Dell B300 in the lab for a few weeks and used it to create two fine tunes of Qwen Flash Next. Victoria (coding and agents) Qwen3.8-Flash-Next cut down by 44% using a paper / technique called REAP: 512 down to 288 per layer. Retrained at 4-bit (NVFP4) afterwards, so it's trained for the format it ships in rather than just quantized after the fact. Terminal-Bench 2.1: 70.0%, averaged over 3…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wujph3/two_openweights_releases_victoria_qwen38flashnext/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 7,
+    "justificacao": "Vem do r/LocalLLaMA (camada 2), com números técnicos genuínos (redução de especialistas, GGUF confirmado), mas o próprio texto admite confusões: não está claro se \"Victoria\" é o nome oficial nem se \"Maple\" é sequer a mesma família de modelo. Sem máquina para correr localmente, isto não te serve já de qualquer forma.",
+    "area": "modelos-apis",
+    "nome": "Victoria e Maple — Qwen3.8-Flash-Next otimizado para coding e agentes",
+    "o_que_e": "Dois modelos abertos baseados em Qwen3.8-Flash-Next: Victoria com 44% dos experts removidos (GGUF incluído) e Maple uma fine-tune local.",
+    "factos": [
+      {
+        "rotulo": "Redução de especiali",
+        "valor": "43,75% (512 reduzido para 288 por camada)",
+        "url": "https://huggingface.co/khuasar/Qwen3.8-Flash-Next-REAP-288-Q4g32-Q8-MTPLX"
+      },
+      {
+        "rotulo": "Técnica usada",
+        "valor": "REAP (saliência calibrada em pesos quantizados)",
+        "url": "https://huggingface.co/sh0wie/Qwen3.8-Flash-Next-REAP-288-bf16"
+      },
+      {
+        "rotulo": "Formato de quantizaç",
+        "valor": "Q4/group32 para especialistas, Q8/group64 para matrizes sensíveis",
+        "url": "https://huggingface.co/khuasar/Qwen3.8-Flash-Next-REAP-288-Q4g32-Q8-MTPLX"
+      },
+      {
+        "rotulo": "Disponibilidade GGUF",
+        "valor": "Confirmado (múltiplas versões em Hugging Face)",
+        "url": "https://huggingface.co/sh0wie/Qwen3.8-Flash-Next-REAP-288-GGUF"
+      }
+    ],
+    "duvidas": [
+      "Victoria é realmente o nome desta fine-tune ou é apenas um nome interno usado no Reddit?",
+      "Qual é exatamente o score Terminal-Bench 2.1: 70.0% referido no resumo?",
+      "Maple é realmente uma fine-tune de Qwen3.8-Flash-Next ou é um projeto diferente (MaplePT encontrado é baseado em Phi-3)?",
+      "A Dell B300 foi realmente usada para treinar Victoria ou apenas para desenvolvimento/teste?",
+      "Victoria é realmente o nome desta fine-tune ou apenas um nome interno usado no Reddit?"
+    ],
+    "verificado": "2026-10-01",
+    "veredicto": "incerto",
+    "acao": "Confirma se Maple é mesmo fine-tune de Qwen e se tens hardware para testar antes de decidir.",
+    "recolhido": "2026-10-01"
+  },
+  {
     "id": "73be68bc8700",
     "titulo": "glanderness/BeefTV",
     "resumo": "595 estrelas, MIT, TypeScript. Local-first, lightweight, AI-native video workspace.",
@@ -248,6 +611,22 @@
     "o_que_e": "Uma aplicação local e leve para edição de vídeo com integração nativa de IA.",
     "veredicto": "depois",
     "recolhido": "2026-09-30"
+  },
+  {
+    "id": "6a91381a4292",
+    "titulo": "Disrupting a coordinated model-distillation campaign",
+    "resumo": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation.",
+    "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-09-30",
+    "nota": 3,
+    "justificacao": "Segurança e defesas de modelos é assunto secundário — não é novo modelo, nem API, nem ferramenta que ele use. Camada 1, mas fora do focos dele.",
+    "area": "modelos-apis",
+    "nome": "OpenAI interrompe campanha de distilação de modelos",
+    "o_que_e": "Análise de como OpenAI bloqueou tentativas de extração não autorizada do raciocínio dos seus modelos.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-01"
   },
   {
     "id": "5699a9dfc9f1",
@@ -306,6 +685,22 @@
     "verificado": "2026-09-30"
   },
   {
+    "id": "443231028f53",
+    "titulo": "Qwen3.8-27B-pi: Effort-Ordered Reasoning for Agentic Coding",
+    "resumo": "submitted by /u/paf1138 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wufzrh/qwen3827bpi_effortordered_reasoning_for_agentic/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 6,
+    "justificacao": "Modelo novo e focado em agentes, mas sem detalhes no resumo — não dá para saber custo, acesso, ou ganho real. Camada 2 sem substância. Interessante, mas investigação necessária.",
+    "area": "modelos-apis",
+    "nome": "Qwen3.8-27B-pi — raciocínio ordenado para código com agentes",
+    "o_que_e": "Modelo Qwen3.8-27B otimizado para raciocínio estruturado em tarefas de código e automação com agentes.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
     "id": "4236a8d04724",
     "titulo": "PSA: ModelScope CLI is now moved to \"modelscope-hub\"",
     "resumo": "To save people 30 minutes of research (because they didn't bother documenting this officially at all): The \"modelscope\" package is now just the library. Doesn't contain a CLI anymore. If you try to install it or update your old CLI package, you get \"No executables are provided by package `modelscope`; removing tool. error: Failed to install entrypoints for `modelscope`\". They moved all CLI tools t…",
@@ -320,6 +715,22 @@
     "o_que_e": "Aviso de que o CLI do ModelScope foi movido para um pacote separado chamado modelscope-hub.",
     "veredicto": "depois",
     "recolhido": "2026-09-30"
+  },
+  {
+    "id": "40e72bec9edf",
+    "titulo": "HydraFusion in VS Code and the GitHub Copilot app",
+    "resumo": "The HydraFusion research preview is now available in Visual Studio Code and the GitHub Copilot app, expanding beyond Copilot CLI. HydraFusion appears in the model picker, but rather than being… The post HydraFusion in VS Code and the GitHub Copilot app appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-09-30",
+    "nota": 6,
+    "justificacao": "É uma extensão do Copilot que vale acompanhar, mas o resumo não diz o que HydraFusion faz — se é mais rápido, mais barato, mais inteligente ou outra coisa. Só que está disponível.",
+    "area": "agentes-codigo",
+    "nome": "HydraFusion em VS Code e GitHub Copilot app",
+    "o_que_e": "HydraFusion, uma pesquisa experimental, está agora disponível no Visual Studio Code e na app do GitHub Copilot como opção no seletor de modelos.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
   },
   {
     "id": "3abc31c9034e",
@@ -338,6 +749,38 @@
     "o_que_e": "Um site que encontra automaticamente notícias e tendências do sector, escrito em TypeScript, que funciona com diferentes fontes e critérios de edição."
   },
   {
+    "id": "38adc6cd00be",
+    "titulo": "Another Ling model comes out, same receipt, 2 weeks free to use, then open source. Chinese labs do contribute a lot to open source community",
+    "resumo": "Ling-3.1-flash: ~560B total params, ~25B active/token, up to 1M-token context. Across work, coding & healthcare: 1,673 Elo on GDPVal-AA v2.1, 75.16 on FrontierSWE, and 65.35 on HealthBench Professional. submitted by /u/Elouakili_Flexy [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wuboum/another_ling_model_comes_out_same_receipt_2_weeks/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 5,
+    "justificacao": "Release do laboratório chinês, cifras impressionantes, mas resumo vago em detalhes técnicos e acesso. Camada 2 sem contexto claro. O padrão \"grátis 2 semanas depois open source\" é positivo, mas não há confirmação de manutenção a longo prazo.",
+    "area": "modelos-apis",
+    "nome": "Ling-3.1-flash — modelo de 25B tokens ativos, 2 semanas grátis depois open source",
+    "o_que_e": "Modelo aberto com 560B parâmetros totais, 25B ativos por token, contexto até 1M, com versão grátis por 2 semanas antes de ser open sourced.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "2e3d5dcc0b0c",
+    "titulo": "You said no MCP",
+    "resumo": "645 pontos e 355 comentários no Hacker News",
+    "url": "https://earendil.com/posts/you-said-no-mcp/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 2,
+    "justificacao": "Título sugere algo sobre MCP, mas sem contexto é impossível perceber o quê — pode ser opinião, notícia, ou post de reclamação. Camada 2 sem substância.",
+    "area": "skills-mcp",
+    "nome": "You said no MCP",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-01"
+  },
+  {
     "id": "26088bef70ca",
     "titulo": "lemomo-ai/lemo-opuscar",
     "resumo": "647 estrelas, NOASSERTION, JavaScript. 43 film styles, each a reusable style prompt plus a short film made entirely in code by Claude Opus 5.5. Pick a style, bring your own story, and let your agent direct. | Opus5.5 x 43 种影片风格：风格提示词 + 纯代码样片 + 导演与技术指南",
@@ -354,6 +797,109 @@
     "o_que_e": "Um repositório com 43 estilos de filme diferentes, cada um com um prompt reutilizável e um filme de exemplo gerado inteiramente em código por Claude Opus 5.5."
   },
   {
+    "id": "22d6bbaa2c19",
+    "titulo": "openai/mcp-extensions",
+    "resumo": "543 estrelas, Apache-2.0, TypeScript. Build plugins that feel like native, first-class features of ChatGPT.",
+    "url": "https://github.com/openai/mcp-extensions",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 7,
+    "justificacao": "Repositório oficial da OpenAI, criado há 2 dias, mantido ativamente, licença Apache-2.0 — mas é sobre construir plugins para ChatGPT, não sobre Claude Code, agentes ou MCP no sentido que tu segues. Ainda é muito cedo para saber se isto se cruza com o teu stack.",
+    "area": "skills-mcp",
+    "nome": "openai/mcp-extensions — plugins para ChatGPT como MCP",
+    "o_que_e": "Framework para construir plugins que funcionam como recursos MCP nativos no ChatGPT.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "544",
+        "url": "https://api.github.com/repos/openai/mcp-extensions"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/openai/mcp-extensions"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "Apache-2.0",
+        "url": "https://api.github.com/repos/openai/mcp-extensions"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/openai/mcp-extensions"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/openai/mcp-extensions"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-01",
+    "veredicto": "depois",
+    "acao": "Volta a olhar quando houver exemplos concretos de integração com MCP ou agentes externos.",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "20b52029e360",
+    "titulo": "Launch HN: Magnitude (YC S25) – Self-optimizing inference engine for agents",
+    "resumo": "169 pontos e 85 comentários no Hacker News. Hey HN, Anders and Tom here. We're building Magnitude, an inference engine for agents that optimizes itself to run as fast as possible on your hardware. It works on Mac, Linux, and Windows on any hardware and is up to 2x faster than llama.cpp. We're both software engineers and previously built an open source browser agent to 4k+ GH stars and 100k+ downlo",
+    "url": "https://github.com/magnitudedev/magnitude",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 7,
+    "justificacao": "Vem do Hacker News (camada 2) — o hype em torno do lançamento não é prova de qualidade. É um motor de inferência em Rust, open-source e ativo, mas promete velocidade \"até 2x mais rápido que llama.cpp\" sem contexto de hardware nem casos de uso para agentes concretos. A tua VM Ubuntu não é máquina para correr modelos localmente, por isso não se aplica já.",
+    "area": "agentes-codigo",
+    "nome": "Magnitude — inference engine self-optimizing para agentes",
+    "o_que_e": "Motor de inferência para agentes que se optimiza automaticamente para correr o mais rápido possível no hardware disponível, compatível com Mac, Linux e Windows, até 2x mais rápido que llama.cpp.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "5923",
+        "url": "https://api.github.com/repos/magnitudedev/magnitude"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/magnitudedev/magnitude"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "Apache-2.0",
+        "url": "https://api.github.com/repos/magnitudedev/magnitude"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Rust",
+        "url": "https://api.github.com/repos/magnitudedev/magnitude"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-01",
+    "veredicto": "depois",
+    "acao": "Volta a olhar quando houver benchmarks independentes ou integração direta com Claude Code/MCP.",
+    "recolhido": "2026-10-01"
+  },
+  {
+    "id": "15e70ee5e4a7",
+    "titulo": "Gemini 4 Argon: our next era of frontier intelligence",
+    "resumo": "",
+    "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+    "fonte": "Google DeepMind",
+    "camada": 1,
+    "data": "2026-09-30",
+    "nota": 5,
+    "justificacao": "Novo modelo é do seu assunto, mas o resumo está vazio — é só um título. Sem detalhar capacidades, preço ou acesso, fica suspenso. Se houvesse detalhes sobre APIs ou custo, subia.",
+    "area": "modelos-apis",
+    "nome": "Gemini 4 Argon — novo modelo frontier",
+    "o_que_e": "Anúncio de novo modelo de IA frontier da Google DeepMind.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
     "id": "0a35e4165d67",
     "titulo": "SFTMill: Easily [off-policy] distill any existing LLM with an OpenAI Compatible Endpoint. Turn any behavioral goal into a comprehensive dataset.",
     "resumo": "Hey guys - half a tutorial/guide, and half an I built this, so I went for resources. This is something that I created for myself recently when I couldn't find any good existing solution. I wrote this post myself, no AI! Probably a fair number of you have seen my posts about fine-tuning AliceAI 80B A3B according to my own synthetic datasets. If you did, I'm still fine tuning it on a live stream rig…",
@@ -368,6 +914,55 @@
     "o_que_e": "Ferramenta para criar datasets de fine-tuning sintéticos a partir de qualquer LLM com endpoint compatível com OpenAI.",
     "veredicto": "depois",
     "recolhido": "2026-09-30"
+  },
+  {
+    "id": "0772f65ed330",
+    "titulo": "edenfunf/reelmimic",
+    "resumo": "637 estrelas, MIT, JavaScript. Show it a video you love. Get a new video in the same style. An AI crew (Claude Code or Codex) plans, builds and reviews it with you.",
+    "url": "https://github.com/edenfunf/reelmimic",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 8,
+    "justificacao": "A promessa — dar-lhe um vídeo e receber um novo no mesmo estilo, com um 'crew' de IA a planear e rever — é vaga sobre o que realmente acontece por trás, e os factos verificados só confirmam estrelas e licença. Vem da camada 2, e 'está a dar que falar' não é o mesmo que funcionar bem. Falta perceber o custo de arranque e se produz algo utilizável sem render farm.",
+    "area": "agentes-codigo",
+    "nome": "reelmimic — gera vídeos no estilo de um que gostas",
+    "o_que_e": "Ferramenta que cria vídeos novos copiando o estilo de um vídeo fornecido, usando Claude Code ou Codex para planeamento e construção.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "637",
+        "url": "https://api.github.com/repos/edenfunf/reelmimic"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/edenfunf/reelmimic"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/edenfunf/reelmimic"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "JavaScript",
+        "url": "https://api.github.com/repos/edenfunf/reelmimic"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/edenfunf/reelmimic"
+      }
+    ],
+    "duvidas": [
+      "Que modelos ou APIs de vídeo usa por trás, e são pagos?",
+      "Corre localmente ou precisa de cloud paga para gerar vídeo?"
+    ],
+    "verificado": "2026-10-01",
+    "veredicto": "incerto",
+    "acao": "Descobre que infraestrutura de vídeo/render exige antes de testar.",
+    "recolhido": "2026-10-01"
   },
   {
     "id": "f969e8bca3c5",
@@ -599,6 +1194,47 @@
     "data": "2026-09-29",
     "veredicto": "incerto",
     "recolhido": "2026-09-28"
+  },
+  {
+    "id": "c6fa71193eb0",
+    "titulo": "Show HN: Ledge.sh – Runnable Markdown Notes",
+    "resumo": "152 pontos e 69 comentários no Hacker News. Hi HN, Ledge is a Markdown notebook that runs shell commands, code, SQL, etc from inside your own notes. I built Ledge because I spend much of my day copy/pasting commands from my notes into the terminal. I was inspired by how much cmux helped me organize my terminals - but there was still a split brain between my notes and frequently run commands. I've ",
+    "url": "https://ledge.sh",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-29",
+    "nota": 7,
+    "justificacao": "Vem do Hacker News (camada 2). Notebook de markdown executável, open-source e com licença Apache-2.0, mas depende de Bun e Electrobun — stack que nunca usaste, e no Windows corre só via WSL. Pode ser útil para organizar comandos, mas o custo de arranque não é trivial e não é ferramenta do teu foco central.",
+    "area": "ferramentas-dia-a-dia",
+    "nome": "Ledge.sh — Notas em Markdown executáveis",
+    "o_que_e": "Caderno de Markdown que executa comandos shell, código e SQL dentro das notas.",
+    "factos": [
+      {
+        "rotulo": "Licença",
+        "valor": "Apache-2.0",
+        "url": "https://ledge.sh/"
+      },
+      {
+        "rotulo": "Tipo",
+        "valor": "Projeto open-source (grátis)",
+        "url": "https://ledge.sh/"
+      },
+      {
+        "rotulo": "Requisitos",
+        "valor": "Bun e Electrobun; Mac, Linux, Windows (WSL), iOS, Android",
+        "url": "https://github.com/ledgesh/ledge"
+      },
+      {
+        "rotulo": "Estado",
+        "valor": "Mantido (última release 01 Out 2026)",
+        "url": "https://github.com/ledgesh/ledge/releases/tag/v0.1.5"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-01",
+    "veredicto": "depois",
+    "acao": "Experimenta quando tiveres WSL configurado e tempo livre para testar fora do fluxo principal.",
+    "recolhido": "2026-10-01"
   },
   {
     "id": "c52cbff36daa",
@@ -888,6 +1524,22 @@
     "recolhido": "2026-09-30"
   },
   {
+    "id": "845f25dd769d",
+    "titulo": "Show HN: NSL – WSL for Linux",
+    "resumo": "161 pontos e 102 comentários no Hacker News. One of the things that Windows really got right is WSL2. I drive an atomic Linux distro for daily use, but wanted a way to develop with multiple different distros with that same WSL UX. NSL is my answer. It is a faithful reproduction of the developer experience, powered by a single VM that hosts one or more systemd-nspawn containers with your developmen",
+    "url": "https://frostyard.github.io/nsl/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-09-29",
+    "nota": 6,
+    "justificacao": "Útil para quem trabalha com múltiplas distros, mas o Duarte usa Windows e uma VM Ubuntu—não é o seu problema. Camada 2, boa ideia mas não muda o que ele faz esta semana.",
+    "area": "ferramentas-dia-a-dia",
+    "nome": "NSL — WSL para Linux",
+    "o_que_e": "Ferramenta que traz a experiência do WSL do Windows para máquinas Linux, usando contentores systemd-nspawn.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-01"
+  },
+  {
     "id": "7f3ada3c2a26",
     "titulo": "ChatGPT Pro 500",
     "resumo": "207 pontos e 239 comentários no Hacker News",
@@ -1047,6 +1699,22 @@
     "data": "2026-09-29",
     "veredicto": "incerto",
     "recolhido": "2026-09-29"
+  },
+  {
+    "id": "273ed5064107",
+    "titulo": "afk-yar/1c-testpilot-agent-kit",
+    "resumo": "21 estrelas, MIT, HTML. Скилл, агент-тестировщик и бенчмарк для AI-агентов, тестирующих 1С через ROCTUP/1c-testpilot",
+    "url": "https://github.com/afk-yar/1c-testpilot-agent-kit",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-29",
+    "nota": 3,
+    "justificacao": "É MCP/skill, mas muito específico do ecossistema 1С (software de negócios russo). Resumo em russo, 21 estrelas, sem sinais de vida fora desse mundo.",
+    "area": "skills-mcp",
+    "nome": "1c-testpilot-agent-kit — Skill para testes de agentes",
+    "o_que_e": "Skill e agente testador para avaliar agentes de IA que testam o sistema 1С através de ROCTUP.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-01"
   },
   {
     "id": "225bdd543503",
@@ -1822,6 +2490,52 @@
     "data": "2026-09-28",
     "veredicto": "incerto",
     "recolhido": "2026-09-29"
+  },
+  {
+    "id": "2a18d8afdae8",
+    "titulo": "echris6/motion-video-kit",
+    "resumo": "732 estrelas, MIT, Python. Claude Code skill kit for premium AI-assisted business videos: independent critic loop, motion principles from 28 launch films, quality bar, sound design, business offers, Three.js patterns, scripts",
+    "url": "https://github.com/echris6/motion-video-kit",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-28",
+    "nota": 8,
+    "justificacao": "Pacote de skills para Claude Code focado em vídeo motion design — com loop de crítica, princípios extraídos de lançamentos reais e padrões Three.js — é o tipo de coleção de skills concretas que segues. Licença MIT, Python, atividade recente e quase 2 anos de estrelas (734) sugerem tração real, não só hype. Vale a pena espreitar a estrutura das skills mesmo sem usares para vídeos de negócio.",
+    "area": "skills-mcp",
+    "nome": "motion-video-kit — Claude Code skill para vídeos de negócios",
+    "o_que_e": "Kit de skills para Claude Code que automatiza produção de vídeos com business intelligence, incluindo crítica, design de som e padrões Three.js.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "734",
+        "url": "https://api.github.com/repos/echris6/motion-video-kit"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/echris6/motion-video-kit"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/echris6/motion-video-kit"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/echris6/motion-video-kit"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/echris6/motion-video-kit"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-01",
+    "veredicto": "agora",
+    "acao": "Explora a estrutura das skills para veres como organizam o loop de crítica.",
+    "recolhido": "2026-10-01"
   },
   {
     "id": "254184b48cd8",
