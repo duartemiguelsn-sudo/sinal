@@ -691,6 +691,125 @@ function iniciarTema() {
   });
 }
 
+// ——— Notificações ———
+
+// A metade pública do par VAPID. Não é segredo: serve só para o serviço de
+// push do browser confirmar que quem manda é o Sinal, que assina com a metade
+// privada guardada no Secret VAPID_CHAVE_PRIVADA. As duas têm de ser do mesmo
+// par; foram geradas com `python pipeline/notificar.py --gerar-chaves`.
+const CHAVE_PUBLICA_PUSH = "BNx0u-jUaO08_JWkupXg9RaJd5QAVaQfaEsb9R93THSmenpWvATJaGyguxYWXVH2XecePbqiIg358eCGsT88y-Y";
+
+const avisos = {
+  caixa: document.querySelector("#avisos"),
+  estado: document.querySelector("#avisos-estado"),
+  ligar: document.querySelector("#avisos-ligar"),
+  desligar: document.querySelector("#avisos-desligar"),
+  subscricao: document.querySelector("#avisos-subscricao"),
+  codigo: document.querySelector("#avisos-codigo"),
+  copiar: document.querySelector("#avisos-copiar")
+};
+
+// O browser quer a chave em bytes; ela está escrita em base64 de URL, sem o
+// "=" do fim, que é como a norma a passa de um lado para o outro.
+function chaveEmBytes(texto) {
+  const base64 = (texto + "=".repeat((4 - (texto.length % 4)) % 4)).replace(/-/g, "+").replace(/_/g, "/");
+  return Uint8Array.from(atob(base64), (letra) => letra.charCodeAt(0));
+}
+
+function mostrarAvisos(texto, subscricao) {
+  avisos.estado.textContent = texto;
+  avisos.ligar.hidden = Boolean(subscricao) || Notification.permission === "denied";
+  avisos.desligar.hidden = !subscricao;
+  avisos.subscricao.hidden = !subscricao;
+  // Uma linha só, sem espaços: é o formato que o notificar.py lê, uma
+  // subscrição por linha, e cola-se no Secret sem arrumar nada.
+  avisos.codigo.value = subscricao ? JSON.stringify(subscricao) : "";
+}
+
+async function iniciarAvisos() {
+  avisos.caixa.hidden = false;
+
+  const suporta = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
+  if (!suporta) {
+    // O iPhone só dá push a sites instalados no ecrã principal. Fora disso
+    // nem sequer expõe o PushManager, e a mensagem genérica não ajudava.
+    const iphone = /iPhone|iPad|iPod/.test(navigator.userAgent);
+    avisos.estado.textContent = iphone
+      ? "No iPhone, as notificações só funcionam com o Sinal no ecrã principal: Partilhar › Adicionar ao ecrã principal, e abre-o de lá."
+      : "Este browser não suporta notificações.";
+    return;
+  }
+
+  // O `ready` nunca resolve se o service worker não se instalar, e o texto
+  // fica este. Melhor do que uma caixa vazia sem explicação.
+  avisos.estado.textContent = "A verificar se as notificações estão ativas…";
+  let registo;
+  try {
+    registo = await navigator.serviceWorker.ready;
+  } catch {
+    avisos.estado.textContent = "As notificações precisam do service worker, que não arrancou.";
+    return;
+  }
+
+  const actual = await registo.pushManager.getSubscription();
+  if (actual) {
+    mostrarAvisos("Ativas neste aparelho. Recebes um resumo quando há coisas novas Para ti.", actual);
+  } else if (Notification.permission === "denied") {
+    mostrarAvisos("Bloqueaste as notificações para este site. Para as receberes, liga-as nas definições do browser.", null);
+  } else {
+    mostrarAvisos("Recebe um resumo no telemóvel ou no PC quando há coisas novas Para ti. Uma vez por dia, no máximo.", null);
+  }
+
+  avisos.ligar.addEventListener("click", async () => {
+    avisos.ligar.disabled = true;
+    try {
+      // Pedir a permissão só aqui, e não ao abrir a página: o browser só a
+      // pede uma vez, e um "não" dado sem contexto fica para sempre.
+      const permissao = await Notification.requestPermission();
+      if (permissao !== "granted") {
+        mostrarAvisos(permissao === "denied"
+          ? "Bloqueaste as notificações para este site. Para as receberes, liga-as nas definições do browser."
+          : "Ficou por decidir. Carrega outra vez quando quiseres.", null);
+        return;
+      }
+      const subscricao = await registo.pushManager.subscribe({
+        // O Chrome exige que cada push mostre uma notificação visível. É a
+        // garantia de que o site não usa o push para correr às escondidas.
+        userVisibleOnly: true,
+        applicationServerKey: chaveEmBytes(CHAVE_PUBLICA_PUSH)
+      });
+      mostrarAvisos("Ativas neste aparelho. Falta só colar a linha abaixo no GitHub.", subscricao);
+      avisos.codigo.focus();
+      avisos.codigo.select();
+    } catch (erro) {
+      mostrarAvisos(`Não foi possível ativar: ${erro.message}`, null);
+    } finally {
+      avisos.ligar.disabled = false;
+    }
+  });
+
+  avisos.desligar.addEventListener("click", async () => {
+    const subscricao = await registo.pushManager.getSubscription();
+    if (subscricao) await subscricao.unsubscribe();
+    mostrarAvisos("Desativadas neste aparelho. Tira a linha dele do Secret PUSH_SUBSCRICOES para o pipeline deixar de tentar.", null);
+    avisos.ligar.focus();
+  });
+
+  avisos.copiar.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(avisos.codigo.value);
+      avisos.copiar.textContent = "Copiado";
+    } catch {
+      // Sem acesso à área de transferência, deixa o texto seleccionado para
+      // se copiar à mão.
+      avisos.codigo.focus();
+      avisos.codigo.select();
+      avisos.copiar.textContent = "Selecionado, copia à mão";
+    }
+    setTimeout(() => { avisos.copiar.textContent = "Copiar"; }, 2500);
+  });
+}
+
 // ——— Arranque ———
 
 async function carregar() {
@@ -726,3 +845,4 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
+iniciarAvisos();

@@ -1,7 +1,7 @@
 // A versão muda quando se publica HTML, CSS ou JavaScript. Os ficheiros são
 // servidos primeiro da cache, por isso sem mudar este nome a app instalada no
 // telemóvel continuava a usar o CSS e o HTML antigos.
-const CACHE = "sinal-estatico-v7";
+const CACHE = "sinal-estatico-v8";
 const FICHEIROS_ESTATICOS = [
   "./",
   "./index.html",
@@ -51,4 +51,53 @@ self.addEventListener("fetch", (evento) => {
   evento.respondWith(
     caches.match(evento.request).then((guardado) => guardado || fetch(evento.request))
   );
+});
+
+// ——— Notificações ———
+// O pipeline manda {titulo, corpo, endereco}, já cifrado pelo serviço de push.
+// Quem chega aqui é só o browser, por isso o texto mostra-se como veio: uma
+// notificação é sempre texto simples, nunca HTML.
+self.addEventListener("push", (evento) => {
+  let mensagem = {};
+  try {
+    mensagem = evento.data ? evento.data.json() : {};
+  } catch {
+    // Uma mensagem estragada ainda tem de dar notificação: o Chrome castiga
+    // o site que recebe um push e não mostra nada.
+  }
+  // O endereço vem relativo e resolve-se contra a pasta do site. Assim um
+  // valor estranho nunca abre outro domínio.
+  const destino = new URL(mensagem.endereco || "./#/", self.registration.scope);
+  const endereco = destino.origin === self.location.origin ? destino.href : self.registration.scope;
+
+  evento.waitUntil(
+    self.registration.showNotification(mensagem.titulo || "Sinal", {
+      body: mensagem.corpo || "Há coisas novas Para ti.",
+      icon: "icone.svg",
+      // A mesma etiqueta faz o resumo de hoje substituir o de ontem, em vez
+      // de se irem acumulando na gaveta.
+      tag: "sinal-resumo",
+      renotify: true,
+      data: { endereco }
+    })
+  );
+});
+
+self.addEventListener("notificationclick", (evento) => {
+  evento.notification.close();
+  const endereco = evento.notification.data?.endereco || self.registration.scope;
+  evento.waitUntil((async () => {
+    // Se o Sinal já está aberto, reaproveita-se esse separador em vez de
+    // abrir outro por cima.
+    const janelas = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
+    for (const janela of janelas) {
+      if (janela.url.startsWith(self.registration.scope) && "focus" in janela) {
+        // Primeiro o foco: o browser só o deixa dar enquanto o toque é
+        // recente, e esperar pela navegação podia passar desse prazo.
+        await janela.focus();
+        return janela.navigate(endereco).catch(() => {});
+      }
+    }
+    return self.clients.openWindow(endereco);
+  })());
 });

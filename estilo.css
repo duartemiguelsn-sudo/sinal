@@ -776,6 +776,74 @@ select {
   font-size: 0.78rem;
 }
 
+/* ——— Notificações, no rodapé ———
+   Fica fora do caminho de leitura: liga-se uma vez por aparelho e esquece-se. */
+
+.avisos {
+  max-width: 34rem;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--linha);
+}
+
+.avisos__titulo {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--tinta);
+}
+
+.avisos__estado {
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
+
+.avisos__accoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.avisos__accoes:not(:has(button:not([hidden]))) {
+  display: none;
+}
+
+.avisos .botao {
+  color: var(--tinta);
+}
+
+.avisos__subscricao {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.avisos__subscricao label {
+  font-size: 0.85rem;
+}
+
+.avisos__subscricao code {
+  font-size: 0.8rem;
+}
+
+.avisos__subscricao textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--linha-forte);
+  border-radius: 6px;
+  background: var(--papel-fundo);
+  color: var(--tinta);
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.75rem;
+  resize: vertical;
+}
+
+.avisos__subscricao .botao-texto {
+  justify-self: start;
+}
+
 /* ——— PC ——— */
 
 @media (min-width: 720px) {

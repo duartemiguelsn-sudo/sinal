@@ -66,7 +66,7 @@ jobs:
           if [ "${{ inputs.sem_pagar }}" = "true" ]; then
             python pipeline/principal.py --sem-filtro
           else
-            python pipeline/principal.py
+            python pipeline/principal.py --resumo-notificacao "$RUNNER_TEMP/notificacao.json"
           fi
 
       - name: Fazer commit dos dados
@@ -90,3 +90,13 @@ jobs:
           # a resolver — só um commit a pôr por cima.
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      # Depois do push, para o site já ter os dados novos quando se toca na
+      # notificação. O resumo foi escrito na pasta temporária do runner, fora
+      # do repositório, e morre com a corrida. Sem os dois Secrets, ou sem
+      # nada novo Para ti, este passo diz isso e não manda nada.
+      - name: Avisar nos aparelhos
+        env:
+          VAPID_CHAVE_PRIVADA: ${{ secrets.VAPID_CHAVE_PRIVADA }}
+          PUSH_SUBSCRICOES: ${{ secrets.PUSH_SUBSCRICOES }}
+        run: python pipeline/notificar.py "$RUNNER_TEMP/notificacao.json"

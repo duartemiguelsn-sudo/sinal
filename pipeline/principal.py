@@ -42,6 +42,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 sys.path.insert(0, str(Path(__file__).parent))
 
 import filtrar  # noqa: E402
+import notificar  # noqa: E402
 import publicar  # noqa: E402
 import veredicto  # noqa: E402
 import verificar  # noqa: E402
@@ -188,6 +189,11 @@ def main() -> int:
         type=int,
         default=publicar.DIAS_DE_HISTORICO,
         help=f"quantos dias de itens ficam no ficheiro que o site lê (por omissão {publicar.DIAS_DE_HISTORICO}); 0 não corta nada",
+    )
+    argumentos.add_argument(
+        "--resumo-notificacao",
+        type=Path,
+        help="escreve aqui o que é novo Para ti, para o notificar.py mandar depois do push",
     )
     opcoes = argumentos.parse_args()
 
@@ -427,6 +433,12 @@ def main() -> int:
     # Só agora, com a corrida inteira feita, é que o retrato das páginas passa a
     # ser o de hoje. Até aqui uma falha deixava tudo como estava, de propósito.
     guardar_paginas(CAMINHO_PAGINAS, retratos)
+
+    # Só se escreve o resumo; mandar fica para depois do push, num passo à
+    # parte do Action. Ver o topo do notificar.py.
+    if opcoes.resumo_notificacao:
+        quantos = notificar.guardar_resumo(opcoes.resumo_notificacao, novos)
+        print(f"\nPara notificar: {quantos} {'item novo' if quantos == 1 else 'itens novos'} Para ti")
 
     print(
         f"\nEscrito: {CAMINHO_ITENS.relative_to(RAIZ)}, "

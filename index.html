@@ -53,6 +53,25 @@
 
     <footer class="pagina rodape">
       <p>Sinal · uma leitura pessoal do mundo da IA, recolhida uma vez por dia.</p>
+
+      <!-- Fica escondido até o app.js saber se este browser suporta push. -->
+      <section id="avisos" class="avisos" aria-labelledby="avisos-titulo" hidden>
+        <h2 id="avisos-titulo" class="avisos__titulo">Notificações</h2>
+        <p id="avisos-estado" class="avisos__estado" role="status"></p>
+        <div class="avisos__accoes">
+          <button id="avisos-ligar" class="botao" type="button" hidden>Ativar neste aparelho</button>
+          <button id="avisos-desligar" class="botao-texto" type="button" hidden>Desativar</button>
+        </div>
+        <div id="avisos-subscricao" class="avisos__subscricao" hidden>
+          <label for="avisos-codigo">
+            Falta um passo: copia esta linha para o Secret <code>PUSH_SUBSCRICOES</code> em
+            <a href="https://github.com/duartemiguelsn-sudo/sinal/settings/secrets/actions" target="_blank" rel="noopener">Settings › Secrets › Actions</a>.
+            Uma linha por aparelho.
+          </label>
+          <textarea id="avisos-codigo" rows="4" readonly spellcheck="false"></textarea>
+          <button id="avisos-copiar" class="botao-texto" type="button">Copiar</button>
+        </div>
+      </section>
     </footer>
   </body>
 </html>

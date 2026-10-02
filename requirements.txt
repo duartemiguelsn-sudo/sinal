@@ -1,1 +1,4 @@
 anthropic>=1.0
+# Notificações (pipeline/notificar.py): cifra e assina o Web Push, que a
+# biblioteca padrão não consegue por não ter curvas elípticas.
+pywebpush>=2.0
