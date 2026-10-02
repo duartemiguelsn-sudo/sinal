@@ -82,6 +82,11 @@ html {
   color: var(--texto);
   font-family: var(--fonte);
   line-height: 1.5;
+  /* O Safari do iPhone aumenta sozinho o texto pequeno em blocos longos (os
+     cartões). O texto aumentado empurra o cartão para fora do ecrã e o
+     telemóvel reduz a página inteira. Isto desliga esse ajuste automático. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -488,6 +493,11 @@ select {
 
 .cartao {
   position: relative;
+  /* Um item da grelha não encolhe abaixo da palavra mais comprida que tem.
+     Com URLs ou listas tipo "Plus/Pro/Business" isso alargava o cartão para lá
+     do ecrã; assim o texto parte e o cartão fica dentro da coluna. */
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 20px 22px;
   border: 1px solid var(--linha);
   border-radius: var(--raio);
@@ -581,6 +591,8 @@ select {
 
 .facto {
   display: flex;
+  flex-wrap: wrap;
+  min-width: 0;
   gap: 5px;
   font-family: var(--fonte-mono);
   font-size: 0.63rem;
