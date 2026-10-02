@@ -1,5 +1,191 @@
 [
   {
+    "id": "ef05aea17ef0",
+    "titulo": "DeepSeek Harness Desktop for macOS and Windows",
+    "resumo": "255 pontos e 123 comentários no Hacker News",
+    "url": "https://www.deepseek.com/en/harness/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 6,
+    "justificacao": "Camada 2, sujeito relevante, mas sem detalhes no resumo. Não dá para saber se há diferença real face ao que existe ou se é só interface nova.",
+    "area": "agentes-codigo",
+    "nome": "DeepSeek Harness Desktop para macOS e Windows",
+    "o_que_e": "Cliente de desktop para usar o DeepSeek em macOS e Windows.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "ebcf4ab022e9",
+    "titulo": "Pi 1.0 released - MCP support now included by default",
+    "resumo": "submitted by /u/psychohistorian8 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvffcr/pi_10_released_mcp_support_now_included_by_default/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 7,
+    "justificacao": "Item da camada 2, sem factos verificados — só um post de Reddit a anunciar um lançamento. Não dá para saber o que o Pi 1.0 realmente faz nem porque o suporte MCP importa na prática.",
+    "area": "skills-mcp",
+    "nome": "Pi 1.0 released — MCP support now included by default",
+    "o_que_e": "Lançamento do Pi 1.0 com suporte a MCP integrado.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "O que é o Pi e que problema resolve?",
+      "Como funciona na prática o suporte MCP incluído?"
+    ],
+    "acao": "Procura o changelog oficial do Pi 1.0 antes de decidir.",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "a885ed61f54a",
+    "titulo": "AutoSynthData: Generating Training Data for Enterprise Agents",
+    "resumo": "",
+    "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata",
+    "fonte": "Hugging Face",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 7,
+    "justificacao": "Não há nenhum facto verificado sobre o que o AutoSynthData faz em concreto, só o título. Sem isso não dá para avaliar ganho nem custo de arranque.",
+    "area": "agentes-codigo",
+    "nome": "AutoSynthData — Generating Training Data for Enterprise Agents",
+    "o_que_e": "Ferramenta para gerar dados de treino automaticamente para agentes empresariais.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "O que é que o AutoSynthData gera e como se integra num pipeline existente?"
+    ],
+    "acao": "Lê o artigo original para perceber o que a ferramenta realmente gera e como se usa.",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "9962084fcd54",
+    "titulo": "Does anyone know if any new releases from Mistral are planned?",
+    "resumo": "It’s been a long time since the last models came out. I notice they are selling GLM on the site, and I wonder if they are developing something, given the long silence. submitted by /u/LegacyRemaster [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvpxg8/does_anyone_know_if_any_new_releases_from_mistral/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 0,
+    "justificacao": "Camada 2: é só uma pergunta de comunidade sem resposta dada. Especulação, não notícia nem dado.",
+    "area": "modelos-apis",
+    "nome": "Does anyone know if any new releases from Mistral are planned?",
+    "o_que_e": "Pergunta de utilizador sobre cronograma de lançamentos futuros da Mistral.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "817f67233623",
+    "titulo": "Perplexity Decider 27B: Open weights decision model fine tune of Qwen3.8 27B",
+    "resumo": "submitted by /u/rm-rf-rm [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvfz9n/perplexity_decider_27b_open_weights_decision/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 5,
+    "justificacao": "Camada 2: é modelo novo (assunto dele), mas resumo vago. Não diz qual é a aplicação, ganho real ou se está mantido.",
+    "area": "modelos-apis",
+    "nome": "Perplexity Decider 27B — decision model fine tune of Qwen 27B",
+    "o_que_e": "Modelo de decisão open weights baseado em fine-tune do Qwen 27B.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "336b976f9dc2",
+    "titulo": "Edwardxlai/easyread",
+    "resumo": "565 estrelas, MIT, JavaScript. 把英文论文读成舒服的中文：本地 PDF 论文翻译、原文对照、边读边问 AI、文献管理。Read English papers in comfortable Chinese.",
+    "url": "https://github.com/Edwardxlai/easyread",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 4,
+    "justificacao": "Camada 2, mas em chinês e sem detalhe do que usa para IA. Sem saber a base e como funciona, parece curiosidade mais que ferramenta útil para ele.",
+    "area": "ferramentas-dia-a-dia",
+    "nome": "easyread — tradutor de papers com PDF local e IA",
+    "o_que_e": "Ferramenta para traduzir papers de inglês para chinês localmente, com leitura lado a lado e chat com IA.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "fd357af57836",
+    "titulo": "Update #2: Post training yandex/AliceAI-80B-A3B [instruct!] from scratch",
+    "resumo": "Last update: https://www.reddit.com/r/LocalLLaMA/comments/1wu9ksu/update_yandexaliceai_80ba3b_fine_tune_progress/ - basically, an instruct fine tune on the base model using a synthetic distilled data set. I've been posting regular updates so I imagine at least a few people have seen this. Live stream: https://figure-bios-expect-cio.trycloudflare.com/ UPDATE: Finished train. hopefully some examples…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wv5h8x/update_2_post_training_yandexaliceai80ba3b/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 2,
+    "justificacao": "Camada 2 vaga: não se sabe se o modelo é acessível, que licença tem, ou como se arranja. Um post de progresso não é release.",
+    "area": "modelos-apis",
+    "nome": "AliceAI-80B-A3B — fine-tune do modelo Yandex",
+    "o_que_e": "Versão instruct fine-tuned de um modelo base Yandex usando dados sintéticos destilados.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "f7d98143955b",
+    "titulo": "CopilotKit/OpenDots",
+    "resumo": "879 estrelas, MIT, TypeScript. Your always-on AI coworkers that move between text, calls, and Slack.",
+    "url": "https://github.com/CopilotKit/OpenDots",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 7,
+    "justificacao": "OpenDots é um projeto novo (criado há 2 dias) com quase 900 estrelas e commits recentes — tração real mas ainda muito cedo para saber se se mantém. É TypeScript, MIT, mas a ideia de 'coworkers sempre ligados' entre texto, chamadas e Slack ainda não tem detalhes de uso prático nem custos associados.",
+    "area": "agentes-codigo",
+    "nome": "OpenDots — coworkers de IA para texto, chamadas e Slack",
+    "o_que_e": "Ferramenta que coloca agentes de IA a trabalhar entre aplicações de chat, voz e Slack.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "880",
+        "url": "https://api.github.com/repos/CopilotKit/OpenDots"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/CopilotKit/OpenDots"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/CopilotKit/OpenDots"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/CopilotKit/OpenDots"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/CopilotKit/OpenDots"
+      }
+    ],
+    "duvidas": [
+      "Que custos de API ou infraestrutura exige correr isto?",
+      "Como se integra concretamente com Slack e chamadas?"
+    ],
+    "verificado": "2026-10-02",
+    "veredicto": "depois",
+    "acao": "Volta a olhar quando o projeto tiver mais maturidade e documentação de setup.",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "f57510a79565",
+    "titulo": "Now which lab is behind fledge alpha?",
+    "resumo": "New free/trial model dropped on OC. Details are yet to be provided. Could this be deepseek v4.1 pro? submitted by /u/Gohab2001 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wv7t3a/now_which_lab_is_behind_fledge_alpha/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 1,
+    "justificacao": "Camada 2 vaga: nem se sabe o que é, quem fez, ou como aceder. Especulação sobre ser DeepSeek não é informação.",
+    "area": "modelos-apis",
+    "nome": "Fledge Alpha — modelo novo",
+    "o_que_e": "Modelo novo lançado sem detalhes divulgados.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-02"
+  },
+  {
     "id": "f51c7028e2ca",
     "titulo": "cmoraes10/loci",
     "resumo": "18 estrelas, MIT, Python. Typed long-term memory for AI agents. One core, an MCP server and a Hermes plugin.",
@@ -44,6 +230,55 @@
     "veredicto": "depois",
     "acao": "Volta a olhar quando o projeto tiver mais maturidade e utilizadores a testá-lo.",
     "recolhido": "2026-10-01"
+  },
+  {
+    "id": "ebb2d7850d0e",
+    "titulo": "Clef: Open-weight decision models, and new RL fine-tuning platform",
+    "resumo": "529 pontos e 184 comentários no Hacker News",
+    "url": "https://blog.cloudflare.com/clef-decision-models/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 8,
+    "justificacao": "A Cloudflare lançou modelos de decisão open-weight (Clef, Apache 2.0) e anunciou uma plataforma de RL fine-tuning, com distribuição via Hugging Face e Workers AI — vem do Hacker News, por isso é tração a verificar, não avaliação direta. Falta saber o custo real de usar isto e se a plataforma RL já está disponível ou é só anúncio.",
+    "area": "modelos-apis",
+    "nome": "Clef — open-weight decision models",
+    "o_que_e": "Modelos de decisão de peso aberto e plataforma de fine-tuning com RL.",
+    "factos": [
+      {
+        "rotulo": "Tipo",
+        "valor": "Modelos de decisão open-weight (Clef e Clef-flash)",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/"
+      },
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "1 de outubro de 2026",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "Apache 2.0",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/"
+      },
+      {
+        "rotulo": "Plataforma RL",
+        "valor": "Serviço de fine-tuning com RL anunciado, começando com parceiros",
+        "url": "https://ai-tldr.dev/releases/cloudflare-clef/"
+      },
+      {
+        "rotulo": "Distribuição",
+        "valor": "Hugging Face, Workers AI, local (vLLM, SGLang, Transformers)",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/"
+      }
+    ],
+    "duvidas": [
+      "Qual é o preço exacto ou modelo de preços para usar Clef no Workers AI?",
+      "A plataforma de RL fine-tuning está disponível agora ou é ainda apenas promessa?"
+    ],
+    "verificado": "2026-10-02",
+    "veredicto": "incerto",
+    "acao": "Confirma o preço no Workers AI e se a plataforma RL já aceita utilizadores fora de parceiros.",
+    "recolhido": "2026-10-02"
   },
   {
     "id": "e45fed453524",
@@ -108,6 +343,56 @@
     "recolhido": "2026-10-01"
   },
   {
+    "id": "cc22da677ef3",
+    "titulo": "Pi extension: Skip reasoning with local Qwen 27B and proceed to answer right now",
+    "resumo": "pi-llama-skip-reasoning is an extension for the Pi.dev harness that forces a local llama.cpp model to stop reasoning and answer / act immediately. When you are deep into the ctx session and ask 27B a simple question about a fact or need a direct action , the model may still feel the urge to indulge in copious deliberation in the reasoning trace. This extension allows the user to force the model to…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wv1e60/pi_extension_skip_reasoning_with_local_qwen_27b/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 4,
+    "justificacao": "Útil se trabalha com models que raciocinam, mas é bem específico a um workflow (Pi.dev + llama.cpp). Camada 2 e parece nicho demais para ter impacto.",
+    "area": "agentes-codigo",
+    "nome": "pi-llama-skip-reasoning — extensão para forçar resposta imediata",
+    "o_que_e": "Extensão para o harness Pi.dev que força um modelo local a parar de raciocinar e responder já.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "c7578ecfe6a5",
+    "titulo": "Clef: Open Weights decision model by Cloudflare",
+    "resumo": "submitted by /u/paf1138 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wv4zzi/clef_open_weights_decision_model_by_cloudflare/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 3,
+    "justificacao": "Camada 2 vaga: o resumo não diz o custo, se há acesso fácil, ou como se usa. Sem mais detalhe não é possível saber se serve.",
+    "area": "modelos-apis",
+    "nome": "Clef — modelo de decisão da Cloudflare",
+    "o_que_e": "Modelo de pesos abertos para tomar decisões.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "beca328dfed9",
+    "titulo": "Jeff-Qwen3.5-0.8B v1.2 + 9 LoRA adapters: put it in front of Qwen3.8-27B for 38× faster decisions and +8.7 points accuracy, for under 2 GB extra memory",
+    "resumo": "A few days ago I released Jeff-Qwen3.5-0.8B, a small \"System 1\" model that picks between options you define and returns a calibrated probability for each, in one forward pass. Speed was great on my M4 Max and RTX PRO 6000, but as a general zero-shot classifier it trailed the big models. Then it occurred to me that most decisions an agent makes in front of a local model aren't open-ended. They fall…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wv05u1/jeffqwen3508b_v12_9_lora_adapters_put_it_in_front/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 7,
+    "justificacao": "É um post de r/LocalLLaMA (camada 2) a divulgar um modelo próprio, com benchmarks apresentados pelo próprio autor sem verificação externa. Não há factos verificados que sustentem os números de velocidade ou precisão, e implica correr modelos locais (RTX PRO 6000, M4 Max) que não é o teu setup. Não é o teu mundo nem há forma de confirmar as alegações.",
+    "area": "modelos-apis",
+    "nome": "Jeff-Qwen3.5-0.8B — modelo de decisão rápido com LoRA",
+    "o_que_e": "Modelo pequeno que escolhe entre opções definidas 38 vezes mais rápido que um modelo grande, usando adaptadores LoRA.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignora: benchmarks não verificados de modelo local que a tua máquina não corre bem.",
+    "recolhido": "2026-10-02"
+  },
+  {
     "id": "b8ca0737d3a2",
     "titulo": "Best OpenSource Claude Cowork alternative?",
     "resumo": "Hey guys, Looking for an alternative for Claude Cowork : Project Work / Documents Integrations like Notion, Gmail, etc. Tools like Websearch, PDF creation, etc. Came over Eigent ( https://github.com/eigent-ai/eigent ) but cant find any actual reviews about it, what usually is a sign thats not good performing.. Also have tried multiple other frameworks (OpenClaw, Hermes, OpenWebUI Chat Interface) -…",
@@ -124,6 +409,182 @@
     "recolhido": "2026-10-01"
   },
   {
+    "id": "b33dfcad9023",
+    "titulo": "GitHub Copilot in VS Code, September 2026 releases",
+    "resumo": "This changelog covers VS Code v1.136 through v1.140, shipped throughout September 2026. September’s releases streamline agent-driven development from implementation through pull request merge. Automations handle repeatable tasks, agent merge helps… The post GitHub Copilot in VS Code, September 2026 releases appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-10-01-github-copilot-in-vs-code-september-2026-releases",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-10-01",
+    "nota": 7,
+    "justificacao": "Changelog do GitHub Copilot em VS Code sem factos verificados extraídos — só o resumo genérico do post. Não há detalhes concretos sobre o que mudou nas funcionalidades de agente.",
+    "area": "agentes-codigo",
+    "nome": "GitHub Copilot em VS Code, releases de setembro 2026",
+    "o_que_e": "Changelog de releases de Copilot em VS Code que inclui automações orientadas por agente e melhorias no merge.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "Que funcionalidades concretas de agente foram adicionadas?"
+    ],
+    "acao": "Lê o changelog completo para ver o que muda no fluxo de trabalho.",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "a94845120b99",
+    "titulo": "AMA about K2 Horizon, Meet our team from IFM",
+    "resumo": "Hi r/LocalLLaMA! We’re researchers at the Institute of Foundation Models (IFM), an AI research lab dedicated to open and independent development of frontier-class foundation models. We recently released K2 Horizon a connected fleet of six fully open models with size ranging from 0.9B to 375B. In addition to weights, we also open-sourced training data and recipes, training code, intermediate checkp…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wv8zww/ama_about_k2_horizon_meet_our_team_from_ifm/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 6,
+    "justificacao": "Modelos novos e abertos é bom sinal, mas sem GPU não pode correr coisa nenhuma além do mais pequeno. Camada 2, AMA sem resultado concreto ainda.",
+    "area": "modelos-apis",
+    "nome": "K2 Horizon — suite de modelos abertos",
+    "o_que_e": "Conjunto de seis modelos abertos entre 0.9B e 375B com pesos, dados de treino, receitas e código.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "9a40180b1317",
+    "titulo": "Why am I like this? (Full Chat and Image generation on a 286 Tandy 1000 TL/3)",
+    "resumo": "40 year tech gap? No problem! The Tandy runs DeskMind, a native DOS program. It talks over WiFi (a PicoMEM 2 card with mTCP) to a small Python server on my PC. That server drives Qwen3.8-27B (NInfer on a 5090) and Krea 2 (ComfyUI on a 4090). The 286 never sees JSON, base64 or a PNG. It gets plain text lines and pictures that are ready to copy into video memory. Drawing from chat without tool calli…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wuxzdg/why_am_i_like_this_full_chat_and_image_generation/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 5,
+    "justificacao": "Criativo e prova de conceito interessante, mas é para um hardware muitíssimo específico (Tandy 1000), exige uma máquina potente separada, e não há estrutura clara para ele usar. Camada 2 meio excêntrica.",
+    "area": "repos-em-alta",
+    "nome": "DeskMind — acesso a modelos de IA desde máquina DOS",
+    "o_que_e": "Programa DOS nativo que fala com um servidor Python local para correr chat e geração de imagem via Qwen e Krea.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "981d09c74551",
+    "titulo": "Vote on which of Hacker News' challenges for AI have been met",
+    "resumo": "154 pontos e 182 comentários no Hacker News",
+    "url": "https://stoppels.ch/goalposts/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 4,
+    "justificacao": "É uma thread de discussão, não uma coisa que ele possa usar. Camada 2 sem substância e assunto vago.",
+    "area": "repos-em-alta",
+    "nome": "Vote on which of Hacker News' challenges for AI have been met",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "90b9985c3923",
+    "titulo": "Dynamic workflows in Copilot CLI and the Copilot app",
+    "resumo": "Dynamic workflows are now available in Copilot CLI, the GitHub Copilot app, and the GitHub Copilot SDK. These let you define an orchestration in code to get the reliability and… The post Dynamic workflows in Copilot CLI and the Copilot app appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-10-01",
+    "nota": 8,
+    "justificacao": "Dynamic workflows deixam definir orquestração em código no Copilot CLI, app e SDK, já disponível (experimental). É uma funcionalidade concreta de orquestração de agentes, útil para comparar com o que já fazes no Claude Code.",
+    "area": "agentes-codigo",
+    "nome": "Dynamic workflows em Copilot CLI e app",
+    "o_que_e": "Copilot agora permite definir orquestrações de fluxo de trabalho em código para maior confiabilidade e rastreabilidade.",
+    "factos": [
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "1 de outubro de 2026",
+        "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app"
+      },
+      {
+        "rotulo": "Disponibilidade",
+        "valor": "Pública e experimental no Copilot CLI, disponível na app",
+        "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-dynamic-workflows"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-02",
+    "veredicto": "agora",
+    "acao": "Testa um workflow simples no Copilot CLI para ver a fiabilidade da orquestração.",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "8e123835eac4",
+    "titulo": "Pi Durable",
+    "resumo": "398 pontos e 51 comentários no Hacker News. Related: Pi 1.0 - https://news.ycombinator.com/item?id=49926069 - Oct 2026 (184 comments)",
+    "url": "https://earendil.com/posts/pi-durable/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 7,
+    "justificacao": "Relacionado com o Pi 1.0, também sem factos verificados — só a contagem de pontos no Hacker News. Não se sabe o que é o 'Durable' nem como se relaciona com o resto.",
+    "area": "skills-mcp",
+    "nome": "Pi Durable",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "O que é especificamente o Pi Durable?"
+    ],
+    "acao": "Confirma o que é o Pi Durable antes de investires tempo.",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "8ca2633994ab",
+    "titulo": "Figma restricts MCP access to whitelisted clients, excluding Pi",
+    "resumo": "180 pontos e 102 comentários no Hacker News",
+    "url": "https://twitter.com/GayaniFigma/status/2105295629941350454",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 6,
+    "justificacao": "MCP é seu assunto, mas isto é uma barreira — restrição de acesso a servidores MCP existentes. Camada 2, assunto seu, mas é gatilho de problema não de oportunidade.",
+    "area": "skills-mcp",
+    "nome": "Figma restricts MCP access to whitelisted clients, excluding Pi",
+    "o_que_e": "Mudança na política de acesso MCP do Figma que restringe clientes não-autorizados.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "819b8b6c47de",
+    "titulo": "GitHub Copilot can now interact with desktop apps with computer use",
+    "resumo": "Computer use is now available in public preview in GitHub Copilot CLI and the GitHub Copilot app on macOS and Windows. Copilot can interact with desktop applications on your behalf… The post GitHub Copilot can now interact with desktop apps with computer use appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-10-01",
+    "nota": 8,
+    "justificacao": "O Copilot CLI e a app ganham controlo direto de apps de desktop — cliques, teclado, scroll — em pré-visualização pública para macOS e Windows. É uma capacidade de agente concreta e testável, não só promessa, e cai em cheio no que segues sobre agentes.",
+    "area": "agentes-codigo",
+    "nome": "GitHub Copilot com computer use para aplicações desktop",
+    "o_que_e": "Copilot pode agora interagir com aplicações desktop em nome do utilizador, disponível em preview no CLI e na app de macOS e Windows.",
+    "factos": [
+      {
+        "rotulo": "Disponibilidade",
+        "valor": "Pré-visualização pública em GitHub Copilot CLI e macOS/Windows",
+        "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/"
+      },
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "1 de outubro de 2026",
+        "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/"
+      },
+      {
+        "rotulo": "Plataformas suportad",
+        "valor": "macOS e Windows",
+        "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/"
+      },
+      {
+        "rotulo": "Funcionalidades",
+        "valor": "Ler conteúdo de apps, clicar, escrever, pressionar teclas, scroll, arrastar",
+        "url": "https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps/"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-02",
+    "veredicto": "agora",
+    "acao": "Experimenta o computer use no Copilot CLI ou na app em pré-visualização.",
+    "recolhido": "2026-10-02"
+  },
+  {
     "id": "803705924fa3",
     "titulo": "nanaism/yomiyasu",
     "resumo": "763 estrelas, MIT, Python. AI生成の日本語を自然な日本語へ推敲するAgent Skill / Agent Skill for Refining AI-Generated Japanese into Natural Japanese",
@@ -138,6 +599,22 @@
     "o_que_e": "Agent skill que refina texto em japonês gerado por IA para soar natural.",
     "veredicto": "depois",
     "recolhido": "2026-10-01"
+  },
+  {
+    "id": "6da2086c3232",
+    "titulo": "Using Opus 5.5 to discover a new eyewitness record of the dodo",
+    "resumo": "158 pontos e 43 comentários no Hacker News",
+    "url": "https://resobscura.substack.com/p/using-opus-55-to-discover-a-new-eyewitness",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 6,
+    "justificacao": "Mostra capacidade real de Opus 5.5, mas é caso de uso académico-histórico, não técnico. Camada 2 com 158 pontos. Vale ver como Opus foi aplicado, mas sem detalhe técnico não vira actionável.",
+    "area": "modelos-apis",
+    "nome": "Usando Opus 5.5 para descobrir novo registo de testemunha do dodo",
+    "o_que_e": "Uso de modelo Opus 5.5 para análise histórica e descoberta de novo material sobre o dodo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
   },
   {
     "id": "4317828ae771",
@@ -182,6 +659,65 @@
     "recolhido": "2026-10-01"
   },
   {
+    "id": "287cb9c6426f",
+    "titulo": "v2.1.287",
+    "resumo": "What's changed Added Claude Mods: plugins may now modify deeper behavior Added You should know, a built-in mod where a side agent watches your back and flags things you or Claude might miss. Turn it on with /plugin enable cc-plugin-you-should-know@builtin (for first-party sessions with telemetry on) Added an n:<text> filter to the agents view that matches session names and tasks; a filter now show…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.287",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-10-01",
+    "nota": 8,
+    "justificacao": "É só mais uma entrada de changelog do Claude Code — adiciona um sistema de mods e pequenos filtros, nada que mude como trabalhas com a ferramenta. O projeto está vivo (148 mil estrelas, commits recentes), mas isto é ruído de versão, não um marco.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code v2.1.287",
+    "o_que_e": "Release com Claude Mods (plugins que modificam comportamento), novo mod integrado You should know, e filtro para vista de agentes por nome.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "148931",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      }
+    ],
+    "duvidas": [
+      "Não declara licença reconhecida — não se sabe o que se pode fazer com o código."
+    ],
+    "verificado": "2026-10-02",
+    "veredicto": "ruido",
+    "acao": "Ignora esta release, não muda o teu fluxo de trabalho.",
+    "recolhido": "2026-10-02"
+  },
+  {
+    "id": "1d001431f657",
+    "titulo": "Pi 1.0",
+    "resumo": "1354 pontos e 430 comentários no Hacker News. Related: Pi Durable - https://news.ycombinator.com/item?id=49925969",
+    "url": "https://earendil.com/posts/pi-1-0/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 7,
+    "justificacao": "Post sobre Pi 1.0 com muita discussão no Hacker News, mas sem nenhum facto verificado sobre o que a ferramenta faz. O número de pontos mostra atenção, não qualidade.",
+    "area": "repos-em-alta",
+    "nome": "Pi 1.0",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "O que é o Pi e para que serve?",
+      "É relevante para o teu stack de agentes/MCP?"
+    ],
+    "acao": "Lê o artigo original para perceber o que o Pi realmente oferece.",
+    "recolhido": "2026-10-02"
+  },
+  {
     "id": "0e3ce3c6bab8",
     "titulo": "Astrabox - Open source Arcade Game Generator",
     "resumo": "Hey everyone! I’ve been working on ASTRABOX : an arcade interface where you describe a game, the AI builds it, and you can ask for changes by voice while playing. Each game gets its own visuals and gameplay, while a shared runtime handles controllers, scores, player joining, etc. I built it around Codex, but the code is open source. I’d love to see someone adapt it to a local coding model, local S…",
@@ -196,6 +732,22 @@
     "o_que_e": "Interface de arcade onde descreve um jogo, a IA constrói-o, e pede mudanças por voz enquanto joga.",
     "veredicto": "depois",
     "recolhido": "2026-10-01"
+  },
+  {
+    "id": "0bf00b70dbd7",
+    "titulo": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs",
+    "resumo": "",
+    "url": "https://huggingface.co/blog/allenai/olmocore3",
+    "fonte": "Hugging Face",
+    "camada": 1,
+    "data": "2026-10-01",
+    "nota": 6,
+    "justificacao": "Resumo vazio torna impossível saber o que isto faz ou se é relevante. Título promete infraestrutura open para mistura de especialistas, mas sem detalhes não dá para pôr nota mais alta. Vale investigar se for treino acessível.",
+    "area": "modelos-apis",
+    "nome": "Olmo-core 3 — infraestrutura de treino open source para MoEs",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-02"
   },
   {
     "id": "ff649694bcad",
