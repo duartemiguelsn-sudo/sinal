@@ -4,144 +4,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#f4f5f2">
-    <meta name="description" content="Sinal — notícias de IA e programação já avaliadas para decidir o que merece atenção.">
+    <meta name="theme-color" content="#f7f4ee">
+    <meta name="description" content="Sinal — o que saiu no mundo da IA, já com um veredicto.">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="icone.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icone.svg">
-    <title>Sinal — painel de decisões</title>
+    <title>Sinal</title>
+    <script>
+      // Aplica o tema guardado antes de a página pintar. Se esperasse pelo
+      // app.js, quem escolheu o escuro via um relâmpago de branco a cada visita.
+      try {
+        var tema = localStorage.getItem("sinal-tema");
+        if (tema === "claro" || tema === "escuro") document.documentElement.dataset.tema = tema;
+      } catch (erro) {}
+    </script>
     <link rel="stylesheet" href="estilo.css">
     <script src="app.js" defer></script>
   </head>
   <body>
+    <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
     <header class="cabecalho">
-      <div class="cabecalho__interior">
-        <div class="marca">
-          <span class="marca__simbolo" aria-hidden="true">S</span>
-          <div>
-            <p class="marca__sobretitulo">Briefing pessoal</p>
-            <h1>Sinal</h1>
-            <p id="resumo-recolha" class="resumo-recolha" aria-live="polite">A preparar a recolha…</p>
-          </div>
-        </div>
-        <div class="cabecalho__acoes">
-          <button id="instalar-app" class="botao botao--instalar" type="button" hidden>
-            <span aria-hidden="true">↓</span>
-            <span>Instalar</span>
-          </button>
-          <button id="alternar-tema" class="botao botao--tema" type="button" aria-label="Usar tema escuro">
-            <span id="icone-tema" aria-hidden="true">◐</span>
-            <span id="texto-tema">Tema escuro</span>
-          </button>
-        </div>
+      <div class="pagina cabecalho__linha">
+        <a class="marca" href="#/">Sinal</a>
+        <p id="data-recolha" class="cabecalho__data"></p>
+        <button id="alternar-tema" class="botao-texto" type="button">Escuro</button>
       </div>
+      <nav class="pagina seccoes" aria-label="Secções">
+        <a href="#/" data-vista="para-ti">Para ti</a>
+        <a href="#/tudo" data-vista="tudo">Tudo</a>
+      </nav>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="titulo-painel">
-        <div>
-          <p class="etiqueta">Edição de hoje</p>
-          <h2 id="titulo-painel">O essencial, sem o ruído.</h2>
+    <!-- O conteúdo é todo desenhado pelo app.js a partir de dados/itens.json.
+         O que está aqui é só o estado de "a carregar", para não haver um ecrã
+         em branco enquanto o ficheiro chega. -->
+    <main id="conteudo" class="pagina" tabindex="-1">
+      <div class="estado" role="status">
+        <p class="estado__titulo">A ler a recolha…</p>
+      </div>
+      <noscript>
+        <div class="estado">
+          <p class="estado__titulo">O Sinal precisa de JavaScript.</p>
+          <p>A página é desenhada no browser a partir de um ficheiro de dados. Liga o JavaScript e recarrega.</p>
         </div>
-        <p class="hero__texto">Um briefing curto para decidir o que explorar agora, guardar para depois ou simplesmente ignorar.</p>
-      </section>
-
-      <section class="resumo-painel" aria-labelledby="titulo-resumo">
-        <div class="secao-cabecalho">
-          <div>
-            <p class="etiqueta">Hoje</p>
-            <h2 id="titulo-resumo">Em resumo</h2>
-          </div>
-          <p id="resumo-estado" class="secao-cabecalho__nota">A contar os itens…</p>
-        </div>
-        <div class="metricas" role="group" aria-label="Contagem por veredicto">
-          <button class="metrica metrica--agora" type="button" data-veredicto="agora" aria-pressed="false">
-            <span id="contagem-agora" class="metrica__numero">0</span>
-            <span class="metrica__nome">Agora</span>
-            <span class="metrica__ajuda">Vale agir nas próximas semanas</span>
-          </button>
-          <button class="metrica metrica--depois" type="button" data-veredicto="depois" aria-pressed="false">
-            <span id="contagem-depois" class="metrica__numero">0</span>
-            <span class="metrica__nome">Depois</span>
-            <span class="metrica__ajuda">Bom, mas ainda não é altura</span>
-          </button>
-          <button class="metrica metrica--ruido" type="button" data-veredicto="ruido" aria-pressed="false">
-            <span id="contagem-ruido" class="metrica__numero">0</span>
-            <span class="metrica__nome">Ruído</span>
-            <span class="metrica__ajuda">Podes passar à frente</span>
-          </button>
-          <button class="metrica metrica--incerto" type="button" data-veredicto="incerto" aria-pressed="false">
-            <span id="contagem-incerto" class="metrica__numero">0</span>
-            <span class="metrica__nome">Incerto</span>
-            <span class="metrica__ajuda">Ainda faltam dados</span>
-          </button>
-        </div>
-      </section>
-
-      <section class="controlos" aria-labelledby="titulo-controlos">
-        <div class="controlos__cabecalho">
-          <div>
-            <p class="etiqueta">Refinar</p>
-            <h2 id="titulo-controlos">Organizar leitura</h2>
-          </div>
-          <div class="controlos__opcoes">
-            <div class="ordenacao">
-              <label for="ordenar">Ordenar</label>
-              <select id="ordenar" name="ordenar" aria-label="Ordenar itens">
-                <option value="relevancia">Por relevância</option>
-                <option value="data">Por data</option>
-              </select>
-            </div>
-            <div class="modo-leitura" role="group" aria-label="Modo de leitura">
-              <span class="modo-leitura__rotulo">Vista</span>
-              <button id="alternar-densidade" class="botao botao--modo" type="button" aria-pressed="false" aria-label="Usar vista compacta">
-                <span aria-hidden="true">▦</span>
-                <span id="texto-densidade">Compacta</span>
-              </button>
-            </div>
-            <button id="abrir-filtros" class="botao botao--filtros" type="button" aria-expanded="false" aria-controls="painel-filtros">
-              <span aria-hidden="true">☷</span>
-              <span id="texto-filtros">Filtros</span>
-            </button>
-          </div>
-
-        </div>
-        <nav id="painel-filtros" class="filtros" aria-label="Filtros de notícias">
-          <div class="grupo-filtros">
-            <p id="titulo-filtro-veredicto" class="titulo-filtro">Veredicto</p>
-            <div id="filtros-veredicto" class="lista-filtros" role="group" aria-labelledby="titulo-filtro-veredicto"></div>
-          </div>
-          <div class="grupo-filtros">
-            <p id="titulo-filtro-area" class="titulo-filtro">Área</p>
-            <div id="filtros-area" class="lista-filtros" role="group" aria-labelledby="titulo-filtro-area"></div>
-          </div>
-          <button id="limpar-filtros" class="botao botao--limpar" type="button" disabled>Limpar filtros</button>
-        </nav>
-      </section>
-
-      <p id="aviso-erro" class="aviso-erro" role="alert" hidden></p>
-
-      <section aria-labelledby="titulo-resultados">
-        <div class="topo-resultados">
-          <div>
-            <p class="etiqueta">Arquivo</p>
-            <h2 id="titulo-resultados">Para ler</h2>
-          </div>
-          <div class="topo-resultados__direita">
-            <p id="estado-filtros" class="estado-filtros">Todos os itens</p>
-            <p id="contagem-resultados" class="contagem-resultados" aria-live="polite"></p>
-          </div>
-        </div>
-        <div id="estado" class="estado" role="status" aria-live="polite">
-          <p class="estado__titulo">A carregar a recolha…</p>
-          <p>Estamos a ler o ficheiro de notícias.</p>
-        </div>
-        <div id="lista-itens" class="lista-itens" hidden></div>
-      </section>
+      </noscript>
     </main>
 
-    <footer class="rodape-site">
-      <p>Sinal · uma leitura pessoal do mundo da IA e do desenvolvimento</p>
+    <footer class="pagina rodape">
+      <p>Sinal · uma leitura pessoal do mundo da IA, recolhida uma vez por dia.</p>
     </footer>
   </body>
 </html>

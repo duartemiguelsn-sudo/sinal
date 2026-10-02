@@ -1,75 +1,60 @@
+/* Sinal — folha de estilos
+   Direção: jornal, não painel de controlo. Papel quente, tinta quase preta,
+   títulos em serifa e linhas finas em vez de caixas. A cor tem um só trabalho,
+   dizer o veredicto; tudo o resto é preto, cinza e espaço. */
+
 :root {
   color-scheme: light;
-  --fundo: #f6f7f4;
-  --superficie: #ffffff;
-  --superficie-suave: #eef1ed;
-  --texto: #16211d;
-  --texto-suave: #64716a;
-  --linha: #d8ded9;
-  --linha-forte: #b8c4bc;
-  --foco: #146ac2;
-  --acento: #08795d;
-  --acento-suave: #daf3e9;
-  --agora: #08795d;
-  --depois: #526258;
-  --incerto: #9b6400;
-  --ruido: #7b857e;
-  --camada-1: #08795d;
-  --camada-2: #b57000;
-  --camada-3: #2866a4;
-  --camada-4: #727c75;
-  --raio: 14px;
-  --raio-pequeno: 9px;
-  --sombra: 0 8px 24px rgb(20 36 27 / 6%);
-  --fonte: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --fonte-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --papel: #f7f4ee;
+  --papel-fundo: #efebe2;
+  --tinta: #1c1a16;
+  --tinta-suave: #5f5a50;
+  --linha: #ddd6c8;
+  --linha-forte: #c4bba9;
+  --foco: #2f5486;
+  --agora: #ad301d;
+  --depois: #2f5486;
+  --ignora: #736d63;
+  --sem-dados: #85620c;
+
+  /* Serifas que já vêm com cada sistema: Iowan no iPhone, Charter no Mac,
+     Sitka e Cambria no Windows. Assim não há pedido a um servidor de fontes
+     e a app instalada continua igual sem rede. */
+  --serifa: "Iowan Old Style", Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 :root[data-tema="escuro"] {
   color-scheme: dark;
-  --fundo: #111513;
-  --superficie: #181e1a;
-  --superficie-suave: #202923;
-  --texto: #edf2ee;
-  --texto-suave: #aab7ae;
-  --linha: #344139;
-  --linha-forte: #59685e;
-  --foco: #82c0ff;
-  --acento: #58d6a1;
-  --acento-suave: #153d2e;
-  --agora: #58d6a1;
-  --depois: #c1ccc4;
-  --incerto: #ffd16a;
-  --ruido: #adb8b0;
-  --camada-1: #58d6a1;
-  --camada-2: #ffd16a;
-  --camada-3: #8bc3ff;
-  --camada-4: #b7c1b9;
-  --sombra: 0 8px 24px rgb(0 0 0 / 20%);
+  --papel: #151412;
+  --papel-fundo: #1d1b18;
+  --tinta: #ece7dc;
+  --tinta-suave: #a69f91;
+  --linha: #2f2c27;
+  --linha-forte: #48433a;
+  --foco: #8fb0e0;
+  --agora: #f08b73;
+  --depois: #8fb0e0;
+  --ignora: #8f897e;
+  --sem-dados: #d8b55c;
 }
 
+/* O mesmo bloco repetido para quem nunca escolheu tema: segue o sistema. Não
+   dá para partilhar as variáveis entre as duas regras sem pré-processador. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-tema="claro"]) {
     color-scheme: dark;
-    --fundo: #111513;
-    --superficie: #181e1a;
-    --superficie-suave: #202923;
-    --texto: #edf2ee;
-    --texto-suave: #aab7ae;
-    --linha: #344139;
-    --linha-forte: #59685e;
-    --foco: #82c0ff;
-    --acento: #58d6a1;
-    --acento-suave: #153d2e;
-    --agora: #58d6a1;
-    --depois: #c1ccc4;
-    --incerto: #ffd16a;
-    --ruido: #adb8b0;
-    --camada-1: #58d6a1;
-    --camada-2: #ffd16a;
-    --camada-3: #8bc3ff;
-    --camada-4: #b7c1b9;
-    --sombra: 0 8px 24px rgb(0 0 0 / 20%);
+    --papel: #151412;
+    --papel-fundo: #1d1b18;
+    --tinta: #ece7dc;
+    --tinta-suave: #a69f91;
+    --linha: #2f2c27;
+    --linha-forte: #48433a;
+    --foco: #8fb0e0;
+    --agora: #f08b73;
+    --depois: #8fb0e0;
+    --ignora: #8f897e;
+    --sem-dados: #d8b55c;
   }
 }
 
@@ -78,13 +63,13 @@
 }
 
 html {
-  background: var(--fundo);
-  color: var(--texto);
-  font-family: var(--fonte);
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 100%;
   line-height: 1.5;
-  /* O Safari do iPhone aumenta sozinho o texto pequeno em blocos longos (os
-     cartões). O texto aumentado empurra o cartão para fora do ecrã e o
-     telemóvel reduz a página inteira. Isto desliga esse ajuste automático. */
+  /* O Safari do iPhone aumenta sozinho o texto em blocos longos, o que
+     empurrava o conteúdo para fora do ecrã. Isto desliga esse ajuste. */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -92,12 +77,34 @@ html {
 body {
   min-width: 280px;
   margin: 0;
-  background: var(--fundo);
+  /* Dados de feeds trazem URLs e nomes sem espaços; sem isto uma palavra
+     comprida alargava a página no telemóvel. */
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
 }
 
 button,
 select {
-  min-height: 42px;
   color: inherit;
   font: inherit;
 }
@@ -106,771 +113,758 @@ button {
   cursor: pointer;
 }
 
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.52;
-}
-
-button:focus-visible,
-select:focus-visible,
-a:focus-visible {
-  outline: 3px solid var(--foco);
+:focus-visible {
+  outline: 2px solid var(--foco);
   outline-offset: 3px;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
-
-.cabecalho {
-  border-bottom: 1px solid var(--linha);
-  background: color-mix(in srgb, var(--fundo) 92%, transparent);
-  backdrop-filter: blur(14px);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.cabecalho__interior,
-main,
-.rodape-site {
-  width: min(100% - 40px, 1040px);
-  margin-inline: auto;
-}
-
-.cabecalho__interior {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  min-height: 68px;
-}
-
-.marca,
-.cabecalho__acoes,
-.controlos__opcoes,
-.ordenacao,
-.modo-leitura,
-.topo-resultados,
-.topo-resultados__direita,
-.cabecalho-cartao {
-  display: flex;
-  align-items: center;
-}
-
-.marca {
-  gap: 10px;
-  min-width: 0;
-}
-
-.marca__simbolo {
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: var(--acento);
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 800;
-}
-
-.marca__sobretitulo,
-.etiqueta {
-  margin-bottom: 2px;
-  color: var(--acento);
-  font-family: var(--fonte-mono);
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-h1 {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  letter-spacing: -0.035em;
-  line-height: 1;
-}
-
-h2 {
-  margin-bottom: 0;
-  font-size: 1rem;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-}
-
-.resumo-recolha,
-.contagem-resultados,
-.estado-filtros,
-.secao-cabecalho__nota {
-  margin-bottom: 0;
-  color: var(--texto-suave);
-  font-family: var(--fonte-mono);
-  font-size: 0.67rem;
-}
-
-.cabecalho__acoes {
-  gap: 7px;
-}
-
-.botao,
-.filtro,
-select {
-  border: 1px solid var(--linha-forte);
-  border-radius: var(--raio-pequeno);
-  background: var(--superficie);
-}
-
-.botao,
-.filtro {
-  padding: 7px 10px;
-}
-
-.botao:hover,
-.filtro:hover {
-  border-color: var(--texto);
-}
-
-.botao--tema,
-.botao--instalar,
-.botao--modo,
-.botao--filtros {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.botao--instalar {
-  border-color: var(--acento);
-  color: var(--acento);
-}
-
-.botao--filtros {
-  border-color: #08795d;
-  background: #08795d;
-  color: #fff;
-}
-
-.botao--modo {
-  min-height: 36px;
-  font-size: 0.72rem;
-}
-
-main {
-  padding-block: 40px 56px;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.6fr);
-  align-items: end;
-  gap: 28px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--linha);
-}
-
-.hero h2 {
-  max-width: 15ch;
-  font-size: clamp(2.15rem, 5vw, 3.4rem);
-  letter-spacing: -0.065em;
-  line-height: 0.98;
-}
-
-.hero__texto {
-  max-width: 39ch;
-  margin-bottom: 3px;
-  color: var(--texto-suave);
-  font-size: 0.94rem;
-}
-
-.resumo-painel {
-  padding-block: 20px;
-  border-bottom: 1px solid var(--linha);
-}
-
-.secao-cabecalho {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 12px;
-}
-
-.secao-cabecalho__nota {
-  color: var(--acento);
-}
-
-.metricas {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid var(--linha);
-  border-radius: var(--raio);
-  overflow: hidden;
-}
-
-.metrica {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 9px;
-  align-items: center;
-  min-width: 0;
-  padding: 13px 15px;
-  border: 0;
-  border-top: 3px solid var(--linha-forte);
-  background: var(--superficie);
-  text-align: left;
-}
-
-.metrica + .metrica {
-  border-left: 1px solid var(--linha);
-}
-
-.metrica:hover,
-.metrica[aria-pressed="true"] {
-  background: var(--superficie-suave);
-}
-
-.metrica--agora { border-top-color: var(--agora); color: var(--agora); }
-.metrica--depois { border-top-color: var(--depois); color: var(--depois); }
-.metrica--ruido { border-top-color: var(--ruido); color: var(--ruido); }
-.metrica--incerto { border-top-color: var(--incerto); color: var(--incerto); }
-
-.metrica__numero {
-  grid-row: span 2;
-  font-size: 1.7rem;
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 1;
-}
-
-.metrica__nome {
-  font-size: 0.77rem;
-  font-weight: 800;
-}
-
-.metrica__ajuda {
-  color: var(--texto-suave);
-  font-size: 0.64rem;
-  line-height: 1.25;
-}
-
-.controlos {
-  padding-block: 18px;
-  border-bottom: 1px solid var(--linha);
-}
-
-.controlos__cabecalho {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.controlos__opcoes {
-  flex-wrap: wrap;
-  justify-content: end;
-  gap: 8px;
-}
-
-.ordenacao,
-.modo-leitura {
-  gap: 7px;
-}
-
-.ordenacao label,
-.modo-leitura__rotulo,
-.titulo-filtro {
-  color: var(--texto-suave);
-  font-family: var(--fonte-mono);
-  font-size: 0.65rem;
-  font-weight: 700;
-}
-
-select {
-  min-height: 36px;
-  padding: 5px 29px 5px 9px;
-  font-size: 0.72rem;
-}
-
-.filtros {
-  display: none;
-  grid-template-columns: minmax(160px, 0.6fr) minmax(320px, 1.5fr) auto;
-  align-items: end;
-  gap: 18px;
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--linha);
-}
-
-.filtros.painel-filtros--aberto {
-  display: grid;
-}
-
-.titulo-filtro {
-  margin-bottom: 7px;
-}
-
-.lista-filtros {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.filtro {
-  min-height: 34px;
-  padding: 5px 9px;
-  border-color: var(--linha);
-  font-family: var(--fonte-mono);
-  font-size: 0.65rem;
-}
-
-.filtro[aria-pressed="true"] {
-  border-color: var(--acento);
-  background: var(--acento);
-  color: #fff;
-}
-
-.botao--limpar {
-  min-height: 34px;
-  color: var(--texto-suave);
-  font-size: 0.7rem;
-}
-
-.botao--limpar:disabled {
-  display: none;
-}
-
-.aviso-erro,
-.estado {
-  border-left: 3px solid var(--incerto);
-  background: color-mix(in srgb, var(--incerto) 11%, var(--superficie));
-}
-
-.aviso-erro {
-  margin-top: 18px;
-  padding: 12px 14px;
-  font-size: 0.82rem;
-}
-
-.topo-resultados {
-  align-items: end;
-  justify-content: space-between;
-  gap: 16px;
-  padding-block: 26px 12px;
-}
-
-.topo-resultados__direita {
-  gap: 9px;
-}
-
-.estado-filtros {
-  color: var(--acento);
-  font-weight: 700;
-}
-
-.estado {
-  padding: 24px;
-}
-
-.estado__titulo {
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-
-.estado p:last-child {
-  margin-bottom: 0;
-}
-
-.lista-itens {
-  display: grid;
-  gap: 10px;
-}
-
-.cartao {
-  position: relative;
-  /* Um item da grelha não encolhe abaixo da palavra mais comprida que tem.
-     Com URLs ou listas tipo "Plus/Pro/Business" isso alargava o cartão para lá
-     do ecrã; assim o texto parte e o cartão fica dentro da coluna. */
-  min-width: 0;
-  overflow-wrap: anywhere;
-  padding: 20px 22px;
-  border: 1px solid var(--linha);
-  border-radius: var(--raio);
-  background: var(--superficie);
-  box-shadow: var(--sombra);
-}
-
-.cartao--agora {
-  border-color: color-mix(in srgb, var(--agora) 50%, var(--linha));
-}
-
-.cartao:hover {
-  border-color: var(--linha-forte);
-}
-
-.cabecalho-cartao {
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 9px;
-}
-
-.veredicto {
-  display: inline-block;
-  margin: 0;
-  border-radius: 5px;
-  padding: 4px 7px;
-  background: var(--superficie-suave);
-  color: var(--texto-suave);
-  font-family: var(--fonte-mono);
-  font-size: 0.6rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.veredicto--agora { background: var(--acento-suave); color: var(--agora); }
-.veredicto--depois { color: var(--depois); }
-.veredicto--incerto { background: color-mix(in srgb, var(--incerto) 15%, var(--superficie)); color: var(--incerto); }
-.veredicto--ruido { color: var(--ruido); }
-
-.nota-item {
-  color: var(--texto-suave);
-  font-family: var(--fonte-mono);
-  font-size: 0.63rem;
-}
-
-.titulo-item {
-  margin-bottom: 7px;
-  font-size: clamp(1.02rem, 2.5vw, 1.25rem);
-  letter-spacing: -0.03em;
-  line-height: 1.25;
-}
-
-.titulo-item a {
-  color: var(--texto);
-  text-decoration-color: color-mix(in srgb, var(--texto) 35%, transparent);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-.titulo-item a:hover {
-  color: var(--acento);
-}
-
-.resumo-item {
-  max-width: 82ch;
-  margin-bottom: 13px;
-  color: var(--texto-suave);
-  font-size: 0.86rem;
-}
-
-.acao {
-  max-width: 78ch;
-  margin-bottom: 13px;
-  padding: 10px 12px;
-  border-radius: var(--raio-pequeno);
-  background: var(--acento-suave);
-  color: var(--texto);
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-.factos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
-  margin: 0 0 13px;
-  padding: 9px 0;
-  border-block: 1px solid var(--linha);
-}
-
-.facto {
-  display: flex;
-  flex-wrap: wrap;
-  min-width: 0;
-  gap: 5px;
-  font-family: var(--fonte-mono);
-  font-size: 0.63rem;
-}
-
-.facto dt {
-  color: var(--texto-suave);
-}
-
-.facto dd {
-  margin: 0;
-  font-weight: 700;
-}
-
-.justificacao {
-  max-width: 80ch;
-  margin-bottom: 13px;
-  font-size: 0.86rem;
-}
-
-.duvidas {
-  margin: 0 0 14px;
-  padding-left: 19px;
-  color: var(--incerto);
-  font-size: 0.76rem;
-}
-
-.duvidas::before {
-  content: "Dúvidas em aberto";
-  display: block;
-  margin-left: -19px;
-  font-weight: 800;
-}
-
-.rodape-cartao {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 7px 10px;
-  padding-top: 10px;
-  border-top: 1px solid var(--linha);
-  color: var(--texto-suave);
-  font-family: var(--fonte-mono);
-  font-size: 0.62rem;
-}
-
-.fonte-item {
-  overflow: hidden;
-  max-width: 32ch;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.separador::before {
-  content: "·";
-  margin-right: 10px;
-}
-
-.indicador-camada {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.ponto-camada {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--camada-4);
-}
-
-.ponto-camada--1 { background: var(--camada-1); }
-.ponto-camada--2 { background: var(--camada-2); }
-.ponto-camada--3 { background: var(--camada-3); }
-.ponto-camada--4 { background: var(--camada-4); }
-
-.cartao--ruido {
-  background: color-mix(in srgb, var(--superficie-suave) 55%, var(--superficie));
-}
-
-:root[data-densidade="compacta"] .lista-itens {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  gap: 10px;
-}
-
-:root[data-densidade="compacta"] .cartao {
-  padding: 15px;
-}
-
-:root[data-densidade="compacta"] .factos,
-:root[data-densidade="compacta"] .duvidas {
-  display: none;
-}
-
-:root[data-densidade="compacta"] .resumo-item,
-:root[data-densidade="compacta"] .justificacao {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.rodape-site {
-  padding-bottom: 36px;
-  color: var(--texto-suave);
-  font-family: var(--fonte-mono);
-  font-size: 0.62rem;
-  text-align: center;
-}
-
-.rodape-site p {
-  margin: 0;
-}
-
-.so-leitores {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  border-radius: 2px;
 }
 
 [hidden] {
   display: none !important;
 }
 
-@media (max-width: 719px) {
-  .cabecalho__interior,
-  main,
-  .rodape-site {
-    width: min(100% - 26px, 1040px);
+.pagina {
+  width: min(100% - 32px, 1060px);
+  margin-inline: auto;
+}
+
+.saltar {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  padding: 10px 14px;
+  background: var(--tinta);
+  color: var(--papel);
+  z-index: 20;
+}
+
+.saltar:focus {
+  top: 12px;
+}
+
+.so-leitores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* ——— Cabeçalho ——— */
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--linha);
+  background: var(--papel);
+}
+
+.cabecalho__linha {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-top: 14px;
+}
+
+.marca {
+  font-family: var(--serifa);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.cabecalho__data {
+  flex: 1;
+  min-width: 0;
+  color: var(--tinta-suave);
+  font-size: 0.8rem;
+}
+
+.botao-texto {
+  min-height: 44px;
+  padding: 0 2px;
+  border: 0;
+  background: none;
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-decoration-color: var(--linha-forte);
+  text-underline-offset: 4px;
+}
+
+.botao-texto:hover {
+  color: var(--tinta);
+}
+
+.seccoes {
+  display: flex;
+  gap: 22px;
+}
+
+.seccoes a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.seccoes a:hover {
+  color: var(--tinta);
+}
+
+.seccoes a[aria-current="page"] {
+  border-bottom-color: var(--tinta);
+  color: var(--tinta);
+}
+
+/* ——— Conteúdo ——— */
+
+main {
+  padding-block: 28px 56px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.estado {
+  max-width: 34rem;
+  padding-block: 40px;
+}
+
+.estado__titulo {
+  margin-bottom: 6px;
+  font-family: var(--serifa);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.estado p + p {
+  color: var(--tinta-suave);
+}
+
+.estado a {
+  font-weight: 600;
+}
+
+.estado--erro .estado__titulo {
+  color: var(--agora);
+}
+
+/* A abertura de "Para ti": uma frase que resume o dia, como o subtítulo da
+   primeira página de um jornal. Substitui os painéis de números. */
+.abertura {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--tinta);
+}
+
+.abertura__titulo,
+.titulo-vista {
+  font-family: var(--serifa);
+  font-size: clamp(1.75rem, 6.5vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.abertura__titulo {
+  max-width: 22ch;
+}
+
+.abertura__texto {
+  max-width: 44ch;
+  margin-top: 10px;
+  color: var(--tinta-suave);
+  font-size: 1rem;
+}
+
+.bloco {
+  padding-top: 28px;
+}
+
+.bloco__titulo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--linha);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.bloco__titulo a {
+  color: var(--tinta-suave);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.bloco__titulo a:hover {
+  color: var(--tinta);
+  text-decoration: underline;
+}
+
+.fim {
+  padding-top: 28px;
+  color: var(--tinta-suave);
+  font-family: var(--serifa);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.fim a {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ——— Marca do veredicto ———
+   A palavra está sempre escrita; o quadrado é só um reforço. A forma muda
+   também (cheio, oco, tracejado) para não depender só da cor. */
+.veredicto {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.veredicto::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  background: currentColor;
+}
+
+.veredicto--agora { color: var(--agora); }
+.veredicto--depois { color: var(--depois); }
+.veredicto--ruido { color: var(--ignora); }
+.veredicto--ruido::before { border: 1.5px solid currentColor; background: none; }
+.veredicto--incerto { color: var(--sem-dados); }
+.veredicto--incerto::before { border: 1.5px dashed currentColor; background: none; }
+
+/* ——— Metadados: fonte · confiança · data ——— */
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 0;
+  color: var(--tinta-suave);
+  font-size: 0.78rem;
+}
+
+.meta > * + *::before {
+  content: "·";
+  margin-inline: 7px;
+}
+
+/* A camada diz se aquilo é facto ou conversa. Um traço cheio para fonte
+   oficial, um traço oco para o que só está a circular. */
+.camada {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.camada__ponto {
+  flex: 0 0 auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+}
+
+.camada--1 .camada__ponto,
+.camada--3 .camada__ponto {
+  background: currentColor;
+}
+
+/* ——— Entradas de "Para ti" ——— */
+
+.entrada {
+  position: relative;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.entrada__titulo {
+  margin-top: 8px;
+  font-family: var(--serifa);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.22;
+}
+
+.entrada__texto {
+  max-width: 62ch;
+  margin-top: 6px;
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+}
+
+.entrada__acao {
+  max-width: 62ch;
+  margin-top: 10px;
+  padding-left: 12px;
+  border-left: 2px solid var(--agora);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.entrada .meta {
+  margin-top: 10px;
+}
+
+/* ——— Linhas de "Tudo" e de "Para depois" ——— */
+
+.linha {
+  position: relative;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.linha__titulo {
+  margin-top: 5px;
+  font-family: var(--serifa);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.28;
+}
+
+.linha__texto {
+  display: -webkit-box;
+  max-width: 68ch;
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--tinta-suave);
+  font-size: 0.88rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.linha .meta {
+  margin-top: 6px;
+}
+
+/* A ligação do título estica-se por cima da linha inteira: no telemóvel
+   toca-se em qualquer sítio da notícia, não só nas letras do título. */
+.ligacao-item {
+  text-decoration: none;
+}
+
+.ligacao-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.ligacao-item:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.ligacao-item:focus-visible {
+  outline: none;
+}
+
+.ligacao-item:focus-visible::after {
+  outline: 2px solid var(--foco);
+  outline-offset: -2px;
+}
+
+/* Ignora aparece apagado, nunca escondido: vê-se que foi visto e porquê. */
+.linha--ruido .linha__titulo,
+.linha--ruido .linha__texto {
+  color: var(--ignora);
+}
+
+.linha--ruido .linha__titulo {
+  font-weight: 500;
+}
+
+/* ——— "Tudo": controlos ——— */
+
+.tudo__topo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.contagem {
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+}
+
+.controlos {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--tinta);
+}
+
+/* Os botões partem para a linha seguinte em vez de deslizarem: um botão
+   cortado na margem não diz que há mais à direita. */
+.segmentos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.segmentos button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--linha-forte);
+  border-radius: 999px;
+  background: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.segmentos button:hover {
+  border-color: var(--tinta);
+}
+
+.segmentos button[aria-pressed="true"] {
+  border-color: var(--tinta);
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+.segmentos .conta {
+  margin-left: 5px;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.selectores {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.selectores label {
+  display: grid;
+  gap: 3px;
+  color: var(--tinta-suave);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 6px 0 10px;
+  border: 1px solid var(--linha-forte);
+  border-radius: 6px;
+  background: var(--papel);
+  color: var(--tinta);
+  font-size: 0.9rem;
+}
+
+.sem-dados-aviso {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 10px;
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+}
+
+.grupo-data {
+  padding-top: 26px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--linha-forte);
+  color: var(--tinta-suave);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.mais {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+.botao {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--tinta);
+  border-radius: 999px;
+  background: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.botao:hover {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+/* ——— Página do item ——— */
+
+.artigo {
+  max-width: 44rem;
+}
+
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: -14px;
+  color: var(--tinta-suave);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  color: var(--tinta);
+}
+
+.artigo__area {
+  margin-top: 6px;
+  color: var(--tinta-suave);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.artigo .veredicto {
+  margin-top: 18px;
+  font-size: 1rem;
+}
+
+.artigo .veredicto::before {
+  width: 11px;
+  height: 11px;
+}
+
+.artigo__titulo {
+  margin-top: 8px;
+  font-family: var(--serifa);
+  font-size: clamp(1.7rem, 6vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.artigo__subtitulo {
+  margin-top: 10px;
+  color: var(--tinta-suave);
+  font-family: var(--serifa);
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+.artigo > .meta {
+  margin-top: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.artigo__acao {
+  margin-top: 22px;
+  padding: 2px 0 2px 14px;
+  border-left: 3px solid var(--agora);
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.artigo__acao span {
+  display: block;
+  color: var(--tinta-suave);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.parte {
+  margin-top: 28px;
+}
+
+.parte__titulo {
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.parte__texto {
+  font-family: var(--serifa);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.parte__nota {
+  margin-top: 8px;
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+}
+
+.parte__nota--original {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.ficha {
+  border-top: 1px solid var(--linha);
+}
+
+.ficha div {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 12px;
+  padding-block: 9px;
+  border-bottom: 1px solid var(--linha);
+  font-size: 0.92rem;
+}
+
+.ficha dt {
+  color: var(--tinta-suave);
+}
+
+.ficha dd {
+  font-weight: 600;
+}
+
+.duvidas li {
+  position: relative;
+  padding: 6px 0 6px 18px;
+  font-size: 0.98rem;
+}
+
+.duvidas li::before {
+  content: "?";
+  position: absolute;
+  left: 0;
+  color: var(--sem-dados);
+  font-weight: 700;
+}
+
+.artigo__fonte {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.rodape {
+  padding-block: 20px 36px;
+  border-top: 1px solid var(--linha);
+  color: var(--tinta-suave);
+  font-size: 0.78rem;
+}
+
+/* ——— PC ——— */
+
+@media (min-width: 720px) {
+  .pagina {
+    width: min(100% - 64px, 1060px);
   }
 
-  .cabecalho__interior {
-    min-height: 62px;
+  .cabecalho__linha {
+    padding-top: 18px;
   }
 
-  .marca__sobretitulo,
-  .resumo-recolha {
-    display: none;
-  }
-
-  .botao--tema span:last-child,
-  .botao--instalar span:last-child {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+  .marca {
+    font-size: 1.9rem;
   }
 
   main {
-    padding-block: 28px 42px;
+    padding-top: 40px;
   }
 
-  .hero {
-    display: block;
-    padding-bottom: 22px;
+  .controlos {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 22rem);
+    align-items: end;
   }
 
-  .hero h2 {
-    max-width: 13ch;
-    margin-bottom: 12px;
-    font-size: 2.15rem;
+  .sem-dados-aviso {
+    grid-column: 1 / -1;
   }
 
-  .hero__texto {
-    font-size: 0.84rem;
+  /* No PC o veredicto passa para uma coluna à esquerda, como a secção de um
+     índice: os olhos descem pela coluna e apanham logo os "Agora". */
+  .linha {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    column-gap: 20px;
   }
 
-  .resumo-painel {
-    padding-block: 16px;
-  }
-
-  .secao-cabecalho {
-    display: block;
-  }
-
-  .secao-cabecalho__nota {
+  .linha > .veredicto {
+    grid-row: span 3;
+    align-self: start;
     margin-top: 4px;
   }
 
-  .metricas {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .linha__titulo {
+    margin-top: 0;
   }
 
-  .metrica {
-    padding: 10px;
+  .linha--compacta {
+    display: block;
   }
 
-  .metrica:nth-child(odd) {
-    border-left: 0;
+  .linha--compacta .linha__titulo {
+    margin-top: 5px;
   }
+}
 
-  .metrica:nth-child(n + 3) {
-    border-top: 1px solid var(--linha);
-  }
-
-  .metrica__numero {
-    font-size: 1.45rem;
-  }
-
-  .metrica__ajuda {
-    display: none;
-  }
-
-  .controlos__cabecalho {
-    align-items: start;
-  }
-
-  .controlos__opcoes {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .ordenacao label,
-  .modo-leitura__rotulo {
-    display: none;
-  }
-
-  .ordenacao {
-    min-width: 0;
-  }
-
-  .ordenacao select {
-    max-width: 137px;
-  }
-
-  .filtros {
-    grid-template-columns: 1fr;
-    gap: 13px;
-  }
-
-  .lista-filtros {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 3px;
-  }
-
-  .filtro {
-    flex: 0 0 auto;
-  }
-
-  .topo-resultados {
-    align-items: start;
-  }
-
-  .topo-resultados__direita {
+@media (min-width: 960px) {
+  /* "Para ti" em duas colunas: os "Agora" à esquerda com espaço para ler,
+     os "Para depois" numa coluna estreita ao lado, como as notícias
+     secundárias de um jornal. */
+  .para-ti {
     display: grid;
-    justify-items: end;
-    gap: 2px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+    column-gap: 48px;
+    align-items: start;
   }
 
-  .fonte-item {
-    max-width: 23ch;
+  .para-ti .abertura,
+  .para-ti .fim {
+    grid-column: 1 / -1;
   }
 
-  :root[data-densidade="compacta"] .lista-itens {
-    grid-template-columns: 1fr;
+  .para-ti .bloco--lateral {
+    position: sticky;
+    top: 120px;
+  }
+
+  .entrada__titulo {
+    font-size: 1.5rem;
+  }
+
+  .tudo {
+    max-width: 52rem;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  button,
-  select,
-  a,
-  .cartao,
-  .metrica {
-    transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
-  }
-
-  .cartao:hover,
-  .metrica:hover {
-    transform: translateY(-1px);
+  .segmentos button,
+  .botao,
+  .seccoes a {
+    transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
   }
 }

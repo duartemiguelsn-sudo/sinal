@@ -1,7 +1,7 @@
 // A versão muda quando se publica HTML, CSS ou JavaScript. Os ficheiros são
 // servidos primeiro da cache, por isso sem mudar este nome a app instalada no
 // telemóvel continuava a usar o CSS e o HTML antigos.
-const CACHE = "sinal-estatico-v6";
+const CACHE = "sinal-estatico-v7";
 const FICHEIROS_ESTATICOS = [
   "./",
   "./index.html",
