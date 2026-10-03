@@ -1,5 +1,135 @@
 [
   {
+    "id": "e992e89cb042",
+    "titulo": "GitHub Student Pack: 1 com oferta diferente",
+    "resumo": "No GitHub Student Pack mudaram de oferta Appwrite.",
+    "url": "https://education.github.com/pack/offers",
+    "fonte": "GitHub Student Pack",
+    "camada": 3,
+    "data": "2026-10-03",
+    "nota": 4,
+    "justificacao": "Tem email académico e pode aproveitar, mas o resumo não explica o que é a Appwrite nem se é útil para o que ele faz. Sem detalhes da oferta não dá para avaliar ganho real.",
+    "area": "gratis-estudante",
+    "nome": "GitHub Student Pack: mudança de oferta Appwrite",
+    "o_que_e": "Mudança de uma das ofertas incluídas no pacote de benefícios para estudantes do GitHub.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "52aff2304aa3",
+    "titulo": "LiquidAI/LFM2.5-Encoder 250M/350M",
+    "resumo": "LFM2.5-Encoder-350M is a multilingual bidirectional encoder built on the LFM2 architecture — a larger encoder for maximum downstream quality. It is a masked language model with full bidirectional attention, designed to be fine-tuned into task-specific models (classification, token classification, retrieval, reranking, and semantic similarity) across 15 languages, and to run efficiently on-device.…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwgns1/liquidailfm25encoder_250m350m/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 4,
+    "justificacao": "Modelo novo e multilíngue, mas é encoder genérico para tarefas de processamento de linguagem standard — não é para agentes nem MCP. Sem API clara nem integração.",
+    "area": "modelos-apis",
+    "nome": "LiquidAI LFM2.5-Encoder 250M/350M",
+    "o_que_e": "Modelo encoder bidirecional multilíngue de 250M e 350M parâmetros, desenhado para fine-tuning em classificação, busca e similaridade semântica.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "2b6248452fd8",
+    "titulo": "NeilGilani/hebb-claude-plugin",
+    "resumo": "15 estrelas, Apache-2.0, Python. ",
+    "url": "https://github.com/NeilGilani/hebb-claude-plugin",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 2,
+    "justificacao": "Repositório com apenas 15 estrelas e descrição vazia — não há informação suficiente para perceber o que faz.",
+    "area": "skills-mcp",
+    "nome": "hebb-claude-plugin",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "119b418afea5",
+    "titulo": "evergreen-it-dev/folio",
+    "resumo": "19 estrelas, MIT, TypeScript. The AI-assisted, open-source alternative to Notion and Confluence: a team wiki that lives in Git, with real-time editing, data tables, whiteboards, offline mode, and first-class AI agents.",
+    "url": "https://github.com/evergreen-it-dev/folio",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 6,
+    "justificacao": "TypeScript, 19 estrelas, e o repositório diz que tem agentes IA, mas o resumo é vago sobre o que esses agentes fazem. Interessante para investigar, mas sem evidência clara de que funciona bem.",
+    "area": "agentes-codigo",
+    "nome": "folio — alternativa open-source a Notion com agentes IA",
+    "o_que_e": "Aplicação de equipa para documentação e wikis em Git com suporte a edição em tempo real, tabelas de dados, quadros brancos e agentes IA integrados.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "f7605b3e32cc",
+    "titulo": "New Architecture from Percepta: Spotlight — separating intelligence from memory, allowing knowledge and skills to grow without changing the model's weights.",
+    "resumo": "https://www.percepta.ai/blog/can-llms-grow-their-own-capabilities https://www.percepta.ai/blog/spotlight-memory \"Our new architecture, Spotlight, replaces attention with a memory that escapes this trade-off: it is the first architecture to achieve infinitely growing memory without increasing the access cost. Every token reads from and writes to an unbounded memory, but because the model learns to…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww09ab/new_architecture_from_percepta_spotlight/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 7,
+    "justificacao": "Sem factos verificados — só a alegação da própria empresa de que criaram uma arquitetura com 'memória infinita' sem aumentar custo de acesso. Vem da camada 2 e o texto tem tom de marketing, sem dados técnicos confirmados por terceiros.",
+    "area": "modelos-apis",
+    "nome": "Spotlight — Percepta — arquitetura com memória infinita sem custo crescente",
+    "o_que_e": "Arquitetura Spotlight que substitui attention por memória não-limitada, permitindo que conhecimento e skills cresçam sem alterar os pesos do modelo, mantendo custo de acesso constante.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "Existe código ou paper técnico publicado e revisto por terceiros?",
+      "A arquitetura já foi testada em modelos de produção ou é apenas um anúncio de blog?"
+    ],
+    "acao": "Precisas de ver benchmarks independentes ou código publicado antes de decidir.",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "f7114bca7c80",
+    "titulo": "Show HN: Giving Opus 5.5 a simulated paint canvas",
+    "resumo": "280 pontos e 89 comentários no Hacker News",
+    "url": "https://stillwet.art/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 7,
+    "justificacao": "Vem da camada 2 (Hacker News) e é uma demonstração artística de simulação de pintura feita com Claude Opus — bonito, mas não tem nada a ver com o que segues em agentes, MCP ou skills. Não há indicação de que o código da engine esteja disponível para usar.",
+    "area": "agentes-codigo",
+    "nome": "Show HN: Giving Opus 5.5 a simulated paint canvas",
+    "o_que_e": "Projeto que liga Claude Opus 5.5 a uma interface de desenho simulada em tempo real.",
+    "factos": [
+      {
+        "rotulo": "Descrição",
+        "valor": "Claude Opus 5.5 escreve código de pincéis e simulação de pintura a óleo",
+        "url": "https://stillwet.art/"
+      },
+      {
+        "rotulo": "Tecnologia",
+        "valor": "Simulação de pintura com física, pincéis, tinta e secagem",
+        "url": "https://stillwet.art/p/r02-winter.html"
+      },
+      {
+        "rotulo": "Acesso",
+        "valor": "Projeto web gratuito, visualiza pinturas geradas e processo",
+        "url": "https://stillwet.art/"
+      },
+      {
+        "rotulo": "Autor",
+        "valor": "Danielle Fong com colaboração de Alice; apresentado por albert_e",
+        "url": "https://news.ycombinator.com/item?id=49928566"
+      }
+    ],
+    "duvidas": [
+      "Os números exactos (280 pontos e 89 comentários) variam nos diferentes momentos em que o post foi registado.",
+      "Não encontrei informação sobre licença de código-fonte ou termos de uso do projeto.",
+      "Se o código da engine de pintura está disponível para usar ou apenas para ver os resultados."
+    ],
+    "verificado": "2026-10-03",
+    "veredicto": "ruido",
+    "acao": "Ignora, é arte gerada por IA sem ligação ao teu trabalho com agentes.",
+    "recolhido": "2026-10-03"
+  },
+  {
     "id": "ef05aea17ef0",
     "titulo": "DeepSeek Harness Desktop for macOS and Windows",
     "resumo": "255 pontos e 123 comentários no Hacker News",
@@ -35,6 +165,159 @@
     ],
     "acao": "Procura o changelog oficial do Pi 1.0 antes de decidir.",
     "recolhido": "2026-10-02"
+  },
+  {
+    "id": "decb5d86e744",
+    "titulo": "With most information hidden, the game Stratego had stumped AI until now",
+    "resumo": "220 pontos e 109 comentários no Hacker News. https://www.nature.com/articles/s41586-026-11036-y https://arxiv.org/abs/2511.07312",
+    "url": "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 5,
+    "justificacao": "Pesquisa relevante em raciocínio de IA, mas é investigação fundamental — não há ferramenta ou API a usar já. Camada 2 sem código.",
+    "area": "modelos-apis",
+    "nome": "Stratego AI — Nature 2024",
+    "o_que_e": "Investigação sobre IA que conseguiu resolver o jogo Stratego com informação incompleta, usando raciocínio sobre estados desconhecidos.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "de33026c1d83",
+    "titulo": "How to Build Your Own AI App Builder Like Lovable with Next.js, AWS and Sandboxes",
+    "resumo": "Tools like Lovable, Bolt, and v0 feel a bit like magic the first time you use them. Honestly, I was shocked the first time I saw something like that...and you get to do all that from a chat window! It",
+    "url": "https://www.freecodecamp.org/news/build-your-own-ai-app-builder-with-next-js-aws-and-sandboxes/",
+    "fonte": "freeCodeCamp",
+    "camada": 3,
+    "data": "2026-10-02",
+    "nota": 5,
+    "justificacao": "O conceito interessa (agentes que geram código), mas o tutorial é em Next.js e AWS — tecnologias que ele não usa e exigem cloud paga que ele quer evitar.",
+    "area": "agentes-codigo",
+    "nome": "Build Your Own AI App Builder — Next.js + AWS + Sandboxes",
+    "o_que_e": "Tutorial sobre reproduzir ferramentas como Lovable ou Bolt: construtores de apps baseados em IA que aceitam instruções em linguagem natural.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "d6a0782fbe47",
+    "titulo": "One month coding with GLM 5.3 Flash",
+    "resumo": "164 pontos e 125 comentários no Hacker News",
+    "url": "https://wagtail.org/blog/one-month-on-glm-53-flash/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 5,
+    "justificacao": "É sobre um modelo novo (GLM 5.3 Flash), mas a notícia é um relato pessoal, não dados da release. Sem conclusões claras sobre o que muda é difícil agir.",
+    "area": "modelos-apis",
+    "nome": "Um mês programando com GLM 5.3 Flash",
+    "o_que_e": "Experiência e feedback de usar o modelo GLM 5.3 Flash durante um mês de código.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "d599f0a282be",
+    "titulo": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+    "resumo": "",
+    "url": "https://huggingface.co/blog/allenai/astabrief",
+    "fonte": "Hugging Face",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 2,
+    "justificacao": "Resumo vazio e título sozinho não chega. Se é um modelo novo e open-source pode valer, mas não se percebe nada do que faz nem como se usa.",
+    "area": "modelos-apis",
+    "nome": "AstaBrief — modelo de geração de relatórios",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "d3c3f6996fb2",
+    "titulo": "Selected models in GitHub Copilot deprecated",
+    "resumo": "As of today, October 2, 2026, we have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Model… The post Selected models in GitHub Copilot deprecated appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 4,
+    "justificacao": "É uma notícia de manutenção, não uma feature. Se um modelo que ele usa foi deprecado dói, mas a notícia sozinha não diz qual. Sem lista concreta fica por saber.",
+    "area": "agentes-codigo",
+    "nome": "Copilot: modelos deprecados",
+    "o_que_e": "Descontinuação de alguns modelos de linguagem no Copilot em todos os modos.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "c50f0986cd4e",
+    "titulo": "Copilot code review: API support and new default effort level",
+    "resumo": "You can now request a GitHub Copilot code review through the REST and GraphQL APIs and set the review effort level for each request. Balanced is also now the default… The post Copilot code review: API support and new default effort level appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 7,
+    "justificacao": "O Copilot code review passa a poder ser pedido via REST e GraphQL, com nível de esforço configurável por pedido — dá para automatizar revisões de código nos teus repositórios. É uma funcionalidade concreta e já disponível, não uma promessa.",
+    "area": "agentes-codigo",
+    "nome": "Copilot: análise de código por API e novo nível de esforço",
+    "o_que_e": "GitHub Copilot agora oferece análise de código através de APIs REST e GraphQL, com novo nível de esforço padrão.",
+    "factos": [
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "2 de outubro de 2026",
+        "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
+      },
+      {
+        "rotulo": "APIs suportadas",
+        "valor": "REST e GraphQL",
+        "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
+      },
+      {
+        "rotulo": "Nível de esforço pre",
+        "valor": "Balanced (equilibrado)",
+        "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
+      },
+      {
+        "rotulo": "Planos disponíveis",
+        "valor": "Pro, Pro+, Max, Business e Enterprise",
+        "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-03",
+    "veredicto": "agora",
+    "acao": "Experimenta pedir uma revisão via API num repo teu e ver o nível de detalhe do 'balanced'.",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "b6e09ab9110a",
+    "titulo": "How to Build an AI Support System That Automatically Routes Bugs to GitHub with Next.js and Jev",
+    "resumo": "Every website gets feedback, and most of it ends up somewhere awkward. A visitor finds a broken button and emails you. Someone else leaves a comment on social media about a page that won't load on the",
+    "url": "https://www.freecodecamp.org/news/build-an-ai-support-system-that-automatically-routes-bugs-to-github/",
+    "fonte": "freeCodeCamp",
+    "camada": 3,
+    "data": "2026-10-02",
+    "nota": 5,
+    "justificacao": "Tem agentes e roteiros de automação (assunto dele), mas é um tutorial em Next.js que ele conhece menos bem. Resumo incompleto (Jev não é explicado) e dificil avaliar sem ver a coisa.",
+    "area": "agentes-codigo",
+    "nome": "AI Support System That Automatically Routes Bugs to GitHub — Next.js + Jev",
+    "o_que_e": "Tutorial sobre construir um sistema que automatiza encaminhamento de feedback e bugs para GitHub usando Next.js e uma ferramenta chamada Jev.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "a97398f76ee5",
+    "titulo": "Chatham scales its capital markets expertise with OpenAI",
+    "resumo": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4.",
+    "url": "https://openai.com/index/chatham-financial",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 4,
+    "justificacao": "É um case study, não uma feature ou release. Mostra que o modelo consegue fazer algo bem, mas não oferece nada que ele possa usar imediatamente.",
+    "area": "modelos-apis",
+    "nome": "Chatham e OpenAI — otimização de capital markets",
+    "o_que_e": "Caso de uso da OpenAI em que Codex e GPT-5.6 cortam validação de trades de 30 minutos para menos de 4.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
   },
   {
     "id": "a885ed61f54a",
@@ -73,6 +356,42 @@
     "recolhido": "2026-10-02"
   },
   {
+    "id": "8e206c4d9ed6",
+    "titulo": "A model guide for the GPT-6 family",
+    "resumo": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
+    "url": "https://openai.com/index/practical-guide-building-gpt-6",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 8,
+    "justificacao": "É um guia oficial da OpenAI sobre como escolher entre os modelos GPT-6, ajustar esforço de raciocínio e otimizar prompts e skills — mas é documentação genérica de produto, não uma ferramenta ou API nova para agentes. Vale a pena só quando estiveres mesmo a escolher entre os modelos GPT-6 para um projeto concreto.",
+    "area": "modelos-apis",
+    "nome": "Guia de modelos para a família GPT-6",
+    "o_que_e": "Documentação da OpenAI sobre como escolher modelos da série GPT-6, ajustar esforço de raciocínio, melhorar prompts e preparar fluxos para produção.",
+    "factos": [
+      {
+        "rotulo": "Data de publicação",
+        "valor": "2 de outubro de 2026",
+        "url": "https://openai.com/index/practical-guide-building-gpt-6"
+      },
+      {
+        "rotulo": "Conteúdo",
+        "valor": "Guia sobre seleção de modelos GPT-6, ajuste de esforço, otimização de prompts e ",
+        "url": "https://openai.com/index/practical-guide-building-gpt-6"
+      },
+      {
+        "rotulo": "Modelos cobertos",
+        "valor": "GPT-6 Astra, GPT-6.1 Sol e GPT-6 Luna",
+        "url": "https://openai.com/index/practical-guide-building-gpt-6"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-03",
+    "veredicto": "depois",
+    "acao": "Volta quando precisares de escolher entre os modelos GPT-6 para um projeto teu.",
+    "recolhido": "2026-10-03"
+  },
+  {
     "id": "817f67233623",
     "titulo": "Perplexity Decider 27B: Open weights decision model fine tune of Qwen3.8 27B",
     "resumo": "submitted by /u/rm-rf-rm [link] [comments]",
@@ -89,6 +408,74 @@
     "recolhido": "2026-10-02"
   },
   {
+    "id": "64ff02c7c629",
+    "titulo": "Qwen3.8-27B-Humanlike-Chat 2.0: texts like a human, now with tool calls and better instruction following",
+    "resumo": "Last month I posted a Qwen3.8-27B LoRA that makes it talk like a person instead of an assistant. It got a lot more attention than I expected: 700+ upvotes, 248 comments and 44k downloads since. I read every comment. People really don't like assistant speak, so its tone of voice resonated. The rest got roasted, very fairly: incapable of producing more than a few words at a time. single default pers…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvxl4n/qwen3827bhumanlikechat_20_texts_like_a_human_now/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 6,
+    "justificacao": "Modelo interessante para agentes locais, mas exige GPU e o download é grande. Sem máquina local, explorias em teoria — vale estar atento, mas não muda nada já.",
+    "area": "modelos-apis",
+    "nome": "Qwen3.8-27B-Humanlike-Chat 2.0 com tool calls",
+    "o_que_e": "LoRA para Qwen 3.8 27B que melhora o tom de voz (menos 'assistente', mais humano) e adiciona suporte a tool calls e melhor instruction following.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "5afa66c19841",
+    "titulo": "AI is changing developer work. Here are three skills to strengthen.",
+    "resumo": "Learn to direct AI agents, critically review their output, and keep technical judgment at the center of your workflow. The post AI is changing developer work. Here are three skills to strengthen. appeared first on The GitHub Blog .",
+    "url": "https://github.blog/ai-and-ml/ai-is-rewriting-the-developer-career-ladder-heres-how-to-stand-out/",
+    "fonte": "GitHub — ofício de programador",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 7,
+    "justificacao": "Post de opinião do blog do GitHub sobre 'competências do futuro' para programadores, sem nada concreto — nenhum facto verificado, nenhuma ferramenta, nenhum número. É o tipo de conteúdo genérico que não muda nada no que fazes amanhã, vem da camada 2 e é puro discurso motivacional.",
+    "area": "agentes-codigo",
+    "nome": "AI is changing developer work — habilidades para direcionar agentes",
+    "o_que_e": "Artigo sobre três competências essenciais para programadores num mundo onde agentes de IA são ferramentas: dirigir agentes, validar output e manter julgamento técnico.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignora: é opinião genérica sobre carreira, sem nada prático para aplicar.",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "503bb9a66361",
+    "titulo": "I made my iPhone a second GPU for my 24 GB MacBook: Qwen 3.8 27B prefills 29–44% faster & my holds part of the CTX window.",
+    "resumo": "**DISCLAIMER** THE PREFILLING TPS SHOWN ON THE PHONE IS COMPUTED ONLY FOR THE LAYERS IT HOLDS. ALREADY FIXING IT TO SHOW END-TO-END PREFILL RATE. NUMBERS BELOW ARE ACCURATE FOR E2E PREFILL RATE. Every file or tool result my agent reads on a 24 GB M4 Pro MacBook is a wait, and 64k of 8-bit context is all that fits next to Qwen 3.8 27B (IQ4_XS), even with the wired limit raised to 20480. An iPhone 1…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wvz1ex/i_made_my_iphone_a_second_gpu_for_my_24_gb/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 2,
+    "justificacao": "Hardware muito específico (M4 Pro + iPhone), fora das tuas máquinas (Windows e VM Ubuntu). Sem GPU local, não é aplicável agora.",
+    "area": "modelos-apis",
+    "nome": "iPhone como segunda GPU para Qwen 27B no MacBook",
+    "o_que_e": "Técnica para correr Qwen 3.8 27B (quantizado) distribuindo camadas entre MacBook M4 Pro e iPhone, melhorando velocidade de prefill.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "39e81c79d6ed",
+    "titulo": "microsoft/FrogNano-4B-2609 · Hugging Face",
+    "resumo": "An agentic model from Microsoft for the GPU poor https://huggingface.co/bartowski/FrogNano-4B-2609-GGUF FrogNano is derived from Qwen/Qwen3.5-4B, a general-purpose post-trained model designed for language, reasoning, coding, agentic, and multimodal tasks. FrogNano inherits Qwen3.5-4B's dense 32-layer hybrid Gated DeltaNet and gated-attention architecture, but its additional post-training is text-o…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww40o2/microsoftfrognano4b2609_hugging_face/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 7,
+    "justificacao": "Sem factos verificados além do que está no resumo: é um modelo local de 4B parâmetros para correr com GPU fraca, mas tu não tens máquina para correr modelos localmente. É o tipo de post que vais ver repetido em r/LocalLLaMA sem te servir.",
+    "area": "modelos-apis",
+    "nome": "FrogNano-4B — Microsoft agentic model para poucos recursos",
+    "o_que_e": "Modelo Microsoft derivado de Qwen 3.5-4B, pós-treinado para tarefas de linguagem, raciocínio, código, agentes e multimodal, muito leve.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignora, é para quem corre modelos localmente com GPU, não é o teu caso.",
+    "recolhido": "2026-10-03"
+  },
+  {
     "id": "336b976f9dc2",
     "titulo": "Edwardxlai/easyread",
     "resumo": "565 estrelas, MIT, JavaScript. 把英文论文读成舒服的中文：本地 PDF 论文翻译、原文对照、边读边问 AI、文献管理。Read English papers in comfortable Chinese.",
@@ -103,6 +490,54 @@
     "o_que_e": "Ferramenta para traduzir papers de inglês para chinês localmente, com leitura lado a lado e chat com IA.",
     "veredicto": "depois",
     "recolhido": "2026-10-02"
+  },
+  {
+    "id": "21904a5fc055",
+    "titulo": "v2.1.288",
+    "resumo": "What's changed Added $.ui.selection() for mods: returns the text you last selected in fullscreen mode and, when the selection lies within one transcript row, that row Added a built-in gh api to cloud sessions whose image has no GitHub CLI, and fixed the built-in sending control characters from file names, jq filters or GitHub errors to the terminal Added recovery for a prompt cleared with Ctrl+C:…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 6,
+    "justificacao": "Claude Code é seu mundo e usa o diariamente, mas isto são refinamentos e correções. Ganho real existe mas é marginal — não muda o que faz esta semana.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code v2.1.288",
+    "o_que_e": "Atualização do Claude Code com novo método $.ui.selection() para mods, CLI do GitHub em sessões cloud sem Git CLI, e recuperação de prompts.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "20d516d5cbae",
+    "titulo": "Self-hosting AI does not save money, and I do it anyway",
+    "resumo": "Hi folks, I'm a long-time lurker and big fan of this subreddit and a massive self-hosting fan (also outside of AI). I doubt many people will disagree with me here because I see the same arguments being made in many posts. However, I thought it might be interesting to share anyway. I wrote down why self-hosting AI does not save money: https://www.nijho.lt/post/self-hosting-ai-is-not-cheaper/ EDIT:…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ww2jsu/selfhosting_ai_does_not_save_money_and_i_do_it/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 4,
+    "justificacao": "O Duarte não tem máquina para treinar modelos e não paga cloud, portanto o assunto é secundário. A leitura pode ser interessante, mas não muda o que ele faz esta semana.",
+    "area": "repos-em-alta",
+    "nome": "Self-hosting AI does not save money, and I do it anyway — reflexão de economia",
+    "o_que_e": "Análise sobre os custos reais de correr modelos de IA localmente comparado com usar serviços na cloud.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
+    "id": "09af319016c5",
+    "titulo": "GronedWaffel/ps-neighborhood",
+    "resumo": "19 estrelas, GPL-3.0, JavaScript. PS4/PS5 Windows workbench: memory scanning, MCP, Ghidra RAM exports, FTP, PKG installs, console controls and saves. Tested PS4 10.01 / PS5 13.60.",
+    "url": "https://github.com/GronedWaffel/ps-neighborhood",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 6,
+    "justificacao": "Servidor MCP legítimo, mas o caso de uso (gaming em consolas) está distante do que fazes. GPL-3.0, JavaScript. Instalável, mas não te muda o fluxo esta semana.",
+    "area": "skills-mcp",
+    "nome": "ps-neighborhood — PS4/PS5 Windows workbench com MCP",
+    "o_que_e": "Servidor MCP para análise e controlo de consolas PlayStation a partir do Windows, incluindo scanning de memória, exports para Ghidra, FTP, instalação de pacotes e gestão de saves.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
   },
   {
     "id": "fd357af57836",
@@ -544,6 +979,22 @@
     "recolhido": "2026-10-02"
   },
   {
+    "id": "83044bac058d",
+    "titulo": "Context Language Models",
+    "resumo": "173 pontos e 50 comentários no Hacker News",
+    "url": "https://arxiv.org/abs/2609.37725",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 5,
+    "justificacao": "Título promissor (modelos é assunto dele), mas resumo não explica nada. Pode ser investigação interessante ou só discussão, impossível avaliar.",
+    "area": "modelos-apis",
+    "nome": "Context Language Models — investigação de modelos",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
     "id": "819b8b6c47de",
     "titulo": "GitHub Copilot can now interact with desktop apps with computer use",
     "resumo": "Computer use is now available in public preview in GitHub Copilot CLI and the GitHub Copilot app on macOS and Windows. Copilot can interact with desktop applications on your behalf… The post GitHub Copilot can now interact with desktop apps with computer use appeared first on The GitHub Blog .",
@@ -617,6 +1068,22 @@
     "recolhido": "2026-10-02"
   },
   {
+    "id": "649e4d2bdd96",
+    "titulo": "FLUX 3 Image",
+    "resumo": "349 pontos e 75 comentários no Hacker News",
+    "url": "https://bfl.ai/models/flux-3-image",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 6,
+    "justificacao": "Parece ser novo modelo de geração de imagens (FLUX 3), assunto relevante. Camada 2 sem detalhes — não chega para saber se é melhoria significativa, preço, ou só hype.",
+    "area": "modelos-apis",
+    "nome": "FLUX 3 Image — gerador de imagens",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
+  },
+  {
     "id": "4317828ae771",
     "titulo": "justxor/claude-code-pro-course",
     "resumo": "30 estrelas, MIT, Shell. Claude Code PRO — полный курс и гайд на русском: CLAUDE.md, settings, skills, subagents, hooks, MCP, плагины, CI. 8 лабораторных, библиотека промптов и готовый starter-kit https://t.me/ai_machinelearning_big_data/10997 - здесь бесплатные курсы по chatgpt",
@@ -657,6 +1124,22 @@
     "veredicto": "incerto",
     "acao": "Confirma se existe repositório público antes de gastares tempo a procurá-lo.",
     "recolhido": "2026-10-01"
+  },
+  {
+    "id": "2ac8db000e71",
+    "titulo": "Sites in ChatGPT",
+    "resumo": "276 pontos e 260 comentários no Hacker News",
+    "url": "https://chatgpt.com/features/sites/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 4,
+    "justificacao": "Pode ser sobre APIs do ChatGPT, mas o resumo é vago. Sem mais contexto, é difícil avaliar se é mudança de preço, nova feature ou marketing.",
+    "area": "modelos-apis",
+    "nome": "Sites in ChatGPT — integração de websites",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-03"
   },
   {
     "id": "287cb9c6426f",
@@ -1515,6 +1998,52 @@
     "veredicto": "incerto",
     "acao": "Descobre que infraestrutura de vídeo/render exige antes de testar.",
     "recolhido": "2026-10-01"
+  },
+  {
+    "id": "faa03e8ec289",
+    "titulo": "silvius1996/claude-sap-kit",
+    "resumo": "17 estrelas, MIT, ABAP. Claude Code plugin + ARC-1 extension + ABAP kit: run SAP reports, preview NAST print output as PDF, edit SmartForms as XML",
+    "url": "https://github.com/silvius1996/claude-sap-kit",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-29",
+    "nota": 7,
+    "justificacao": "Plugin Claude Code para SAP/ABAP — a não ser que trabalhes com SAP, isto não te toca em nada. 17 estrelas e criado há 4 dias, é um projeto muito recente e de nicho específico que não tem relação com o que segues.",
+    "area": "skills-mcp",
+    "nome": "claude-sap-kit — extensão Claude para SAP",
+    "o_que_e": "Plugin de Claude Code combinado com extensão ARC-1 e kit ABAP para executar relatórios SAP e editar documentos como XML.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "17",
+        "url": "https://api.github.com/repos/silvius1996/claude-sap-kit"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/silvius1996/claude-sap-kit"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/silvius1996/claude-sap-kit"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "ABAP",
+        "url": "https://api.github.com/repos/silvius1996/claude-sap-kit"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 4 dias",
+        "url": "https://api.github.com/repos/silvius1996/claude-sap-kit"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-03",
+    "veredicto": "ruido",
+    "acao": "Salta: é para quem trabalha com SAP, não é o teu caso.",
+    "recolhido": "2026-10-03"
   },
   {
     "id": "f969e8bca3c5",
