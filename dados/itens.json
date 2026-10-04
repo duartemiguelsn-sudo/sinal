@@ -1,5 +1,99 @@
 [
   {
+    "id": "fed243c4d73a",
+    "titulo": "[Discussion] A 5KB pure x86-64 assembly engine for Gemma-2B (FP16, 4.6 tok/s on CPU)",
+    "resumo": "Hi everyone, Sharing a personal project exploring the minimal bare-metal footprint required to run an autoregressive LLM. Instead of relying on large runtimes or compiler abstractions, I wrote an inference engine for Gemma-2B entirely in flat x86-64 assembly (FASM): - **Binary footprint**: Total 5.2 KB flat machine code (`gemma_engine.bin` 3.7 KB + `mat_smp_f16c_gemm_avx2.bin` 1.5 KB). - **Executi…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wx5x1p/discussion_a_5kb_pure_x8664_assembly_engine_for/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-04",
+    "nota": 5,
+    "justificacao": "É hack técnico impressionante e sobre modelos, mas é hobby-oriented e tu não corres modelos localmente. Se precisasses, seria relevante; como está, é demonstração que não muda o que fazias esta semana.",
+    "area": "repos-em-alta",
+    "nome": "Gemma-2B engine — x86-64 assembly",
+    "o_que_e": "Projeto pessoal de motor de inference para Gemma-2B inteiramente em assembly x86-64, com footprint total de 5.2 KB e 4.6 tokens por segundo em CPU.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "39a6cfc0a703",
+    "titulo": "QingYunA/answer-me-with-html",
+    "resumo": "726 estrelas, MIT, JavaScript. Answer me with HTML — an agent skill that answers hard questions with a one-page HTML you can actually read. 让 AI Agent 用一页 HTML 回答复杂问题。",
+    "url": "https://github.com/QingYunA/answer-me-with-html",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-04",
+    "nota": 6,
+    "justificacao": "É skill de agent, que é assunto teu, mas é demasiado especializado—responder com HTML é um caso de uso estreito e o repositório não tem descrição suficiente no resumo para perceberes se funciona bem ou está vivo.",
+    "area": "skills-mcp",
+    "nome": "answer-me-with-html — skill de agent",
+    "o_que_e": "Skill para agentes que responde a perguntas complexas gerando uma página HTML legível de uma página.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "1edb9a8e28a0",
+    "titulo": "bilibili released Index-Translate,a A Multilingual Translation Model Family based on Qwen3.5",
+    "resumo": "https://github.com/bilibili/Index-Translate Index-Translate is a family of multilingual translation models built on Qwen3.5. The text models cover 150 languages and follow translation instructions such as terminology, formatting, and content-preservation requirements. The family extends this foundation to speech, syllable-controlled translation, and full-document translation. -Index-Translate tran…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wxa1wr/bilibili_released_indextranslatea_a_multilingual/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-04",
+    "nota": 7,
+    "justificacao": "Modelo de tradução multilingue baseado em Qwen3.5, saído do r/LocalLLaMA — foge do que segues (agentes, Claude Code, MCP, skills) e os tamanhos maiores exigem GPU que não tens.",
+    "area": "modelos-apis",
+    "nome": "Index-Translate — modelo multilíngue",
+    "o_que_e": "Família de modelos de tradução multilíngue baseados no Qwen 3.5, cobrindo 150 línguas e extensões para fala e tradução de documentos completos.",
+    "factos": [
+      {
+        "rotulo": "Base",
+        "valor": "Qwen3.5",
+        "url": "https://github.com/bilibili/Index-Translate"
+      },
+      {
+        "rotulo": "Linguagens",
+        "valor": "150 idiomas",
+        "url": "https://github.com/bilibili/Index-Translate"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "Apache-2.0",
+        "url": "https://pandaily.com/bilibili-index-translate-open-source-qwen3-5-150-languages"
+      },
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "30 de setembro de 2026",
+        "url": "https://pandaily.com/bilibili-index-translate-open-source-qwen3-5-150-languages"
+      },
+      {
+        "rotulo": "Tamanhos",
+        "valor": "2B, 9B, 35B-A3B (preview)",
+        "url": "https://github.com/bilibili/Index-Translate"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-04",
+    "veredicto": "ruido",
+    "acao": "Ignora — é um modelo de tradução, fora do teu foco e sem máquina para correr.",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "094e0d99b5db",
+    "titulo": "Can someone explain how JEV is different from a simple embeddings model?",
+    "resumo": "How is JEV any different from using an embeddings model? I really will appreciate if someone can explain this to me - because I have yet to see the difference. I'll even give you my JEV server for free! It uses ollama, you install `ollama pull nomic-embed-text:latest`. % python3 ./jev_embedding.py \"How high is the sky?\" find_phone: 0.38 volume: 0.41 calendar: 0.44 tell_the_time: 0.49 weather: 0.53…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wxcn49/can_someone_explain_how_jev_is_different_from_a/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-04",
+    "nota": 4,
+    "justificacao": "É skill técnica de agentes (routing), mas a discussão é teórica e confusa. Sem documentação ou repositório do JEV mencionado claramente, é difícil saber se é coisa viva ou nota num fórum.",
+    "area": "skills-mcp",
+    "nome": "JEV — discussão sobre embeddings",
+    "o_que_e": "Discussão sobre as diferenças entre JEV e modelos de embeddings tradicionais para routing de agents.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
+  },
+  {
     "id": "e992e89cb042",
     "titulo": "GitHub Student Pack: 1 com oferta diferente",
     "resumo": "No GitHub Student Pack mudaram de oferta Appwrite.",
@@ -14,6 +108,178 @@
     "o_que_e": "Mudança de uma das ofertas incluídas no pacote de benefícios para estudantes do GitHub.",
     "veredicto": "depois",
     "recolhido": "2026-10-03"
+  },
+  {
+    "id": "aff3e2da47dc",
+    "titulo": "I built a code knowledge graph tool that's actually MIT licensed (fully local, no cloud)",
+    "resumo": "So this is maybe a niche problem, but at my job I work on a huge Python codebase and every time I change some shared function I'm basically playing roulette. grep tells who mentions it in the code base, not who actually calls it. And more essentially, Claude Code (my major coding agent) mainly uses grep so it doesn't give better results. The tool I wanted already exists (GitNexus) but it's PolyFor…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wws6o6/i_built_a_code_knowledge_graph_tool_thats/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 6,
+    "justificacao": "Ideia sólida para integrar com Claude Code, mas o resumo não explica como se usa nem se é fácil de montar; parece investigável, não imediato.",
+    "area": "repos-em-alta",
+    "nome": "Code knowledge graph tool — indexação local de dependências",
+    "o_que_e": "Ferramenta de código aberto que mapeia relações entre funções e chamadas num codebase Python, funcionando completamente offline.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "9a14422b82b9",
+    "titulo": "Aleph Alpha Kolibri: How the sovereign German LLM works",
+    "resumo": "413 pontos e 12 comentários no Hacker News. https://aleph-alpha.com/en/blog/kolibri-has-landed-a-soverei...",
+    "url": "https://tej.as/blog/aleph-alpha-kolibri",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 7,
+    "justificacao": "Fala de um LLM soberano alemão (Kolibri), vindo do Hacker News (camada 2), mas não há nenhum facto verificado sobre o que o modelo faz, tamanho, licença ou acesso.",
+    "area": "modelos-apis",
+    "nome": "Aleph Alpha Kolibri: How the sovereign German LLM works",
+    "o_que_e": "Explicação sobre o funcionamento do modelo de linguagem Kolibri de código aberto alemão.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "Que tamanho, licença e forma de acesso tem o modelo?",
+      "É algo que se pode testar via API ou só documentação institucional?"
+    ],
+    "acao": "Procura o tech report ou anúncio oficial antes de dar atenção a isto.",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "979d52d891bb",
+    "titulo": "Getting the most out of Opus 5.5 in Claude and Claude Code",
+    "resumo": "220 pontos e 151 comentários no Hacker News",
+    "url": "https://claude.dev/blog/getting-the-most-out-of-opus-5-5/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 8,
+    "justificacao": "Vem do Hacker News (camada 2), mas os factos são concretos: Opus 5.5 já está disponível, mais barato e mais rápido que o anterior, com foco em coding. Como usas Claude Code, isto afeta diretamente o teu custo de API e a qualidade do que já usas.",
+    "area": "agentes-codigo",
+    "nome": "Getting the most out of Opus 5.5 in Claude and Claude Code",
+    "o_que_e": "Estratégias e técnicas para aproveitar ao máximo o modelo Claude Opus 5.5 e a ferramenta Claude Code.",
+    "factos": [
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "22 de setembro de 2026",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      {
+        "rotulo": "Modelo disponível",
+        "valor": "Claude Opus 5.5 lançado e disponível em todas plataformas",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      {
+        "rotulo": "Preço (API)",
+        "valor": "$4 por milhão de tokens entrada, $20 saída",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      {
+        "rotulo": "Mudanças principais",
+        "valor": "40% mais barato que Opus 5, 30% mais rápido, melhor em coding",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      {
+        "rotulo": "Contexto",
+        "valor": "1 milhão de tokens, máximo de 128 mil tokens output",
+        "url": "https://www.anthropic.com/claude-opus-5-5"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-04",
+    "veredicto": "agora",
+    "acao": "Experimenta o Opus 5.5 no Claude Code e compara custo/velocidade com o modelo anterior.",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "95fb57e78f56",
+    "titulo": "The Rise of Overfit Inference Engines",
+    "resumo": "There seems to be a whole category of extremely narrow inference runtimes appearing: Strata, ninfer, DwarfStar, Splash, llamAmpere, gufo, etc. They deliberately give up the thing llama.cpp/vLLM are great at - generality - and optimize around a small number of models and sometimes one hardware family e.g. Strix Halo It seems that general runtimes for compatibility, disposable overfit runtimes for m…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwu6zj/the_rise_of_overfit_inference_engines/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 6,
+    "justificacao": "Interessante mas com ressalvas — aborda otimização de inferência local, que é vizinho do seu mundo. Mas é para GPUs e ele não tem GPU. Camada 2 sem conteúdo completo e comparação com que já existe (llama.cpp) reduz relevância imediata.",
+    "area": "repos-em-alta",
+    "nome": "The Rise of Overfit Inference Engines",
+    "o_que_e": "Análise de uma categoria emergente de runtimes de inferência altamente especializados para modelos específicos e hardware específico, incluindo Strata, ninfer e DwarfStar.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "89764eae0099",
+    "titulo": "The Agent Said It Was Done. The Database Disagreed.",
+    "resumo": "",
+    "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+    "fonte": "Hugging Face",
+    "camada": 1,
+    "data": "2026-10-03",
+    "nota": 4,
+    "justificacao": "Título intrigante sobre agentes, mas sem resumo é impossível saber se é artigo técnico, case study ou ficção. Da fonte (Hugging Face) suspeita-se que seja conteúdo educativo, mas requer clicar para confirmar.",
+    "area": "agentes-codigo",
+    "nome": "The Agent Said It Was Done. The Database Disagreed.",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "823147554c67",
+    "titulo": "Come let your LLMs play World of Warcraft",
+    "resumo": "I hosted my own world of warcraft private server then built a client that you can play in the browser on PC or mobile at https://jankcraft.xyz/ for free. Afterwards, I created a custom MCP and agent harness to control the browser client and play the game by sending signals over a websocket. The agent harness is live on https://jankcraft.xyz/agent , still working out some kinks if all you have a cl…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwqclz/come_let_your_llms_play_world_of_warcraft/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 7,
+    "justificacao": "É um projeto divertido de fazer um agente jogar World of Warcraft via MCP, mas é uma curiosidade de hobby sem ligação ao que procuras — produtividade com agentes, Claude Code ou skills no teu trabalho. Vem do Reddit, camada 2, sem factos verificados que mudem isso.",
+    "area": "skills-mcp",
+    "nome": "Come let your LLMs play World of Warcraft",
+    "o_que_e": "Servidor privado de World of Warcraft com cliente em browser e harness MCP customizado para controlar agentes de IA a jogar o jogo.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignora, é entretenimento técnico sem aplicação ao teu trabalho.",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "811b330a28e1",
+    "titulo": "v2.1.289",
+    "resumo": "What's changed Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines Fixed the terminal freezing on short code blocks with many unclosed <script> tags or deeply nested ${ substitutions Fixed Read deny rules not applying to files @-mentioned, changed, or selected in the IDE through a symlink [VSCode] Reverted a 2.1…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-10-03",
+    "nota": 7,
+    "justificacao": "Release de patch do Claude Code direto da fonte (camada 1), mas só traz correções pontuais de bugs menores em regras de permissão e terminal — nada que mude o que fazes com a ferramenta.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code — versão 2.1.289",
+    "o_que_e": "Atualização do Claude Code com correções a regras de deny/ask, freezing do terminal, e symlinks.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "149349",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      }
+    ],
+    "duvidas": [
+      "Não declara licença reconhecida — não se sabe o que se pode fazer com o código.",
+      "Falta informação sobre a licença do repositório."
+    ],
+    "verificado": "2026-10-04",
+    "veredicto": "ruido",
+    "acao": "Ignora — são apenas correções menores, atualiza automaticamente quando usares.",
+    "recolhido": "2026-10-04"
   },
   {
     "id": "52aff2304aa3",
@@ -32,6 +298,44 @@
     "recolhido": "2026-10-03"
   },
   {
+    "id": "44b0da6b4170",
+    "titulo": "Anyworld, a self-hosted multiplayer text RPG where a local LLM is the Dungeon Master",
+    "resumo": "Hey everyone, I’ve been working on a game called Anyworld. It’s a browser-based multiplayer (single player also supported) text adventure inspired by the early days of AI Dungeon, especially its browser-based free version AI Dungeon 2. The setup is pretty straightforward: one person hosts the server and runs the model via llama.cpp (OpenAI or other cloud APIs are also supported, and great for non-…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwkudj/anyworld_a_selfhosted_multiplayer_text_rpg_where/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 7,
+    "justificacao": "É um RPG de texto self-hosted com LLM, item da camada 2 sem factos verificados. Não tem relação com IA agentes, Claude Code, MCP ou skills — é um mundo diferente do que segues, e exige correr modelo via llama.cpp, o que não se aplica ao teu hardware.",
+    "area": "repos-em-alta",
+    "nome": "Anyworld — RPG multiplayer com LLM como Dungeon Master",
+    "o_que_e": "Jogo de texto baseado em browser onde um modelo de linguagem local ou de API gera as histórias e o mundo.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignora: é um jogo de RPG, fora do teu foco e sem máquina para correr localmente.",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "40c51d505599",
+    "titulo": "Kolibri: A Sovereign Open-Weight Model",
+    "resumo": "617 pontos e 317 comentários no Hacker News. tech report: https://aleph-alpha.com/downloads/tech-report.pdf additional paper: https://tej.as/blog/aleph-alpha-kolibri",
+    "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 7,
+    "justificacao": "Mesmo tema do Kolibri, outro ângulo, ainda camada 2 e sem nenhum facto verificado sobre parâmetros, licença ou desempenho real do modelo.",
+    "area": "modelos-apis",
+    "nome": "Kolibri: A Sovereign Open-Weight Model",
+    "o_que_e": "Modelo de linguagem Kolibri de código aberto com 78 mil milhões de parâmetros e até 1 milhão de tokens de contexto.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "Quais são os números reais de parâmetros, contexto e licença?"
+    ],
+    "acao": "Espera por um resumo verificado com especificações concretas do modelo.",
+    "recolhido": "2026-10-04"
+  },
+  {
     "id": "2b6248452fd8",
     "titulo": "NeilGilani/hebb-claude-plugin",
     "resumo": "15 estrelas, Apache-2.0, Python. ",
@@ -48,6 +352,82 @@
     "recolhido": "2026-10-03"
   },
   {
+    "id": "2ad697ead091",
+    "titulo": "Agents don't need memory, they need documentation",
+    "resumo": "197 pontos e 110 comentários no Hacker News",
+    "url": "https://liao.gg/blog/agents-dont-need-memory",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 7,
+    "justificacao": "É um post de opinião sobre agentes e memória, vindo do Hacker News (camada 2). Os números de popularidade reportados contradizem os verificados numa fonte independente, por isso não dá para confiar neles.",
+    "area": "agentes-codigo",
+    "nome": "Agents don't need memory, they need documentation",
+    "o_que_e": "Argumento de que agentes funcionam melhor com documentação clara do que com sistemas de memória.",
+    "factos": [
+      {
+        "rotulo": "URL",
+        "valor": "https://liao.gg/blog/agents-dont-need-memory",
+        "url": "https://liao.gg/blog/agents-dont-need-memory"
+      },
+      {
+        "rotulo": "Pontos HN",
+        "valor": "96 pontos (04/10, Daily Top 30)",
+        "url": "https://github.com/meixger/hackernews-daily/issues/1483"
+      },
+      {
+        "rotulo": "Comentários HN",
+        "valor": "59 comentários (04/10, Daily Top 30)",
+        "url": "https://github.com/meixger/hackernews-daily/issues/1483"
+      }
+    ],
+    "duvidas": [
+      "Os números no item (197 pontos, 110 comentários) diferem dos encontrados em fontes datadas de 04-10-2026 (96 pontos, 59 comentários) — qual é o valor correto ou de que hora foram capturados?",
+      "Os 197 pontos/110 comentários são de que momento, já que outra fonte regista só 96/59?"
+    ],
+    "verificado": "2026-10-04",
+    "veredicto": "incerto",
+    "acao": "Confirma os números reais de pontos/comentários antes de decidir se vale a leitura.",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "2a195ab6cc44",
+    "titulo": "I built Ninfer 4080 for 16GB class GPUs",
+    "resumo": "Hi everyone, TL/DR I created NInfer 4080 to run ISTA-DASLab-Qwen-3.8-27B-GSQ at 100k context on an RTX 4080 16GB GPU using way more of the hardware capabilities ( max overall: 2720 tok/s prefill, 262 tok/s generation ) and sharing it with the community now so others can also have the benefit. https://github.com/roofkid/ninfer-4080 Full Version After seeing all the amazing work done in the communit…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwv0fj/i_built_ninfer_4080_for_16gb_class_gpus/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 4,
+    "justificacao": "Otimização de inferência local — é repo open-source com mérito técnico real (2720 tok/s prefill), mas exige RTX 4080 ou GPU similar. Ele não tem GPU, logo não é acionável esta semana.",
+    "area": "repos-em-alta",
+    "nome": "Ninfer 4080 for 16GB class GPUs",
+    "o_que_e": "Motor de inferência especializado ninfer-4080 para GPUs de 16GB otimizado para rodar modelos MoE de 27 mil milhões de parâmetros com contexto de 100k tokens.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
+  },
+  {
+    "id": "231fd44562ff",
+    "titulo": "Aleph-Alpha/Kolibri-1 · Hugging Face - 78B parameters. 3.46B active. Up to 1M tokens of context - Apache 2.0",
+    "resumo": "From Aleph Alpha on 𝕏: https://x.com/Aleph__Alpha/status/2106306840657297814 Tech report: https://aleph-alpha.com/downloads/tech-report.pdf submitted by /u/Nunki08 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwl7y6/alephalphakolibri1_hugging_face_78b_parameters/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 7,
+    "justificacao": "Post no Reddit (camada 2) sobre o mesmo Kolibri, agora com números concretos no título (78B parâmetros, 3.46B ativos, 1M contexto, Apache 2.0), mas nada disto está nos factos verificados que recebi, só no título.",
+    "area": "modelos-apis",
+    "nome": "Aleph-Alpha/Kolibri-1 · Hugging Face",
+    "o_que_e": "Modelo Kolibri-1 na Hugging Face com 78 mil milhões de parâmetros, 3,46 mil milhões ativos, contexto até 1 milhão de tokens e licença Apache 2.0.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "Os números de parâmetros e contexto do título estão corretos?",
+      "O modelo corre em hardware acessível ou só via cloud paga?"
+    ],
+    "acao": "Confirma os números do título numa fonte verificada antes de investigar mais.",
+    "recolhido": "2026-10-04"
+  },
+  {
     "id": "119b418afea5",
     "titulo": "evergreen-it-dev/folio",
     "resumo": "19 estrelas, MIT, TypeScript. The AI-assisted, open-source alternative to Notion and Confluence: a team wiki that lives in Git, with real-time editing, data tables, whiteboards, offline mode, and first-class AI agents.",
@@ -62,6 +442,22 @@
     "o_que_e": "Aplicação de equipa para documentação e wikis em Git com suporte a edição em tempo real, tabelas de dados, quadros brancos e agentes IA integrados.",
     "veredicto": "depois",
     "recolhido": "2026-10-03"
+  },
+  {
+    "id": "0b865f6ae1ed",
+    "titulo": "Running Qwen3.8 Flash Next 176B on a 16GB RTX 3080 Laptop + 32GB RAM + SSD",
+    "resumo": "I wanted to see how far I could push a fairly ordinary laptop with a huge MoE model. Turns out, Qwen3.8 Flash Next 176B can run on: RTX 3080 Laptop — 16GB VRAM 32GB system RAM SSD No 128GB/256GB RAM workstation and no multi-GPU setup. I’m running it with TensorSharp , my open-source local LLM inference engine: TensorSharp on GitHub The interesting part for me wasn't simply getting a 176B model to…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wwwmy1/running_qwen38_flash_next_176b_on_a_16gb_rtx_3080/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 5,
+    "justificacao": "Interessante mas não aplicável — o projeto TensorSharp é relevante e open-source, mas ele não tem GPU (nem 3080 nem qualquer outra). É mais inspiração do que ferramenta pronta para usar.",
+    "area": "repos-em-alta",
+    "nome": "Running Qwen3.8 Flash Next 176B on a 16GB RTX 3080 Laptop + 32GB RAM + SSD",
+    "o_que_e": "Demonstração de execução de um modelo MoE gigante em hardware limitado usando TensorSharp, um motor de inferência local de código aberto.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
   },
   {
     "id": "f7605b3e32cc",
@@ -286,6 +682,22 @@
     "veredicto": "agora",
     "acao": "Experimenta pedir uma revisão via API num repo teu e ver o nível de detalhe do 'balanced'.",
     "recolhido": "2026-10-03"
+  },
+  {
+    "id": "b6e3d6aab003",
+    "titulo": "sepehr071/snapp-mcp",
+    "resumo": "21 estrelas, MIT, Python. Unofficial read-only MCP server for Snappfood & SnappMarket: search food and groceries, compare prices, find deals.",
+    "url": "https://github.com/sepehr071/snapp-mcp",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 5,
+    "justificacao": "É MCP e código aberto com MIT, mas é leitor de API de terceiros pouco relevante fora de Irão; bom exemplo de pattern, não traz ferramentas que uses.",
+    "area": "skills-mcp",
+    "nome": "snapp-mcp — MCP para Snappfood",
+    "o_que_e": "Servidor MCP que integra a API de busca de comida e preços do Snappfood em assistentes de IA.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
   },
   {
     "id": "b6e09ab9110a",
@@ -714,6 +1126,52 @@
     "veredicto": "incerto",
     "acao": "Confirma o preço no Workers AI e se a plataforma RL já aceita utilizadores fora de parceiros.",
     "recolhido": "2026-10-02"
+  },
+  {
+    "id": "e4af5926e3cb",
+    "titulo": "nykooi1/vibe-wise",
+    "resumo": "830 estrelas, MIT, Python. A Claude Code plugin that helps you learn how to build while AI writes the code.",
+    "url": "https://github.com/nykooi1/vibe-wise",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-01",
+    "nota": 8,
+    "justificacao": "Item de camada 2 (GitHub em alta), mas é um plugin Claude Code recente, MIT, com tração rápida (830 estrelas em 5 dias) e commit ativo. Encaixa diretamente no que procuras — aprender enquanto a IA escreve código — e o custo de arranque é só instalar o plugin.",
+    "area": "agentes-codigo",
+    "nome": "vibe-wise — plugin Claude Code para aprendizagem",
+    "o_que_e": "Plugin que integra Claude Code com ferramentas de aprendizagem enquanto a IA escreve código.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "830",
+        "url": "https://api.github.com/repos/nykooi1/vibe-wise"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/nykooi1/vibe-wise"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/nykooi1/vibe-wise"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/nykooi1/vibe-wise"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 5 dias",
+        "url": "https://api.github.com/repos/nykooi1/vibe-wise"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-04",
+    "veredicto": "agora",
+    "acao": "Instala o plugin e testa-o num projeto pequeno teu.",
+    "recolhido": "2026-10-04"
   },
   {
     "id": "e45fed453524",
@@ -1919,6 +2377,22 @@
     "recolhido": "2026-10-01"
   },
   {
+    "id": "1bc3fee2413f",
+    "titulo": "composio-community/open-dot",
+    "resumo": "537 estrelas, sem licença declarada, TypeScript. Open-source personal AI agents that work on their own, on their own computers. Mac app, OpenAI + Composio.",
+    "url": "https://github.com/composio-community/open-dot",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 6,
+    "justificacao": "Agentes que funcionam localmente é interessante e está alinhado; mas é Mac apenas e depende da OpenAI + Composio, não abre caminhos novos.",
+    "area": "agentes-codigo",
+    "nome": "open-dot — agentes autónomos para macOS",
+    "o_que_e": "Aplicação que cria agentes de IA autónomos que executam tarefas no próprio computador, sem nuvem.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-04"
+  },
+  {
     "id": "15e70ee5e4a7",
     "titulo": "Gemini 4 Argon: our next era of frontier intelligence",
     "resumo": "",
@@ -1933,6 +2407,52 @@
     "o_que_e": "Anúncio de novo modelo de IA frontier da Google DeepMind.",
     "veredicto": "depois",
     "recolhido": "2026-10-01"
+  },
+  {
+    "id": "0ce99fe41e23",
+    "titulo": "gonzaroman/IHMT-MEMORY",
+    "resumo": "17 estrelas, MIT, Python. Long-term memory for AI coding agents (Claude Code, Codex, opencode) as a tree of plain files",
+    "url": "https://github.com/gonzaroman/IHMT-MEMORY",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-09-30",
+    "nota": 8,
+    "justificacao": "Ferramenta de memória para agentes de código (Claude Code, Codex) com ideia interessante — árvore de ficheiros planos — mas só tem 17 estrelas e 3 dias de vida, sem sinal de tração ou manutenção continuada ainda. Vale a pena voltar quando tiver mais utilizadores ou commits a mostrar que não morreu.",
+    "area": "skills-mcp",
+    "nome": "IHMT-MEMORY — memória de longo prazo para agentes de código",
+    "o_que_e": "Sistema de memória persistente para Claude Code, Codex e outras ferramentas de IA que escreve código, usando ficheiros simples.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "17",
+        "url": "https://api.github.com/repos/gonzaroman/IHMT-MEMORY"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/gonzaroman/IHMT-MEMORY"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/gonzaroman/IHMT-MEMORY"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/gonzaroman/IHMT-MEMORY"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/gonzaroman/IHMT-MEMORY"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-04",
+    "veredicto": "depois",
+    "acao": "Volta a olhar quando o projeto tiver mais tração ou commits regulares.",
+    "recolhido": "2026-10-04"
   },
   {
     "id": "0a35e4165d67",
