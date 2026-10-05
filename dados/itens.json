@@ -1,5 +1,184 @@
 [
   {
+    "id": "f065758bd4b8",
+    "titulo": "amber-notes/amber-notes",
+    "resumo": "16 estrelas, MIT, Swift. Amber Notes: the free, open-source notes app for iPhone and Mac that ChatGPT and Claude can use (MCP).",
+    "url": "https://github.com/amber-notes/amber-notes",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 7,
+    "justificacao": "App de notas para iPhone/Mac em Swift, com integração MCP para ChatGPT/Claude. É de camada 2, tem 16 estrelas e seis dias de vida — projeto a nascer, sem tração nem relevância para o teu stack (não tens Mac nem usas notas via agente). Não há aqui nada que mude o que fazes.",
+    "area": "skills-mcp",
+    "nome": "Amber Notes — app de notas para iPhone e Mac com MCP",
+    "o_que_e": "App de notas grátis e de código aberto para iPhone e Mac que ChatGPT e Claude conseguem usar através de MCP.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "16",
+        "url": "https://api.github.com/repos/amber-notes/amber-notes"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/amber-notes/amber-notes"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/amber-notes/amber-notes"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Swift",
+        "url": "https://api.github.com/repos/amber-notes/amber-notes"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 6 dias",
+        "url": "https://api.github.com/repos/amber-notes/amber-notes"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-05",
+    "veredicto": "ruido",
+    "acao": "Ignora: app de notas para Apple sem tração, fora do que usas.",
+    "recolhido": "2026-10-05"
+  },
+  {
+    "id": "c19ac647b2d7",
+    "titulo": "StayLameBro/backburner",
+    "resumo": "588 estrelas, MIT, Python. Your iPhone helps your Mac run a 27B model: faster prompt reading and more context over a USB-C cable",
+    "url": "https://github.com/StayLameBro/backburner",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 7,
+    "justificacao": "Usa o iPhone para acelerar inferência de um modelo de 27B no Mac via USB-C — exige hardware Apple (iPhone e Mac) que não tens, e a tua máquina não corre modelos localmente de qualquer forma. 588 estrelas e crescimento rápido, mas não se aplica ao teu setup.",
+    "area": "repos-em-alta",
+    "nome": "backburner — correr modelo 27B com iPhone como acelerador",
+    "o_que_e": "iPhone ajuda o Mac a correr um modelo de 27B: leitura de prompt mais rápida e mais contexto através de cabo USB-C.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "588",
+        "url": "https://api.github.com/repos/StayLameBro/backburner"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/StayLameBro/backburner"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/StayLameBro/backburner"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/StayLameBro/backburner"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/StayLameBro/backburner"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-05",
+    "veredicto": "ruido",
+    "acao": "Ignora: exige iPhone e Mac, hardware que não usas.",
+    "recolhido": "2026-10-05"
+  },
+  {
+    "id": "989e094c39cb",
+    "titulo": "VoltAgent/official-mcp-servers",
+    "resumo": "38 estrelas, MIT, linguagem não declarada. A curated directory of 280+ official MCP servers from the companies behind the products. No unofficial forks, no abandoned projects.",
+    "url": "https://github.com/VoltAgent/official-mcp-servers",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 9,
+    "justificacao": "É da camada 2, um diretório agregador de servidores MCP oficiais com apenas 38 estrelas e 4 dias de vida — útil como referência, mas ainda cedo para saber se vai ser mantido ou só mais uma lista. Volta a olhar quando tiver mais tração e meses de histórico.",
+    "area": "skills-mcp",
+    "nome": "VoltAgent — diretório de 280+ servidores MCP oficiais",
+    "o_que_e": "Diretório curado de 280+ servidores MCP oficiais de empresas, sem forks não oficiais nem projectos abandonados.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "38",
+        "url": "https://api.github.com/repos/VoltAgent/official-mcp-servers"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/VoltAgent/official-mcp-servers"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/VoltAgent/official-mcp-servers"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 4 dias",
+        "url": "https://api.github.com/repos/VoltAgent/official-mcp-servers"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-05",
+    "veredicto": "depois",
+    "acao": "Volta a olhar quando o repositório tiver mais tração e histórico estabelecido.",
+    "recolhido": "2026-10-05"
+  },
+  {
+    "id": "7969a7ee4cc8",
+    "titulo": "dongnguyenvie/BashCut",
+    "resumo": "41 estrelas, MIT, Swift. Native macOS video editor that coding agents can drive: everything the UI does, Claude Code and Codex can do through the bashcut CLI or MCP server. Layered timeline, captions, voiceover, plugins.",
+    "url": "https://github.com/dongnguyenvie/BashCut",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 8,
+    "justificacao": "Editor de vídeo nativo para macOS controlável por agentes — mas exige macOS e Swift, e não encaixa no que fazes nem nas máquinas que usas (Windows e VM Ubuntu). Camada 2, 41 estrelas, 2 dias de vida, ainda sem tração provada.",
+    "area": "skills-mcp",
+    "nome": "BashCut — editor de vídeo nativo para macOS com MCP",
+    "o_que_e": "Editor de vídeo nativo para macOS que agentes de código conseguem controlar: tudo o que a UI faz, Claude Code e Copilot conseguem fazer através da CLI ou servidor MCP. Inclui timeline em camadas, legendas, voiceover e pl",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "41",
+        "url": "https://api.github.com/repos/dongnguyenvie/BashCut"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/dongnguyenvie/BashCut"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/dongnguyenvie/BashCut"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Swift",
+        "url": "https://api.github.com/repos/dongnguyenvie/BashCut"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/dongnguyenvie/BashCut"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-05",
+    "veredicto": "ruido",
+    "acao": "Ignora: ferramenta exclusiva para macOS, fora das tuas máquinas.",
+    "recolhido": "2026-10-05"
+  },
+  {
     "id": "fed243c4d73a",
     "titulo": "[Discussion] A 5KB pure x86-64 assembly engine for Gemma-2B (FP16, 4.6 tok/s on CPU)",
     "resumo": "Hi everyone, Sharing a personal project exploring the minimal bare-metal footprint required to run an autoregressive LLM. Instead of relying on large runtimes or compiler abstractions, I wrote an inference engine for Gemma-2B entirely in flat x86-64 assembly (FASM): - **Binary footprint**: Total 5.2 KB flat machine code (`gemma_engine.bin` 3.7 KB + `mat_smp_f16c_gemm_avx2.bin` 1.5 KB). - **Executi…",
@@ -14,6 +193,84 @@
     "o_que_e": "Projeto pessoal de motor de inference para Gemma-2B inteiramente em assembly x86-64, com footprint total de 5.2 KB e 4.6 tokens por segundo em CPU.",
     "veredicto": "depois",
     "recolhido": "2026-10-04"
+  },
+  {
+    "id": "7c7110316f18",
+    "titulo": "26.2.2",
+    "resumo": "- AI Assistant: - Redesigned the AI engine selector with a native drop-down, engine icons, and improved keyboard accessibility - Fixed model discovery for self-hosted OpenAI-compatible endpoints with non-OpenAI model names - Improved error messages for HTTP redirects from custom OpenAI-compatible endpoints by showing the redirect target and configuration guidance - Fixed model listing and chat req…",
+    "url": "https://github.com/dbeaver/dbeaver/releases/tag/26.2.2",
+    "fonte": "DBeaver — releases",
+    "camada": 1,
+    "data": "2026-10-04",
+    "nota": 4,
+    "justificacao": "Melhorias de UI e suporte a endpoints customizados no DBeaver, que ele pode usar. Mas é ferramentas de base de dados — não é o núcleo do que ele segue. Camada 1, mas sem impacto directo.",
+    "area": "ferramentas-dia-a-dia",
+    "nome": "DBeaver 26.2.2 — melhorias no assistente de IA",
+    "o_que_e": "Release que redisposição o seletor de motor de IA com dropdown nativo e ícones, corrige descoberta de modelos em endpoints OpenAI-compatíveis self-hosted, e melhora mensagens de erro.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-05"
+  },
+  {
+    "id": "738dfad82fa1",
+    "titulo": "joeseesun/qiaomu-codex-imagegen",
+    "resumo": "85 estrelas, MIT, JavaScript. 让任何 Agent 调用 Codex 内置生图（MCP + CLI + Skill），内置小红书、视频封面、Mondo 海报技巧 · Codex image generation for any agent",
+    "url": "https://github.com/joeseesun/qiaomu-codex-imagegen",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-04",
+    "nota": 7,
+    "justificacao": "Ferramenta para geração de imagens via Codex com MCP+CLI+Skill, focada em casos de uso chinês (Xiaohongshu, capas de vídeo). Vem da camada 2, 85 estrelas e um dia de vida — ainda sem histórico que mostre se é mantido a sério. O nicho (geração de imagens para redes sociais chinesas) não encaixa no que segues.",
+    "area": "skills-mcp",
+    "nome": "qiaomu-codex-imagegen — gerador de imagens para agentes",
+    "o_que_e": "Servidor MCP e CLI que permite a qualquer agente chamar funcionalidades de geração de imagens do Codex, com templates prontos para redes sociais.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "85",
+        "url": "https://api.github.com/repos/joeseesun/qiaomu-codex-imagegen"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/joeseesun/qiaomu-codex-imagegen"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/joeseesun/qiaomu-codex-imagegen"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "JavaScript",
+        "url": "https://api.github.com/repos/joeseesun/qiaomu-codex-imagegen"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 1 dias",
+        "url": "https://api.github.com/repos/joeseesun/qiaomu-codex-imagegen"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-05",
+    "veredicto": "ruido",
+    "acao": "Ignora: nicho de geração de imagens para redes sociais chinesas.",
+    "recolhido": "2026-10-05"
+  },
+  {
+    "id": "567a67be4150",
+    "titulo": "Show HN: AI search for every photo and every frame of video on macOS",
+    "resumo": "154 pontos e 71 comentários no Hacker News",
+    "url": "https://github.com/allenv0/SCM",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-04",
+    "nota": 5,
+    "justificacao": "É Show HN, logo é do próprio criador, e a ideia é interessante — processamento local de imagens com IA. Mas é específico para macOS, ele usa Windows e Ubuntu. Camada 1, bom conceito, mas fora da sua máquina.",
+    "area": "repos-em-alta",
+    "nome": "Show HN — busca de IA em fotos e frames de vídeo no macOS",
+    "o_que_e": "Ferramenta que faz busca de IA em cada foto e em cada frame de vídeo armazenados no macOS.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-05"
   },
   {
     "id": "39a6cfc0a703",
@@ -563,6 +820,22 @@
     "recolhido": "2026-10-02"
   },
   {
+    "id": "e35138269f8b",
+    "titulo": "Show HN: Made an open-source Lego AI generator",
+    "resumo": "156 pontos e 50 comentários no Hacker News. Hi there :-) New on HN, first time posting. Past year, around December, I started experimenting with making ChatGPT and Claude generate source code in LDraw language. This LDraw is literally an \"assembly\" language, a low-level programming language that describes how to assemble LEGO pieces together into models, one placement instruction at a time. When e",
+    "url": "https://github.com/anteloc/ldraw-nova",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 5,
+    "justificacao": "Usa IA e modelos (Claude), 156 pontos e 50 comentários; mas é mais curiosidade de prototipagem do que algo que chegue aos agentes ou MCP. Custo de arranque não fica claro.",
+    "area": "repos-em-alta",
+    "nome": "Gerador de LEGO com IA — código aberto",
+    "o_que_e": "Ferramenta que usa Claude e ChatGPT para gerar instruções em LDraw (linguagem de assembly para LEGO) a partir de texto.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-05"
+  },
+  {
     "id": "decb5d86e744",
     "titulo": "With most information hidden, the game Stratego had stumped AI until now",
     "resumo": "220 pontos e 109 comentários no Hacker News. https://www.nature.com/articles/s41586-026-11036-y https://arxiv.org/abs/2511.07312",
@@ -768,6 +1041,52 @@
     "recolhido": "2026-10-02"
   },
   {
+    "id": "9802b0f9fc39",
+    "titulo": "artemnovichkov/xcode-mods",
+    "resumo": "16 estrelas, MIT, TypeScript. Xcode's build, tests, console and SwiftUI previews inside Claude Code",
+    "url": "https://github.com/artemnovichkov/xcode-mods",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 9,
+    "justificacao": "Integra Xcode (build, testes, previews SwiftUI) no Claude Code — mas é específico de iOS/macOS, e tu não desenvolves nesse ecossistema. Da camada 2, com só 16 estrelas e 3 dias de vida, não há tração nenhuma que justifique atenção fora do nicho.",
+    "area": "skills-mcp",
+    "nome": "xcode-mods — Xcode dentro de Claude Code",
+    "o_que_e": "Servidor MCP que expõe a build, testes, consola e SwiftUI previews do Xcode dentro de Claude Code.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "16",
+        "url": "https://api.github.com/repos/artemnovichkov/xcode-mods"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/artemnovichkov/xcode-mods"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/artemnovichkov/xcode-mods"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/artemnovichkov/xcode-mods"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/artemnovichkov/xcode-mods"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-05",
+    "veredicto": "ruido",
+    "acao": "Ignora: é ferramenta para desenvolvimento Xcode/macOS, fora do teu stack.",
+    "recolhido": "2026-10-05"
+  },
+  {
     "id": "8e206c4d9ed6",
     "titulo": "A model guide for the GPT-6 family",
     "resumo": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
@@ -818,6 +1137,52 @@
     "o_que_e": "Modelo de decisão open weights baseado em fine-tune do Qwen 27B.",
     "veredicto": "depois",
     "recolhido": "2026-10-02"
+  },
+  {
+    "id": "75ba9e5c6513",
+    "titulo": "FidelisMM/shipstores",
+    "resumo": "16 estrelas, MIT, Python. Ship iOS and Android apps from your AI agent. MCP server for App Store Connect, Google Play Console and Expo EAS.",
+    "url": "https://github.com/FidelisMM/shipstores",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 8,
+    "justificacao": "MCP server para publicar apps iOS/Android via App Store Connect, Google Play e Expo EAS a partir de um agente — interessante se alguma vez fores publicar apps móveis, mas é nicho fora do que segues agora. Camada 2, só 16 estrelas e 4 dias de vida, sem maturidade ainda. Volta a olhar se precisares de publicar uma app móvel via agente.",
+    "area": "skills-mcp",
+    "nome": "shipstores — servidor MCP para mobile",
+    "o_que_e": "Servidor MCP que liga agentes a App Store Connect, Google Play Console e Expo EAS para publicar aplicações iOS e Android.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "16",
+        "url": "https://api.github.com/repos/FidelisMM/shipstores"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/FidelisMM/shipstores"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/FidelisMM/shipstores"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/FidelisMM/shipstores"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 4 dias",
+        "url": "https://api.github.com/repos/FidelisMM/shipstores"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-05",
+    "veredicto": "depois",
+    "acao": "Volta a olhar quando precisares de publicar uma app móvel com um agente.",
+    "recolhido": "2026-10-05"
   },
   {
     "id": "64ff02c7c629",
