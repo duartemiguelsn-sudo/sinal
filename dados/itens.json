@@ -1,5 +1,437 @@
 [
   {
+    "id": "fee86b0c62c6",
+    "titulo": "What Claude Code Can and Can't Do with Full Access Inside a Docker Sandbox",
+    "resumo": "Claude Code can do more than suggest a fix. It can edit files, install dependencies, run tests, and start your application. But letting it finish a task on its own raises a practical question: how muc",
+    "url": "https://www.freecodecamp.org/news/claude-code-in-a-docker-sandbox/",
+    "fonte": "freeCodeCamp",
+    "camada": 3,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Artigo explica o que o Claude Code consegue fazer com acesso total dentro de um sandbox Docker — editar ficheiros, instalar dependências, correr testes e iniciar a app sozinho, com modos direto e clone. É útil para perceberes os limites de autonomia do agente mesmo sem usares Docker tu próprio.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code em sandbox Docker — capacidades e limites",
+    "o_que_e": "Análise do que Claude Code consegue fazer dentro de um container isolado, incluindo edição de ficheiros, instalação de dependências e testes.",
+    "factos": [
+      {
+        "rotulo": "O que faz",
+        "valor": "Claude pode editar ficheiros, instalar dependências, correr testes e iniciar apl",
+        "url": "https://www.freecodecamp.org/news/claude-code-in-a-docker-sandbox/"
+      },
+      {
+        "rotulo": "Isolamento",
+        "valor": "Docker Sandboxes executa Claude dentro de uma máquina virtual leve (microVM) com",
+        "url": "https://www.freecodecamp.org/news/claude-code-in-a-docker-sandbox/"
+      },
+      {
+        "rotulo": "Acesso",
+        "valor": "Claude tem acesso sudo dentro da sandbox, pode correr comandos shell e instalar ",
+        "url": "https://www.freecodecamp.org/news/claude-code-in-a-docker-sandbox/"
+      },
+      {
+        "rotulo": "Modos",
+        "valor": "Modo direto modifica a pasta imediatamente; modo clone trabalha em cópia separad",
+        "url": "https://www.freecodecamp.org/news/claude-code-in-a-docker-sandbox/"
+      },
+      {
+        "rotulo": "Testes práticos",
+        "valor": "Claude adicionou endpoint health, escreveu teste, construiu Docker image, passou",
+        "url": "https://www.freecodecamp.org/news/claude-code-in-a-docker-sandbox/"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-06",
+    "veredicto": "agora",
+    "acao": "Lê o artigo para perceberes os modos de autonomia do Claude Code em sandbox.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "fd6647e681c1",
+    "titulo": "lcandy2/sim-agentation",
+    "resumo": "26 estrelas, Apache-2.0, Swift. Annotate a running iOS simulator in your browser, and hand the notes to your coding agent.",
+    "url": "https://github.com/lcandy2/sim-agentation",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 6,
+    "justificacao": "MCP temático e criativo, mas muito específico (iOS, Swift, 26 estrelas). É interessante, mas a utilidade prática para ti no Windows/Ubuntu é limitada. Fica na observação.",
+    "area": "skills-mcp",
+    "nome": "sim-agentation — MCP para anotar simulador iOS",
+    "o_que_e": "Servidor MCP que permite anotar um simulador iOS em execução pelo navegador e passar essas notas a um agente de código.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "c7bd5d95a685",
+    "titulo": "We’re using GLM-5.3 Flash instead of frontier models on a massive production codebase",
+    "resumo": "At my company, we’re using GLM-5.3 Flash internally for software engineering work, and I’ve been genuinely impressed by it. I work in a very large production environment with projects totaling **millions of lines of code**, and we’re not relying on frontier models for this workflow — GLM-5.3 Flash is doing the actual day-to-day coding work. The model is extremely fast, but what’s more impressive i…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyuqha/were_using_glm53_flash_instead_of_frontier_models/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "Post da camada 2 sem qualquer facto verificado, é um relato anedótico num fórum sobre um modelo chamado GLM-5.3 Flash. Não há números, benchmarks nem ligação confirmada — só entusiasmo de um utilizador.",
+    "area": "modelos-apis",
+    "nome": "GLM-5.3 Flash em produção vs frontier models",
+    "o_que_e": "Relato de uso de GLM-5.3 Flash em vez de modelos de ponta numa base de código em produção com milhões de linhas.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignorar até surgir benchmark ou anúncio oficial verificável.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "a85434f0e19b",
+    "titulo": "I made a Chrome extension that filters your YouTube feed with a small local model running in the browser (WebGPU, no server)",
+    "resumo": "My YouTube feed was mostly songs, pranks and celebrity clips, so I built a filter that judges each video title with a small decision model running inside Chrome. Nothing is sent anywhere: no server, no API key, no account, and after one download it works offline. What it does - Hides the kinds of video you choose (11 kinds: music, gaming, comedy, vlogs, news, how-tos, and so on), or follows a rule…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyycbs/i_made_a_chrome_extension_that_filters_your/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Extensão Chrome que filtra o YouTube com modelo local via WebGPU — interessante como engenharia, mas fora do que segues (IA agentes, Claude Code, MCP, skills). É mundo de LLM local no browser, não o teu.",
+    "area": "agentes-codigo",
+    "nome": "Filtro de YouTube com modelo local em Chrome",
+    "o_que_e": "Extensão de Chrome que filtra a feed de YouTube com um modelo de decisão pequeno a correr localmente no navegador, sem servidor nem API key.",
+    "factos": [
+      {
+        "rotulo": "Projeto",
+        "valor": "OpenDecider Focus",
+        "url": "https://github.com/manjunathshiva/opendecider"
+      },
+      {
+        "rotulo": "Modelo",
+        "valor": "opendecider-nano em WebGPU (fp16) ou WebAssembly (q8)",
+        "url": "https://github.com/manjunathshiva/opendecider/pull/43"
+      },
+      {
+        "rotulo": "Offline",
+        "valor": "Sim, funciona completamente offline após download",
+        "url": "https://github.com/manjunathshiva/opendecider/pull/43"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "Não confirmada (repositório público no GitHub)",
+        "url": "https://github.com/manjunathshiva/opendecider"
+      }
+    ],
+    "duvidas": [
+      "Qual é a licença exata do projeto OpenDecider?",
+      "O repositório mencionado no post do Reddit é o mesmo do OpenDecider Focus?"
+    ],
+    "verificado": "2026-10-06",
+    "veredicto": "ruido",
+    "acao": "Salta, não é sobre agentes, Claude Code nem MCP.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "9f36884378e4",
+    "titulo": "h9-tec/arabic-ai-atlas",
+    "resumo": "24 estrelas, MIT, Python. The Arabic AI ecosystem as a map, a list, and a skill your agent can install.",
+    "url": "https://github.com/h9-tec/arabic-ai-atlas",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 5,
+    "justificacao": "Conceito sólido (skill para agente), mas 24 estrelas, pouca tração e sem clareza sobre manutenção. Interessante como exemplo de curadoria de ecossistema, não como ferramenta de produção.",
+    "area": "skills-mcp",
+    "nome": "arabic-ai-atlas — mapa do ecossistema de IA árabe",
+    "o_que_e": "Mapeamento do ecossistema de IA árabe como mapa interativo, lista e skill instalável num agente.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "8b501b914c83",
+    "titulo": "Story time: Qwen3.8-Flash-Next on my Strix Halo laptop vs Claude Opus 5.5 on the same feature",
+    "resumo": "For the last few weeks most of my coding has been done locally with Qwen3.8-Flash-Next, so I gave it and Opus 5.5 the same high complexity feature to build on LlamaStash (a complex and large Rust project) and compared the results. Setup : ASUS ROG Flow Z13 (Strix Halo, 128GB), Flash-Next at xhigh effort with Pi as the harness. Opus 5.5 ran in Claude Code at medium effort. I wanted xhigh for Opus a…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyzt1d/story_time_qwen38flashnext_on_my_strix_halo/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Comparação anedótica entre um modelo local e Claude Opus numa feature de código Rust, vinda de um post Reddit (camada 2). A versão \"Opus 5.5\" não está confirmada nem o harness \"Pi\" explicado, por isso não dá para tirar conclusões sólidas.",
+    "area": "modelos-apis",
+    "nome": "Qwen3.8-Flash-Next vs Claude Opus 5.5 em produção",
+    "o_que_e": "Comparação de Qwen Flash Next rodando localmente num laptop Strix Halo contra Claude Opus 5.5 em Claude Code, resolvendo a mesma feature complexa em Rust.",
+    "factos": [
+      {
+        "rotulo": "ASUS ROG Flow Z13 pr",
+        "valor": "AMD Ryzen AI Max+ 395 (Strix Halo) com 16 cores",
+        "url": "https://www.tweaktown.com/news/105408/asus-rog-flow-z13-gaming-tablet-at-computex-2025-packs-amd-strix-halo-apu-up-to-128gb-ram/index.html"
+      },
+      {
+        "rotulo": "ASUS ROG Flow Z13 me",
+        "valor": "Até 128 GB LPDDR5X-8000",
+        "url": "https://www.tweaktown.com/news/105408/asus-rog-flow-z13-gaming-tablet-at-computex-2025-packs-amd-strix-halo-apu-up-to-128gb-ram/index.html"
+      },
+      {
+        "rotulo": "Qwen3.8-Flash-Next c",
+        "valor": "256K tokens (262.144 tokens)",
+        "url": "https://github.com/chm123/b0b3eec2b7f68e09e5855e23fef44dba"
+      }
+    ],
+    "duvidas": [
+      "Qual é a versão exacta do Claude Opus mencionada (5.5)? As buscas encontram referências a Claude Opus mas não conseguem confirmar uma versão 5.5.",
+      "O que é exatamente 'Pi' como harness mencionado no resumo?",
+      "O post Reddit original não foi acedido nos resultados da pesquisa para confirmar os detalhes específicos da comparação.",
+      "Qual é a versão exacta do Claude Opus usada?",
+      "O que é o harness \"Pi\" mencionado?"
+    ],
+    "verificado": "2026-10-06",
+    "veredicto": "incerto",
+    "acao": "Confirma a versão real do Opus testada antes de levar a sério a comparação.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "8a239992c98e",
+    "titulo": "Why 38% of AI Agent container escapes didn't need kernel 0-days: Analysis of 109 empirical incidents (Open Dataset + Defense Harness)",
+    "resumo": "Over the past several months, we conducted an empirical post-mortem investigation into 109 autonomous AI agent security incidents (cataloged with 193 falsification criteria across tool-use and multi-agent systems). One of the most striking patterns in the dataset: In 38% of container breakouts, attackers and misaligned multi-step agents didn't exploit complex Linux kernel vulnerabilities or hyperv…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyur2p/why_38_of_ai_agent_container_escapes_didnt_need/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 5,
+    "justificacao": "Relevante ao tema de agentes, mas é segurança em escala corporativa, não contexto dele. Camada 2 sem detalhe sobre as defesas ou as causas raiz.",
+    "area": "agentes-codigo",
+    "nome": "Análise de segurança de agentes IA em containers",
+    "o_que_e": "Estudo de 109 incidentes reais onde agentes autónomos escaparam de containers, com dataset aberto e defesas propostas.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "7cf55c72b789",
+    "titulo": "Tencent releases Octop, a self-hosted AI assistant",
+    "resumo": "Octop is an open-source, self-hosted AI assistant. Through its multi-agent architecture, it builds an intelligent environment that is both independent and collaborative for teams, families, and individuals. Best of all, it runs entirely on your machine, the fully self-hosted design means privacy is never a compromise, while single-process startup makes the powerful web console, CLI, and IM integra…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyzef4/tencent_releases_octop_a_selfhosted_ai_assistant/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 6,
+    "justificacao": "Arquitetura de agentes e totalmente local são interessantes, mas sem detalhes de custo de arranque (Docker? Dependências pesadas?) ou benchmarks reais. Vale olhar, mas vago.",
+    "area": "agentes-codigo",
+    "nome": "Octop — assistente de IA autossuficiente da Tencent",
+    "o_que_e": "Assistente de IA aberto que corre inteiramente na máquina local, com arquitetura multi-agente para equipas, famílias e indivíduos.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "77e766be467d",
+    "titulo": "A 0.8B model just beat a 2B model on ARC-Challenge (42.15%): Closed-form weight surgery beat multi-GPU SFT with 0 backprop (Independently verified on NVIDIA L4)",
+    "resumo": "A few days ago we shared the idea behind DynamicTune: transferring the trajectory flow from a larger teacher model directly into a smaller student via closed-form linear algebra in ~12 minutes on consumer hardware. Zero backpropagation, zero training tokens, zero gradient descent. To eliminate local bias, we uploaded the unquantized FP16 checkpoint to Hugging Face, and TPN Bench (TaoFu Protocol) i…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyycx6/a_08b_model_just_beat_a_2b_model_on_arcchallenge/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 6,
+    "justificacao": "Ideia interessante para otimizar modelos, mas o resumo é vago sobre viabilidade prática e a tração no mundo dele. Camada 2, sem prova de que funciona além destes números.",
+    "area": "modelos-apis",
+    "nome": "DynamicTune — transferência de conhecimento sem backprop",
+    "o_que_e": "Técnica que transfere conhecimento de um modelo grande para um pequeno usando álgebra linear, sem treino nem gradientes.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "494290ba02ca",
+    "titulo": "Would you use LoRAs as persistent, switchable skills instead of relying entirely on context/RAG?",
+    "resumo": "We're currently building a tool around an idea we're trying to validate : using LoRA adapters as a way to give an LLM persistent, specialized capabilities that can be switched on and off when needed. The basic idea is that instead of continuously putting a skill or domain-specific information into the model's context, you could encode some of it into a LoRA adapter. For example, you might have sep…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyzwab/would_you_use_loras_as_persistent_switchable/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 5,
+    "justificacao": "Ideia alinhada com skills, mas é enquete de validação, não ferramenta nem lançamento. Camada 2, sem prototipo visível.",
+    "area": "skills-mcp",
+    "nome": "LoRAs como skills persistentes em modelos",
+    "o_que_e": "Proposta de usar adaptadores LoRA para dar capacidades especializadas permanentes a um modelo, ativáveis/desativáveis conforme necessário.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "43985be57fc6",
+    "titulo": "Mistral CEO says new AI model beats Chinese ones in some areas",
+    "resumo": "submitted by /u/tengo_harambe [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyz1y6/mistral_ceo_says_new_ai_model_beats_chinese_ones/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 2,
+    "justificacao": "Citação de CEO sem dados, contexto ou comparação detalhada. Marketing puro, sem substância. Camada 2 fraca sem números ou benchmarks.",
+    "area": "modelos-apis",
+    "nome": "Mistral CEO says new AI model beats Chinese ones",
+    "o_que_e": "Declaração do CEO da Mistral sobre um novo modelo que supera modelos chineses em algumas áreas.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "3648fcd612d8",
+    "titulo": "unsloth/Qwen3.8-Flash-Next-GGUF is being updated",
+    "resumo": "Looks like Unsloth is updating https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF to work with llama.cpp, so hopefully this will resolve the issue of having two different GGUF versions of Qwen Flash Next. submitted by /u/jacek2023 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyuoht/unslothqwen38flashnextgguf_is_being_updated/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "Nota técnica de camada 2 sobre compatibilidade de um GGUF com llama.cpp, sem factos verificados e sobre correr modelos localmente — coisa que não se aplica às tuas máquinas.",
+    "area": "modelos-apis",
+    "nome": "Unsloth atualiza Qwen3.8-Flash-Next GGUF",
+    "o_que_e": "Atualização em curso para tornar o Qwen Flash Next compatível com llama.cpp, resolvendo fragmentação de versões GGUF.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignorar, é sobre correr modelos localmente, que não é o teu caso.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "31ce016c9399",
+    "titulo": "v2.1.291",
+    "resumo": "What's changed Fixed a regression in 2.1.290 where cloud sessions could drop answers to permission prompts Fixed a regression in 2.1.288 where the last messages of a session could be lost when quitting",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.291",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "É só um release de correção de regressões (prompts de permissão e perda de mensagens ao sair), não traz funcionalidade nova. Claude Code atualiza-se sozinho, não há ação a tomar aqui.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code v2.1.291",
+    "o_que_e": "Lançamento de manutenção que corrige regressões em sessões cloud e perda de mensagens.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "149568",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      }
+    ],
+    "duvidas": [
+      "Não declara licença reconhecida — não se sabe o que se pode fazer com o código."
+    ],
+    "verificado": "2026-10-06",
+    "veredicto": "ruido",
+    "acao": "Ignora, é só um patch de bugs que se instala sozinho.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "1b91ca1a36c3",
+    "titulo": "Microsoft confirms OpenAI has been using Looped Transformers in the GPT-6 series",
+    "resumo": "Microsoft confirms on publicly accessible web page that OpenAI has been using Looped Transformers in the GPT-6 series, proving The Information's reporting was correct all along. GPT-6.1 Sol uses 2 inference passes, with a passing mention of \"instead of three\". For those confused by \"same base model weights as GPT-6 Sol\", I think Microsoft meant 6 & 6.1 are both post-trained models on top of the sa…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz00vv/microsoft_confirms_openai_has_been_using_looped/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 2,
+    "justificacao": "É rumor sobre arquitetura de modelo, sem acesso real à documentação ou código. Hype puro neste momento — não há ganho real a investigar.",
+    "area": "modelos-apis",
+    "nome": "Microsoft confirms Looped Transformers in GPT-6 series",
+    "o_que_e": "Afirmação de que OpenAI usa arquitetura Looped Transformers em modelos GPT-6.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "1a49afae6773",
+    "titulo": "Fully local copy-editing app for book-length manuscripts (Qwen3.5 4B) benchmarked against planted errors across five languages",
+    "resumo": "Hey y'all! I have a pet project that has grown out of proportions. Long story short: I'm a data scientist who writes fantasy books and self-publish them. I think it's a genuine waste of human life to check for spelling errors so I figured AI could help. Turns out, it is not so simple to get an AI to properly fix a 120k words manuscript ;)... That's why I created Betty! It runs Qwen3.5 4B as an off…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyyow7/fully_local_copyediting_app_for_booklength/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "Post de camada 2 sem factos verificados, sobre uma app de copy-editing local para manuscritos usando um modelo pequeno. É um projeto pessoal fora do que segues — não é agentes, MCP, skills nem Claude Code.",
+    "area": "repos-em-alta",
+    "nome": "Betty — verificador de cópia com Qwen3.5 4B",
+    "o_que_e": "Aplicação que corre um modelo pequeno localmente para detetar e corrigir erros de ortografia em manuscritos longos.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignorar, está fora do teu foco em agentes e ferramentas de IA.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "1491c2f1f36c",
+    "titulo": "SysikNagibator/AiPC",
+    "resumo": "28 estrelas, MIT, Python. Give the agent \"this\" and he gets a real PC.",
+    "url": "https://github.com/SysikNagibator/AiPC",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "Item da camada 2, MIT, Python, muito recente e ainda sem tração (28 estrelas). O título promete \"dar um PC real ao agente\" mas os factos não dizem o que isso significa em concreto — pode ser só acesso a shell/ficheiros, que já existe noutras ferramentas.",
+    "area": "skills-mcp",
+    "nome": "AiPC — servidor MCP para controlo de PC",
+    "o_que_e": "Servidor MCP que dá a um agente capacidade de controlar e interagir com um PC verdadeiro.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "28",
+        "url": "https://api.github.com/repos/SysikNagibator/AiPC"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/SysikNagibator/AiPC"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/SysikNagibator/AiPC"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/SysikNagibator/AiPC"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/SysikNagibator/AiPC"
+      }
+    ],
+    "duvidas": [
+      "O que faz exatamente além do que um MCP de shell já oferece?"
+    ],
+    "verificado": "2026-10-06",
+    "veredicto": "incerto",
+    "acao": "Ler o README para perceber que acesso real dá ao agente.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "085f7195b66f",
+    "titulo": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
+    "resumo": "",
+    "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
+    "fonte": "Hugging Face",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 5,
+    "justificacao": "Modelo novo de laboratório menos conhecido, mas sem resumo a explicar o que oferece na prática ou como se acessa. Camada 1 ajuda, mas o ganho real em relação ao hype fica por esclarecer.",
+    "area": "modelos-apis",
+    "nome": "Falcon-Emirati — modelo de IA para árabe",
+    "o_que_e": "Um modelo de linguagem treinado especificamente para árabe emirati, com otimizações para dialeto, cultura e nuances locais.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "041b1123cb1b",
+    "titulo": "oil-oil/oil-ui",
+    "resumo": "691 estrelas, MIT, Python. 把 AI 的 UI 设计能力推到极限。",
+    "url": "https://github.com/oil-oil/oil-ui",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 4,
+    "justificacao": "É sobre UI design com IA, o que toca o teu mundo tangencialmente, mas o resumo em chinês não deixa claro o que faz na prática. Interessante mas vago.",
+    "area": "repos-em-alta",
+    "nome": "oil-ui — design de UI com IA",
+    "o_que_e": "Biblioteca Python que coloca a capacidade de design de interface com IA ao limite.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
     "id": "f065758bd4b8",
     "titulo": "amber-notes/amber-notes",
     "resumo": "16 estrelas, MIT, Swift. Amber Notes: the free, open-source notes app for iPhone and Mac that ChatGPT and Claude can use (MCP).",
@@ -44,6 +476,38 @@
     "veredicto": "ruido",
     "acao": "Ignora: app de notas para Apple sem tração, fora do que usas.",
     "recolhido": "2026-10-05"
+  },
+  {
+    "id": "ec9915c4fbdd",
+    "titulo": "Opus 5.5 agents discover two room-temperature magnetic semiconductor candidates",
+    "resumo": "384 pontos e 261 comentários no Hacker News",
+    "url": "https://www.vals.ai/blogs/room-temperature-magnetic-semiconductors",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 5,
+    "justificacao": "Investigação interessante em IA para descoberta científica, mas o resumo não deixa claro que aplicações práticas tem. Camada 2 sem substância suficiente.",
+    "area": "modelos-apis",
+    "nome": "Opus 5.5 agents — descoberta de semicondutores magnéticos",
+    "o_que_e": "Modelos de IA descobriram candidatos a semicondutores magnéticos à temperatura ambiente através de busca de espaço químico.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "e774e46e76c5",
+    "titulo": "lucasmarkes/hairline",
+    "resumo": "690 estrelas, MIT, TypeScript. Six isometric line figures that answer the pointer. For React and for anything with a DOM.",
+    "url": "https://github.com/lucasmarkes/hairline",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 2,
+    "justificacao": "Biblioteca de interface visual em TypeScript/React. Não é ferramentas de IA nem agentes—é design de componentes genéricos.",
+    "area": "ferramentas-dia-a-dia",
+    "nome": "hairline — isometric line figures para React",
+    "o_que_e": "Componentes de figuras isométricas que reagem ao cursor, para React e aplicações com DOM.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-06"
   },
   {
     "id": "c19ac647b2d7",
@@ -92,6 +556,22 @@
     "recolhido": "2026-10-05"
   },
   {
+    "id": "a462e0c05184",
+    "titulo": "A benchmark for LLMs playing Civilization V. GLM-5.3 is ahead of Opus-5.5, and Qwen-3.8-27B holds up surprisingly well.",
+    "resumo": "A while ago, I posted here getting OSS-120B and GLM-4.6 playing full games of Civilization V . Since then, models have moved pretty far, and we wanted a better understanding about models' capabilities playing the game. Introducing the controlled version of CivBench on newer models: The controlled version of CivBench (Chen et al., 2026, extending our COLM 2026 work) We are currently testing GPT-6.1…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wynbvq/a_benchmark_for_llms_playing_civilization_v_glm53/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 4,
+    "justificacao": "Benchmark interessante mas avaliação de modelos em jogos é tangencial ao teu dia a dia — não vai mudar como usas IA ou código. É curiosidade, não ferramenta.",
+    "area": "repos-em-alta",
+    "nome": "CivBench — benchmark de modelos em Civilization V",
+    "o_que_e": "Framework de avaliação de capacidades de modelos LLM jogando Civilization V, com resultados comparativos de GLM-5.3, Opus-5.5 e outros.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
     "id": "989e094c39cb",
     "titulo": "VoltAgent/official-mcp-servers",
     "resumo": "38 estrelas, MIT, linguagem não declarada. A curated directory of 280+ official MCP servers from the companies behind the products. No unofficial forks, no abandoned projects.",
@@ -131,6 +611,43 @@
     "veredicto": "depois",
     "acao": "Volta a olhar quando o repositório tiver mais tração e histórico estabelecido.",
     "recolhido": "2026-10-05"
+  },
+  {
+    "id": "8937ca82cfee",
+    "titulo": "Smallest Jev-like model",
+    "resumo": "TinyDecide is 10M Jev-like mode with 10M parameters and fits in just ~6MB. Smaller than every model on the Decision Index leaderboard and it punches way above its size . It runs almost anywhere: in the browser, Node.js, Python, Rust, and even on an ESP32. https://huggingface.co/TheREZOR/TinyDecide submitted by /u/TheRealREZOR [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wybi2y/smallest_jevlike_model/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 5,
+    "justificacao": "Interessante por tamanho e portabilidade, mas sem detalhes sobre que problema resolve — não dá para perceber se é para aplicar já ou só curiosidade técnica.",
+    "area": "modelos-apis",
+    "nome": "TinyDecide — modelo de 10M parâmetros",
+    "o_que_e": "Modelo de decisão com 10M parâmetros que ocupa ~6MB e corre em browser, Node.js, Python, Rust e ESP32.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "7ded5c03aba5",
+    "titulo": "Beam: Reflection's 501B open-weight model",
+    "resumo": "478 pontos e 155 comentários no Hacker News",
+    "url": "https://reflection.ai/blog/introducing-beam",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 7,
+    "justificacao": "Vem da camada 2, só tens a popularidade no Hacker News como sinal — não há factos verificados sobre o modelo, o que ele faz, custo de acesso ou se corre nalgum lado acessível. Sem isso não dá para saber se te interessa, já que é um modelo de 501B que certamente não corres localmente.",
+    "area": "modelos-apis",
+    "nome": "Beam — modelo aberto de 501B parâmetros da Reflection",
+    "o_que_e": "Modelo de linguagem de código aberto com 501 biliões de parâmetros.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "Há API acessível e grátis/barata para testar o Beam?",
+      "Que ganho concreto tem face a modelos que já usas?"
+    ],
+    "acao": "Procura como se acede ao modelo e a que custo antes de decidir.",
+    "recolhido": "2026-10-06"
   },
   {
     "id": "7969a7ee4cc8",
@@ -177,6 +694,233 @@
     "veredicto": "ruido",
     "acao": "Ignora: ferramenta exclusiva para macOS, fora das tuas máquinas.",
     "recolhido": "2026-10-05"
+  },
+  {
+    "id": "78ad53815846",
+    "titulo": "Our approach to EU text provenance rules",
+    "resumo": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
+    "url": "https://openai.com/index/eu-text-provenance",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-10-05",
+    "nota": 4,
+    "justificacao": "De camada 1, mas é política regulatória, não mudança técnica. Relevância marginal se ele usar APIs OpenAI — que ele não está a pagar.",
+    "area": "modelos-apis",
+    "nome": "Regras de proveniência de texto na UE — abordagem OpenAI",
+    "o_que_e": "Política de marca-de-água de texto por OpenAI para cumprir regulações europeias sobre atribuição.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "6d4d3c7ab89b",
+    "titulo": "How is it possible that qwen 27b is so good? When GPT 4o had a trillion parameters and was worse?",
+    "resumo": "Picture from a post in r/amodei . People were praising qwen and I'm just wondering, what kind of new technologies are at play here? Does qwen just have \"better\" pre training data? That's more high quality? submitted by /u/SignificantZebra5883 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyefkt/how_is_it_possible_that_qwen_27b_is_so_good_when/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 6,
+    "justificacao": "Especulação sobre arquitetura e dados de treino de modelos abertos. Interessante para perceber o panorama, mas sem respostas concretas nem acesso a código.",
+    "area": "modelos-apis",
+    "nome": "Qwen 27B — eficiência vs GPT-4o escala",
+    "o_que_e": "Discussão sobre razões da eficiência do Qwen 27B comparado com modelos muito maiores como GPT-4o.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "6cc3830d5f2c",
+    "titulo": "v2.1.290",
+    "resumo": "What's changed Added serverToolUses to the result of a mod's turn.step hook: the tool calls the API ran itself (the advisor), each with its id, name, input, start and end Added agentId to the tool.check event of plugin hooks, so a hook can tell a subagent's permission check from the main session's Added ceiling to the question and verdict a mod's tool.check hook reads, naming the approval an organ…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.290",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-10-05",
+    "nota": 7,
+    "justificacao": "É só mais um changelog de versão do Claude Code, com ajustes internos de hooks e permissões para plugins que não mudam o teu uso diário da ferramenta. O repositório está muito vivo, mas isto é manutenção rotineira, não uma novidade que te afete.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code v2.1.290",
+    "o_que_e": "Release com mudanças em hooks de permissão, visibilidade de chamadas de ferramenta de subagentes, e eventos de verificação.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "149568",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      }
+    ],
+    "duvidas": [
+      "Não declara licença reconhecida — não se sabe o que se pode fazer com o código."
+    ],
+    "verificado": "2026-10-06",
+    "veredicto": "ruido",
+    "acao": "Ignora, é changelog de rotina sem impacto no teu uso.",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "6877981f8072",
+    "titulo": "Web Search API",
+    "resumo": "562 pontos e 258 comentários no Hacker News",
+    "url": "https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 3,
+    "justificacao": "O título é vago. Poderia ser uma API de busca genérica ou integração com modelos, mas sem contexto fica impossível avaliar.",
+    "area": "modelos-apis",
+    "nome": "Web Search API",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "60f79ee00d52",
+    "titulo": "How to Break the AI Coding Agent Fix Loop",
+    "resumo": "You've likely seen this movie before: something breaks in an app you built with an AI coding agent. You ask the agent to fix it. It \"fixes\" it. But the bug is still there, or a second bug appears. So",
+    "url": "https://www.freecodecamp.org/news/how-to-break-the-ai-coding-agent-fix-loop/",
+    "fonte": "freeCodeCamp",
+    "camada": 3,
+    "data": "2026-10-05",
+    "nota": 7,
+    "justificacao": "Usa Claude Code e agentes regularmente — prática contra loop de fixes é problema real que encontras. Vale a leitura antes de usar agentes a sério.",
+    "area": "agentes-codigo",
+    "nome": "Como sair do loop de fixes do AI coding agent",
+    "o_que_e": "Guia sobre estratégias para evitar ciclos infinitos de tentativas falhadas quando pedes a agentes IA que reparem código.",
+    "veredicto": "incerto",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "6005eac560d9",
+    "titulo": "OpenAI \"rogue\" agent activities found on Wikimedia projects",
+    "resumo": "285 pontos e 186 comentários no Hacker News",
+    "url": "https://diff.wikimedia.org/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 4,
+    "justificacao": "O título fala em agentes, mas a notícia é sobre más práticas e violações de termos, não sobre técnica ou ferramentas que ele possa usar.",
+    "area": "agentes-codigo",
+    "nome": "OpenAI rogue agent activities — Wikimedia projects",
+    "o_que_e": "Atividades de agentes IA não autorizados detetadas em projectos da Wikimedia.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "5c7f4024d895",
+    "titulo": "Whistle: speech to text in a 16.9MB file",
+    "resumo": "Hey all, we designed Cactus Whistle, an ASR model for ultra-small devices. It's not perfect, but mostly beats Whisper base with 9x less file size and 6x speed. Whistle supports English, German, French, Spanish, Italian, Dutch and Polish. Remember, the goal at Cactus Compute isn't to achieve SOTA with scale, but to compress intelligence and bring them to smaller under-looked devices like budget pho…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyemcb/whistle_speech_to_text_in_a_169mb_file/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 4,
+    "justificacao": "Engenharia de compressão impressionante mas speech-to-text não é foco do teu trabalho em IA e agentes. Curiosidade de implementação, não mexe com o que fazes.",
+    "area": "modelos-apis",
+    "nome": "Whistle — ASR em 16.9MB",
+    "o_que_e": "Modelo de reconhecimento de voz para dispositivos pequenos, 9x mais comprimido que Whisper base com 6x velocidade, suporta 7 línguas.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "57d99b2f7330",
+    "titulo": "llama.cpp v0.6.0 released with MTP speculative decoding for Qwen4Exp and lots more",
+    "resumo": "submitted by /u/vexatious-big [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyh03u/llamacpp_v060_released_with_mtp_speculative/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 7,
+    "justificacao": "llama.cpp é ferramenta viva que já usas ou vais usar — MTP speculative decoding é optimização séria de velocidade. Vale investigar a leve do que é e se muda performance nos teus testes.",
+    "area": "repos-em-alta",
+    "nome": "llama.cpp v0.6.0 com MTP speculative decoding",
+    "o_que_e": "Release de llama.cpp com suporte a speculative decoding para Qwen4Exp e outras melhorias.",
+    "veredicto": "incerto",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "4005b7acdc52",
+    "titulo": "VITASID57/dudulove-memory",
+    "resumo": "21 estrelas, MIT, JavaScript. Self-hosted continuity memory for persistent AI identities across agents, models, and interfaces.",
+    "url": "https://github.com/VITASID57/dudulove-memory",
+    "fonte": "GitHub — MCP",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 7,
+    "justificacao": "Alinhado com agentes e MCP, permite executar num único comando e mantém estado em modelos locais ou cloud. Sem requerimentos de GPU. Vale investigar.",
+    "area": "skills-mcp",
+    "nome": "dudulove-memory — memória persistente para agentes IA",
+    "o_que_e": "Sistema auto-hospedado de memória de continuidade para manter identidades persistentes de IA em agentes, modelos e interfaces.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "21",
+        "url": "https://api.github.com/repos/VITASID57/dudulove-memory"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/VITASID57/dudulove-memory"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/VITASID57/dudulove-memory"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "JavaScript",
+        "url": "https://api.github.com/repos/VITASID57/dudulove-memory"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 1 dias",
+        "url": "https://api.github.com/repos/VITASID57/dudulove-memory"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-06",
+    "veredicto": "incerto",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "2ac688ca159f",
+    "titulo": "Dust: Pretraining Transformers Without Backpropagation",
+    "resumo": "221 pontos e 56 comentários no Hacker News",
+    "url": "https://qlabs.sh/research/dust",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 4,
+    "justificacao": "Pesquisa interessante sobre otimização de modelos, camada 2. Mas é método de treino para grande escala, não ferramenta que ele consiga usar. Ganho real é obscuro.",
+    "area": "modelos-apis",
+    "nome": "Dust — treino de Transformers sem backprop",
+    "o_que_e": "Técnica de treino de modelos de transformer que não usa retropropagação de gradientes.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
+    "id": "2a0ffadb52de",
+    "titulo": "PewDiePie getting banned twice by OpenAI while making a local model is top-tier comedy 💀",
+    "resumo": "So PewDiePie decides to fine-tune a local AI model called Ajax on his own computer. Pretty normal stuff for local model fans. To make his dataset, he uses OpenAI's API. OpenAI catches him using their outputs to train another model, flags his account for breaking their terms, and bans him. He files an appeal, gets unbanned, goes right back to pulling data from the API, and immediately gets banned a…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wymgu6/pewdiepie_getting_banned_twice_by_openai_while/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 3,
+    "justificacao": "Anedota sobre violação de termos OpenAI, não sobre técnica ou ferramenta. O que importava—como fazer fine-tune local—fica perdido na história.",
+    "area": "modelos-apis",
+    "nome": "PewDiePie fine-tuning com Ajax — banimentos OpenAI",
+    "o_que_e": "Relato de desenvolvedor banido duas vezes pela OpenAI enquanto tentava fazer fine-tune local de modelo, reutilizando dados da API deles.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-06"
   },
   {
     "id": "fed243c4d73a",
@@ -539,6 +1283,51 @@
     "recolhido": "2026-10-04"
   },
   {
+    "id": "628a3a6811f5",
+    "titulo": "ythx-101/live-panel-skill",
+    "resumo": "612 estrelas, NOASSERTION, HTML. Config-driven animated architecture diagrams: turn one JSON file into a terminal-style, always-running diagram or a light-theme infographic that moves. Outputs H.264 mp4 or a live web page; also a Claude Code style skill (SKILL.md).",
+    "url": "https://github.com/ythx-101/live-panel-skill",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 8,
+    "justificacao": "Item da camada 2, só com nota do agregador. É uma skill de Claude Code que gera diagramas animados a partir de um JSON, repo muito novo e sem licença reconhecida. Sem licença não se sabe se podes usar ou adaptar o código livremente.",
+    "area": "skills-mcp",
+    "nome": "live-panel-skill — diagramas animados de arquitetura",
+    "o_que_e": "Skill para Claude Code que transforma ficheiro JSON em diagrama de arquitetura animado, output em H.264 mp4 ou página web ao vivo.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "612",
+        "url": "https://api.github.com/repos/ythx-101/live-panel-skill"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/ythx-101/live-panel-skill"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "HTML",
+        "url": "https://api.github.com/repos/ythx-101/live-panel-skill"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/ythx-101/live-panel-skill"
+      }
+    ],
+    "duvidas": [
+      "Não declara licença reconhecida — não se sabe o que se pode fazer com o código.",
+      "Que licença tem o repositório, se alguma?",
+      "Funciona só como vídeo/mp4 ou também como painel web interativo real?"
+    ],
+    "verificado": "2026-10-06",
+    "veredicto": "incerto",
+    "acao": "Confirmar se o repo define licença antes de experimentar.",
+    "recolhido": "2026-10-06"
+  },
+  {
     "id": "52aff2304aa3",
     "titulo": "LiquidAI/LFM2.5-Encoder 250M/350M",
     "resumo": "LFM2.5-Encoder-350M is a multilingual bidirectional encoder built on the LFM2 architecture — a larger encoder for maximum downstream quality. It is a masked language model with full bidirectional attention, designed to be fine-tuned into task-specific models (classification, token classification, retrieval, reranking, and semantic similarity) across 15 languages, and to run efficiently on-device.…",
@@ -715,6 +1504,52 @@
     "o_que_e": "Demonstração de execução de um modelo MoE gigante em hardware limitado usando TensorSharp, um motor de inferência local de código aberto.",
     "veredicto": "depois",
     "recolhido": "2026-10-04"
+  },
+  {
+    "id": "056cd65a152e",
+    "titulo": "Jakeschincariol/replica-skill",
+    "resumo": "608 estrelas, MIT, Python. Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
+    "url": "https://github.com/Jakeschincariol/replica-skill",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-03",
+    "nota": 9,
+    "justificacao": "Skill de 3 dias, 608 estrelas já é muito para tão pouco tempo, promete clonar qualquer app via Claude Skills — é uma promessa grande sem relatos de uso real. Camada 2, nota alta mas sem histórico que prove que funciona como descrito.",
+    "area": "skills-mcp",
+    "nome": "replica-skill — clonar apps em 5 skills",
+    "o_que_e": "Coleção de 11 skills grátis para Claude Code que reverse-engineer uma app, a reconstroem, testam bugs e arranjam o que users não gostam.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "608",
+        "url": "https://api.github.com/repos/Jakeschincariol/replica-skill"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/Jakeschincariol/replica-skill"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/Jakeschincariol/replica-skill"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Python",
+        "url": "https://api.github.com/repos/Jakeschincariol/replica-skill"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 3 dias",
+        "url": "https://api.github.com/repos/Jakeschincariol/replica-skill"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-06",
+    "veredicto": "depois",
+    "acao": "Volta quando houver relatos de uso real ou mais maturidade no repositório.",
+    "recolhido": "2026-10-06"
   },
   {
     "id": "f7605b3e32cc",
@@ -1201,6 +2036,22 @@
     "recolhido": "2026-10-03"
   },
   {
+    "id": "5ef20db1b8a4",
+    "titulo": "npm staged publishing now supports creating new packages",
+    "resumo": "You can now create a new npm package with npm stage publish, using a local session or a granular access token, including a stage-only token. This lets you create packages… The post npm staged publishing now supports creating new packages appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-10-02-npm-staged-publishing-now-supports-creating-new-packages",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 5,
+    "justificacao": "Bom para fluxo de publishing se planeias publicar mas hoje não o fazes — é conveniência de workflow, não ferramenta de IA nem agentes. Nota marginal.",
+    "area": "ferramentas-dia-a-dia",
+    "nome": "npm staged publishing — criar packages novos",
+    "o_que_e": "Feature nova no npm que permite criar packages novos com npm stage publish usando sessão local ou granular access token.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
+  },
+  {
     "id": "5afa66c19841",
     "titulo": "AI is changing developer work. Here are three skills to strengthen.",
     "resumo": "Learn to direct AI agents, critically review their output, and keep technical judgment at the center of your workflow. The post AI is changing developer work. Here are three skills to strengthen. appeared first on The GitHub Blog .",
@@ -1233,6 +2084,22 @@
     "o_que_e": "Técnica para correr Qwen 3.8 27B (quantizado) distribuindo camadas entre MacBook M4 Pro e iPhone, melhorando velocidade de prefill.",
     "veredicto": "ruido",
     "recolhido": "2026-10-03"
+  },
+  {
+    "id": "4a76c0c80bf1",
+    "titulo": "Unvalidated npm trusted publishing configurations now expire",
+    "resumo": "Unvalidated npm trusted publishing configurations now expire 48 hours after creation and can no longer authorize publishing. This limits the risk of trusting a repository or project name that changes… The post Unvalidated npm trusted publishing configurations now expire appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-10-02-unvalidated-npm-trusted-publishing-configurations-now-expire",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-10-02",
+    "nota": 6,
+    "justificacao": "npm segurança é relevante se publicas packages, mas é mudança marginal de segurança — não afeta o que programas em IA nem agentes. Notícia técnica mas não é muda nada esta semana.",
+    "area": "ferramentas-dia-a-dia",
+    "nome": "npm trusted publishing — configs expiram após 48h",
+    "o_que_e": "Mudança de segurança: npm trusted publishing configurations que não sejam validadas agora expiram 48 horas após criação e não autorizam mais publish.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-06"
   },
   {
     "id": "39e81c79d6ed",
