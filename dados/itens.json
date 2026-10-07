@@ -1,5 +1,106 @@
 [
   {
+    "id": "b2b173be29b6",
+    "titulo": "I re-trained the DFlash 2 drafter for Ternary Bonsai 2 27B: 2.2x on an L4 (3.2x on code edits with ngram lookup), 1.5x on a Mac, 1.2x in Chrome",
+    "resumo": "PrismML's Ternary Bonsai 2 27B fits a 24 GB card or Mac, but decodes at ~30 tok/s on an L4 and ~21 on an M4 Pro. z-lab's DFlash 2 drafter was trained on bf16 Qwen3.8-27B, so it guesses worse on the ternary model. I fine-tuned it on 1.5M tokens of Bonsai 2's own greedy output. Drafter (safetensors + Q4_K_M GGUF): https://huggingface.co/naklitechie/Qwen3.8-27B-DFlash2-ternary-bonsai2 Setup for all t…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzqyfl/i_retrained_the_dflash_2_drafter_for_ternary/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-07",
+    "nota": 6,
+    "justificacao": "Tem dados técnicos e downloads prontos, mas é uma otimização muito específica para um modelo particular. Só vale se já estiveres a correr Bonsai 2, e o ganho de velocidade, embora real, não muda a tua estratégia a não ser que tenhas essa GPU.",
+    "area": "modelos-apis",
+    "nome": "DFlash 2 drafter otimizado para Ternary Bonsai 2 27B",
+    "o_que_e": "Um drafter refinado para acelerar a inferência do modelo Ternary Bonsai 2 27B, conseguindo speedups de 2.2× a 3.2× dependendo do contexto e da máquina.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "b262a3a25021",
+    "titulo": "Image-text retrieval with EmbeddingGemma 2's vision tower, running in the browser on WebGPU",
+    "resumo": "EmbeddingGemma 2 came out this week. It maps images and text into one 768-dim space, so you can search photos by describing them. I ported its text and vision towers to ruNNtime, a WebGPU inference library in TypeScript, and made a small photo gallery where search runs entirely on your GPU in the browser. ruNNtime also supports plenty of other vision-like models, and you can play with them in the…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzs1t5/imagetext_retrieval_with_embeddinggemma_2s_vision/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-07",
+    "nota": 7,
+    "justificacao": "É uma demo de busca de imagens via WebGPU no browser, vinda do Reddit, mas não há factos verificados sobre o projeto (ruNNtime) nem sobre o quão fácil é reproduzir isto.",
+    "area": "repos-em-alta",
+    "nome": "EmbeddingGemma 2 — busca multimodal no browser com WebGPU",
+    "o_que_e": "Uma implementação em TypeScript de um modelo de embedding que processa imagens e texto no GPU do navegador, permitindo pesquisar fotos por descrição.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "O código da demo e da biblioteca ruNNtime está disponível?",
+      "Funciona em GPUs comuns de portátil?"
+    ],
+    "acao": "Confirmar se ruNNtime é open source e fácil de testar localmente.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "4fada7eb0a1d",
+    "titulo": "BenchLabs' Cagliostro V3.5 135M finally takes Hugging Face's SmolLM2-135M's first place on Open SLM Leaderboard with an Intelligence Index of 27.49",
+    "resumo": "submitted by /u/Megneous [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzljhn/benchlabs_cagliostro_v35_135m_finally_takes/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-07",
+    "nota": 4,
+    "justificacao": "Leaderboards são métricas, não ferramenta. Sem saber se o modelo é prático, como se instala e o que consegue fazer de verdade, é apenas uma linha de texto num ranking. Camada 2 sem substância.",
+    "area": "modelos-apis",
+    "nome": "Cagliostro V3.5 135M — modelo pequeno no topo da leaderboard",
+    "o_que_e": "Um modelo de linguagem com 135 milhões de parâmetros que alcançou a primeira posição num ranking de modelos abertos pequenos.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "1fa2f64dbfdc",
+    "titulo": "Strands Decider 2B: a small, open-source, decision model",
+    "resumo": "208 pontos e 53 comentários no Hacker News",
+    "url": "https://strandsagents.com/blog/introducing-strands-decider/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-07",
+    "nota": 5,
+    "justificacao": "A camada 2 sem mais contexto técnico não permite saber se é realmente útil ou apenas marketing. O tamanho reduzido é interessante, mas falta saber se o modelo funciona e como se integra.",
+    "area": "modelos-apis",
+    "nome": "Strands Decider 2B — modelo de decisão open-source",
+    "o_que_e": "Um modelo pequeno treinado para tarefas de decisão, de código aberto.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "13e48a9428b4",
+    "titulo": "New 35B-A3B model is comming on huggingface",
+    "resumo": "MiniCPM-V-4.7-35B-A3B No model card yet submitted by /u/BreakfastFriendly728 [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzpyzk/new_35ba3b_model_is_comming_on_huggingface/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-07",
+    "nota": 4,
+    "justificacao": "Camada 2, sem detalhes técnicos concretos nem card de modelo. Uma notícia de \"está a chegar\" sem dados sobre performance, custo de inferência ou como o usar não dá para avaliar.",
+    "area": "modelos-apis",
+    "nome": "MiniCPM-V-4.7-35B-A3B — novo modelo open-source",
+    "o_que_e": "Um modelo de visão aberto com 35 mil milhões de parâmetros, ainda sem descrição oficial.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "0df3fe0610b5",
+    "titulo": "Trained a ~20K LM (probably smallest) that can still write stories",
+    "resumo": "I’ve been pushing TinyStories-style models downward in size, and this is the smallest one so far: MacroStories — 19,969 parameters, 81 KB FP32 https://huggingface.co/raincandy-u/MacroStories For scale: → ~50× smaller than the 1M TinyStories model → ~3,000× smaller than AlexNet → 32-dim hidden state → 378-token vocabulary → one decoder block, recurrently applied 4 times with shared weights It’s obv…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzp2ja/trained_a_20k_lm_probably_smallest_that_can_still/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-07",
+    "nota": 6,
+    "justificacao": "É uma proeza de engenharia interessante e corres-o no teu laptop sem problemas, mas um modelo de 81 KB que escreve histórias é mais prova de conceito do que ferramenta prática. Fica no campo da curiosidade técnica.",
+    "area": "modelos-apis",
+    "nome": "MacroStories — modelo de linguagem com ~20K parâmetros",
+    "o_que_e": "Um modelo de linguagem extremamente pequeno, treinado no estilo TinyStories, capaz de gerar histórias com apenas 20 mil parâmetros.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
     "id": "fee86b0c62c6",
     "titulo": "What Claude Code Can and Can't Do with Full Access Inside a Docker Sandbox",
     "resumo": "Claude Code can do more than suggest a fix. It can edit files, install dependencies, run tests, and start your application. But letting it finish a task on its own raises a practical question: how muc",
@@ -62,6 +163,123 @@
     "recolhido": "2026-10-06"
   },
   {
+    "id": "f465f4e38540",
+    "titulo": "v2.1.292",
+    "resumo": "What's changed Added --marketplace <source> to claude plugin install : adds the marketplace if needed, under the same policy checks as claude plugin marketplace add , then installs the plugin from it Added an effort parameter to the Agent tool, so Claude runs a sub-agent at the effort level you ask for Added CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS environment variable to set a longer base delay…",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292",
+    "fonte": "Claude Code — releases",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Changelog do teu agente principal: novo parâmetro effort para sub-agentes e instalação de plugins via marketplace num só comando. É manutenção ativa (commit de ontem), mas falta licença clara no repositório.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code — v2.1.292",
+    "o_que_e": "Release com novo parâmetro de esforço para o Agent tool, opção --marketplace para instalar plugins, e configuração de retry.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "149705",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "TypeScript",
+        "url": "https://api.github.com/repos/anthropics/claude-code"
+      }
+    ],
+    "duvidas": [
+      "Não declara licença reconhecida — não se sabe o que se pode fazer com o código.",
+      "Que licença rege o uso do código do Claude Code?"
+    ],
+    "verificado": "2026-10-07",
+    "veredicto": "agora",
+    "acao": "Atualiza o Claude Code e testa o parâmetro effort no Agent tool.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "f02fc4590b9c",
+    "titulo": "openai/math",
+    "resumo": "6941 estrelas, Apache-2.0, Lean. ",
+    "url": "https://github.com/openai/math",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 6,
+    "justificacao": "OpenAI é fonte credível e 6941 estrelas mostram tração, mas sem descrição do que faz é difícil saber se serve — provavelmente formais matemáticos em Lean, não IA prática.",
+    "area": "modelos-apis",
+    "nome": "openai/math — repositório OpenAI",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "d4f31a42a87a",
+    "titulo": "elstongun/leviathan",
+    "resumo": "652 estrelas, Apache-2.0, Rust. **Deep memory for agents over large datasets.** Leviathan is a single static binary that turns your records (JSONL, JSON, CSV/TSV, SQLite, or anything a database CLI can export) into a ranked full-text index.",
+    "url": "https://github.com/elstongun/leviathan",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Vem do GitHub trending (camada 2), mas os factos seguram: binário único em Rust, Apache-2.0, indexação full-text de JSONL/CSV/SQLite para memória de agentes — arranque sem dependências pesadas. Repositório muito novo (2 dias), ainda sem histórico de manutenção.",
+    "area": "agentes-codigo",
+    "nome": "leviathan — memória e índice para agentes",
+    "o_que_e": "Utilitário que converte registos (JSONL, JSON, CSV, SQLite) num índice full-text ordenado para agentes.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "652",
+        "url": "https://api.github.com/repos/elstongun/leviathan"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/elstongun/leviathan"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "Apache-2.0",
+        "url": "https://api.github.com/repos/elstongun/leviathan"
+      },
+      {
+        "rotulo": "Linguagem",
+        "valor": "Rust",
+        "url": "https://api.github.com/repos/elstongun/leviathan"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/elstongun/leviathan"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-07",
+    "veredicto": "agora",
+    "acao": "Experimenta o binário num dataset pequeno para ver se serve de memória para os teus agentes.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "cf31f861ac66",
+    "titulo": "I trained a model to be wrong 98% of the time and 96% sure about it. It took three tries.",
+    "resumo": "Meet Bev. She is a decision model (the Jev / Nimble kind: you give her a situation and a question, she gives a probability for each answer), fine-tuned on Qwen3.5-9B to pick the worst answer on purpose. Try her in your browser: https://huggingface.co/spaces/richardyoung/ask-bev Type in your own options and she picks the worst one, with a probability for each. Or run her locally: ollama run richard…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz8wsb/i_trained_a_model_to_be_wrong_98_of_the_time_and/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 4,
+    "justificacao": "É uma demonstração técnica interessante de como um modelo pode ser enviesado sistematicamente, mas é mais curiosidade do que coisa que mude o que ele faz. Sem aplicação prática clara para o trabalho com agentes ou MCP.",
+    "area": "repos-em-alta",
+    "nome": "Ask Bev — modelo de decisão treinado para estar errado",
+    "o_que_e": "Um modelo de decisão baseado em Qwen3.5-9B, ajustado para escolher propositadamente a pior resposta entre opções apresentadas, com probabilidades atribuídas a cada uma.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
     "id": "c7bd5d95a685",
     "titulo": "We’re using GLM-5.3 Flash instead of frontier models on a massive production codebase",
     "resumo": "At my company, we’re using GLM-5.3 Flash internally for software engineering work, and I’ve been genuinely impressed by it. I work in a very large production environment with projects totaling **millions of lines of code**, and we’re not relying on frontier models for this workflow — GLM-5.3 Flash is doing the actual day-to-day coding work. The model is extremely fast, but what’s more impressive i…",
@@ -78,6 +296,93 @@
     "duvidas": [],
     "acao": "Ignorar até surgir benchmark ou anúncio oficial verificável.",
     "recolhido": "2026-10-06"
+  },
+  {
+    "id": "c4f384800b7f",
+    "titulo": "Introducing EmbeddingGemma 2: A best-in-class open model for natively multimodal embeddings | Google",
+    "resumo": "https://huggingface.co/google/embeddinggemma-2 EmbeddingGemma 2 is an open multimodal embedding model built by Google DeepMind which maps text (incl. code), images, video, and audio inputs—and combinations thereof—into a single, unified 768-dimensional vector space. The model has 740M total parameters, combining a 270M parameter text model with modular vision (170M) and audio (300M) encoders. Desi…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz7faa/introducing_embeddinggemma_2_a_bestinclass_open/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Vem do Reddit (camada 2) e não há factos verificados sobre parâmetros, licença ou como correr o modelo. Sem isso não dá para saber se é viável na tua máquina nem o custo real de uso.",
+    "area": "modelos-apis",
+    "nome": "EmbeddingGemma 2 — anúncio oficial Google",
+    "o_que_e": "Modelo de embeddings aberto de Google DeepMind que mapeia texto, imagens, vídeo e áudio num espaço vectorial único.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "Que hardware mínimo é preciso para correr o modelo?",
+      "A licença permite uso gratuito em projetos pessoais?"
+    ],
+    "acao": "Verificar tamanho, licença e requisitos antes de testar.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "bf8250ccf259",
+    "titulo": "Local AI World Model Part 2 - Deep NN to turn Images into Playable Characters, with prompt switching mid rollout",
+    "resumo": "Last time when I posted on this subReddit to share my work, the response almost made me cry because a tiny demo got so many people talking about this In the past 2 months Ive been training a new model, but this time with actual text guidance. So a little about the older model. Normal video models are too large and not meant to run on consumer hardware in real time. You can generate a static clip,…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzdm08/local_ai_world_model_part_2_deep_nn_to_turn/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 5,
+    "justificacao": "É trabalho técnico impressionante e o autor claramente o domina, mas fica no espaço de modelos visuais locais, que não é prioridade dele. A coisa está viva (dois meses de desenvolvimento), mas sem um caminho claro para agentes ou ferramentas práticas que ele use.",
+    "area": "repos-em-alta",
+    "nome": "Local AI World Model Part 2 — NN para converter imagens em personagens jogáveis",
+    "o_que_e": "Um modelo de rede neuronal profunda que transforma imagens em personagens interativos, com capacidade de mudar comportamentos via texto durante a inferência, otimizado para rodar em hardware de consumo.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "bb30d565ebf0",
+    "titulo": "Update your IDE to restore agent activity in Copilot usage metrics",
+    "resumo": "If your Copilot usage metrics have shown agent activity or agent lines of code falling while Copilot usage kept growing, we’ve found the cause, and a fix is rolling out… The post Update your IDE to restore agent activity in Copilot usage metrics appeared first on The GitHub Blog .",
+    "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
+    "fonte": "GitHub Changelog",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "É uma correção de bug nas métricas internas de uso do Copilot Agent, relevante só para quem acompanha dashboards de telemetria da ferramenta, não para quem a usa no dia a dia.",
+    "area": "agentes-codigo",
+    "nome": "Copilot — métricas de agentes corrigidas",
+    "o_que_e": "Correção num IDE que afectava a leitura de actividade de agentes nos métricas de utilização do Copilot.",
+    "veredicto": "ruido",
+    "duvidas": [],
+    "acao": "Ignorar, é só uma correção de métricas internas do GitHub.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "b0898a851f1a",
+    "titulo": "Europe rejoins the fight with Chonky! Mistral Large 4 Released, Open weights end of month, who’s ready?",
+    "resumo": "1 trillion parameters, 49B active, definitely chonky! If you don’t love the model you gotta at least love the humor in the name - Le Chonk submitted by /u/chemist_slime [link] [comments]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wzginu/europe_rejoins_the_fight_with_chonky_mistral/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 6,
+    "justificacao": "Modelo novo de laboratório respeitável, mas é só anúncio de camada 2 — vale acompanhar quando sair, não é iminente.",
+    "area": "modelos-apis",
+    "nome": "Mistral Large 4 (Chonky) — novo modelo aberto",
+    "o_que_e": "Release anunciado de modelo Mistral de 1 trilião de parâmetros com 49B activos.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "ab5e6ca801d9",
+    "titulo": "EmbeddingGemma 2: An open, lightweight multimodal embedding model",
+    "resumo": "353 pontos e 35 comentários no Hacker News",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 6,
+    "justificacao": "Camada 2, modelo novo de Google/DeepMind. Tração boa (353 pontos). Pode ser útil se precisa embeddings, mas sem saber se há integração fácil ou documentação, fica como potencial investigar.",
+    "area": "modelos-apis",
+    "nome": "EmbeddingGemma 2 — modelo multimodal leve",
+    "o_que_e": "Novo modelo de embeddings aberto e leve, suporta múltiplas modalidades.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
   },
   {
     "id": "a85434f0e19b",
@@ -124,6 +429,59 @@
     "recolhido": "2026-10-06"
   },
   {
+    "id": "a824fffb27a5",
+    "titulo": "Claude Code’s suggested message feature: I think the real customer is the model",
+    "resumo": "223 pontos e 126 comentários no Hacker News",
+    "url": "https://www.zohaib.cc/blog/smartest-claude-code-feature",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 5,
+    "justificacao": "Camada 2, é opinião sobre Claude Code, não é feature ou release. Tração razoável (223 pontos) mas sem indicação se há mudança real ou é apenas discussão especulativa.",
+    "area": "agentes-codigo",
+    "nome": "Claude Code — crítica ao suggested message",
+    "o_que_e": "Análise crítica sobre feature de mensagens sugeridas no Claude Code, questionando se beneficia o modelo ou o utilizador.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "a585154abde8",
+    "titulo": "Decisions API is in public beta",
+    "resumo": "328 pontos e 172 comentários no Hacker News",
+    "url": "https://developers.openai.com/api/docs/guides/decisions",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "API de Decisions da OpenAI em beta pública, com destaque no Hacker News, mas sem factos verificados sobre o que a API faz em concreto nem preços.",
+    "area": "modelos-apis",
+    "nome": "OpenAI — Decisions API em beta público",
+    "o_que_e": "Nova API da OpenAI em beta público, provavelmente para lógica de decisão em modelos.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "O que faz exatamente a Decisions API?",
+      "Há custo associado ou está incluída no plano gratuito?"
+    ],
+    "acao": "Ler a documentação da API para perceber o caso de uso real.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "a5577f8867ce",
+    "titulo": "Vibecoding isn't as fun as writing code by hand",
+    "resumo": "189 pontos e 272 comentários no Hacker News",
+    "url": "https://www.autodidacts.io/vibecoding-isnt-as-fun-as-writing-code-by-hand/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 3,
+    "justificacao": "Camada 2, é reflexão sobre workflow com modelos, não é anúncio de ferramenta ou feature. Debate interessante mas não muda nada imediatamente.",
+    "area": "agentes-codigo",
+    "nome": "Vibecoding — crítica a geração de código por \"vibe\"",
+    "o_que_e": "Opinião que geração de código baseada em vibe ou sensação não é tão produtiva como escrever código manualmente.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-07"
+  },
+  {
     "id": "9f36884378e4",
     "titulo": "h9-tec/arabic-ai-atlas",
     "resumo": "24 estrelas, MIT, Python. The Arabic AI ecosystem as a map, a list, and a skill your agent can install.",
@@ -138,6 +496,75 @@
     "o_que_e": "Mapeamento do ecossistema de IA árabe como mapa interativo, lista e skill instalável num agente.",
     "veredicto": "depois",
     "recolhido": "2026-10-06"
+  },
+  {
+    "id": "9ad1574487b3",
+    "titulo": "Qwen 4 apparently coming out at the end of October",
+    "resumo": "Hey All, I spoke to a 0-day partner of Alibaba today and he casually mentioned (didnt know if he was allowed to) that Qwen 4 is apparently planned for the end of October. To me, this is way faster than expected as there was quite a gap between 3.6 and 3.8. I tried to get more information out of him regarding which variants will come first and he got a bit cagey. BUT: No matter the order of the var…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz1pqn/qwen_4_apparently_coming_out_at_the_end_of_october/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 3,
+    "justificacao": "Modelo grande de laboratório conhecido, mas é só boato de insider — sem data confirmada nem especificações, é ruído.",
+    "area": "modelos-apis",
+    "nome": "Qwen 4 — anúncio de modelo Alibaba",
+    "o_que_e": "Rumor de lançamento de Qwen 4 no final de Outubro.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "9964af802e9c",
+    "titulo": "Advancing computer use with Ironclad",
+    "resumo": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
+    "url": "https://openai.com/index/advancing-computer-use-with-ironclad",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 6,
+    "justificacao": "Camada 1, fala de agentes—tema que segues—mas é um case de enterprise muito específico. Sem acesso a detalhes técnicos, modelos ou como replicar, fica mais próximo de um anúncio do que de notícia prática.",
+    "area": "agentes-codigo",
+    "nome": "OpenAI e Ironclad — agentes para workflows de contratos",
+    "o_que_e": "Uma parceria onde OpenAI treina e avalia agentes de IA em workflows complexos de contratação.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "8eda8214ccb1",
+    "titulo": "Introducing Mistral Large 4",
+    "resumo": "",
+    "url": "https://mistral.ai/news/mistral-large-4/",
+    "fonte": "Mistral",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 1,
+    "justificacao": "Camada 1 mas resumo vazio. Sem saber se é um modelo novo, uma atualização de preços ou uma feature, não há o que avaliar. Mistral tem produtos que te interessam, mas isto não é informação.",
+    "area": "modelos-apis",
+    "nome": "Mistral Large 4",
+    "o_que_e": "Não dá para saber pelo título e pelo resumo.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "8bf6b1b34efc",
+    "titulo": "google/embeddinggemma-2 · Hugging Face",
+    "resumo": "EmbeddingGemma 2 is an open multimodal embedding model built by Google DeepMind which maps text (incl. code), images, video, and audio inputs—and combinations thereof—into a single, unified 768-dimensional vector space. The model has 740M total parameters, combining a 270M parameter text model with modular vision (170M) and audio (300M) encoders. Designed to run on consumer hardware such as mobile…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz5va3/googleembeddinggemma2_hugging_face/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "Modelo de embeddings multimodal da Google, descrito no resumo mas sem nenhum facto verificado — nem tamanho confirmado, nem requisitos, nem se já está disponível para download. Vem da camada 2 via Reddit, e sem verificação não dá para saber se corre na máquina do Duarte.",
+    "area": "modelos-apis",
+    "nome": "EmbeddingGemma 2 — modelo multimodal aberto",
+    "o_que_e": "Modelo de embeddings aberto de Google DeepMind que mapeia texto, imagens, vídeo e áudio num espaço vectorial único.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "O modelo já está disponível para download ou é anúncio?",
+      "Corre em CPU/GPU de consumo real ou precisa de mais recursos?"
+    ],
+    "acao": "Confirma se o modelo já está publicado e que hardware mínimo pede.",
+    "recolhido": "2026-10-07"
   },
   {
     "id": "8b501b914c83",
@@ -230,6 +657,119 @@
     "recolhido": "2026-10-06"
   },
   {
+    "id": "6e2c593ea404",
+    "titulo": "Sharing AI progress in mathematics",
+    "resumo": "985 pontos e 961 comentários no Hacker News. https://github.com/openai/math https://github.com/openai/math/tree/main/preprints",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 6,
+    "justificacao": "Camada 2, tração alta (985 pontos), mas é apenas um anúncio de progresso em domínio específico. Sem saber se há API nova, modelo disponível ou ferramenta para usar, fica como tendência interessante mas não accionável esta semana.",
+    "area": "modelos-apis",
+    "nome": "OpenAI — avanços em matemática",
+    "o_que_e": "Notícia sobre progresso em modelos de IA para resolver problemas de matemática.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "65b10d5e370b",
+    "titulo": "Mistral Large 4",
+    "resumo": "1873 pontos e 1123 comentários no Hacker News. https://docs.mistral.ai/models/mistral-large-4-0",
+    "url": "https://mistral.ai/news/mistral-large-4/\\",
+    "fonte": "Hacker News",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Vem do Hacker News (camada 2): modelo de 1 trilião de parâmetros, só em API de pré-visualização, pesos ainda não publicados. Preço com desconto pode ser promoção temporária, e a licença dos pesos é desconhecida.",
+    "area": "modelos-apis",
+    "nome": "Mistral Large 4",
+    "o_que_e": "Novo modelo de linguagem Mistral Large 4 com API disponível.",
+    "factos": [
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "6 de outubro de 2026",
+        "url": "https://techcrunch.com/2026/10/06/mistrals-new-1t-model-aims-to-leapfrog-closed-and-open-rivals/"
+      },
+      {
+        "rotulo": "Disponibilidade",
+        "valor": "Pré-visualização por API, pesos previstos até 31 de outubro",
+        "url": "https://huggingface.co/mistralai/Mistral-Large-4.0-1T05-A52B"
+      },
+      {
+        "rotulo": "Preço (desconto)",
+        "valor": "$0,68 por milhão entrada, $2,09 por milhão saída",
+        "url": "https://openrouter.ai/mistralai/mistral-large-4-0"
+      },
+      {
+        "rotulo": "Preço (listado)",
+        "valor": "$1,36 por milhão entrada, $4,18 por milhão saída",
+        "url": "https://www.explainx.ai/blog/mistral-large-4-le-chonk-1t-open-weights-preview-2026"
+      },
+      {
+        "rotulo": "Parâmetros",
+        "valor": "1 trilião total, 49 mil milhões ativos por token",
+        "url": "https://huggingface.co/mistralai/Mistral-Large-4.0-1T05-A52B"
+      }
+    ],
+    "duvidas": [
+      "Qual é a licença exata que será usada quando os pesos forem lançados?",
+      "O preço de $0,68 é definitivo ou é apenas uma promoção temporária de dois meses?",
+      "A licença dos pesos será aberta ou restritiva?",
+      "O preço com desconto é permanente ou promocional?"
+    ],
+    "verificado": "2026-10-07",
+    "veredicto": "depois",
+    "acao": "Volta a olhar quando os pesos forem publicados, previstos para final de outubro.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "4dd290070848",
+    "titulo": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+    "resumo": "",
+    "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+    "fonte": "Google DeepMind",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Modelo de embeddings aberto e leve (740M, Apache 2.0), corre em CPU com menos de 600MB de RAM mesmo em modo multimodal — nada de GPU nem Docker. Serve para montar RAG ou busca semântica em projetos pessoais sem custo.",
+    "area": "modelos-apis",
+    "nome": "EmbeddingGemma 2 — modelo de embedding multimodal aberto",
+    "o_que_e": "Um modelo de embedding aberto que mapeia imagens e texto para um espaço de 768 dimensões, permitindo busca e recuperação multimodal.",
+    "factos": [
+      {
+        "rotulo": "Licença",
+        "valor": "Apache 2.0",
+        "url": "https://ai.google.dev/gemma/docs/embeddinggemma"
+      },
+      {
+        "rotulo": "Parâmetros",
+        "valor": "740M parâmetros",
+        "url": "https://ai.google.dev/gemma/docs/embeddinggemma"
+      },
+      {
+        "rotulo": "Data de lançamento",
+        "valor": "6 de outubro de 2026",
+        "url": "https://pasqualepillitteri.it/en/news/21252/embeddinggemma-2-google-open-multimodal-embeddings"
+      },
+      {
+        "rotulo": "Modalidades",
+        "valor": "Texto, imagens, vídeo e áudio",
+        "url": "https://ai.google.dev/gemma/docs/embeddinggemma"
+      },
+      {
+        "rotulo": "Consumo de RAM",
+        "valor": "191MB (texto) a 567MB (multimodal)",
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/"
+      }
+    ],
+    "duvidas": [],
+    "verificado": "2026-10-07",
+    "veredicto": "agora",
+    "acao": "Experimenta o EmbeddingGemma 2 localmente para indexar texto ou imagens num projeto teu.",
+    "recolhido": "2026-10-07"
+  },
+  {
     "id": "494290ba02ca",
     "titulo": "Would you use LoRAs as persistent, switchable skills instead of relying entirely on context/RAG?",
     "resumo": "We're currently building a tool around an idea we're trying to validate : using LoRA adapters as a way to give an LLM persistent, specialized capabilities that can be switched on and off when needed. The basic idea is that instead of continuously putting a skill or domain-specific information into the model's context, you could encode some of it into a LoRA adapter. For example, you might have sep…",
@@ -244,6 +784,43 @@
     "o_que_e": "Proposta de usar adaptadores LoRA para dar capacidades especializadas permanentes a um modelo, ativáveis/desativáveis conforme necessário.",
     "veredicto": "depois",
     "recolhido": "2026-10-06"
+  },
+  {
+    "id": "47b9255d8fa0",
+    "titulo": "Sharing AI progress in mathematics",
+    "resumo": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "OpenAI partilha resultados de um modelo interno em problemas de matemática, com provas em Lean no GitHub, mas não há factos verificados sobre o que está realmente acessível ou replicável.",
+    "area": "modelos-apis",
+    "nome": "OpenAI — avanços em matemática com modelo interno",
+    "o_que_e": "OpenAI publica resultados em problemas em aberto de matemática usando um modelo interno e partilha formalizações em Lean no GitHub.",
+    "veredicto": "incerto",
+    "duvidas": [
+      "O modelo usado está disponível publicamente ou só os resultados?",
+      "O código Lean é fácil de correr sem o modelo original?"
+    ],
+    "acao": "Ver o que está no repositório GitHub antes de decidir se interessa.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "475fd729df90",
+    "titulo": "DozenTwelve/Papermorph",
+    "resumo": "490 estrelas, MIT, HTML. An AI skill that turns books into animated, narrated, interactive web experiences",
+    "url": "https://github.com/DozenTwelve/Papermorph",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 5,
+    "justificacao": "Skill interessante mas HTML puro e sem código backend claro — parece demo mais do que ferramenta que uses.",
+    "area": "skills-mcp",
+    "nome": "Papermorph — skill que torna livros em experiências web",
+    "o_que_e": "Skill de IA que converte livros em páginas web animadas, narradas e interactivas.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
   },
   {
     "id": "43985be57fc6",
@@ -278,6 +855,22 @@
     "duvidas": [],
     "acao": "Ignorar, é sobre correr modelos localmente, que não é o teu caso.",
     "recolhido": "2026-10-06"
+  },
+  {
+    "id": "342677ae7ead",
+    "titulo": "How Jump Trading is scaling quant research with ChatGPT",
+    "resumo": "Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review.",
+    "url": "https://openai.com/index/jump-trading",
+    "fonte": "OpenAI",
+    "camada": 1,
+    "data": "2026-10-06",
+    "nota": 3,
+    "justificacao": "Camada 1, mas é um case de uso empresarial, não notícia de modelo, API ou ferramenta. Mostra aplicação, não te dá nada prático ou novo para fazer. Interessante como padrão, mas distante do teu dia a dia.",
+    "area": "repos-em-alta",
+    "nome": "Jump Trading — scaling quant research com ChatGPT",
+    "o_que_e": "Um case de estudo sobre como Jump Trading usa OpenAI para expandir investigação quantitativa através de workflows de IA de longa duração.",
+    "veredicto": "ruido",
+    "recolhido": "2026-10-07"
   },
   {
     "id": "31ce016c9399",
@@ -316,6 +909,101 @@
     "veredicto": "ruido",
     "acao": "Ignora, é só um patch de bugs que se instala sozinho.",
     "recolhido": "2026-10-06"
+  },
+  {
+    "id": "2cb6711a67be",
+    "titulo": "I gave a 21M model a 6.4B-parameter lookup table. It matches a 114M dense model and runs with the table on an SSD (RX 9070)",
+    "resumo": "I spent the last few weeks on a hobby research project and just made it public. The idea isn't new (product-key memory, Lample et al. 2019, and Meta's \"Memory Layers at Scale\"): give a model a huge table of learned vectors and let it read only a few hundred of them per token. I wanted to know what that's actually worth on a small model, what it costs, and whether the table even has to sit in VRAM.…",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz7tvs/i_gave_a_21m_model_a_64bparameter_lookup_table_it/",
+    "fonte": "r/LocalLLaMA",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 8,
+    "justificacao": "Projeto hobby de investigação (camada 2, r/LocalLLaMA) sobre tabelas de lookup para substituir parâmetros densos — ideia interessante mas sem produto nem replicação independente. Faltam detalhes sobre o hardware usado e a comparação com o trabalho da Meta citado.",
+    "area": "repos-em-alta",
+    "nome": "Modelo 21M com lookup table de 6.4B",
+    "o_que_e": "Experiência de research: modelo pequeno com tabela de vectores aprendida em SSD, resultado equivalente a modelo de 114M denso.",
+    "factos": [
+      {
+        "rotulo": "Tamanho da tabela",
+        "valor": "6.4B de parâmetros com 16.8M de linhas",
+        "url": "https://github.com/re133/sparse-memory-lm"
+      },
+      {
+        "rotulo": "Desempenho",
+        "valor": "Equivalente a modelo denso com ~114M parâmetros",
+        "url": "https://github.com/re133/sparse-memory-lm"
+      },
+      {
+        "rotulo": "Armazenamento",
+        "valor": "Tabela cabe em SSD com resto do modelo em GPU",
+        "url": "https://github.com/re133/sparse-memory-lm"
+      },
+      {
+        "rotulo": "Referência técnica",
+        "valor": "Baseado em product-key memory de Lample et al. 2019",
+        "url": "https://arxiv.org/pdf/1907.05242"
+      },
+      {
+        "rotulo": "Repositório",
+        "valor": "Código público em sparse-memory-lm no GitHub",
+        "url": "https://github.com/re133/sparse-memory-lm"
+      }
+    ],
+    "duvidas": [
+      "O título menciona RX 9070 mas os resultados não confirmam detalhes sobre este hardware específico.",
+      "Não encontrada informação sobre Meta's 'Memory Layers at Scale' mencionado no resumo.",
+      "O título menciona RX 9070 mas os resultados não confirmam detalhes sobre esse hardware.",
+      "Como se compara exatamente ao 'Memory Layers at Scale' da Meta citado no resumo?"
+    ],
+    "verificado": "2026-10-07",
+    "veredicto": "incerto",
+    "acao": "Confirma se há reprodução independente antes de investigar o código.",
+    "recolhido": "2026-10-07"
+  },
+  {
+    "id": "2be993c9a7e6",
+    "titulo": "AgentMemoryRepo/agentmemoryrepo",
+    "resumo": "597 estrelas, MIT, linguagem não declarada. Spec for Agent Memory Repo",
+    "url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-06",
+    "nota": 7,
+    "justificacao": "É uma spec para memória de agentes, da camada 2, com 597 estrelas e criado há só dois dias — número alto demais para a idade, o que pede desconfiança em vez de entusiasmo. Não há factos sobre o que a spec realmente propõe nem quem a adotou.",
+    "area": "agentes-codigo",
+    "nome": "AgentMemoryRepo — especificação de repositório de memória",
+    "o_que_e": "Padrão ou norma para como agentes guardam e acedem a memória.",
+    "factos": [
+      {
+        "rotulo": "Estrelas",
+        "valor": "597",
+        "url": "https://api.github.com/repos/AgentMemoryRepo/agentmemoryrepo"
+      },
+      {
+        "rotulo": "Último commit",
+        "valor": "hoje ou ontem",
+        "url": "https://api.github.com/repos/AgentMemoryRepo/agentmemoryrepo"
+      },
+      {
+        "rotulo": "Licença",
+        "valor": "MIT",
+        "url": "https://api.github.com/repos/AgentMemoryRepo/agentmemoryrepo"
+      },
+      {
+        "rotulo": "Criado",
+        "valor": "há 2 dias",
+        "url": "https://api.github.com/repos/AgentMemoryRepo/agentmemoryrepo"
+      }
+    ],
+    "duvidas": [
+      "O que é que a spec define em concreto, além de ser 'spec'?",
+      "Há alguma implementação a usar isto ou é só texto?"
+    ],
+    "verificado": "2026-10-07",
+    "veredicto": "incerto",
+    "acao": "Verifica o conteúdo real da spec antes de confiares nas estrelas.",
+    "recolhido": "2026-10-07"
   },
   {
     "id": "1b91ca1a36c3",
@@ -921,6 +1609,22 @@
     "o_que_e": "Relato de desenvolvedor banido duas vezes pela OpenAI enquanto tentava fazer fine-tune local de modelo, reutilizando dados da API deles.",
     "veredicto": "ruido",
     "recolhido": "2026-10-06"
+  },
+  {
+    "id": "00083ec8b20b",
+    "titulo": "whirlchat/whirl",
+    "resumo": "491 estrelas, MIT, TypeScript. The AI chat app that sweats the details. Every top model, real memory, living documents, and your own tools.",
+    "url": "https://github.com/whirlchat/whirl",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-05",
+    "nota": 5,
+    "justificacao": "Ferramenta de interface de chat competente (MIT, TypeScript, 491 estrelas), mas é primariamente um cliente de consumo. Pode ser útil para experimentar, mas não é uma prioridade face ao foco em agentes, MCP e APIs que ele segue.",
+    "area": "ferramentas-dia-a-dia",
+    "nome": "Whirl — app de chat com IA",
+    "o_que_e": "Uma aplicação de chat que integra múltiplos modelos de topo, com histórico persistente, documentos vivos e suporte para ferramentas personalizadas.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
   },
   {
     "id": "fed243c4d73a",
@@ -1632,6 +2336,22 @@
     "o_que_e": "Cliente de desktop para usar o DeepSeek em macOS e Windows.",
     "veredicto": "depois",
     "recolhido": "2026-10-02"
+  },
+  {
+    "id": "ee7758faa6d3",
+    "titulo": "zzzz7788990213-ops/EvoVLM",
+    "resumo": "507 estrelas, sem licença declarada, Python. Evolving Multimodal Inference Programs: LLM-guided evolutionary search for accurate and efficient vision-language inference.",
+    "url": "https://github.com/zzzz7788990213-ops/EvoVLM",
+    "fonte": "GitHub — repositórios novos em alta",
+    "camada": 2,
+    "data": "2026-10-02",
+    "nota": 4,
+    "justificacao": "Trabalho técnico sólido (507 estrelas, Python), mas é investigação em visão multimodal sem uma ferramenta ou API clara para ele usar. Sem licença declarada também é um sinal de que o projeto pode estar em draft.",
+    "area": "repos-em-alta",
+    "nome": "EvoVLM — busca evolutiva para inferência vision-language",
+    "o_que_e": "Um modelo de rede neuronal que usa busca evolutiva guiada por LLM para otimizar programas de inferência vision-language, buscando maior precisão e eficiência.",
+    "veredicto": "depois",
+    "recolhido": "2026-10-07"
   },
   {
     "id": "ebcf4ab022e9",
