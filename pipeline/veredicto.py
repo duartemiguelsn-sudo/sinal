@@ -232,10 +232,16 @@ def veredicto_da_nota(item: dict, limiar: int) -> str:
     é um item que devia ter sido julgado e não foi — porque um travão de custo
     cortou, ou porque a chave não estava no ambiente. Esse fica "incerto", que
     é a verdade, e não "agora", que seria uma promessa que ninguém verificou.
+
+    O outro caso de nota alta é o que ficou fora do limite diário da fase 3
+    (traz o campo `ignorado`). Esse não falhou nada: teve nota para passar e
+    não coube hoje. Fica "depois", que é o que é — bom, mas não foi a altura.
     """
     nota = item.get("nota")
     if nota is None:
         return "incerto"
+    if nota >= limiar and item.get("ignorado"):
+        return "depois"
     if nota >= limiar:
         return "incerto"
     if nota <= 3:

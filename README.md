@@ -73,12 +73,15 @@ procuradas fontes para elas, e o resultado foi desigual:
 O site mostra na mesma as áreas vazias, desligadas e a dizer porquê: escondê-las dava a
 entender que não havia novidades, quando o que não há é fonte.
 
-A fase 3 tem dois caminhos. Um item que aponte para um repositório do GitHub — que são
-quase dois terços da recolha — é verificado pela API do GitHub: estrelas, último commit,
-licença e linguagem, de graça e sem passar por modelo nenhum. Tudo o resto vai a
-pesquisa paga, que é a parte cara e por isso está limitada a três itens e duas pesquisas
-cada por corrida. Um facto sem o URL de onde saiu não é guardado; o que não se confirmou
-fica como dúvida em aberto.
+A fase 3 recebe no máximo 8 itens por dia (`itens_por_dia` no `modelos.toml`), os de
+nota mais alta; os que sobram ficam como ignorados, com a razão escrita no item, e levam
+*Depois*. Dentro da fase, vai-se do mais barato para o mais caro. Um item que aponte para
+um repositório do GitHub é verificado pela API do GitHub: estrelas, último commit,
+licença e linguagem, de graça e sem passar por modelo nenhum. Os outros vão ao Haiku, que
+lê primeiro a página do próprio item (web fetch, sem custo além dos tokens, cortada a
+6000 tokens) e só pesquisa se ela não chegar — no máximo uma pesquisa por item, que é a
+parte cara. Um facto sem o URL de onde saiu não é guardado; o que não se confirmou fica
+como dúvida em aberto.
 
 A fase 4 tem dois caminhos, pela mesma lógica. Os itens verificados — meia dúzia por
 dia — vão ao Sonnet, que lê os factos da fase 3 e escreve o veredicto e o parágrafo
@@ -123,7 +126,7 @@ comportamento certo: sem dados não há julgamento.
 │  ├─ modelos.toml                  # modelo, preço, esforço e travões de cada fase paga
 │  ├─ modelos.py                    # lê e valida o modelos.toml
 │  ├─ filtrar.py                    # fase 2: pontua com o Haiku, com travões de custo
-│  ├─ verificar.py                  # fase 3: factos do GitHub de graça, o resto por pesquisa
+│  ├─ verificar.py                  # fase 3: API do GitHub, depois a página, e só no fim a pesquisa
 │  ├─ veredicto.py                  # fase 4: julgamento escrito pelo Sonnet, ou tirado da nota
 │  ├─ publicar.py                   # fase 5: junta ao histórico, corta os 60 dias, grava
 │  └─ principal.py                  # orquestra as fases
@@ -197,7 +200,7 @@ saldo"*, em vez do código sozinho. A corrida não se perde — recolhe, publica
 que ficou por pontuar.
 
 Contas por corrida, com os tetos que estão no código: fase 2 até 0,25 USD (uma corrida
-de 45 itens estimou 0,017 USD), fase 3 até 0,12 USD e fase 4 até 0,15 USD. Uma corrida
+de 45 itens estimou 0,017 USD), fase 3 até 0,15 USD e fase 4 até 0,15 USD. Uma corrida
 por dia dá menos de 5 USD por mês no pior caso, e o pior caso é raro: a maioria dos
 candidatos são repositórios e verificam-se de graça, e a fase 4 só paga por meia dúzia
 de itens.
@@ -258,7 +261,7 @@ a $10 por 1000, a outra paga ao Sonnet. Esse número é o que mais decide a fatu
 projeto, porque mexe nas duas contas ao mesmo tempo.
 
 A fase 4 tem os seus dois, na secção `[veredicto]` do `modelos.toml`: `itens_julgados`
-(12 por corrida) e `teto_dolares` (0,15 USD). Um item que um travão deixe por julgar não fica sem
+(8 por corrida, o mesmo limite da fase 3) e `teto_dolares` (0,15 USD). Um item que um travão deixe por julgar não fica sem
 rótulo — apanha o veredicto da nota, que para um item de nota alta dá *Incerto*. É o
 estado honesto de quem não conseguiu julgar, e não uma promessa que ninguém verificou.
 
@@ -280,6 +283,14 @@ travões de antes (3 itens pesquisados, 2 pesquisas cada, 12 julgados), a conta
 esperada desce para cerca de $3,5 a $4 por mês, quase toda em pesquisas e no veredicto. O Sonnet 5.5
 fica se o custo por item no `custos.json` não sair claramente acima dos $0,005 do
 Sonnet 5; se sair, volta-se ao 5 numa linha do `modelos.toml`.
+
+**A fase 3 nova, no mesmo dia:** limite de 8 itens por dia, leitura da página antes da
+pesquisa e uma pesquisa por item, no máximo. Num teste com dois itens reais, o do
+changelog do GitHub ficou resolvido só com a página e o do Reddit precisou de uma
+pesquisa: $0,015 os dois, perto de $0,0075 por item. Com uns cinco itens não-repositório
+por dia, a fase 3 fica perto de $1 por mês, a fase 4 (8 itens) perto de $1,2, e o
+projeto à volta de $3 por mês. O pior caso — 8 itens por dia, todos a pesquisar — dá
+cerca de $4,5.
 
 Os números seguintes são de setembro, com os preços da tabela oficial dessa data
 (Haiku 4.5 a $1/$5 por milhão de tokens de entrada/saída).

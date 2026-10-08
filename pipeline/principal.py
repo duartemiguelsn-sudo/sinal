@@ -154,6 +154,9 @@ def linha_de_custos(fases: dict[str, dict]) -> dict:
         "fases": limpas,
         "entrada": sum(uso["entrada"] for uso in fases.values()),
         "saida": sum(uso["saida"] for uso in fases.values()),
+        # As leituras não custam nada por si; ficam para se ver quantas
+        # pesquisas é que a leitura da página poupou.
+        "leituras": sum(uso.get("leituras", 0) for uso in fases.values()),
         "pesquisas": sum(uso.get("pesquisas", 0) for uso in fases.values()),
         "dolares": round(sum(uso["dolares"] for uso in fases.values()), 6),
     }
@@ -300,8 +303,9 @@ def main() -> int:
 
     if opcoes.estimar:
         print(
-            f"\nPior caso da fase 3: {verificar.TETO_DE_ITENS_PESQUISADOS} itens pesquisados a "
-            f"{verificar.PESQUISAS_POR_ITEM} pesquisas cada, com teto de {opcoes.teto_fase3:.2f} USD.\n"
+            f"\nPior caso da fase 3: {verificar.ITENS_POR_DIA} itens verificados, cada um a ler até "
+            f"{verificar.LEITURAS_POR_ITEM} páginas e a fazer até {verificar.PESQUISAS_POR_ITEM} "
+            f"pesquisa, com teto de {opcoes.teto_fase3:.2f} USD.\n"
             "O custo verdadeiro dela só se sabe depois das notas: os itens que forem\n"
             "repositórios do GitHub verificam-se de graça e não entram nesta conta."
         )
@@ -345,12 +349,14 @@ def main() -> int:
         )
 
     # Fase 3. Os candidatos vão ordenados por nota, do mais alto para o mais
-    # baixo: se o teto de custo cortar a meio, corta pelos que menos interessam.
+    # baixo: o limite diário fica com os melhores, e se o teto de custo cortar
+    # a meio, corta pelos que menos interessam.
     candidatos = sorted(
         (item for item in novos if item.get("nota", 0) >= LIMIAR_FASE_3),
         key=lambda item: item["nota"],
         reverse=True,
     )
+    candidatos, sobram = verificar.limitar(candidatos)
 
     if not candidatos:
         print(f"\nFase 3 — nenhum item com nota >= {LIMIAR_FASE_3}. Não há nada para verificar.")
@@ -359,10 +365,13 @@ def main() -> int:
         print(
             f"\nFase 3 — {len(candidatos)} itens com nota >= {LIMIAR_FASE_3}: "
             f"{conta3['repositorios']} são repositórios e verificam-se de graça, "
-            f"{conta3['pesquisados']} vão a pesquisa"
+            f"{conta3['lidos']} vão ao {verificar.MODELO} (página primeiro, pesquisa se faltar)"
         )
-        if conta3["ignorados"]:
-            print(f"{conta3['ignorados']} ficam por pesquisar por causa do teto de itens")
+        if sobram:
+            print(
+                f"{len(sobram)} ficam como ignorados por passarem o limite de "
+                f"{verificar.ITENS_POR_DIA} itens por dia"
+            )
         print(
             f"Custo estimado: {conta3['dolares']:.4f} USD"
             f"   (teto desta corrida: {opcoes.teto_fase3:.2f} USD)"
@@ -389,7 +398,8 @@ def main() -> int:
         print(f"\n{com_factos} de {len(candidatos)} itens ficaram com factos verificados")
         print(
             f"Custo da fase 3: {uso_fase3['dolares']:.4f} USD  "
-            f"({uso_fase3['pesquisas']} pesquisas, {uso_fase3['entrada']} tokens de entrada, "
+            f"({uso_fase3['leituras']} páginas lidas, {uso_fase3['pesquisas']} pesquisas, "
+            f"{uso_fase3['entrada']} tokens de entrada, "
             f"{uso_fase3['saida']} de saída)"
         )
 

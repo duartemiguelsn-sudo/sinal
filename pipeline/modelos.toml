@@ -37,11 +37,20 @@ preco_saida = 0.50
 esforco = "medium"
 # 10 dólares por mil pesquisas: um cêntimo cada. É o número que manda nesta fase.
 preco_por_pesquisa = 0.01
-# Quantos itens não-repositório vão a pesquisa por corrida, e quantas pesquisas
-# cada um pode fazer. Os repositórios não contam: vão à API do GitHub, de graça.
-itens_pesquisados = 3
-pesquisas_por_item = 2
-teto_dolares = 0.12
+# Quantos itens entram na fase 3 por dia, repositórios incluídos. Seguem os de
+# nota mais alta; os que sobram ficam como ignorados, com a nota da fase 2. É
+# também o número que a fase 4 julga, por isso é o primeiro a baixar se a
+# conta subir.
+itens_por_dia = 8
+# A ordem é do mais barato para o mais caro: primeiro lê-se a página do item
+# (sem custo além dos tokens), e só se ela não chegar se pesquisa. Duas
+# leituras deixam ler a página do item e mais uma que a pesquisa encontre.
+leituras_por_item = 2
+pesquisas_por_item = 1
+# Teto de tokens de cada página lida. Uma página normal tem uns 2500; uma de
+# documentação grande passa dos 25 mil, e sem teto era isso que se pagava.
+tokens_por_pagina = 6000
+teto_dolares = 0.15
 
 # Fase 4 — o veredicto. O único sítio onde se paga o modelo caro.
 [veredicto]
@@ -53,5 +62,6 @@ preco_saida = 10.00
 # se compensa. Se sair muito mais caro por item do que o Sonnet 5 (~0.005 USD
 # por item, medido em outubro), volta-se a "claude-sonnet-5" aqui.
 esforco = "low"
-itens_julgados = 12
+# Igual ao itens_por_dia da fase 3: só se julga o que foi verificado.
+itens_julgados = 8
 teto_dolares = 0.15

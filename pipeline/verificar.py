@@ -1,26 +1,30 @@
 """Fase 3 do Sinal: ir buscar os factos que não se inventam.
 
-Só entram aqui os itens que passaram a fase 2 (nota >= LIMIAR_FASE_3), que
-devem ser cinco a dez por dia. Isto é de propósito: esta é a fase mais cara do
-projeto, porque cada pesquisa na web custa dinheiro à parte dos tokens.
+Só entram aqui os itens que passaram a fase 2 (nota >= LIMIAR_FASE_3), e no
+máximo ITENS_POR_DIA deles — os de nota mais alta. Os que sobram ficam como
+ignorados (ver `limitar`). Isto é de propósito: esta fase e a seguinte pagam
+por item, e este limite é o que mais decide a conta do mês.
 
-São dois caminhos, e a diferença entre eles é toda a diferença no orçamento:
+A ordem é do mais barato para o mais caro:
 
-1. O item aponta para um repositório do GitHub — a maioria, porque a camada 2
+1. O item aponta para um repositório do GitHub — boa parte, porque a camada 2
    é quase toda GitHub. Aqui não se pesquisa nada: pergunta-se à API do GitHub,
    que responde de graça e com números exactos (estrelas, último commit,
    licença, se está arquivado). Zero dólares, zero tokens, zero hipótese de o
    modelo inventar uma estrela.
 
-2. O item é outra coisa qualquer — uma ferramenta, um curso, um anúncio. Aí
-   sim, o modelo pesquisa. É o caminho pago, e por isso tem três travões:
-   um número máximo de itens, um número máximo de pesquisas, e um teto em
-   dólares verificado antes de cada pedido.
+2. O item é outra coisa qualquer — uma ferramenta, um curso, um anúncio. O
+   modelo lê primeiro a página do próprio item com a ferramenta de leitura de
+   páginas (web fetch), que não custa nada além dos tokens do que leu.
 
-A pesquisa na web custa 10 USD por cada mil pesquisas — um cêntimo por
-pesquisa, que é muito mais do que os tokens de um item. É por isso que o
-caminho 1 existe. O modelo, os preços e os travões vivem em
-pipeline/modelos.toml.
+3. Só se essa página não chegar — é um fórum, um agregador, ou não diz o
+   preço — o modelo pesquisa, no máximo PESQUISAS_POR_ITEM vezes. A pesquisa
+   custa 10 USD por cada mil, um cêntimo cada, mais do que os tokens de um
+   item inteiro. Por isso fica em último.
+
+Os passos 2 e 3 são o mesmo pedido: o modelo recebe as duas ferramentas, cada
+uma com o seu `max_uses`, e as instruções dizem-lhe a ordem. O modelo, os
+preços e os travões vivem em pipeline/modelos.toml.
 
 Regra que atravessa o ficheiro todo: um facto sem origem não é facto. Tudo o
 que fica guardado traz o URL de onde saiu, e o que não se conseguiu confirmar
@@ -54,19 +58,23 @@ ESFORCO = FASE["esforco"]
 # nisso, antes de se contar um único token. É o número que manda nesta fase.
 PRECO_POR_PESQUISA = FASE["preco_por_pesquisa"]
 
-# Travões do caminho pago. Os três agem em conjunto e nenhum chega sozinho:
-# o de itens impede que um dia bom de recolha vire uma conta má, o de pesquisas
-# impede que um só item ande à deriva pela web, e o de dólares apanha tudo o
+# Travões. Agem em conjunto e nenhum chega sozinho: o de itens impede que um
+# dia bom de recolha vire uma conta má, os de leituras e pesquisas impedem que
+# um só item ande à deriva pela web, o de tokens por página impede que uma
+# página de documentação enorme encha o pedido, e o de dólares apanha tudo o
 # resto.
 #
-# Os números saem do orçamento, de trás para a frente. Um item pesquisado custa
-# uns três cêntimos, quase todos em pesquisa. Três itens por dia dão cerca de
-# dez cêntimos por dia, ou três dólares por mês no pior caso — e o pior caso é
-# raro, porque a maior parte dos candidatos são repositórios e não chegam aqui.
+# Os números saem do orçamento, de trás para a frente. Um item que só lê a
+# página custa uns três décimos de cêntimo; um que também pesquisa, pouco mais
+# de um cêntimo. Oito itens por dia, todos a pesquisar, dão uns onze cêntimos
+# — três dólares e pouco por mês no pior caso, que é raro: parte dos itens são
+# repositórios e não chegam ao modelo, e muitos ficam resolvidos pela página.
 # Se isto for de mais, baixa-se no modelos.toml, ou numa corrida só com
 # --teto-fase3, sem mexer em código.
-TETO_DE_ITENS_PESQUISADOS = FASE["itens_pesquisados"]
+ITENS_POR_DIA = FASE["itens_por_dia"]
+LEITURAS_POR_ITEM = FASE["leituras_por_item"]
 PESQUISAS_POR_ITEM = FASE["pesquisas_por_item"]
+TOKENS_POR_PAGINA = FASE["tokens_por_pagina"]
 TETO_DE_DOLARES = FASE["teto_dolares"]
 
 # Um repositório sem commits há mais tempo do que isto deixa de se poder
@@ -81,8 +89,19 @@ PAUSA_ENTRE_PEDIDOS = 1
 
 INSTRUCOES = """És o verificador do Sinal. O teu trabalho é ir buscar factos, não opiniões.
 
-Recebes um item que já passou o filtro. Pesquisa na web e devolve só o que
-conseguires confirmar numa página que tenhas mesmo visto nos resultados.
+Recebes um item que já passou o filtro. Devolve só o que conseguires confirmar
+numa página que tenhas mesmo lido.
+
+POR ESTA ORDEM, do mais barato para o mais caro
+1. Lê primeiro a página do item (o url que vem no pedido) com web_fetch.
+2. Se faltar um facto que interessa e um resultado já lido apontar para a
+   página oficial (preços, documentação, anúncio), lê essa com web_fetch.
+3. Só pesquisa com web_search se a página do item não for oficial (um fórum,
+   o Reddit, o Hacker News, um agregador) ou não tiver o que falta. Tens
+   direito a uma pesquisa: escolhe-a bem, com o nome do produto e o facto que
+   procuras. Depois dela podes ler um dos resultados com web_fetch.
+Se a página do item já respondeu, não pesquises. O reddit.com não deixa ler
+as páginas: num item do Reddit, passa diretamente à pesquisa.
 
 O QUE INTERESSA, conforme o que o item for
 - Ferramenta ou serviço: preço actual, se tem plano gratuito, e se tem plano
@@ -98,8 +117,8 @@ REGRAS DURAS
 - Um facto sem URL de origem não vale nada. Cada facto leva o endereço da
   página onde o leste.
 - Nunca escrevas um número, uma data, um preço ou uma licença que não tenhas
-  visto nos resultados da pesquisa. Se não encontraste, não inventas: escreves
-  a pergunta em aberto nas dúvidas.
+  visto numa página lida ou nos resultados da pesquisa. Se não encontraste,
+  não inventas: escreves a pergunta em aberto nas dúvidas.
 - Se as fontes se contradisserem, guarda as duas versões como dois factos e
   escreve a contradição nas dúvidas. Não escolhas uma.
 - Não julgues o item nem digas se vale a pena. Isso é da fase seguinte.
@@ -234,7 +253,7 @@ def factos_do_repositorio(dono: str, nome: str) -> tuple[list[dict], list[str]]:
 
 
 # ---------------------------------------------------------------------------
-# Caminho 2: pesquisa. Paga, e por isso racionada.
+# Caminhos 2 e 3: ler a página e, se não chegar, pesquisar.
 # ---------------------------------------------------------------------------
 
 
@@ -318,10 +337,42 @@ def _duvidas_limpas(bruto) -> list[str]:
     return duvidas
 
 
-def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], dict, str]:
+def ferramentas() -> list[dict]:
+    """As duas ferramentas do pedido, cada uma com o seu travão.
+
+    As versões são as básicas (`_20250305` e `_20250910`). As mais novas
+    filtram os resultados a correr código num contentor à parte; com o Haiku
+    isso é mais uma peça a mexer na conta sem se saber quanto, e aqui as
+    páginas já vêm cortadas pelo `max_content_tokens`.
+    """
+    return [
+        {
+            "type": "web_fetch_20250910",
+            "name": "web_fetch",
+            # As leituras que falham também contam. Sem este número, um item
+            # com links partidos podia tentar página atrás de página.
+            "max_uses": LEITURAS_POR_ITEM,
+            # A leitura é grátis, mas o texto lido entra no pedido e paga-se
+            # como entrada. Isto corta páginas grandes antes de chegarem.
+            "max_content_tokens": TOKENS_POR_PAGINA,
+        },
+        {
+            "type": "web_search_20250305",
+            "name": "web_search",
+            # O travão que mais conta, e o único que age dentro do pedido: sem
+            # ele o modelo pode pesquisar dez vezes sobre o mesmo item e gastar
+            # dez cêntimos a decidir nada.
+            "max_uses": PESQUISAS_POR_ITEM,
+        },
+    ]
+
+
+def factos_da_web(item: dict, cliente) -> tuple[list[dict], list[str], dict, str]:
     """Um item, um pedido. Devolve (factos, dúvidas, uso, aviso).
 
-    O `uso` traz tokens, pesquisas e dólares deste pedido, para o custos.json.
+    O `uso` traz tokens, leituras, pesquisas e dólares deste pedido, para o
+    custos.json. As leituras não entram nos dólares — só os tokens do que se
+    leu, que já vêm na entrada.
 
     O aviso vem vazio quando correu bem. Um item que falhe não leva os outros
     atrás: fica sem factos verificados e segue para a fase 4, que o há-de
@@ -329,7 +380,7 @@ def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], dic
     """
     import anthropic
 
-    uso = {"entrada": 0, "saida": 0, "pesquisas": 0, "dolares": 0.0}
+    uso = {"entrada": 0, "saida": 0, "leituras": 0, "pesquisas": 0, "dolares": 0.0}
 
     try:
         resposta = cliente.messages.create(
@@ -339,17 +390,12 @@ def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], dic
             max_tokens=6000,
             system=INSTRUCOES,
             output_config={"effort": ESFORCO},
+            # O url do item vai na mensagem do utilizador, e não só nas
+            # instruções, porque a leitura de páginas só aceita endereços que
+            # já tenham aparecido na conversa. É uma protecção da API contra
+            # o modelo inventar um endereço para onde mandar dados.
             messages=[{"role": "user", "content": texto_do_item(item)}],
-            tools=[
-                {
-                    "type": "web_search_20250305",
-                    "name": "web_search",
-                    # O travão que mais conta, e o único que age dentro do
-                    # pedido: sem ele o modelo pode pesquisar dez vezes sobre
-                    # o mesmo item e gastar dez cêntimos a decidir nada.
-                    "max_uses": PESQUISAS_POR_ITEM,
-                }
-            ],
+            tools=ferramentas(),
         )
     except anthropic.RateLimitError:
         return [], [], uso, "limite de pedidos atingido"
@@ -361,7 +407,10 @@ def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], dic
     contagem = resposta.usage
     uso["entrada"] = contagem.input_tokens
     uso["saida"] = contagem.output_tokens
-    uso["pesquisas"] = contagem.server_tool_use.web_search_requests if contagem.server_tool_use else 0
+    ferramentas_usadas = contagem.server_tool_use
+    if ferramentas_usadas:
+        uso["pesquisas"] = ferramentas_usadas.web_search_requests or 0
+        uso["leituras"] = getattr(ferramentas_usadas, "web_fetch_requests", 0) or 0
     uso["dolares"] = custo(uso["entrada"], uso["saida"], uso["pesquisas"])
 
     # Uma recusa vem como resposta normal, sem texto. Sem esta linha aparecia
@@ -369,6 +418,13 @@ def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], dic
     # errado.
     if resposta.stop_reason == "refusal":
         return [], [], uso, "o modelo recusou o pedido"
+    # A API pára o ciclo das ferramentas a meio quando ele se alonga. Com uma
+    # pesquisa e duas leituras não devia acontecer; se acontecer, diz-se, em
+    # vez de se aproveitar uma resposta que ainda não tinha chegado ao JSON.
+    if resposta.stop_reason == "pause_turn":
+        return [], [], uso, "a resposta ficou a meio (pause_turn)"
+    if resposta.stop_reason == "max_tokens":
+        return [], [], uso, "a resposta passou do max_tokens"
 
     conteudo = _json_da_resposta(resposta)
     if conteudo is None:
@@ -382,8 +438,23 @@ def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], dic
 # ---------------------------------------------------------------------------
 
 
+def limitar(candidatos: list[dict], limite: int = ITENS_POR_DIA) -> tuple[list[dict], list[dict]]:
+    """Fica com os `limite` candidatos de nota mais alta. Devolve (ficam, sobram).
+
+    Os candidatos têm de vir ordenados por nota, do mais alto para o mais
+    baixo. Os que sobram são marcados como ignorados, com a razão escrita: têm
+    nota para passar, mas não couberam hoje. Não voltam amanhã — já estão no
+    vistos — e é por isso que a razão fica no item, para se perceber no site
+    porque é que um 7 não tem factos.
+    """
+    ficam, sobram = candidatos[:limite], candidatos[limite:]
+    for item in sobram:
+        item["ignorado"] = f"ficou fora do limite de {limite} itens verificados por dia"
+    return ficam, sobram
+
+
 def separar(candidatos: list[dict]) -> tuple[list[dict], list[dict]]:
-    """Divide os candidatos pelos dois caminhos: os de graça e os pagos."""
+    """Divide os candidatos: os do GitHub, de graça, e os que vão ao modelo."""
     repositorios = [item for item in candidatos if repositorio_do_url(item["url"])]
     restantes = [item for item in candidatos if not repositorio_do_url(item["url"])]
     return repositorios, restantes
@@ -392,27 +463,31 @@ def separar(candidatos: list[dict]) -> tuple[list[dict], list[dict]]:
 def estimar(candidatos: list[dict]) -> dict:
     """Quanto é que esta fase ia custar, sem gastar nada.
 
-    A conta é grosseira por cima: assume que cada item pesquisado usa as
-    pesquisas todas a que tem direito e que cada pesquisa enche o pedido de
-    resultados. Prefere-se assustar a mais do que a menos.
+    Recebe os candidatos já cortados pelo `limitar`. A conta é grosseira por
+    cima: assume que cada item lê as páginas todas a que tem direito, cheias
+    até ao teto, e que também pesquisa. Prefere-se assustar a mais do que a
+    menos.
     """
     repositorios, restantes = separar(candidatos)
-    pesquisados = min(len(restantes), TETO_DE_ITENS_PESQUISADOS)
+    lidos = len(restantes)
 
-    # Cada pesquisa despeja resultados no pedido. Sete mil tokens por pesquisa
-    # era o que se via com o Haiku 4.5; o 5.5 conta uns 30% mais para o mesmo
-    # texto, e por isso a conta passou a nove mil. É uma estimativa: o número
-    # verdadeiro vem no `usage` e fica em dados/custos.json.
-    entrada = pesquisados * (len(INSTRUCOES) // 3 + PESQUISAS_POR_ITEM * 9000)
-    # Os factos são pouco texto; o grosso da saída passa a ser o pensamento.
-    saida = pesquisados * 1200
+    # Por item: as instruções, as páginas lidas (cortadas no teto) e os
+    # resultados da pesquisa. Nove mil tokens por pesquisa foi o que se mediu
+    # com o Haiku 5.5 a 2026-10-08. O número verdadeiro vem no `usage` e fica
+    # em dados/custos.json.
+    entrada = lidos * (
+        len(INSTRUCOES) // 3
+        + LEITURAS_POR_ITEM * TOKENS_POR_PAGINA
+        + PESQUISAS_POR_ITEM * 9000
+    )
+    # Os factos são pouco texto; o grosso da saída é o pensamento.
+    saida = lidos * 1200
 
     return {
         "repositorios": len(repositorios),
-        "pesquisados": pesquisados,
-        "ignorados": max(0, len(restantes) - pesquisados),
-        "pesquisas": pesquisados * PESQUISAS_POR_ITEM,
-        "dolares": custo(entrada, saida, pesquisados * PESQUISAS_POR_ITEM),
+        "lidos": lidos,
+        "pesquisas": lidos * PESQUISAS_POR_ITEM,
+        "dolares": custo(entrada, saida, lidos * PESQUISAS_POR_ITEM),
     }
 
 
@@ -423,14 +498,16 @@ def verificar(
 ) -> tuple[list[str], dict]:
     """Põe factos e dúvidas nos candidatos, no sítio. Devolve (avisos, uso).
 
-    O `uso` soma tokens, pesquisas e dólares de todos os pedidos da fase. Os
-    repositórios não entram nele: não custam nada.
+    Recebe os candidatos já cortados pelo `limitar`.
+
+    O `uso` soma tokens, leituras, pesquisas e dólares de todos os pedidos da
+    fase. Os repositórios não entram nele: não custam nada.
 
     Escreve directamente nos dicionários que recebe — são os mesmos objectos
     que a fase 5 vai gravar, e copiá-los só criava duas versões da verdade.
     """
     avisos: list[str] = []
-    total = {"modelo": MODELO, "entrada": 0, "saida": 0, "pesquisas": 0, "dolares": 0.0}
+    total = {"modelo": MODELO, "entrada": 0, "saida": 0, "leituras": 0, "pesquisas": 0, "dolares": 0.0}
     hoje = date.today().isoformat()
 
     repositorios, restantes = separar(candidatos)
@@ -452,24 +529,17 @@ def verificar(
         return avisos, total
 
     if not com_pesquisa:
-        avisos.append(f"{len(restantes)} itens ficaram por pesquisar: a pesquisa está desligada")
+        avisos.append(f"{len(restantes)} itens ficaram por verificar: a parte paga está desligada")
         return avisos, total
 
     import anthropic
 
     cliente = anthropic.Anthropic()
 
-    if len(restantes) > TETO_DE_ITENS_PESQUISADOS:
-        avisos.append(
-            f"travão: {len(restantes)} itens para pesquisar é mais do que o teto de "
-            f"{TETO_DE_ITENS_PESQUISADOS}; ficam os primeiros, que são os de nota mais alta"
-        )
-        restantes = restantes[:TETO_DE_ITENS_PESQUISADOS]
-
     for numero, item in enumerate(restantes, start=1):
         # O teto verifica-se antes de cada item, com o que já se gastou a
-        # sério. Um item pesquisado custa um cêntimo ou dois; não vale a pena
-        # arriscar o orçamento do mês para fazer mais um.
+        # sério. Um item custa entre meio cêntimo e cêntimo e meio; não vale a
+        # pena arriscar o orçamento do mês para fazer mais um.
         if total["dolares"] >= teto_dolares:
             avisos.append(
                 f"travão de custo: parou aos {total['dolares']:.3f} USD com "
@@ -477,8 +547,8 @@ def verificar(
             )
             break
 
-        factos, duvidas, uso, aviso = factos_por_pesquisa(item, cliente)
-        for campo in ("entrada", "saida", "pesquisas", "dolares"):
+        factos, duvidas, uso, aviso = factos_da_web(item, cliente)
+        for campo in ("entrada", "saida", "leituras", "pesquisas", "dolares"):
             total[campo] += uso[campo]
 
         if aviso:
@@ -489,6 +559,6 @@ def verificar(
         item["duvidas"] = duvidas
         item["verificado"] = hoje
         if not factos:
-            avisos.append(f"{item['titulo'][:50]}: a pesquisa não confirmou nada")
+            avisos.append(f"{item['titulo'][:50]}: nem a página nem a pesquisa confirmaram nada")
 
     return avisos, total
