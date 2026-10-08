@@ -38,9 +38,21 @@ const AREAS = [
 ];
 const NOMES_AREAS = Object.fromEntries(AREAS);
 
-// Tudo mostra a lista aos bocados. Com os itens por avaliar à vista são mais
-// de 700 linhas, e desenhá-las todas de uma vez deixava o telemóvel lento.
+// As listas mostram-se aos bocados. Os ignorados de uma semana passam das
+// trezentas linhas, e desenhá-las todas de uma vez deixava o telemóvel lento.
 const POR_PAGINA = 40;
+
+// A nota a partir da qual um item vai à verificação e ao veredicto. É o
+// LIMIAR_FASE_3 do pipeline/principal.py: se mudar lá, muda aqui.
+const LIMIAR = 7;
+
+// Quantos dias de ignorados o pipeline guarda (DIAS_DE_IGNORADOS, no
+// pipeline/publicar.py). Só serve para a frase que o diz ao leitor.
+const DIAS_IGNORADOS = 7;
+
+// O selector de período de Tudo. Sessenta é o histórico inteiro que o
+// pipeline guarda; mais do que isso não há.
+const PERIODOS = [7, 14, 30, 60];
 
 let itens = [];
 let porId = new Map();
@@ -50,8 +62,12 @@ const estadoTudo = {
   veredicto: "todos",
   area: "todas",
   ordem: "data",
-  mostrarSemDados: false,
-  limite: POR_PAGINA
+  periodo: 7,
+  limite: POR_PAGINA,
+  // A secção dos ignorados lembra-se se estava aberta e quantos mostrava,
+  // para o leitor voltar de um item ignorado e cair no mesmo sítio.
+  ignoradosAbertos: false,
+  limiteIgnorados: POR_PAGINA
 };
 
 // Guarda onde se estava em cada lista. Ao voltar de um item, o leitor cai
@@ -120,6 +136,25 @@ function veredictoDe(item) {
 
 function avaliado(item) {
   return Number.isFinite(Number(item.nota)) && item.nota !== null && item.nota !== undefined;
+}
+
+// Um ignorado é o que o filtro deixou cair (nota abaixo do limiar) ou o que
+// teve nota para passar mas não coube no limite diário da fase 3 — esse traz
+// o campo `ignorado` com a razão. Não tem veredicto, só a nota e o porquê.
+function ignorado(item) {
+  return avaliado(item) && (Boolean(item.ignorado) || Number(item.nota) < LIMIAR);
+}
+
+// O que a vista principal mostra: passou o filtro e foi julgado. Um item sem
+// nota não entra em lado nenhum — não há nada para dizer sobre ele.
+function comVeredicto(item) {
+  return avaliado(item) && !ignorado(item);
+}
+
+// A data pela qual um item envelhece: a de publicação, ou a de recolha quando
+// o feed não a deu. É a mesma regra do pipeline/publicar.py.
+function idadeDe(item) {
+  return item.data || item.recolhido || "";
 }
 
 // O nome escrito pela fase 2 ganha ao título do feed, que é quase sempre
@@ -192,6 +227,23 @@ function fraseDaLinha(item) {
   return item.o_que_e || item.resumo;
 }
 
+// Os factos da fase 3 numa linha só, pequena: "Estrelas 1 204 · Licença MIT".
+// Três chegam para a lista; a ficha inteira está na página do item. Devolve
+// null quando não há factos, para não deixar uma linha vazia.
+function linhaFactos(item) {
+  const factos = Array.isArray(item.factos)
+    ? item.factos.filter((f) => f && f.rotulo && f.valor !== undefined).slice(0, 3)
+    : [];
+  if (factos.length === 0) return null;
+  const linha = el("p", "factos-linha");
+  factos.forEach((facto) => {
+    const parte = el("span", "factos-linha__facto");
+    parte.append(el("span", "factos-linha__rotulo", facto.rotulo), document.createTextNode(` ${valorFacto(facto.valor)}`));
+    linha.append(parte);
+  });
+  return linha;
+}
+
 function criarLinha(item, compacta) {
   const v = veredictoDe(item);
   const linha = el("li", `linha linha--${v}${compacta ? " linha--compacta" : ""}`);
@@ -200,6 +252,8 @@ function criarLinha(item, compacta) {
   linha.append(marcaVeredicto(item), titulo);
   const frase = fraseDaLinha(item);
   if (frase) linha.append(el("p", "linha__texto", frase));
+  const factos = compacta ? null : linhaFactos(item);
+  if (factos) linha.append(factos);
   // A área fica de fora da linha: escolhe-se no selector e aparece na página
   // do item. Com ela, a linha de metadados partia em duas no telemóvel.
   linha.append(linhaMeta(item));
@@ -213,6 +267,8 @@ function criarEntrada(item) {
   entrada.append(marcaVeredicto(item), titulo);
   if (item.o_que_e) entrada.append(el("p", "entrada__texto", item.o_que_e));
   if (item.acao) entrada.append(el("p", "entrada__acao", item.acao));
+  const factos = linhaFactos(item);
+  if (factos) entrada.append(factos);
   entrada.append(linhaMeta(item));
   return entrada;
 }
@@ -239,15 +295,17 @@ function ordenarPorDataENota(a, b) {
 }
 
 function desenharParaTi() {
-  const agora = itens.filter((item) => veredictoDe(item) === "agora").sort(ordenarPorDataENota);
-  const depoisTodos = itens.filter((item) => veredictoDe(item) === "depois");
-  // Só os "Depois" com nota alta. Os outros não desaparecem: estão em Tudo,
+  // Só itens com veredicto. Um ignorado pode ter "depois" e nota 8 (ficou
+  // fora do limite diário), mas ninguém o julgou — não é para aqui.
+  const julgados = itens.filter(comVeredicto);
+  const agora = julgados.filter((item) => veredictoDe(item) === "agora").sort(ordenarPorDataENota);
+  const depoisTodos = julgados.filter((item) => veredictoDe(item) === "depois");
+  // Os "Depois" de nota mais alta. Os outros não desaparecem: estão em Tudo,
   // a um toque. Esta página é curta de propósito.
   const depois = depoisTodos
-    .filter((item) => Number(item.nota) >= 7)
+    .slice()
     .sort((a, b) => Number(b.nota) - Number(a.nota) || ordenarPorDataENota(a, b))
     .slice(0, 8);
-  const avaliados = itens.filter(avaliado).length;
 
   const vista = el("div", "para-ti");
 
@@ -258,7 +316,7 @@ function desenharParaTi() {
     : `${n === 1 ? "Uma coisa pede" : `${n} coisas pedem`} atenção agora.`;
   abertura.append(el("h1", "abertura__titulo", tituloAbertura));
   abertura.append(el("p", "abertura__texto",
-    `De ${avaliados} itens avaliados, estes são os que contam. O resto está em Tudo, com o porquê.`));
+    `De ${julgados.length} itens julgados, estes são os que contam. O resto está em Tudo, com o porquê.`));
   vista.append(abertura);
 
   const blocoAgora = el("section", "bloco");
@@ -287,6 +345,8 @@ function desenharParaTi() {
     verTodos.addEventListener("click", () => {
       estadoTudo.veredicto = "depois";
       estadoTudo.area = "todas";
+      // O número do link conta os 60 dias, por isso Tudo abre com eles.
+      estadoTudo.periodo = PERIODOS[PERIODOS.length - 1];
       estadoTudo.limite = POR_PAGINA;
       posicoes.tudo = 0;
     });
@@ -299,7 +359,7 @@ function desenharParaTi() {
   }
 
   const fim = el("p", "fim", "É tudo por hoje. ");
-  const verTudo = el("a", "", "Ver tudo o que entrou ›");
+  const verTudo = el("a", "", "Ver todos os veredictos ›");
   verTudo.href = "#/tudo";
   verTudo.addEventListener("click", () => {
     estadoTudo.veredicto = "todos";
@@ -315,13 +375,17 @@ function desenharParaTi() {
 
 // ——— Tudo ———
 
+// Dentro do período escolhido. Um item sem data nenhuma fica: deitá-lo fora
+// por uma falha do feed seria decidir com o que não se sabe.
+function noPeriodo(item, dias = estadoTudo.periodo) {
+  const data = lerData(idadeDe(item));
+  return !data || diasAtras(data) < dias;
+}
+
 function itensDeTudo() {
   return itens.filter((item) => {
-    const v = veredictoDe(item);
-    // Os "Sem dados" ficam de fora até serem pedidos: são quase sempre itens
-    // que ainda não foram avaliados e não ajudam a decidir nada.
-    if (v === "incerto" && !estadoTudo.mostrarSemDados) return false;
-    if (estadoTudo.veredicto !== "todos" && v !== estadoTudo.veredicto) return false;
+    if (!comVeredicto(item) || !noPeriodo(item)) return false;
+    if (estadoTudo.veredicto !== "todos" && veredictoDe(item) !== estadoTudo.veredicto) return false;
     if (estadoTudo.area !== "todas" && String(item.area || "") !== estadoTudo.area) return false;
     return true;
   }).sort((a, b) => {
@@ -346,35 +410,59 @@ function redesenharTudo() {
   conteudo.replaceChildren(desenharTudo());
 }
 
+// Um selector com rótulo por cima, no formato dos outros. `aoMudar` recebe o
+// valor novo; o redesenho e o foco tratam-se aqui, iguais para todos.
+function criarSelector(rotulo, opcoes, valor, aoMudar) {
+  const campo = el("label", "", rotulo);
+  const select = el("select");
+  opcoes.forEach(([valorOpcao, texto, desligada]) => {
+    const opcao = new Option(texto, valorOpcao);
+    opcao.disabled = Boolean(desligada);
+    select.append(opcao);
+  });
+  select.value = String(valor);
+  select.dataset.rotulo = rotulo;
+  select.addEventListener("change", () => {
+    aoMudar(select.value);
+    estadoTudo.limite = POR_PAGINA;
+    redesenharTudo();
+    // O redesenho troca o select por um novo; o foco volta ao equivalente.
+    document.querySelector(`.selectores select[data-rotulo="${rotulo}"]`)?.focus();
+  });
+  campo.append(select);
+  return campo;
+}
+
 function desenharTudo() {
   const vista = el("div", "tudo");
   const resultado = itensDeTudo();
 
   const topo = el("div", "tudo__topo");
   topo.append(el("h1", "titulo-vista", "Tudo"));
-  const contagem = el("p", "contagem", `${resultado.length} ${resultado.length === 1 ? "item" : "itens"}`);
+  const contagem = el("p", "contagem", `${resultado.length} ${resultado.length === 1 ? "veredicto" : "veredictos"}`);
   contagem.setAttribute("aria-live", "polite");
   topo.append(contagem);
   vista.append(topo);
 
   const controlos = el("div", "controlos");
 
-  // Os contadores dos botões respeitam a área escolhida, para o número dizer
-  // o que se vai ver ao carregar.
-  const naArea = itens.filter((item) => estadoTudo.area === "todas" || String(item.area || "") === estadoTudo.area);
+  // Os contadores dos botões respeitam o período e a área escolhidos, para o
+  // número dizer o que se vai ver ao carregar.
+  const julgados = itens.filter((item) => comVeredicto(item) && noPeriodo(item));
+  const naArea = julgados.filter((item) => estadoTudo.area === "todas" || String(item.area || "") === estadoTudo.area);
   const porVeredicto = contarPor(veredictoDe, naArea);
   const segmentos = el("div", "segmentos");
   segmentos.setAttribute("role", "group");
   segmentos.setAttribute("aria-label", "Filtrar por veredicto");
-  const opcoes = [["todos", "Todos"], ["agora", "Agora"], ["depois", "Depois"], ["ruido", "Ignora"]];
-  if (estadoTudo.mostrarSemDados) opcoes.push(["incerto", "Sem dados"]);
+  const opcoes = [["todos", "Todos"], ["agora", "Agora"], ["depois", "Depois"], ["ruido", "Ignora"], ["incerto", "Sem dados"]];
   opcoes.forEach(([valor, nome]) => {
+    const total = valor === "todos" ? naArea.length : porVeredicto.get(valor) || 0;
+    // "Sem dados" só aparece quando há algum: é o veredicto mais raro, e um
+    // botão a zero todos os dias era ruído na barra.
+    if (valor === "incerto" && total === 0 && estadoTudo.veredicto !== "incerto") return;
     const botao = el("button", "", nome);
     botao.type = "button";
     botao.setAttribute("aria-pressed", String(estadoTudo.veredicto === valor));
-    const total = valor === "todos"
-      ? naArea.filter((item) => estadoTudo.mostrarSemDados || veredictoDe(item) !== "incerto").length
-      : porVeredicto.get(valor) || 0;
     botao.append(el("span", "conta", total));
     botao.addEventListener("click", () => {
       estadoTudo.veredicto = valor;
@@ -386,99 +474,165 @@ function desenharTudo() {
   });
   controlos.append(segmentos);
 
-  const selectores = el("div", "selectores");
-  const porArea = contarPor((item) => String(item.area || ""), itens.filter(avaliado));
-  const campoArea = el("label", "", "Área");
-  const selectArea = el("select");
-  selectArea.append(new Option("Todas as áreas", "todas"));
+  const porArea = contarPor((item) => String(item.area || ""), julgados);
+  const opcoesArea = [["todas", "Todas as áreas"]];
   AREAS.forEach(([slug, nome]) => {
     const total = porArea.get(slug) || 0;
     // Áreas antigas só aparecem se ainda houver itens com elas no histórico.
     if (total === 0 && (slug === "meu-stack" || slug === "carreira-junior")) return;
-    const opcao = new Option(`${nome} (${total})`, slug);
-    opcao.disabled = total === 0;
-    selectArea.append(opcao);
+    opcoesArea.push([slug, `${nome} (${total})`, total === 0]);
   });
-  selectArea.value = estadoTudo.area;
-  selectArea.addEventListener("change", () => {
-    estadoTudo.area = selectArea.value;
-    estadoTudo.limite = POR_PAGINA;
-    redesenharTudo();
-    document.querySelector(".selectores select")?.focus();
-  });
-  campoArea.append(selectArea);
 
-  const campoOrdem = el("label", "", "Ordenar");
-  const selectOrdem = el("select");
-  selectOrdem.append(new Option("Mais recentes", "data"), new Option("Mais relevantes", "nota"));
-  selectOrdem.value = estadoTudo.ordem;
-  selectOrdem.addEventListener("change", () => {
-    estadoTudo.ordem = selectOrdem.value;
-    estadoTudo.limite = POR_PAGINA;
-    redesenharTudo();
-    document.querySelectorAll(".selectores select")[1]?.focus();
-  });
-  campoOrdem.append(selectOrdem);
-  selectores.append(campoArea, campoOrdem);
+  const selectores = el("div", "selectores");
+  selectores.append(
+    criarSelector("Período", PERIODOS.map((dias) => [String(dias), `Últimos ${dias} dias`]), estadoTudo.periodo,
+      (valor) => { estadoTudo.periodo = Number(valor); }),
+    criarSelector("Ordenar", [["data", "Mais recentes"], ["nota", "Mais relevantes"]], estadoTudo.ordem,
+      (valor) => { estadoTudo.ordem = valor; }),
+    // A área vai em último porque é o mais largo: no telemóvel ocupa a linha
+    // inteira por baixo dos outros dois, e os nomes não ficam cortados.
+    criarSelector("Área", opcoesArea, estadoTudo.area,
+      (valor) => { estadoTudo.area = valor; })
+  );
   controlos.append(selectores);
-
-  const totalSemDados = naArea.filter((item) => veredictoDe(item) === "incerto").length;
-  if (totalSemDados > 0) {
-    const aviso = el("p", "sem-dados-aviso");
-    aviso.append(el("span", "", estadoTudo.mostrarSemDados
-      ? `A mostrar ${totalSemDados} sem dados.`
-      : `${totalSemDados} ${totalSemDados === 1 ? "item" : "itens"} sem dados escondidos.`));
-    const alternar = el("button", "botao-texto", estadoTudo.mostrarSemDados ? "Esconder" : "Mostrar");
-    alternar.type = "button";
-    alternar.addEventListener("click", () => {
-      estadoTudo.mostrarSemDados = !estadoTudo.mostrarSemDados;
-      if (!estadoTudo.mostrarSemDados && estadoTudo.veredicto === "incerto") estadoTudo.veredicto = "todos";
-      estadoTudo.limite = POR_PAGINA;
-      redesenharTudo();
-      document.querySelector(".sem-dados-aviso button")?.focus();
-    });
-    aviso.append(alternar);
-    controlos.append(aviso);
-  }
   vista.append(controlos);
 
   if (resultado.length === 0) {
-    vista.append(itens.length === 0
-      ? estado("Ainda não há itens.", "Espera pela próxima recolha diária e volta cá.")
-      : estado("Nada com estes filtros.", "Escolhe outra área ou carrega em Todos."));
-    return vista;
+    const ultimo = PERIODOS[PERIODOS.length - 1];
+    if (itens.length === 0) {
+      vista.append(estado("Ainda não há itens.", "Espera pela próxima recolha diária e volta cá."));
+    } else if (estadoTudo.periodo < ultimo) {
+      vista.append(estado("Nada com estes filtros.", `Alarga o período até ${ultimo} dias, escolhe outra área ou carrega em Todos.`));
+    } else {
+      vista.append(estado("Nada com estes filtros.", "Escolhe outra área ou carrega em Todos."));
+    }
+  } else {
+    // Por data, a lista parte-se por dias, como as edições de um jornal. Por
+    // relevância não há dias: seria partir uma ordem que não é temporal.
+    const visiveis = resultado.slice(0, estadoTudo.limite);
+    let lista = null;
+    let diaActual = null;
+    visiveis.forEach((item) => {
+      const dia = String(item.data || "");
+      if (!lista || (estadoTudo.ordem === "data" && dia !== diaActual)) {
+        if (estadoTudo.ordem === "data") vista.append(el("h2", "grupo-data", rotuloDia(dia)));
+        lista = el("ul");
+        vista.append(lista);
+        diaActual = dia;
+      }
+      lista.append(criarLinha(item, false));
+    });
+
+    if (resultado.length > visiveis.length) {
+      const mais = el("div", "mais");
+      const botao = el("button", "botao", `Mostrar mais ${Math.min(POR_PAGINA, resultado.length - visiveis.length)}`);
+      botao.type = "button";
+      botao.addEventListener("click", () => {
+        estadoTudo.limite += POR_PAGINA;
+        redesenharTudo();
+        window.scrollTo(0, posicoes.tudo);
+      });
+      mais.append(botao);
+      vista.append(mais);
+    }
   }
 
-  // Por data, a lista parte-se por dias, como as edições de um jornal. Por
-  // relevância não há dias: seria partir uma ordem que não é temporal.
-  const visiveis = resultado.slice(0, estadoTudo.limite);
-  let lista = null;
-  let diaActual = null;
-  visiveis.forEach((item) => {
-    const dia = String(item.data || "");
-    if (!lista || (estadoTudo.ordem === "data" && dia !== diaActual)) {
-      if (estadoTudo.ordem === "data") vista.append(el("h2", "grupo-data", rotuloDia(dia)));
-      lista = el("ul");
-      vista.append(lista);
-      diaActual = dia;
-    }
-    lista.append(criarLinha(item, false));
-  });
+  vista.append(desenharIgnorados());
+  return vista;
+}
 
-  if (resultado.length > visiveis.length) {
+// ——— Ignorados ———
+
+// A data da recolha mais recente que trouxe ignorados. É a ela que o contador
+// se refere: "hoje" quando a recolha foi hoje, a data quando não foi — dizer
+// "hoje: 0" num dia em que o Action não correu enganava.
+function ultimaRecolha(lista) {
+  return lista.reduce((ultima, item) => {
+    const valor = String(item.recolhido || "");
+    return valor > ultima ? valor : ultima;
+  }, "");
+}
+
+function criarLinhaIgnorada(item) {
+  const linha = el("li", "ignorada");
+  const nota = el("p", "ignorada__nota", item.nota);
+  nota.setAttribute("aria-label", `Nota ${item.nota} em 10`);
+  const titulo = el("h3", "ignorada__titulo");
+  titulo.append(ligacaoItem(item));
+  linha.append(nota, titulo);
+  if (item.justificacao) linha.append(el("p", "ignorada__texto", item.justificacao));
+  const meta = linhaMeta(item);
+  // Um 8 ignorado pede explicação: não foi o filtro, foi o limite do dia.
+  if (item.ignorado) meta.append(el("span", "ignorada__razao", "Fora do limite do dia"));
+  linha.append(meta);
+  return linha;
+}
+
+function desenharListaIgnorados(caixa, lista) {
+  const conteudoLista = el("div", "ignorados__corpo");
+  conteudoLista.append(el("p", "ignorados__explicacao",
+    `O que o filtro deixou cair nos últimos ${DIAS_IGNORADOS} dias, da nota mais alta para a mais baixa. ` +
+    "Não é para ler todos os dias: serve para apanhar um bom que tenha escapado."));
+
+  const visiveis = lista.slice(0, estadoTudo.limiteIgnorados);
+  const ul = el("ul");
+  visiveis.forEach((item) => ul.append(criarLinhaIgnorada(item)));
+  conteudoLista.append(ul);
+
+  if (lista.length > visiveis.length) {
     const mais = el("div", "mais");
-    const botao = el("button", "botao", `Mostrar mais ${Math.min(POR_PAGINA, resultado.length - visiveis.length)}`);
+    const botao = el("button", "botao", `Mostrar mais ${Math.min(POR_PAGINA, lista.length - visiveis.length)}`);
     botao.type = "button";
     botao.addEventListener("click", () => {
-      estadoTudo.limite += POR_PAGINA;
-      redesenharTudo();
-      window.scrollTo(0, posicoes.tudo);
+      estadoTudo.limiteIgnorados += POR_PAGINA;
+      // Só a lista é redesenhada: a página não salta, e o foco fica no
+      // primeiro item novo, que é onde o leitor ia continuar.
+      const antes = visiveis.length;
+      desenharListaIgnorados(caixa, lista);
+      caixa.querySelectorAll(".ignorada .ligacao-item")[antes]?.focus();
     });
     mais.append(botao);
-    vista.append(mais);
+    conteudoLista.append(mais);
   }
 
-  return vista;
+  caixa.querySelector(".ignorados__corpo")?.remove();
+  caixa.append(conteudoLista);
+}
+
+function desenharIgnorados() {
+  // O pipeline já corta os ignorados aos 7 dias; o filtro aqui repete-o para
+  // o site não depender disso — um itens.json antigo mostrava semanas deles.
+  const lista = itens
+    .filter((item) => ignorado(item) && noPeriodo(item, DIAS_IGNORADOS))
+    .sort((a, b) => Number(b.nota) - Number(a.nota) || ordenarPorDataENota(a, b));
+
+  // Um <details> nativo: abre e fecha com o teclado e o leitor de ecrã diz o
+  // estado sem código nenhum. Fica fechado por omissão.
+  const caixa = el("details", "ignorados");
+  caixa.open = estadoTudo.ignoradosAbertos;
+
+  const resumo = el("summary", "ignorados__resumo");
+  resumo.append(el("span", "ignorados__titulo", "Ignorados"));
+  const recolha = ultimaRecolha(lista);
+  const doDia = lista.filter((item) => item.recolhido === recolha).length;
+  const data = lerData(recolha);
+  const quando = !data ? "" : diasAtras(data) <= 0 ? "hoje" : diasAtras(data) === 1 ? "ontem" : formatoCurto.format(data);
+  resumo.append(el("span", "ignorados__conta", lista.length === 0
+    ? "nenhum esta semana"
+    : `${quando ? `${quando}: ` : ""}${doDia} ${doDia === 1 ? "ignorado" : "ignorados"} · ${lista.length} em ${DIAS_IGNORADOS} dias`));
+  caixa.append(resumo);
+
+  // A lista só se desenha ao abrir. Fechada, a secção é uma linha, e não há
+  // razão para pôr centenas de itens na página de quem nunca a abre.
+  if (caixa.open && lista.length) desenharListaIgnorados(caixa, lista);
+  caixa.addEventListener("toggle", () => {
+    estadoTudo.ignoradosAbertos = caixa.open;
+    if (caixa.open && lista.length && !caixa.querySelector(".ignorados__corpo")) {
+      desenharListaIgnorados(caixa, lista);
+    }
+  });
+
+  return caixa;
 }
 
 // ——— Página do item ———
@@ -508,7 +662,10 @@ function desenharItem(id) {
   const artigo = el("article", "artigo");
   artigo.append(voltar);
   if (nomeArea(item.area)) artigo.append(el("p", "artigo__area", nomeArea(item.area)));
-  artigo.append(marcaVeredicto(item));
+  // Um ignorado não leva o rótulo de veredicto: ninguém o julgou. O que tem é
+  // a nota e a frase do filtro, e é isso que a página mostra.
+  const deitadoFora = ignorado(item);
+  artigo.append(deitadoFora ? el("p", "veredicto veredicto--ignorado", "Ignorado") : marcaVeredicto(item));
   const titulo = el("h1", "artigo__titulo", nomeDe(item));
   titulo.id = `titulo-${idSeguro(item.id)}`;
   artigo.append(titulo);
@@ -518,7 +675,13 @@ function desenharItem(id) {
   if (avaliado(item)) meta.append(el("span", "", `Nota ${item.nota}/10`));
   artigo.append(meta);
 
-  if (item.acao) {
+  if (deitadoFora) {
+    artigo.append(el("p", "artigo__razao", item.ignorado
+      ? `Teve nota para passar, mas ${String(item.ignorado)}. Não foi verificado nem julgado.`
+      : `O filtro deu-lhe ${item.nota}, abaixo dos ${LIMIAR} que levam à verificação. Não foi verificado nem julgado.`));
+  }
+
+  if (item.acao && !deitadoFora) {
     const acao = el("p", "artigo__acao");
     acao.append(el("span", "", "O que fazer"), document.createTextNode(String(item.acao)));
     artigo.append(acao);
@@ -534,8 +697,8 @@ function desenharItem(id) {
   }
 
   // Os factos vêm antes do porquê: são o que não se discute, e o porquê
-  // assenta neles.
-  if (avaliado(item)) {
+  // assenta neles. Num ignorado não há factos, e a razão já está escrita.
+  if (avaliado(item) && !deitadoFora) {
     const parte = el("section", "parte");
     parte.append(el("h2", "parte__titulo", "Factos verificados"));
     const factos = Array.isArray(item.factos)
@@ -554,14 +717,15 @@ function desenharItem(id) {
     } else {
       // Dizer que não houve verificação é diferente de não dizer nada: sem
       // esta frase, a falta de factos parecia um esquecimento do site.
-      parte.append(el("p", "parte__nota", "Nada verificado. Só os itens com nota 7 ou mais passam pela verificação."));
+      parte.append(el("p", "parte__nota", "A verificação não confirmou nada. O que ficou por saber está nas dúvidas."));
     }
     artigo.append(parte);
   }
 
   if (item.justificacao) {
     const parte = el("section", "parte");
-    parte.append(el("h2", "parte__titulo", v === "ruido" ? "Porque não te serve" : "Porquê"));
+    const tituloPorque = deitadoFora ? "O que o filtro disse" : v === "ruido" ? "Porque não te serve" : "Porquê";
+    parte.append(el("h2", "parte__titulo", tituloPorque));
     parte.append(el("p", "parte__texto", item.justificacao));
     artigo.append(parte);
   }

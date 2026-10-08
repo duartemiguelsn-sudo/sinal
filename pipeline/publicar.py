@@ -37,6 +37,12 @@ from pathlib import Path
 # site, não no custo do pipeline.
 DIAS_DE_HISTORICO = 60
 
+# Os ignorados ficam muito menos tempo. Servem para auditar o filtro — apanhar
+# um item bom que ele deixou cair — e isso faz-se na semana, não ao fim de
+# dois meses. São também a maior parte da recolha: com 60 dias seriam eles a
+# pesar no ficheiro, não os veredictos.
+DIAS_DE_IGNORADOS = 7
+
 # A área que a fase 2 dá ao que não é do mundo dele. Estes itens são
 # pontuados — é preciso pagar a pontuação para saber que não interessam — mas
 # não chegam ao ficheiro que o site lê.
@@ -166,12 +172,42 @@ def cortar(itens: list[dict], dias: int, hoje: str) -> tuple[list[dict], int]:
     return mantidos, len(itens) - len(mantidos)
 
 
+def sem_veredicto(item: dict, limiar: int) -> bool:
+    """Diz se o item fica de fora da vista principal do site.
+
+    São três casos: o que o filtro deixou abaixo do limiar, o que teve nota
+    para passar mas ficou fora do limite diário da fase 3 (traz o campo
+    `ignorado`), e o que nem chegou a ter nota. Os dois primeiros são os
+    "ignorados" do site; o terceiro não aparece em lado nenhum, mas também não
+    há razão para o guardar mais tempo do que eles.
+    """
+    if "nota" not in item:
+        return True
+    return bool(item.get("ignorado")) or item["nota"] < limiar
+
+
+def cortar_ignorados(
+    itens: list[dict], dias: int, hoje: str, limiar: int
+) -> tuple[list[dict], int]:
+    """Deita fora os itens sem veredicto mais velhos do que `dias`."""
+    if dias <= 0:
+        return itens, 0
+
+    limite = (date.fromisoformat(hoje) - timedelta(days=dias)).isoformat()
+    mantidos = [
+        item for item in itens
+        if not sem_veredicto(item, limiar) or not idade(item) or idade(item) >= limite
+    ]
+    return mantidos, len(itens) - len(mantidos)
+
+
 def publicar(
     caminho_itens: Path,
     caminho_vistos: Path,
     novos: list[dict],
     dias: int = DIAS_DE_HISTORICO,
     hoje: str | None = None,
+    limiar: int = 7,
 ) -> dict:
     """Escreve os dois ficheiros de dados e devolve o resumo do que fez.
 
@@ -179,6 +215,9 @@ def publicar(
     início. É de propósito: com `--esquecer` a corrida ignora o histórico para
     apanhar tudo outra vez, mas isso é uma decisão sobre o que recolher, não
     uma ordem para apagar o que já se sabe.
+
+    O `limiar` é o LIMIAR_FASE_3 do principal.py, que o passa sempre: é ele
+    que separa um item com veredicto de um ignorado.
     """
     hoje = hoje or date.today().isoformat()
 
@@ -194,6 +233,12 @@ def publicar(
     # "cortados por idade" fala só de idade e lê-se sem enganar.
     dentro, fora = sem_fora_de_ambito(juntos)
     mantidos, cortados = cortar(dentro, dias, hoje)
+    # Com `--historico 0` não se corta nada, nem os ignorados: é a forma de
+    # publicar tudo de uma vez quando se quer olhar para o arquivo inteiro.
+    if dias > 0:
+        mantidos, ignorados_cortados = cortar_ignorados(mantidos, DIAS_DE_IGNORADOS, hoje, limiar)
+    else:
+        ignorados_cortados = 0
 
     # Mais recente primeiro, como o site mostra por omissão. Ordenar aqui faz
     # com que o diff do Git seja quase sempre um bloco no topo, legível.
@@ -227,6 +272,11 @@ def publicar(
     ids_libertados = 0
     ids_esquecidos = 0
     for id_, quando in vistos.items():
+        # Um id sem data vem do formato antigo do ficheiro. Enquanto o item
+        # estava publicado, isso não importava; com os ignorados cortados aos
+        # 7 dias, deixava de ser reconhecido e um item sem data de publicação
+        # voltava a ser recolhido e pago. Ganha a data de hoje e fica mais 60.
+        quando = quando or hoje
         if id_ in por_pontuar:
             ids_libertados += 1
         elif id_ in ids_publicados or quando >= limite:
@@ -243,6 +293,7 @@ def publicar(
         "historico": len(historico),
         "fora_de_ambito": fora,
         "cortados": cortados,
+        "ignorados_cortados": ignorados_cortados,
         "publicados": len(mantidos),
         "ids_esquecidos": ids_esquecidos,
         "ids_libertados": ids_libertados,

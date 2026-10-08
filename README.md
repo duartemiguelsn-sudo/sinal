@@ -94,7 +94,11 @@ ver os factos, e isso é a fase 3.
 
 A fase 5 é a única que lê o disco antes de lhe escrever. Junta a corrida de hoje ao
 que já estava publicado — sem isto, cada corrida apagava o dia anterior — e corta o que
-passou os 60 dias, para o ficheiro que o telemóvel descarrega não crescer sem fim. Um id
+passou os 60 dias, para o ficheiro que o telemóvel descarrega não crescer sem fim. Os
+itens sem veredicto — os ignorados (nota abaixo de 7, ou fora do limite diário da fase 3)
+e os que nem chegaram a ter nota — ficam só 7 dias: servem para auditar o filtro na
+semana, e eram eles que pesavam no ficheiro. O primeiro corte levou o `itens.json` de
+858 itens (713 KB) para 207 (295 KB). Um id
 repetido não substitui o item antigo em bloco: escreve por cima campo a campo, para que
 uma corrida sem chave não deite fora a nota e o veredicto que já foram pagos. O
 `vistos.json` é cortado pela mesma janela e passou a guardar a data em que cada id foi
@@ -111,9 +115,13 @@ que prenderam 152 itens — a camada 1 inteira entre eles. Não faz ciclo sem fi
 fase 1 só aceita itens dos últimos sete dias: passada essa janela o feed deixa de os dar
 e desiste-se sozinho.
 
-O site lê `dados/itens.json` e mostra a recolha real. Enquanto a fase 2 não correr com
-uma chave, os itens não têm nota e aparecem todos como *Incerto* — que é o
-comportamento certo: sem dados não há julgamento.
+O site lê `dados/itens.json` e mostra só itens com veredicto — os que passaram o filtro
+e foram julgados. *Para ti* é o resumo curto (os *Agora* e os melhores *Depois*); *Tudo*
+tem os veredictos com período (7 dias por omissão, até 60), filtro por veredicto e por
+área, e ordem por data ou por nota. No fim de *Tudo* está a secção *Ignorados*, fechada,
+com o contador do dia; aberta, lista o que o filtro deixou cair nos últimos 7 dias, da
+nota mais alta para a mais baixa, cada um com a nota e a frase do filtro. Um item sem
+nota não aparece em lado nenhum: sem julgamento não há nada para dizer sobre ele.
 
 ## Estrutura
 
@@ -421,8 +429,8 @@ nada de novo.
   antes de acrescentar código que talvez não poupe nada.
 - O corte dos 60 dias está feito e testado, mas **ainda nunca cortou nada a sério** —
   não há histórico com essa idade. A primeira limpeza verdadeira é daqui a dois meses.
-- Os ids que já estavam no `vistos.json` no formato antigo ficaram sem data. Mantêm-se
-  enquanto o item deles estiver publicado, e saem na primeira limpeza depois disso.
+- Os ids que já estavam no `vistos.json` no formato antigo ficaram sem data. Na
+  primeira corrida depois de 2026-10-08 ganham essa data e saem 60 dias depois.
 - **A *Carreira júnior* continua sem fonte a sério.** Procurou-se a 2026-09-21 e não
   há feed nenhum sobre o mercado português: a `landing.jobs` responde sem itens e o
   `itjobs.pt` devolve 404. O que está lá é a categoria do blogue do GitHub sobre o

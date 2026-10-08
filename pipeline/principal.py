@@ -458,7 +458,9 @@ def main() -> int:
     # Fase 5. Junta esta corrida ao que já estava publicado e corta o que é
     # velho de mais. Não custa nada, e por isso corre sempre até ao fim, mesmo
     # que as fases pagas tenham sido saltadas.
-    resumo = publicar.publicar(CAMINHO_ITENS, CAMINHO_VISTOS, novos, opcoes.historico)
+    resumo = publicar.publicar(
+        CAMINHO_ITENS, CAMINHO_VISTOS, novos, opcoes.historico, limiar=LIMIAR_FASE_3
+    )
 
     print(
         f"\nFase 5 — {resumo['novos']} itens acrescentados aos {resumo['historico']} "
@@ -474,6 +476,11 @@ def main() -> int:
         print(
             f"{resumo['cortados']} cortados por passarem os {opcoes.historico} dias de histórico"
             + (f" e {resumo['ids_esquecidos']} ids esquecidos" if resumo["ids_esquecidos"] else "")
+        )
+    if resumo["ignorados_cortados"]:
+        print(
+            f"{resumo['ignorados_cortados']} ignorados ou sem nota cortados por passarem "
+            f"os {publicar.DIAS_DE_IGNORADOS} dias"
         )
     # Estes dois números são o aviso de que alguma coisa não foi pontuada. Em
     # dia normal são zero; se teimarem em aparecer, a fase 2 está a falhar e o

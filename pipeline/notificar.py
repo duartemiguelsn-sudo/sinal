@@ -74,6 +74,10 @@ def para_ti(itens: list[dict]) -> list[dict]:
     depois = [
         item for item in itens
         if item.get("veredicto") == "depois" and (item.get("nota") or 0) >= NOTA_MINIMA_DEPOIS
+        # Um "depois" com nota alta pode ser um item que só ficou fora do
+        # limite diário da fase 3. Esse é um ignorado, e o site não o mostra
+        # Para ti; avisar dele era mandar abrir uma página onde ele não está.
+        and not item.get("ignorado")
     ]
     depois.sort(key=lambda item: item.get("nota") or 0, reverse=True)
     return agora + depois
