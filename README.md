@@ -18,9 +18,9 @@ repositório é público, por isso está no `.gitignore`.
 | Fase | Estado |
 |---|---|
 | 1 — recolher | Feita; 24 fontes, camadas 1, 2 e 3 |
-| 2 — filtrar (pontuar com Haiku 4.5) | Feita e corrida a sério |
+| 2 — filtrar (pontuar com Haiku 5.5) | Feita e corrida a sério |
 | 3 — verificar | Feita e corrida a sério, nos dois caminhos |
-| 4 — veredicto (Sonnet 5) | Feita e corrida a sério |
+| 4 — veredicto (Sonnet 5.5) | Feita e corrida a sério |
 | 5 — publicar (GitHub Action) | Feita; Secret e Pages ligados, o Action já fez commit |
 
 A fase 2 não devolve só a nota. Devolve também o **nome** e a **linha do que a coisa
@@ -81,7 +81,7 @@ cada por corrida. Um facto sem o URL de onde saiu não é guardado; o que não s
 fica como dúvida em aberto.
 
 A fase 4 tem dois caminhos, pela mesma lógica. Os itens verificados — meia dúzia por
-dia — vão ao Sonnet 5, que lê os factos da fase 3 e escreve o veredicto e o parágrafo
+dia — vão ao Sonnet, que lê os factos da fase 3 e escreve o veredicto e o parágrafo
 de justificação. Todos os outros, que são a esmagadora maioria, não vão a modelo
 nenhum: o veredicto sai da nota que a fase 2 já pagou, por uma regra fixa (0–3 é
 *Ruído*, 4–6 é *Depois*, sem nota é *Incerto*), e a justificação continua a ser a
@@ -120,6 +120,8 @@ comportamento certo: sem dados não há julgamento.
 ├─ pipeline/
 │  ├─ fontes.toml                   # as fontes, editáveis sem tocar no código
 │  ├─ fontes.py                     # fase 1: lê RSS, Atom, APIs JSON e páginas
+│  ├─ modelos.toml                  # modelo, preço, esforço e travões de cada fase paga
+│  ├─ modelos.py                    # lê e valida o modelos.toml
 │  ├─ filtrar.py                    # fase 2: pontua com o Haiku, com travões de custo
 │  ├─ verificar.py                  # fase 3: factos do GitHub de graça, o resto por pesquisa
 │  ├─ veredicto.py                  # fase 4: julgamento escrito pelo Sonnet, ou tirado da nota
@@ -129,7 +131,8 @@ comportamento certo: sem dados não há julgamento.
 ├─ dados/
 │  ├─ itens.json                    # o que o site lê
 │  ├─ vistos.json                   # id -> data em que foi visto
-│  └─ paginas.json                  # retrato das páginas vigiadas, para as comparar
+│  ├─ paginas.json                  # retrato das páginas vigiadas, para as comparar
+│  └─ custos.json                   # tokens, pesquisas e dólares de cada corrida, 90 dias
 ├─ .env.exemplo                     # modelo do .env; o .env a sério nunca entra no Git
 └─ requirements.txt                 # uma dependência só: o SDK da Anthropic
 ```
@@ -243,7 +246,7 @@ A fase 2 paga ao item, por isso há quatro limites, e cada um apanha uma coisa d
 | `limite` por fonte | `fontes.toml` | uma fonte que passou a despejar resultados |
 | `JANELA_DE_DIAS` | `principal.py` | o arquivo inteiro de um feed em vez do dia |
 | `TETO_DE_ITENS` | `filtrar.py` | a recolha inteira a crescer sem explicação |
-| `TETO_DE_DOLARES` | `filtrar.py` | tudo o resto, incluindo o que ainda não se imaginou |
+| `teto_dolares` | `modelos.toml`, secção `[filtro]` | tudo o resto, incluindo o que ainda não se imaginou |
 
 O travão de dólares verifica-se antes de cada lote, com o que já se gastou a sério
 (o `usage` da resposta), não com a estimativa. Quando dispara, pára e diz quantos
@@ -251,17 +254,34 @@ itens ficaram por pontuar.
 
 O quinto travão é o `LIMIAR_FASE_3`, no `principal.py`: só os itens com nota igual ou
 superior a 7 passam à fase 3 e à fase 4, que são as fases caras — uma paga por pesquisa
-a $10 por 1000, a outra paga ao Sonnet 5. Esse número é o que mais decide a fatura do
+a $10 por 1000, a outra paga ao Sonnet. Esse número é o que mais decide a fatura do
 projeto, porque mexe nas duas contas ao mesmo tempo.
 
-A fase 4 tem os seus dois, no `veredicto.py`: `TETO_DE_ITENS_JULGADOS` (12 por corrida)
-e `TETO_DE_DOLARES` (0,15 USD). Um item que um travão deixe por julgar não fica sem
+A fase 4 tem os seus dois, na secção `[veredicto]` do `modelos.toml`: `itens_julgados`
+(12 por corrida) e `teto_dolares` (0,15 USD). Um item que um travão deixe por julgar não fica sem
 rótulo — apanha o veredicto da nota, que para um item de nota alta dá *Incerto*. É o
 estado honesto de quem não conseguiu julgar, e não uma promessa que ninguém verificou.
 
 ## Custo, medido
 
-Números medidos a 2026-09-20, com os preços da tabela oficial dessa data
+Desde 2026-10-08 cada corrida acrescenta uma linha a `dados/custos.json`, com os
+tokens de entrada e saída de cada fase, as pesquisas e os dólares, tirados do `usage`
+que a API devolve. Guarda 90 dias. É esse ficheiro que conta; os números abaixo são
+o histórico que levou até ele.
+
+**Outubro, antes da troca de modelos** (tirado dos logs do Action, 1 a 7 de outubro,
+com Haiku 4.5 e Sonnet 5): **$0,20 por dia, cerca de $6 por mês** — fase 2 a $0,059
+por dia, fase 3 a $0,093 (seis pesquisas por dia são $0,06 disso), fase 4 a $0,049,
+cerca de $0,005 por item julgado. Passava do orçamento de $5.
+
+**A troca de 2026-10-08:** fases 2 e 3 para o Haiku 5.5 ($0,10/$0,50, dez vezes mais
+barato) e fase 4 para o Sonnet 5.5 (o mesmo preço do Sonnet 5). Com os mesmos
+travões de antes (3 itens pesquisados, 2 pesquisas cada, 12 julgados), a conta
+esperada desce para cerca de $3,5 a $4 por mês, quase toda em pesquisas e no veredicto. O Sonnet 5.5
+fica se o custo por item no `custos.json` não sair claramente acima dos $0,005 do
+Sonnet 5; se sair, volta-se ao 5 numa linha do `modelos.toml`.
+
+Os números seguintes são de setembro, com os preços da tabela oficial dessa data
 (Haiku 4.5 a $1/$5 por milhão de tokens de entrada/saída).
 
 - Prompt de sistema da fase 2: ~1500 tokens, enviado uma vez por lote de 20 itens.

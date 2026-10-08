@@ -248,3 +248,39 @@ def publicar(
         "ids_libertados": ids_libertados,
         "por_pontuar": len(por_pontuar),
     }
+
+
+# Quantos dias de custos ficam guardados. Noventa dão três meses para comparar
+# — chega para ver se uma troca de modelo subiu ou desceu a conta, e o ficheiro
+# fica com uma linha por dia, pequeno de mais para pesar no repositório.
+DIAS_DE_CUSTOS = 90
+
+
+def registar_custos(caminho: Path, linha: dict, dias: int = DIAS_DE_CUSTOS) -> int:
+    """Acrescenta a linha desta corrida ao custos.json e corta o que é velho.
+
+    Devolve quantas linhas ficaram. O site não lê este ficheiro: existe para
+    trocar as estimativas do CLAUDE.md por números verdadeiros, tirados do
+    `usage` que a API devolve. Se o custo divergir da estimativa, é aqui que
+    se vê primeiro.
+
+    Um ficheiro estragado não pára a corrida — perdem-se os números antigos,
+    mas o de hoje fica escrito, e o aviso fica no log do Action.
+    """
+    linhas: list[dict] = []
+    if caminho.exists():
+        try:
+            guardado = json.loads(caminho.read_text(encoding="utf-8"))
+            if isinstance(guardado, list):
+                linhas = [l for l in guardado if isinstance(l, dict) and l.get("data")]
+            else:
+                print(f"aviso: {caminho.name} não é uma lista, a recomeçar os custos do zero")
+        except json.JSONDecodeError:
+            print(f"aviso: {caminho.name} ilegível, a recomeçar os custos do zero")
+
+    linhas.append(linha)
+    limite = (date.fromisoformat(linha["data"]) - timedelta(days=dias)).isoformat()
+    linhas = [l for l in linhas if l["data"] >= limite]
+
+    gravar_json(caminho, linhas)
+    return len(linhas)

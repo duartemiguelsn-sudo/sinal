@@ -3,7 +3,7 @@
 Esta é a primeira fase que custa dinheiro, e por isso é a primeira que tem
 travões. São três, e nenhum é decorativo:
 
-1. O modelo é o Haiku 4.5, o mais barato. Vê título e resumo, nada mais.
+1. O modelo é o Haiku, o mais barato. Vê título e resumo, nada mais.
 2. Há um teto de itens por corrida e um teto de dólares por corrida. Se a
    recolha disparar, a conta não dispara atrás dela.
 3. Existe `--estimar`, que diz o que a corrida ia custar sem gastar nada.
@@ -12,19 +12,25 @@ Pontua-se tudo e guarda-se tudo, inclusive o que reprova. O site precisa do
 que reprovou para conseguir ordenar por data, e um item mau mostrado apagado
 é mais honesto do que um item mau escondido.
 
-Preços confirmados a 2026-09-20 em platform.claude.com/docs/en/about-claude/pricing.
+O modelo, o preço e o teto em dólares vivem em pipeline/modelos.toml.
 """
 
 from __future__ import annotations
 
 import json
 import os
+import sys
+from pathlib import Path
 
-MODELO = "claude-haiku-4-5"
+sys.path.insert(0, str(Path(__file__).parent))
 
-# Dólares por milhão de tokens, Haiku 4.5.
-PRECO_ENTRADA = 1.00
-PRECO_SAIDA = 5.00
+from modelos import CONFIG  # noqa: E402
+
+FASE = CONFIG["filtro"]
+MODELO = FASE["modelo"]
+PRECO_ENTRADA = FASE["preco_entrada"]
+PRECO_SAIDA = FASE["preco_saida"]
+ESFORCO = FASE["esforco"]
 
 # Quantos itens vão em cada pedido. Vinte é o equilíbrio: poucos por pedido
 # faz pagar o prompt de sistema vezes sem conta, muitos por pedido faz o
@@ -34,12 +40,13 @@ ITENS_POR_PEDIDO = 20
 # Os dois travões. O de itens protege de uma fonte que enlouqueceu; o de
 # dólares protege de tudo o resto, incluindo do que ainda não imaginámos.
 TETO_DE_ITENS = 250
-TETO_DE_DOLARES = 0.25
+TETO_DE_DOLARES = FASE["teto_dolares"]
 
 # Caracteres por token, para a estimativa. Não é exacto — é uma regra grossa
-# para texto técnico. O número verdadeiro vem no `usage` da resposta, e é esse
-# que aparece no ecrã depois de uma corrida a sério.
-CHARS_POR_TOKEN = 3.5
+# para texto técnico. Era 3.5 no Haiku 4.5; o tokenizador do Haiku 5.5 conta
+# cerca de 30% mais tokens para o mesmo texto. O número verdadeiro vem no
+# `usage` da resposta e fica em dados/custos.json.
+CHARS_POR_TOKEN = 2.7
 
 # As oito áreas em que o painel se lê, pela ordem que o Duarte pediu. Cada item
 # leva exactamente uma. Duas por item fariam o mesmo item aparecer em dois
@@ -289,8 +296,16 @@ def estimar(itens: list[dict]) -> dict:
     }
 
 
-def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[list[dict], list[str], float]:
-    """Pontua os itens, lote a lote. Devolve (itens, avisos, dólares gastos).
+def uso_vazio() -> dict:
+    """O que uma fase gastou, no formato que vai para o dados/custos.json."""
+    return {"modelo": MODELO, "entrada": 0, "saida": 0, "dolares": 0.0}
+
+
+def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[list[dict], list[str], dict]:
+    """Pontua os itens, lote a lote. Devolve (itens, avisos, uso).
+
+    O `uso` traz os tokens e os dólares tirados do `usage` de cada resposta —
+    é o que vai para o dados/custos.json.
 
     Um lote que falhe não leva os outros atrás: os itens desse lote ficam sem
     nota e seguem na mesma para o site, onde aparecem como incertos. Sem nota
@@ -301,7 +316,7 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
     cliente = anthropic.Anthropic()
     avisos: list[str] = []
     por_id = {item["id"]: item for item in itens}
-    gasto = 0.0
+    uso = uso_vazio()
 
     for principio in range(0, len(itens), ITENS_POR_PEDIDO):
         numero_do_lote = principio // ITENS_POR_PEDIDO + 1
@@ -310,19 +325,24 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
         # O travão verifica-se antes de cada pedido, com o que já se gastou a
         # sério e não com a estimativa. Parar a meio deixa itens por pontuar,
         # que é mau — gastar sem limite é pior.
-        if gasto >= teto_dolares:
+        if uso["dolares"] >= teto_dolares:
             avisos.append(
-                f"travão de custo: parou aos {gasto:.3f} USD com {len(itens) - principio} itens por pontuar"
+                f"travão de custo: parou aos {uso['dolares']:.3f} USD com {len(itens) - principio} itens por pontuar"
             )
             break
 
         try:
             resposta = cliente.messages.create(
                 model=MODELO,
-                max_tokens=4000,
+                # Vinte itens a ~120 tokens cada dão ~2400 de resposta. O resto
+                # é folga para o pensamento, que também conta para este limite:
+                # se acabar a meio, o lote perde-se inteiro.
+                max_tokens=8000,
                 system=INSTRUCOES,
                 messages=[{"role": "user", "content": texto_do_lote(lote)}],
-                output_config={"format": esquema()},
+                # Sem `thinking`: o Haiku 5.5 pensa de forma adaptativa por
+                # omissão, e o esforço é o que diz quanto. Ver modelos.toml.
+                output_config={"format": esquema(), "effort": ESFORCO},
             )
         except anthropic.RateLimitError:
             avisos.append(f"lote {numero_do_lote}: limite de pedidos atingido, ficou por pontuar")
@@ -334,8 +354,22 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
             avisos.append(f"lote {numero_do_lote}: não chegou à API ({erro})")
             continue
 
-        gasto += custo(resposta.usage.input_tokens, resposta.usage.output_tokens)
+        uso["entrada"] += resposta.usage.input_tokens
+        uso["saida"] += resposta.usage.output_tokens
+        uso["dolares"] += custo(resposta.usage.input_tokens, resposta.usage.output_tokens)
 
+        # Os modelos novos podem recusar um pedido. Não é erro da API: vem
+        # como resposta normal, sem o texto. Dizer porquê poupa uma tarde a
+        # procurar um JSON estragado que nunca existiu.
+        if resposta.stop_reason == "refusal":
+            avisos.append(f"lote {numero_do_lote}: o modelo recusou o pedido, ficou por pontuar")
+            continue
+        if resposta.stop_reason == "max_tokens":
+            avisos.append(f"lote {numero_do_lote}: a resposta passou do max_tokens, ficou por pontuar")
+            continue
+
+        # A resposta pode começar por blocos de pensamento, por isso não
+        # serve pegar no primeiro bloco: é preciso o que é mesmo texto.
         texto = next((bloco.text for bloco in resposta.content if bloco.type == "text"), "")
         try:
             avaliacoes = json.loads(texto)["avaliacoes"]
@@ -372,7 +406,7 @@ def pontuar(itens: list[dict], teto_dolares: float = TETO_DE_DOLARES) -> tuple[l
     if sem_nota:
         avisos.append(f"{sem_nota} itens ficaram sem nota e vão para o site como incertos")
 
-    return itens, avisos, gasto
+    return itens, avisos, uso
 
 
 def explicar_erro(erro: anthropic.APIStatusError) -> str:

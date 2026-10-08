@@ -21,6 +21,10 @@ Tudo o que fica acima passa pela verificação (fase 3, paga por pesquisa) e
 pelo julgamento escrito (fase 4, paga ao Sonnet). Mexer neste número mexe nas
 duas contas ao mesmo tempo.
 
+Os modelos e os travões de cada fase paga vivem em pipeline/modelos.toml. No fim
+de cada corrida acrescenta-se uma linha a dados/custos.json com os tokens, as
+pesquisas e os dólares de cada fase — o custo medido, não o estimado.
+
 A fase 5 é a que junta esta corrida ao que já estava publicado e corta o
 histórico velho. Não chama a API, e está no `publicar.py` porque é a única
 parte do pipeline que lê o disco antes de lhe escrever.
@@ -32,7 +36,7 @@ import argparse
 import json
 import os
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 # A consola do Windows não usa UTF-8 por omissão e estraga os acentos.
@@ -56,6 +60,7 @@ CAMINHO_VISTOS = RAIZ / "dados" / "vistos.json"
 # notícia é a diferença para o que lá estava na corrida anterior, e é aqui que
 # esse "anterior" fica guardado entre corridas.
 CAMINHO_PAGINAS = RAIZ / "dados" / "paginas.json"
+CAMINHO_CUSTOS = RAIZ / "dados" / "custos.json"
 CAMINHO_AMBIENTE = RAIZ / ".env"
 
 # Quase todos os feeds servem o arquivo inteiro, não o dia. Sem esta janela, a
@@ -131,6 +136,27 @@ def guardar_paginas(caminho: Path, retratos: dict) -> None:
         json.dumps(retratos, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
         encoding="utf-8",
     )
+
+
+def linha_de_custos(fases: dict[str, dict]) -> dict:
+    """Junta o uso de cada fase numa linha do custos.json.
+
+    Uma fase que não correu não aparece. Os totais ficam também na linha para
+    se poder somar um mês sem ter de abrir cada fase.
+    """
+    agora = datetime.now(timezone.utc)
+    limpas = {}
+    for nome, uso in fases.items():
+        limpas[nome] = {**uso, "dolares": round(uso["dolares"], 6)}
+    return {
+        "data": agora.date().isoformat(),
+        "hora": agora.strftime("%H:%M"),
+        "fases": limpas,
+        "entrada": sum(uso["entrada"] for uso in fases.values()),
+        "saida": sum(uso["saida"] for uso in fases.values()),
+        "pesquisas": sum(uso.get("pesquisas", 0) for uso in fases.values()),
+        "dolares": round(sum(uso["dolares"] for uso in fases.values()), 6),
+    }
 
 
 def main() -> int:
@@ -250,6 +276,9 @@ def main() -> int:
 
     if not novos:
         print("\nNada de novo. Isso também é um resultado — não se inventa recolha.")
+        # Fica registado na mesma: um dia a zero é um dado, e sem ele não se
+        # distingue de um dia em que o Action nem correu.
+        publicar.registar_custos(CAMINHO_CUSTOS, linha_de_custos({}))
         return 0
 
     # Teto de itens. É o segundo travão: mesmo que uma fonte passe o teto dela,
@@ -285,7 +314,9 @@ def main() -> int:
         print("\n--estimar: fica por aqui, não se chamou a API e não se gastou nada.")
         return 0
 
-    gasto = 0.0
+    # O uso de cada fase paga que correu, tirado do `usage` das respostas. É
+    # isto que vai para o custos.json no fim.
+    fases: dict[str, dict] = {}
 
     if opcoes.sem_filtro:
         print("\n--sem-filtro: a fase 2 não correu. Os itens vão para o site sem nota.")
@@ -297,8 +328,8 @@ def main() -> int:
         )
     else:
         print("\na pontuar...")
-        novos, avisos_fase2, gasto_fase2 = filtrar.pontuar(novos, opcoes.teto)
-        gasto += gasto_fase2
+        novos, avisos_fase2, uso_fase2 = filtrar.pontuar(novos, opcoes.teto)
+        fases["filtro"] = uso_fase2
         mostrar_lista("Fase 2:", avisos_fase2)
 
         pontuados = [item for item in novos if "nota" in item]
@@ -308,7 +339,10 @@ def main() -> int:
                 distribuicao[item["nota"]] = distribuicao.get(item["nota"], 0) + 1
             escala = "  ".join(f"{nota}:{quantos}" for nota, quantos in sorted(distribuicao.items(), reverse=True))
             print(f"\nNotas  {escala}")
-        print(f"Custo da fase 2: {gasto_fase2:.4f} USD")
+        print(
+            f"Custo da fase 2: {uso_fase2['dolares']:.4f} USD  "
+            f"({uso_fase2['entrada']} tokens de entrada, {uso_fase2['saida']} de saída, {filtrar.MODELO})"
+        )
 
     # Fase 3. Os candidatos vão ordenados por nota, do mais alto para o mais
     # baixo: se o teto de custo cortar a meio, corta pelos que menos interessam.
@@ -344,13 +378,20 @@ def main() -> int:
         com_pesquisa = not opcoes.sem_pesquisa and filtrar.tem_chave()
 
         print("\na verificar...")
-        avisos_fase3, gasto_fase3 = verificar.verificar(candidatos, opcoes.teto_fase3, com_pesquisa)
-        gasto += gasto_fase3
+        avisos_fase3, uso_fase3 = verificar.verificar(candidatos, opcoes.teto_fase3, com_pesquisa)
+        # Só conta como fase paga se chegou a chamar a API. Uma corrida em que
+        # tudo eram repositórios não gastou nada e não precisa de linha.
+        if uso_fase3["entrada"]:
+            fases["verificacao"] = uso_fase3
         mostrar_lista("Fase 3:", avisos_fase3)
 
         com_factos = sum(1 for item in candidatos if item.get("factos"))
         print(f"\n{com_factos} de {len(candidatos)} itens ficaram com factos verificados")
-        print(f"Custo da fase 3: {gasto_fase3:.4f} USD")
+        print(
+            f"Custo da fase 3: {uso_fase3['dolares']:.4f} USD  "
+            f"({uso_fase3['pesquisas']} pesquisas, {uso_fase3['entrada']} tokens de entrada, "
+            f"{uso_fase3['saida']} de saída)"
+        )
 
     # Fase 4. Só os candidatos verificados levam julgamento escrito — é a única
     # parte paga. Todos os outros apanham o veredicto da nota logo a seguir,
@@ -377,10 +418,14 @@ def main() -> int:
         )
 
         print("\na julgar...")
-        avisos_fase4, gasto_fase4 = veredicto.julgar(candidatos, opcoes.teto_fase4)
-        gasto += gasto_fase4
+        avisos_fase4, uso_fase4 = veredicto.julgar(candidatos, opcoes.teto_fase4)
+        fases["veredicto"] = uso_fase4
         mostrar_lista("Fase 4:", avisos_fase4)
-        print(f"\nCusto da fase 4: {gasto_fase4:.4f} USD")
+        por_item = uso_fase4["dolares"] / uso_fase4["itens"] if uso_fase4["itens"] else 0.0
+        print(
+            f"\nCusto da fase 4: {uso_fase4['dolares']:.4f} USD  "
+            f"({uso_fase4['itens']} itens, {por_item:.4f} USD por item, {veredicto.MODELO})"
+        )
 
     # O resto da corrida — a esmagadora maioria — fica com o veredicto tirado
     # da nota que a fase 2 já pagou, sem chamar modelo nenhum. Corre sempre,
@@ -396,8 +441,9 @@ def main() -> int:
         contagem[item["veredicto"]] = contagem.get(item["veredicto"], 0) + 1
     print("Veredictos  " + "  ".join(f"{rotulo}:{quantos}" for rotulo, quantos in sorted(contagem.items())))
 
-    if gasto:
-        print(f"\nCusto real desta corrida: {gasto:.4f} USD")
+    custos = linha_de_custos(fases)
+    if custos["dolares"]:
+        print(f"\nCusto real desta corrida: {custos['dolares']:.4f} USD")
 
     # Fase 5. Junta esta corrida ao que já estava publicado e corta o que é
     # velho de mais. Não custa nada, e por isso corre sempre até ao fim, mesmo
@@ -433,6 +479,7 @@ def main() -> int:
     # Só agora, com a corrida inteira feita, é que o retrato das páginas passa a
     # ser o de hoje. Até aqui uma falha deixava tudo como estava, de propósito.
     guardar_paginas(CAMINHO_PAGINAS, retratos)
+    dias_de_custos = publicar.registar_custos(CAMINHO_CUSTOS, custos)
 
     # Só se escreve o resumo; mandar fica para depois do push, num passo à
     # parte do Action. Ver o topo do notificar.py.
@@ -442,7 +489,8 @@ def main() -> int:
 
     print(
         f"\nEscrito: {CAMINHO_ITENS.relative_to(RAIZ)}, "
-        f"{CAMINHO_VISTOS.relative_to(RAIZ)} e {CAMINHO_PAGINAS.relative_to(RAIZ)}"
+        f"{CAMINHO_VISTOS.relative_to(RAIZ)}, {CAMINHO_PAGINAS.relative_to(RAIZ)} e "
+        f"{CAMINHO_CUSTOS.relative_to(RAIZ)} ({dias_de_custos} corridas guardadas)"
     )
     return 0
 

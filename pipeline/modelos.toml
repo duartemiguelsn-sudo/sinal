@@ -1,0 +1,57 @@
+# Modelos e limites das fases pagas do Sinal.
+#
+# Está aqui, e não no código, por duas razões. A primeira é trocar de modelo
+# sem caçar nomes espalhados por três ficheiros: muda-se uma linha. A segunda
+# é que o preço anda colado ao modelo — se um mudasse sem o outro, os travões
+# em dólares passavam a contar com o preço errado e cortavam cedo ou tarde de
+# mais. Por isso cada fase tem o modelo e o preço lado a lado.
+#
+# Os identificadores são sempre os completos, com versão. Um nome sem versão
+# deixava a API escolher, e é assim que se acaba num modelo antigo e mais caro.
+#
+# Preços confirmados a 2026-10-08 na tabela de modelos da documentação da
+# Anthropic e em platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool.
+# Dólares por milhão de tokens. O custo real de cada corrida fica em
+# dados/custos.json; é esse que decide, não estas contas.
+
+# Fase 2 — pontuar tudo o que entrou. É volume, por isso é o modelo barato.
+[filtro]
+modelo = "claude-haiku-5-5"
+# Preço para pedidos até 100 mil tokens. Acima disso o Haiku 5.5 passa a
+# 0.50/2.50, mas um lote de vinte itens fica nos milhares, longe do corte.
+preco_entrada = 0.10
+preco_saida = 0.50
+# O Haiku 5.5 pensa sempre um pouco antes de responder, e o pensamento paga-se
+# como saída. Pontuar título e resumo não precisa de muito: "low" é o mais
+# barato e deixa-o saltar o pensamento nos casos simples.
+esforco = "low"
+teto_dolares = 0.25
+
+# Fase 3 — ir buscar os factos que não se inventam.
+[verificacao]
+modelo = "claude-haiku-5-5"
+preco_entrada = 0.10
+preco_saida = 0.50
+# "medium", e não "low": a documentação avisa que em "low" o Haiku 5.5 salta
+# pesquisas com mais facilidade, e esta fase existe precisamente para ir ver.
+esforco = "medium"
+# 10 dólares por mil pesquisas: um cêntimo cada. É o número que manda nesta fase.
+preco_por_pesquisa = 0.01
+# Quantos itens não-repositório vão a pesquisa por corrida, e quantas pesquisas
+# cada um pode fazer. Os repositórios não contam: vão à API do GitHub, de graça.
+itens_pesquisados = 3
+pesquisas_por_item = 2
+teto_dolares = 0.12
+
+# Fase 4 — o veredicto. O único sítio onde se paga o modelo caro.
+[veredicto]
+modelo = "claude-sonnet-5-5"
+preco_entrada = 2.00
+preco_saida = 10.00
+# Os níveis de esforço do Sonnet 5.5 foram recalibrados face ao Sonnet 5: o
+# mesmo "low" não pensa o mesmo. Fica "low" para começar, e o custos.json diz
+# se compensa. Se sair muito mais caro por item do que o Sonnet 5 (~0.005 USD
+# por item, medido em outubro), volta-se a "claude-sonnet-5" aqui.
+esforco = "low"
+itens_julgados = 12
+teto_dolares = 0.15

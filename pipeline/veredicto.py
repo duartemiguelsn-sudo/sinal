@@ -5,7 +5,7 @@ dois caminhos, pela mesma lógica da fase 3 — o que se consegue fazer de graç
 faz-se de graça, e só se paga pelo que não tem alternativa:
 
 1. Itens verificados (nota >= LIMIAR_FASE_3, com factos da fase 3). Vão ao
-   Sonnet 5, que lê os factos e escreve o veredicto, a justificação e a ação
+   Sonnet, que lê os factos e escreve o veredicto, a justificação e a ação
    (a frase curta que o site mostra na lista por baixo do nome). É a parte
    paga, e é a razão de ser do projeto: julgar com dados à frente.
 
@@ -25,8 +25,7 @@ continua a ser o que a fase 2 escreveu.
 O que nunca acontece por esta via é um item cair em "Agora". Para uma coisa
 ser "Agora" é preciso alguém ter ido ver os factos, e isso é a fase 3.
 
-Preços confirmados a 2026-09-20 em platform.claude.com/docs/en/about-claude/pricing:
-Sonnet 5 a 2.00/10.00 USD por milhão de tokens.
+O modelo, os preços, o esforço e os travões vivem em pipeline/modelos.toml.
 """
 
 from __future__ import annotations
@@ -34,13 +33,15 @@ from __future__ import annotations
 import json
 
 import filtrar  # a tradução dos erros da API vive lá
+from modelos import CONFIG
 
-MODELO = "claude-sonnet-5"
+FASE = CONFIG["veredicto"]
+MODELO = FASE["modelo"]
 
-# Dólares por milhão de tokens, Sonnet 5. Cinco vezes mais caro à saída do que
-# o Haiku da fase 2 — daí só ver meia dúzia de itens por dia.
-PRECO_ENTRADA = 2.00
-PRECO_SAIDA = 10.00
+# Dólares por milhão de tokens. Vinte vezes mais caro do que o Haiku da fase 2
+# — daí só ver meia dúzia de itens por dia.
+PRECO_ENTRADA = FASE["preco_entrada"]
+PRECO_SAIDA = FASE["preco_saida"]
 
 # Quantos itens julgados por pedido. Cinco, e não um de cada vez, porque as
 # instruções desta fase são longas: pagá-las uma vez por item multiplicava a
@@ -53,18 +54,17 @@ ITENS_POR_PEDIDO = 5
 # um dia em que a fase 2 seja generosa não pode virar uma conta má; o de
 # dólares apanha tudo o resto.
 #
-# O número sai do orçamento de trás para a frente. Julgar dez itens custa cerca
-# de seis cêntimos e meio, ou menos de dois dólares por mês. Com a fase 2
-# (~1.50/mês) e a fase 3 (~0.90/mês no pior caso), o projeto fica à volta de
-# quatro dólares por mês, dentro do teto de cinco.
-TETO_DE_ITENS_JULGADOS = 12
-TETO_DE_DOLARES = 0.15
+# Medido em outubro com o Sonnet 5: julgar dez itens custa cerca de cinco
+# cêntimos, perto de um dólar e meio por mês. O custo real de cada corrida
+# fica em dados/custos.json.
+TETO_DE_ITENS_JULGADOS = FASE["itens_julgados"]
+TETO_DE_DOLARES = FASE["teto_dolares"]
 
 # O modelo pensa antes de escrever, mas com esforço baixo. Pensar é o que
 # separa um veredicto de um resumo, e aqui há mesmo quatro critérios para
 # pesar uns contra os outros. O esforço baixo é o travão: os tokens de
 # raciocínio pagam-se ao preço da saída, que nesta fase é o caro.
-ESFORCO = "low"
+ESFORCO = FASE["esforco"]
 
 CHARS_POR_TOKEN = 3.5
 
@@ -363,8 +363,11 @@ def estimar(candidatos: list[dict]) -> dict:
 def julgar(
     candidatos: list[dict],
     teto_dolares: float = TETO_DE_DOLARES,
-) -> tuple[list[str], float]:
-    """Escreve o veredicto nos candidatos, no sítio. Devolve (avisos, dólares).
+) -> tuple[list[str], dict]:
+    """Escreve o veredicto nos candidatos, no sítio. Devolve (avisos, uso).
+
+    O `uso` traz os tokens e os dólares tirados do `usage` das respostas, para
+    o dados/custos.json.
 
     Escreve directamente nos dicionários que recebe, como a fase 3: são os
     mesmos objectos que vão ser gravados, e copiá-los só criava duas versões
@@ -378,7 +381,7 @@ def julgar(
 
     cliente = anthropic.Anthropic()
     avisos: list[str] = []
-    gasto = 0.0
+    uso = {"modelo": MODELO, "entrada": 0, "saida": 0, "itens": 0, "dolares": 0.0}
 
     if len(candidatos) > TETO_DE_ITENS_JULGADOS:
         avisos.append(
@@ -393,9 +396,9 @@ def julgar(
         numero_do_lote = principio // ITENS_POR_PEDIDO + 1
         lote = candidatos[principio:principio + ITENS_POR_PEDIDO]
 
-        if gasto >= teto_dolares:
+        if uso["dolares"] >= teto_dolares:
             avisos.append(
-                f"travão de custo: parou aos {gasto:.3f} USD com "
+                f"travão de custo: parou aos {uso['dolares']:.3f} USD com "
                 f"{len(candidatos) - principio} itens por julgar"
             )
             break
@@ -420,7 +423,22 @@ def julgar(
             avisos.append(f"lote {numero_do_lote}: não chegou à API ({erro})")
             continue
 
-        gasto += custo(resposta.usage.input_tokens, resposta.usage.output_tokens)
+        uso["entrada"] += resposta.usage.input_tokens
+        uso["saida"] += resposta.usage.output_tokens
+        uso["dolares"] += custo(resposta.usage.input_tokens, resposta.usage.output_tokens)
+        # Conta os itens pedidos, não os julgados: o que se paga é o pedido.
+        # É este número que dá o custo por item, que decide se o Sonnet 5.5
+        # compensa face ao 5 (ver modelos.toml).
+        uso["itens"] += len(lote)
+
+        # O Sonnet 5.5 pode recusar um pedido; vem como resposta normal, sem
+        # texto. Sem esta linha aparecia como formato errado.
+        if resposta.stop_reason == "refusal":
+            avisos.append(f"lote {numero_do_lote}: o modelo recusou o pedido, ficou por julgar")
+            continue
+        if resposta.stop_reason == "max_tokens":
+            avisos.append(f"lote {numero_do_lote}: a resposta passou do max_tokens, ficou por julgar")
+            continue
 
         # A resposta traz blocos de raciocínio à frente do texto, por isso não
         # serve pegar no primeiro bloco: é preciso o que é mesmo texto.
@@ -460,4 +478,4 @@ def julgar(
             f"{sem_veredicto} candidatos ficaram sem julgamento escrito e vão como incertos"
         )
 
-    return avisos, gasto
+    return avisos, uso

@@ -17,10 +17,10 @@ São dois caminhos, e a diferença entre eles é toda a diferença no orçamento
    um número máximo de itens, um número máximo de pesquisas, e um teto em
    dólares verificado antes de cada pedido.
 
-Preços confirmados a 2026-09-20 em platform.claude.com/docs/en/about-claude/pricing:
-Haiku 4.5 a 1.00/5.00 USD por milhão de tokens, e a pesquisa na web a 10 USD
-por cada mil pesquisas — ou seja um cêntimo por pesquisa, que é muito mais do
-que os tokens de um item. É por isso que o caminho 1 existe.
+A pesquisa na web custa 10 USD por cada mil pesquisas — um cêntimo por
+pesquisa, que é muito mais do que os tokens de um item. É por isso que o
+caminho 1 existe. O modelo, os preços e os travões vivem em
+pipeline/modelos.toml.
 
 Regra que atravessa o ficheiro todo: um facto sem origem não é facto. Tudo o
 que fica guardado traz o URL de onde saiu, e o que não se conseguiu confirmar
@@ -42,17 +42,17 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import filtrar  # noqa: E402  (a tradução dos erros da API vive lá)
 from fontes import TEMPO_LIMITE, cabecalhos  # noqa: E402
+from modelos import CONFIG  # noqa: E402
 
-MODELO = "claude-haiku-4-5"
+FASE = CONFIG["verificacao"]
+MODELO = FASE["modelo"]
+PRECO_ENTRADA = FASE["preco_entrada"]
+PRECO_SAIDA = FASE["preco_saida"]
+ESFORCO = FASE["esforco"]
 
-# Dólares por milhão de tokens, Haiku 4.5.
-PRECO_ENTRADA = 1.00
-PRECO_SAIDA = 5.00
-
-# Dólares por pesquisa: 10 USD por mil. Um item que peça duas pesquisas gasta
-# dois cêntimos só nisso, antes de se contar um único token. É o número que
-# manda no custo desta fase.
-PRECO_POR_PESQUISA = 0.01
+# Dólares por pesquisa. Um item que peça duas pesquisas gasta dois cêntimos só
+# nisso, antes de se contar um único token. É o número que manda nesta fase.
+PRECO_POR_PESQUISA = FASE["preco_por_pesquisa"]
 
 # Travões do caminho pago. Os três agem em conjunto e nenhum chega sozinho:
 # o de itens impede que um dia bom de recolha vire uma conta má, o de pesquisas
@@ -63,10 +63,11 @@ PRECO_POR_PESQUISA = 0.01
 # uns três cêntimos, quase todos em pesquisa. Três itens por dia dão cerca de
 # dez cêntimos por dia, ou três dólares por mês no pior caso — e o pior caso é
 # raro, porque a maior parte dos candidatos são repositórios e não chegam aqui.
-# Se isto for de mais, baixa-se com --teto-fase3 sem mexer em código.
-TETO_DE_ITENS_PESQUISADOS = 3
-PESQUISAS_POR_ITEM = 2
-TETO_DE_DOLARES = 0.12
+# Se isto for de mais, baixa-se no modelos.toml, ou numa corrida só com
+# --teto-fase3, sem mexer em código.
+TETO_DE_ITENS_PESQUISADOS = FASE["itens_pesquisados"]
+PESQUISAS_POR_ITEM = FASE["pesquisas_por_item"]
+TETO_DE_DOLARES = FASE["teto_dolares"]
 
 # Um repositório sem commits há mais tempo do que isto deixa de se poder
 # chamar mantido. Seis meses é generoso para um projeto pequeno e já é
@@ -251,7 +252,11 @@ def texto_do_item(item: dict) -> str:
         "fonte": item["fonte"],
         "camada": item["camada"],
     }
+    # A data vai no pedido porque o modelo não sabe em que dia está. Sem ela
+    # trata o que aprendeu no treino como actual e pesquisa menos do que devia;
+    # a documentação do Haiku 5.5 recomenda dá-la sempre que há pesquisa.
     return (
+        f"A data de hoje é {date.today().isoformat()}.\n\n"
         "Verifica este item.\n\n"
         "<item-a-verificar>\n"
         f"{json.dumps(material, ensure_ascii=False, indent=1)}\n"
@@ -313,8 +318,10 @@ def _duvidas_limpas(bruto) -> list[str]:
     return duvidas
 
 
-def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], float, str]:
-    """Um item, um pedido. Devolve (factos, dúvidas, dólares, aviso).
+def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], dict, str]:
+    """Um item, um pedido. Devolve (factos, dúvidas, uso, aviso).
+
+    O `uso` traz tokens, pesquisas e dólares deste pedido, para o custos.json.
 
     O aviso vem vazio quando correu bem. Um item que falhe não leva os outros
     atrás: fica sem factos verificados e segue para a fase 4, que o há-de
@@ -322,11 +329,16 @@ def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], flo
     """
     import anthropic
 
+    uso = {"entrada": 0, "saida": 0, "pesquisas": 0, "dolares": 0.0}
+
     try:
         resposta = cliente.messages.create(
             model=MODELO,
-            max_tokens=2000,
+            # Cinco factos e quatro dúvidas cabem em poucas centenas de tokens.
+            # A folga é para o pensamento, que conta para este limite.
+            max_tokens=6000,
             system=INSTRUCOES,
+            output_config={"effort": ESFORCO},
             messages=[{"role": "user", "content": texto_do_item(item)}],
             tools=[
                 {
@@ -340,21 +352,29 @@ def factos_por_pesquisa(item: dict, cliente) -> tuple[list[dict], list[str], flo
             ],
         )
     except anthropic.RateLimitError:
-        return [], [], 0.0, "limite de pedidos atingido"
+        return [], [], uso, "limite de pedidos atingido"
     except anthropic.APIStatusError as erro:
-        return [], [], 0.0, filtrar.explicar_erro(erro)
+        return [], [], uso, filtrar.explicar_erro(erro)
     except anthropic.APIConnectionError as erro:
-        return [], [], 0.0, f"não chegou à API ({erro})"
+        return [], [], uso, f"não chegou à API ({erro})"
 
-    uso = resposta.usage
-    pesquisas = uso.server_tool_use.web_search_requests if uso.server_tool_use else 0
-    gasto = custo(uso.input_tokens, uso.output_tokens, pesquisas)
+    contagem = resposta.usage
+    uso["entrada"] = contagem.input_tokens
+    uso["saida"] = contagem.output_tokens
+    uso["pesquisas"] = contagem.server_tool_use.web_search_requests if contagem.server_tool_use else 0
+    uso["dolares"] = custo(uso["entrada"], uso["saida"], uso["pesquisas"])
+
+    # Uma recusa vem como resposta normal, sem texto. Sem esta linha aparecia
+    # como "resposta sem JSON legível", que manda procurar o problema no sítio
+    # errado.
+    if resposta.stop_reason == "refusal":
+        return [], [], uso, "o modelo recusou o pedido"
 
     conteudo = _json_da_resposta(resposta)
     if conteudo is None:
-        return [], [], gasto, "resposta sem JSON legível"
+        return [], [], uso, "resposta sem JSON legível"
 
-    return _factos_limpos(conteudo.get("factos")), _duvidas_limpas(conteudo.get("duvidas")), gasto, ""
+    return _factos_limpos(conteudo.get("factos")), _duvidas_limpas(conteudo.get("duvidas")), uso, ""
 
 
 # ---------------------------------------------------------------------------
@@ -380,10 +400,12 @@ def estimar(candidatos: list[dict]) -> dict:
     pesquisados = min(len(restantes), TETO_DE_ITENS_PESQUISADOS)
 
     # Cada pesquisa despeja resultados no pedido. Sete mil tokens por pesquisa
-    # é o que se vê na prática com o Haiku; é uma estimativa, e o número
-    # verdadeiro vem no `usage` no fim da corrida.
-    entrada = pesquisados * (len(INSTRUCOES) // 4 + PESQUISAS_POR_ITEM * 7000)
-    saida = pesquisados * 400
+    # era o que se via com o Haiku 4.5; o 5.5 conta uns 30% mais para o mesmo
+    # texto, e por isso a conta passou a nove mil. É uma estimativa: o número
+    # verdadeiro vem no `usage` e fica em dados/custos.json.
+    entrada = pesquisados * (len(INSTRUCOES) // 3 + PESQUISAS_POR_ITEM * 9000)
+    # Os factos são pouco texto; o grosso da saída passa a ser o pensamento.
+    saida = pesquisados * 1200
 
     return {
         "repositorios": len(repositorios),
@@ -398,14 +420,17 @@ def verificar(
     candidatos: list[dict],
     teto_dolares: float = TETO_DE_DOLARES,
     com_pesquisa: bool = True,
-) -> tuple[list[str], float]:
-    """Põe factos e dúvidas nos candidatos, no sítio. Devolve (avisos, dólares).
+) -> tuple[list[str], dict]:
+    """Põe factos e dúvidas nos candidatos, no sítio. Devolve (avisos, uso).
+
+    O `uso` soma tokens, pesquisas e dólares de todos os pedidos da fase. Os
+    repositórios não entram nele: não custam nada.
 
     Escreve directamente nos dicionários que recebe — são os mesmos objectos
     que a fase 5 vai gravar, e copiá-los só criava duas versões da verdade.
     """
     avisos: list[str] = []
-    gasto = 0.0
+    total = {"modelo": MODELO, "entrada": 0, "saida": 0, "pesquisas": 0, "dolares": 0.0}
     hoje = date.today().isoformat()
 
     repositorios, restantes = separar(candidatos)
@@ -424,11 +449,11 @@ def verificar(
             avisos.append(f"{dono}/{nome}: não se conseguiu ler o repositório")
 
     if not restantes:
-        return avisos, gasto
+        return avisos, total
 
     if not com_pesquisa:
         avisos.append(f"{len(restantes)} itens ficaram por pesquisar: a pesquisa está desligada")
-        return avisos, gasto
+        return avisos, total
 
     import anthropic
 
@@ -445,15 +470,16 @@ def verificar(
         # O teto verifica-se antes de cada item, com o que já se gastou a
         # sério. Um item pesquisado custa um cêntimo ou dois; não vale a pena
         # arriscar o orçamento do mês para fazer mais um.
-        if gasto >= teto_dolares:
+        if total["dolares"] >= teto_dolares:
             avisos.append(
-                f"travão de custo: parou aos {gasto:.3f} USD com "
+                f"travão de custo: parou aos {total['dolares']:.3f} USD com "
                 f"{len(restantes) - numero + 1} itens por verificar"
             )
             break
 
-        factos, duvidas, custo_do_item, aviso = factos_por_pesquisa(item, cliente)
-        gasto += custo_do_item
+        factos, duvidas, uso, aviso = factos_por_pesquisa(item, cliente)
+        for campo in ("entrada", "saida", "pesquisas", "dolares"):
+            total[campo] += uso[campo]
 
         if aviso:
             avisos.append(f"{item['titulo'][:50]}: {aviso}")
@@ -465,4 +491,4 @@ def verificar(
         if not factos:
             avisos.append(f"{item['titulo'][:50]}: a pesquisa não confirmou nada")
 
-    return avisos, gasto
+    return avisos, total
