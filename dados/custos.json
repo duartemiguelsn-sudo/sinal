@@ -95,5 +95,22 @@
     "leituras": 0,
     "pesquisas": 0,
     "dolares": 0.007663
+  },
+  {
+    "data": "2026-10-12",
+    "hora": "13:40",
+    "fases": {
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "entrada": 23330,
+        "saida": 10908,
+        "dolares": 0.007787
+      }
+    },
+    "entrada": 23330,
+    "saida": 10908,
+    "leituras": 0,
+    "pesquisas": 0,
+    "dolares": 0.007787
   }
 ]
