@@ -321,5 +321,29 @@
     "leituras": 0,
     "pesquisas": 0,
     "dolares": 0.020652
+  },
+  {
+    "data": "2026-10-21",
+    "hora": "10:43",
+    "fases": {
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "entrada": 25755,
+        "saida": 12887,
+        "dolares": 0.009019
+      },
+      "veredicto": {
+        "modelo": "claude-sonnet-5-5",
+        "entrada": 3619,
+        "saida": 547,
+        "itens": 2,
+        "dolares": 0.012708
+      }
+    },
+    "entrada": 29374,
+    "saida": 13434,
+    "leituras": 0,
+    "pesquisas": 0,
+    "dolares": 0.021727
   }
 ]
