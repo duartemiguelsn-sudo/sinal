@@ -369,5 +369,37 @@
     "leituras": 0,
     "pesquisas": 0,
     "dolares": 0.019141
+  },
+  {
+    "data": "2026-10-23",
+    "hora": "10:37",
+    "fases": {
+      "filtro": {
+        "modelo": "claude-haiku-5-5",
+        "entrada": 29133,
+        "saida": 12777,
+        "dolares": 0.009302
+      },
+      "verificacao": {
+        "modelo": "claude-haiku-5-5",
+        "entrada": 17180,
+        "saida": 1609,
+        "leituras": 1,
+        "pesquisas": 0,
+        "dolares": 0.002523
+      },
+      "veredicto": {
+        "modelo": "claude-sonnet-5-5",
+        "entrada": 4270,
+        "saida": 828,
+        "itens": 3,
+        "dolares": 0.01682
+      }
+    },
+    "entrada": 50583,
+    "saida": 15214,
+    "leituras": 1,
+    "pesquisas": 0,
+    "dolares": 0.028644
   }
 ]
